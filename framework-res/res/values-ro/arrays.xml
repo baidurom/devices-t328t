@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Domiciliu</item>
+        <item>Birou</item>
+        <item>Alta</item>
+        <item>Particularizată</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Birou</item>
+        <item>Alta</item>
+        <item>Particularizată</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Domiciliu</item>
+        <item>Mobil</item>
+        <item>Birou</item>
+        <item>Fax birou</item>
+        <item>Fax domiciliu</item>
+        <item>Pager</item>
+        <item>Altul</item>
+        <item>Particularizat</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Domiciliu</item>
+        <item>Birou</item>
+        <item>Alta</item>
+        <item>Particularizată</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Domiciliu</item>
+        <item>Birou</item>
+        <item>Alta</item>
+        <item>Particularizată</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>Cea mai mare</item>
+        <item>Mare</item>
+        <item>Medie</item>
+        <item>Mică</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>Alb</item>
+        <item>Negru</item>
+        <item>Gri</item>
+        <item>Roşu</item>
+        <item>Verde</item>
+        <item>Galben</item>
+        <item>Albastru</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>Subliniere</item>
+        <item>Aldin</item>
+        <item>Cursiv</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>Stânga</item>
+        <item>Stânga-dreapta</item>
+        <item>Dreapta</item>
+    </string-array>
+</resources>

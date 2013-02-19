@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Start</item>
+        <item>Arbejde</item>
+        <item>Andre</item>
+        <item>Tilpasset</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Arbejde</item>
+        <item>Andre</item>
+        <item>Tilpasset</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Start</item>
+        <item>Mobil</item>
+        <item>Arbejde</item>
+        <item>Arbejdsfax</item>
+        <item>Hjemmefax</item>
+        <item>Personsøger</item>
+        <item>Andet</item>
+        <item>Tilpasset</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Start</item>
+        <item>Arbejde</item>
+        <item>Andre</item>
+        <item>Tilpasset</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Start</item>
+        <item>Arbejde</item>
+        <item>Anden</item>
+        <item>Tilpasset</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>Størst</item>
+        <item>Stor</item>
+        <item>Mellem</item>
+        <item>Lille</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>Hvid</item>
+        <item>Sort</item>
+        <item>Grå</item>
+        <item>Rød</item>
+        <item>Grøn</item>
+        <item>Gul</item>
+        <item>Blå</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>Understreget</item>
+        <item>Fed skrift</item>
+        <item>Kursiv</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>Venstre</item>
+        <item>Juster</item>
+        <item>Højre</item>
+    </string-array>
+</resources>

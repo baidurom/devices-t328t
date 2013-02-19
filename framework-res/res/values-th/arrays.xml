@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>หน้าหลัก</item>
+        <item>ที่ทำงาน</item>
+        <item>อื่นๆ</item>
+        <item>กำหนดเอง</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>ที่ทำงาน</item>
+        <item>อื่นๆ</item>
+        <item>กำหนดเอง</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>หน้าหลัก</item>
+        <item>มือถือ</item>
+        <item>ที่ทำงาน</item>
+        <item>แฟกซ์ที่ทำงาน</item>
+        <item>แฟกซ์บ้าน</item>
+        <item>วิทยุติดตามตัว</item>
+        <item>อื่นๆ</item>
+        <item>กำหนดเอง</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>หน้าหลัก</item>
+        <item>ที่ทำงาน</item>
+        <item>อื่นๆ</item>
+        <item>กำหนดเอง</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>หน้าหลัก</item>
+        <item>ที่ทำงาน</item>
+        <item>อื่นๆ</item>
+        <item>กำหนดเอง</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>ใหญ่ที่สุด</item>
+        <item>ใหญ่</item>
+        <item>กลาง</item>
+        <item>เล็ก</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>สีขาว</item>
+        <item>ดำ</item>
+        <item>เทา</item>
+        <item>สีแดง</item>
+        <item>เขียว</item>
+        <item>เหลือง</item>
+        <item>น้ำเงิน</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>ตัวขีดเส้นใต้</item>
+        <item>ตัวหนา</item>
+        <item>ตัวเอียง</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>ซ้าย</item>
+        <item>จัดขอบ</item>
+        <item>ขวา</item>
+    </string-array>
+</resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Thuis</item>
+        <item>Werk</item>
+        <item>Overig</item>
+        <item>Aangepast</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Werk</item>
+        <item>Overig</item>
+        <item>Aangepast</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Thuis</item>
+        <item>Mobiel</item>
+        <item>Werk</item>
+        <item>Fax werk</item>
+        <item>Fax thuis</item>
+        <item>Semafoon</item>
+        <item>Overig</item>
+        <item>Aangepast</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Thuis</item>
+        <item>Werk</item>
+        <item>Overig</item>
+        <item>Aangepast</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Thuis</item>
+        <item>Werk</item>
+        <item>Overig</item>
+        <item>Aangepast</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>Grootste</item>
+        <item>Groot</item>
+        <item>Medium</item>
+        <item>Klein</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>Wit</item>
+        <item>Zwart</item>
+        <item>Grijs</item>
+        <item>Rood</item>
+        <item>Groen</item>
+        <item>Geel</item>
+        <item>Blauw</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>Onderstrepen</item>
+        <item>Vet</item>
+        <item>Cursief</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>Links</item>
+        <item>Uitvullen</item>
+        <item>Rechts</item>
+    </string-array>
+</resources>

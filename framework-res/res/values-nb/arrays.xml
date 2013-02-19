@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Hjemme</item>
+        <item>Arbeid</item>
+        <item>Annen</item>
+        <item>Egendefinert…</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Arbeid</item>
+        <item>Annen</item>
+        <item>Egendefinert…</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Hjemme</item>
+        <item>Mobil</item>
+        <item>Arbeid</item>
+        <item>Faks arbeid</item>
+        <item>Faks hjemme</item>
+        <item>Personsøker</item>
+        <item>Annen</item>
+        <item>Egendefinert…</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Hjemme</item>
+        <item>Arbeid</item>
+        <item>Annen</item>
+        <item>Egendefinert…</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Hjemme</item>
+        <item>Arbeid</item>
+        <item>Annen</item>
+        <item>Egendefinert…</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>Størst</item>
+        <item>Stor</item>
+        <item>Middels</item>
+        <item>Liten</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>Hvit</item>
+        <item>Svart</item>
+        <item>Grå</item>
+        <item>Rød</item>
+        <item>Grønn</item>
+        <item>Gul</item>
+        <item>Blå</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>Understreking</item>
+        <item>Fet</item>
+        <item>Kursiv</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>Venstre</item>
+        <item>Justere</item>
+        <item>Høyre</item>
+    </string-array>
+</resources>

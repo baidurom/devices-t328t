@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Domicile</item>
+        <item>Bureau</item>
+        <item>Autre</item>
+        <item>Personnalisée</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Bureau</item>
+        <item>Autre</item>
+        <item>Personnalisée</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Domicile</item>
+        <item>Portable</item>
+        <item>Bureau</item>
+        <item>Télécopie bureau</item>
+        <item>Télécopie domicile</item>
+        <item>"Récepteur d'appel"</item>
+        <item>Autre</item>
+        <item>Personnalisée</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Domicile</item>
+        <item>Bureau</item>
+        <item>Autre</item>
+        <item>Personnalisée</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Domicile</item>
+        <item>Bureau</item>
+        <item>Autre</item>
+        <item>Personnalisé</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>Maximale</item>
+        <item>Grande</item>
+        <item>Moyenne</item>
+        <item>Petite</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>Blanc</item>
+        <item>Noir</item>
+        <item>Gris</item>
+        <item>Rouge</item>
+        <item>Vert</item>
+        <item>Jaune</item>
+        <item>Bleu</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>Souligné</item>
+        <item>Gras</item>
+        <item>Italique</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>Gauche</item>
+        <item>Justifier</item>
+        <item>Droite</item>
+    </string-array>
+</resources>

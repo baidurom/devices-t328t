@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Namai</item>
+        <item>Darbas</item>
+        <item>Kita</item>
+        <item>Pasirinktinis</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Darbas</item>
+        <item>Kita</item>
+        <item>Pasirinktinis</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Namai</item>
+        <item>Mobilusis</item>
+        <item>Darbas</item>
+        <item>Darbo faksas</item>
+        <item>Namų faksas</item>
+        <item>Pranešimų gaviklis</item>
+        <item>Kita</item>
+        <item>Pasirinktinis</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Namai</item>
+        <item>Darbas</item>
+        <item>Kita</item>
+        <item>Pasirinktinis</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Namai</item>
+        <item>Darbas</item>
+        <item>Kita</item>
+        <item>Pasirinktinis</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>Didžiausias</item>
+        <item>Didelis</item>
+        <item>Vidutinis</item>
+        <item>Mažas</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>Balta</item>
+        <item>Juoda</item>
+        <item>Pilka</item>
+        <item>Raudona</item>
+        <item>Žalia</item>
+        <item>Geltona</item>
+        <item>Mėlyna</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>Pabraukimas</item>
+        <item>Paryškintasis šriftas</item>
+        <item>Kursyvas</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>Kairė</item>
+        <item>Lygiuoti</item>
+        <item>Dešinė</item>
+    </string-array>
+</resources>

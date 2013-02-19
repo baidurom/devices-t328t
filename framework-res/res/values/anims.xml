@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="anim" name="htc_ime_decelerate_interpolator">@anim/zzz_htc_ime_decelerate_interpolator</item>
+</resources>

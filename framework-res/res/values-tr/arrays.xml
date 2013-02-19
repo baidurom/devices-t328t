@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Ev</item>
+        <item>İş</item>
+        <item>Diğer</item>
+        <item>Özel</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>İş</item>
+        <item>Diğer</item>
+        <item>Özel</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Ev</item>
+        <item>Mobil</item>
+        <item>İş</item>
+        <item>İş Faksı</item>
+        <item>Ev Faksı</item>
+        <item>Çağrı cihazı</item>
+        <item>Diğer</item>
+        <item>Özel</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Ev</item>
+        <item>İş</item>
+        <item>Diğer</item>
+        <item>Özel</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Ev</item>
+        <item>İş</item>
+        <item>Diğer</item>
+        <item>Özel</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>En büyük</item>
+        <item>Büyük</item>
+        <item>Orta</item>
+        <item>Küçük</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>Beyaz</item>
+        <item>Siyah</item>
+        <item>Gri</item>
+        <item>Kırmızı</item>
+        <item>Yeşil</item>
+        <item>Sarı</item>
+        <item>Mavi</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>Altı çizili</item>
+        <item>Kalın</item>
+        <item>İtalik</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>Sol</item>
+        <item>İki yana yasla</item>
+        <item>Sağ</item>
+    </string-array>
+</resources>

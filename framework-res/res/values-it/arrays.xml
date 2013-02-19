@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Casa</item>
+        <item>Ufficio</item>
+        <item>Altro</item>
+        <item>Personalizzato</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Ufficio</item>
+        <item>Altro</item>
+        <item>Personalizzato</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Casa</item>
+        <item>Cellulare</item>
+        <item>Ufficio</item>
+        <item>Fax ufficio</item>
+        <item>Fax casa</item>
+        <item>Cercapersone</item>
+        <item>Altro</item>
+        <item>Personalizzato</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Casa</item>
+        <item>Ufficio</item>
+        <item>Altro</item>
+        <item>Personalizzato</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Casa</item>
+        <item>Uffico</item>
+        <item>Altro</item>
+        <item>Personalizzato</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>Molto grande</item>
+        <item>Grande</item>
+        <item>Medio</item>
+        <item>Piccolo</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>Bianco</item>
+        <item>Nero</item>
+        <item>Grigio</item>
+        <item>Rosso</item>
+        <item>Verde</item>
+        <item>Giallo</item>
+        <item>Blu</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>Sottolineato</item>
+        <item>Grassetto</item>
+        <item>Corsivo</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>Sinistra</item>
+        <item>Giustifica</item>
+        <item>Destra</item>
+    </string-array>
+</resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Dom</item>
+        <item>Praca</item>
+        <item>Inne</item>
+        <item>Niestandardowy</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Praca</item>
+        <item>Inne</item>
+        <item>Niestandardowy</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Dom</item>
+        <item>Komórka</item>
+        <item>Praca</item>
+        <item>Faks w pracy</item>
+        <item>Faks domowy</item>
+        <item>Pager</item>
+        <item>Inny</item>
+        <item>Niestandardowy</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Dom</item>
+        <item>Praca</item>
+        <item>Inny</item>
+        <item>Niestandardowy</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Dom</item>
+        <item>Praca</item>
+        <item>Inne</item>
+        <item>Niestandardowy</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>Największa</item>
+        <item>Duża</item>
+        <item>Średnia</item>
+        <item>Mała</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>Biały</item>
+        <item>Czarny</item>
+        <item>Szary</item>
+        <item>Czerwony</item>
+        <item>Zielony</item>
+        <item>Żółty</item>
+        <item>Niebieski</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>Podkreślenie</item>
+        <item>Pogrubienie</item>
+        <item>Kursywa</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>Lewy</item>
+        <item>Wyjustuj</item>
+        <item>Prawy</item>
+    </string-array>
+</resources>

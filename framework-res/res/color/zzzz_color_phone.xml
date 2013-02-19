@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="htc_unlock_pin_unlock_font_color">#FFFFFFFF</color>
+    <color name="htc_unlock_pin_emergency_font_color">#FF000000</color>
+</resources>

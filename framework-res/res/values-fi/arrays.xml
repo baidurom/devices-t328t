@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Koti</item>
+        <item>Työ</item>
+        <item>Muu</item>
+        <item>Mukautettu</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Työ</item>
+        <item>Muu</item>
+        <item>Mukautettu</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Koti</item>
+        <item>Matkapuhelin</item>
+        <item>Työ</item>
+        <item>Faksi (työ)</item>
+        <item>Faksi (koti)</item>
+        <item>Hakulaite</item>
+        <item>Muu</item>
+        <item>Mukautettu</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Koti</item>
+        <item>Työ</item>
+        <item>Muu</item>
+        <item>Mukautettu</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Koti</item>
+        <item>Työ</item>
+        <item>Muu</item>
+        <item>Mukautettu</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>Suurin</item>
+        <item>Suuri</item>
+        <item>Keskisuuri</item>
+        <item>Pieni</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>Valkoinen</item>
+        <item>Musta</item>
+        <item>Harmaa</item>
+        <item>Punainen</item>
+        <item>Vihreä</item>
+        <item>Keltainen</item>
+        <item>Sininen</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>Alleviivattu</item>
+        <item>Lihavoitu</item>
+        <item>Kursivoitu</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>Vasen</item>
+        <item>Tasaa</item>
+        <item>Oikea</item>
+    </string-array>
+</resources>

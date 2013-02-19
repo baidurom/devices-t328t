@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="light_shadow_xoffset">0</integer>
+    <integer name="light_shadow_yoffset">2</integer>
+    <integer name="dark_shadow_xoffset">0</integer>
+    <integer name="dark_shadow_yoffset">-2</integer>
+    <integer name="actionBar_marginOffset">90</integer>
+    <integer name="actionBar_activeItemPMax">3</integer>
+    <integer name="actionBar_activeItemLMax">3</integer>
+    <integer name="actionBar_actionDivPadding">16</integer>
+</resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Domů</item>
+        <item>Práce</item>
+        <item>Ostatní</item>
+        <item>Vlastní</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo!</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Práce</item>
+        <item>Ostatní</item>
+        <item>Vlastní</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Domů</item>
+        <item>Mobil</item>
+        <item>Práce</item>
+        <item>Pracovní fax</item>
+        <item>Fax domů</item>
+        <item>Pager</item>
+        <item>Ostatní</item>
+        <item>Vlastní</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Domů</item>
+        <item>Práce</item>
+        <item>Ostatní</item>
+        <item>Vlastní</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Domů</item>
+        <item>Práce</item>
+        <item>Ostatní</item>
+        <item>Vlastní</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>Největší</item>
+        <item>Velké</item>
+        <item>Střední</item>
+        <item>Malé</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>Bílá</item>
+        <item>Černá</item>
+        <item>Šedá</item>
+        <item>Červená</item>
+        <item>Zelená</item>
+        <item>Žlutá</item>
+        <item>Modrá</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>Podtrhnout</item>
+        <item>Tučné</item>
+        <item>Kurzíva</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>Vlevo</item>
+        <item>Zarovnat do bloku</item>
+        <item>Vpravo</item>
+    </string-array>
+</resources>

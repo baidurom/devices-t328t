@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Privat</item>
+        <item>Arbeit</item>
+        <item>Andere</item>
+        <item>Benutzerdefiniert</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Arbeit</item>
+        <item>Andere</item>
+        <item>Benutzerdefiniert</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Privat</item>
+        <item>Mobil</item>
+        <item>Arbeit</item>
+        <item>Fax (Arbeit)</item>
+        <item>Fax (privat)</item>
+        <item>Pager</item>
+        <item>Andere</item>
+        <item>Benutzerdefiniert</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Privat</item>
+        <item>Arbeit</item>
+        <item>Andere</item>
+        <item>Benutzerdefiniert</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Privat</item>
+        <item>Arbeit</item>
+        <item>Andere</item>
+        <item>Benutzerdefiniert</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>Sehr groß</item>
+        <item>Groß</item>
+        <item>Mittel</item>
+        <item>Klein</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>Weiß</item>
+        <item>Schwarz</item>
+        <item>Grau</item>
+        <item>Rot</item>
+        <item>Grün</item>
+        <item>Gelb</item>
+        <item>Blau</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>Unterstrichen</item>
+        <item>Fettschrift</item>
+        <item>Kursiv</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>Links</item>
+        <item>Justieren</item>
+        <item>Rechts</item>
+    </string-array>
+</resources>

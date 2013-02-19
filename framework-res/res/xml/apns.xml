@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<apns version="8">
+    <apn carrier="中華電信 (Internet)" apn="internet" mcc="466" mnc="92" type="default,hipri" />
+    <apn carrier="中華電信 (MMS)" apn="emome" mmsc="http://mms.emome.net:8002" mmsproxy="10.1.1.1" mmsport="8080" mcc="466" mnc="92" type="mms" />
+    <apn carrier="台灣大哥大 (match)" apn="twm" mcc="466" mnc="97" type="default,hipri" />
+    <apn carrier="台灣大哥大 (Internet)" apn="internet" mcc="466" mnc="97" type="dun" />
+    <apn carrier="台灣大哥大 (MMS)" apn="mms" mmsc="http://mms.catch.net.tw" mmsproxy="10.1.1.2" mmsport="80" mcc="466" mnc="97" type="mms" />
+    <apn carrier="台灣大哥大 (match)" apn="twm" mcc="466" mnc="99" type="default,hipri" />
+    <apn carrier="台灣大哥大 (Internet)" apn="internet" mcc="466" mnc="99" type="dun" />
+    <apn carrier="台灣大哥大 (MMS)" apn="mms" mmsc="http://mms.catch.net.tw" mmsproxy="10.1.1.2" mmsport="80" mcc="466" mnc="99" type="mms" />
+    <apn carrier="台灣大哥大 (match)" apn="twm" mcc="466" mnc="93" type="default,hipri" />
+    <apn carrier="台灣大哥大 (Internet)" apn="internet" mcc="466" mnc="93" type="dun" />
+    <apn carrier="台灣大哥大 (MMS)" apn="mms" mmsc="http://mms.catch.net.tw" mmsproxy="10.1.1.2" mmsport="80" mcc="466" mnc="93" type="mms" />
+    <apn carrier="遠傳網際網路" apn="internet" mcc="466" mnc="01" type="default,hipri" />
+    <apn carrier="遠傳影音訊息" apn="fetnet01" mmsc="http://mms" mmsproxy="210.241.199.199" mmsport="9201" mcc="466" mnc="01" type="mms" />
+    <apn carrier="和信電訊 (Internet)" apn="internet" mcc="466" mnc="88" type="default,hipri" />
+    <apn carrier="和信電訊 (Fetnet01)" apn="fetnet01" proxy="210.241.199.199" port="80" mcc="466" mnc="88" type="httpproxy" />
+    <apn carrier="和信電訊 (MMS)" apn="kgtmms" mmsc="http://mms.kgtmms.net.tw/mms/wapenc" mmsproxy="172.28.33.5" mmsport="8080" mcc="466" mnc="88" type="mms" />
+    <apn carrier="威寶-vibo" apn="vibo" mcc="466" mnc="89" type="default,hipri" />
+    <apn carrier="威寶-internet" apn="internet" mcc="466" mnc="89" type="default,hipri" />
+    <apn carrier="威寶旺卡" apn="viboone" mcc="466" mnc="89" type="default,hipri" />
+    <apn carrier="VIBO-MMS" apn="vibo" mmsc="http://mms" mmsproxy="172.24.128.36" mmsport="8080" mcc="466" mnc="89" type="mms" />
+    <apn carrier="沃3G连接互联网" apn="3gnet" mcc="460" mnc="01" type="default,internet,hipri" />
+    <apn carrier="沃3G手机上网" apn="3gwap" proxy="10.0.0.172" port="80" mmsc="http://mmsc.myuni.com.cn" mmsproxy="10.0.0.172" mmsport="80" mcc="460" mnc="01" type="default,mms,httpproxy,hipri" />
+    <apn carrier="CMNET" apn="cmnet" mcc="460" mnc="00" authtype="1" type="default,internet,hipri" />
+    <apn carrier="CMWAP" apn="cmwap" proxy="10.0.0.172" port="80" mmsc="http://mmsc.monternet.com" mmsproxy="10.0.0.172" mmsport="80" mcc="460" mnc="00" authtype="1" type="default,mms,httpproxy,hipri" />
+    <apn carrier="CMMM" apn="cmmm" proxy="192.168.11.5" port="80" mcc="460" mnc="00" authtype="1" type="MM" state="hidden" />
+    <apn carrier="CMMAIL" apn="cmmail" mcc="460" mnc="00" authtype="1" type="cmmail" state="hidden" />
+    <apn carrier="CMNET" apn="cmnet" mcc="460" mnc="02" authtype="1" type="default,internet,hipri" />
+    <apn carrier="CMWAP" apn="cmwap" proxy="10.0.0.172" port="80" mmsc="http://mmsc.monternet.com" mmsproxy="10.0.0.172" mmsport="80" mcc="460" mnc="02" authtype="1" type="default,mms,httpproxy,hipri" />
+    <apn carrier="CMMM" apn="cmmm" proxy="192.168.11.5" port="80" mcc="460" mnc="02" authtype="1" type="MM" state="hidden" />
+    <apn carrier="CMMAIL" apn="cmmail" mcc="460" mnc="02" authtype="1" type="cmmail" state="hidden" />
+    <apn carrier="CMNET" apn="cmnet" mcc="460" mnc="07" authtype="1" type="default,internet,hipri" />
+    <apn carrier="CMWAP" apn="cmwap" proxy="10.0.0.172" port="80" mmsc="http://mmsc.monternet.com" mmsproxy="10.0.0.172" mmsport="80" mcc="460" mnc="07" authtype="1" type="default,mms,httpproxy,hipri" />
+    <apn carrier="CMMM" apn="cmmm" proxy="192.168.11.5" port="80" mcc="460" mnc="07" authtype="1" type="MM" state="hidden" />
+    <apn carrier="CMMAIL" apn="cmmail" mcc="460" mnc="07" authtype="1" type="cmmail" state="hidden" />
+    <apn carrier="CMNET" apn="cmnet" mcc="460" mnc="12" authtype="1" type="default,internet,hipri" />
+    <apn carrier="CMWAP" apn="cmwap" proxy="10.0.0.172" port="80" mmsc="http://mmsc.monternet.com" mmsproxy="10.0.0.172" mmsport="80" mcc="460" mnc="12" authtype="1" type="default,mms,httpproxy,hipri" />
+    <apn carrier="CMMM" apn="cmmm" proxy="192.168.11.5" port="80" mcc="460" mnc="12" authtype="1" type="MM" state="hidden" />
+    <apn carrier="CMMAIL" apn="cmmail" mcc="460" mnc="12" authtype="1" type="cmmail" state="hidden" />
+    <apn carrier="1O1O" apn="hkcsl" proxy="192.168.59.51" port="8080" mmsc="http://192.168.58.171:8002" mmsproxy="192.168.59.51" mmsport="8080" mmsprotocol="2.0" mcc="454" mnc="00" authtype="3" operator="1O1O" type="default,mms,hipri" />
+    <apn carrier="1O1O tethering" apn="internet" mcc="454" mnc="00" operator="1O1O" type="dun" />
+    <apn carrier="1O1O" apn="hkcsl" proxy="192.168.59.51" port="8080" mmsc="http://192.168.58.171:8002" mmsproxy="192.168.59.51" mmsport="8080" mmsprotocol="2.0" mcc="454" mnc="10" authtype="3" operator="1O1O" type="default,mms,hipri" />
+    <apn carrier="1O1O tethering" apn="internet" mcc="454" mnc="10" operator="1O1O" type="dun" />
+    <apn carrier="one2free" apn="hkcsl" proxy="192.168.59.51" port="8080" mmsc="http://192.168.58.171:8002" mmsproxy="192.168.59.51" mmsport="8080" mmsprotocol="2.0" mcc="454" mnc="00" authtype="3" operator="one2free" type="default,mms,hipri" />
+    <apn carrier="one2free tethering" apn="internet" mcc="454" mnc="00" operator="one2free" type="dun" />
+    <apn carrier="one2free" apn="hkcsl" proxy="192.168.59.51" port="8080" mmsc="http://192.168.58.171:8002" mmsproxy="192.168.59.51" mmsport="8080" mmsprotocol="2.0" mcc="454" mnc="10" authtype="3" operator="one2free" type="default,mms,hipri" />
+    <apn carrier="one2free tethering" apn="internet" mcc="454" mnc="10" operator="one2free" type="dun" />
+    <apn carrier="New World Mobility" apn="NWMOBILE" proxy="192.168.59.61" port="8080" mmsc="http://192.168.58.171:8002" mmsproxy="192.168.59.61" mmsport="8080" mmsprotocol="2.0" mcc="454" mnc="00" authtype="3" operator="New World Mobility" type="*" />
+    <apn carrier="New World Mobility" apn="NWMOBILE" proxy="192.168.59.61" port="8080" mmsc="http://192.168.58.171:8002" mmsproxy="192.168.59.61" mmsport="8080" mmsprotocol="2.0" mcc="454" mnc="10" authtype="3" operator="New World Mobility" type="*" />
+    <apn carrier="3-HK" apn="mobile.three.com.hk" mmsc="http://mms.um.three.com.hk:10021/mmsc" mmsproxy="mms.three.com.hk" mmsport="8799" mmsprotocol="2.0" mcc="454" mnc="03" authtype="3" type="*" />
+    <apn carrier="3 (2G)" apn="web-g.three.com.hk" mcc="454" mnc="04" authtype="3" type="default,hipri" />
+    <apn carrier="3 (2G) MMS" apn="mms-g.three.com.hk" mmsc="http://10.30.15.51:10021/mmsc" mmsproxy="10.30.15.53" mmsport="9201" mmsprotocol="1.2" mcc="454" mnc="04" authtype="3" type="mms" />
+    <apn carrier="SMC-Voda" apn="SmarTone-Vodafone" mmsc="http://mms.smartone-vodafone.com/server" mmsproxy="10.9.9.9" mmsport="8080" mmsprotocol="2.0" mcc="454" mnc="06" authtype="3" type="*" />
+    <apn carrier="CMHK GPRS" apn="peoples.net" mcc="454" mnc="12" type="default,hipri" />
+    <apn carrier="CMHK MMS" apn="peoples.mms" mmsc="http://mms.hk.chinamobile.com/mms" mmsproxy="172.31.31.36" mmsport="8080" mmsprotocol="2.0" mcc="454" mnc="12" type="mms" />
+    <apn carrier="PCCW 2G" apn="pccwdata" mcc="454" mnc="16" authtype="3" type="default,hipri" />
+    <apn carrier="PCCW 2G MMS" apn="pccwmms" mmsc="http://mmsc.mms.pccwmobile.com:8002/" mmsproxy="10.131.2.8" mmsport="8080" mmsprotocol="2.0" mcc="454" mnc="16" authtype="3" type="mms" />
+    <apn carrier="PCCW 3G" apn="pccw" mmsc="http://3gmms.pccwmobile.com:8080/was" mmsproxy="10.140.14.10" mmsport="8080" mmsprotocol="2.0" mcc="454" mnc="19" authtype="3" type="*" />
+    <apn carrier="CTM" apn="ctm-mobile" proxy="192.168.99.2" port="8080" mcc="455" mnc="01" authtype="3" operator="CTM" type="default,hipri" />
+    <apn carrier="CTM MMS" apn="ctmmms" mmsc="http://mms.wap.ctm.net:8002" mmsproxy="192.168.99.3" mmsport="8080" mmsprotocol="2.0" mcc="455" mnc="01" authtype="3" operator="CTM" type="mms" />
+    <apn carrier="CTM" apn="ctm-mobile" proxy="192.168.99.2" port="8080" mcc="455" mnc="04" authtype="3" operator="CTM" type="default,hipri" />
+    <apn carrier="CTM MMS" apn="ctmmms" mmsc="http://mms.wap.ctm.net:8002" mmsproxy="192.168.99.3" mmsport="8080" mmsprotocol="2.0" mcc="455" mnc="04" authtype="3" operator="CTM" type="mms" />
+    <apn carrier="SmarTone Macau" apn="smartgprs" proxy="10.9.9.29" port="8080" mmsc="http://mms.smartone.com.mo/dmog/mo" mmsproxy="10.9.9.29" mmsport="8080" mmsprotocol="2.0" mcc="455" mnc="00" authtype="3" type="*" />
+    <apn carrier="3 Macau" apn="mobile.three.com.mo" mmsc="http://mms.three.com.mo:10021/mmsc" mmsproxy="172.20.80.80" mmsport="8080" mmsprotocol="2.0" mcc="455" mnc="03" authtype="3" type="*" />
+    <apn carrier="3 Macau" apn="mobile.three.com.mo" mmsc="http://mms.three.com.mo:10021/mmsc" mmsproxy="172.20.80.80" mmsport="8080" mmsprotocol="2.0" mcc="455" mnc="05" authtype="3" type="*" />
+    <apn carrier="CTM (Prepaid)" apn="ctmprepaid" proxy="192.168.99.2" port="8080" mcc="455" mnc="01" authtype="3" operator="CTM (Prepaid)" type="default,hipri" />
+    <apn carrier="CTM MMS (Prepaid)" apn="ctmprepaid" mmsc="http://mms.wap.ctm.net:8002" mmsproxy="192.168.99.3" mmsport="8080" mmsprotocol="2.0" mcc="455" mnc="01" authtype="3" operator="CTM (Prepaid)" type="mms" />
+    <apn carrier="CTM (Prepaid)" apn="ctmprepaid" proxy="192.168.99.2" port="8080" mcc="455" mnc="04" authtype="3" operator="CTM (Prepaid)" type="default,hipri" />
+    <apn carrier="CTM MMS (Prepaid)" apn="ctmprepaid" proxy="192.168.99.3" port="8080" mmsc="http://mms.wap.ctm.net:8002" mmsproxy="192.168.99.3" mmsport="8080" mmsprotocol="2.0" mcc="455" mnc="04" authtype="3" operator="CTM (Prepaid)" type="mms" />
+    <apn carrier="1O1O" apn="hkcsl" proxy="192.168.59.51" port="8080" mmsc="http://192.168.58.171:8002" mmsproxy="192.168.59.51" mmsport="8080" mcc="454" mnc="02" authtype="3" operator="1O1O" type="default,mms,hipri" />
+    <apn carrier="1O1O tethering" apn="internet" mcc="454" mnc="02" operator="1O1O" type="dun" />
+    <apn carrier="1O1O" apn="hkcsl" proxy="192.168.59.51" port="8080" mmsc="http://192.168.58.171:8002" mmsproxy="192.168.59.51" mmsport="8080" mcc="454" mnc="18" authtype="3" operator="1O1O" type="default,mms,hipri" />
+    <apn carrier="1O1O tethering" apn="internet" mcc="454" mnc="18" operator="1O1O" type="dun" />
+    <apn carrier="one2free" apn="hkcsl" proxy="192.168.59.51" port="8080" mmsc="http://192.168.58.171:8002" mmsproxy="192.168.59.51" mmsport="8080" mcc="454" mnc="02" authtype="3" operator="one2free" type="default,mms,hipri" />
+    <apn carrier="one2free tethering" apn="internet" mcc="454" mnc="02" operator="one2free" type="dun" />
+    <apn carrier="one2free" apn="hkcsl" proxy="192.168.59.51" port="8080" mmsc="http://192.168.58.171:8002" mmsproxy="192.168.59.51" mmsport="8080" mcc="454" mnc="18" authtype="3" operator="one2free" type="default,mms,hipri" />
+    <apn carrier="one2free tethering" apn="internet" mcc="454" mnc="18" operator="one2free" type="dun" />
+    <apn carrier="New World Mobility" apn="NWMOBILE" proxy="192.168.59.61" port="8080" mmsc="http://192.168.58.171:8002" mmsproxy="192.168.59.61" mmsport="8080" mcc="454" mnc="02" authtype="3" operator="New World Mobility" type="*" />
+    <apn carrier="New World Mobility" apn="NWMOBILE" proxy="192.168.59.61" port="8080" mmsc="http://192.168.58.171:8002" mmsproxy="192.168.59.61" mmsport="8080" mcc="454" mnc="18" authtype="3" operator="New World Mobility" type="*" />
+</apns>

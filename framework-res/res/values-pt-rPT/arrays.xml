@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Residência</item>
+        <item>Trabalho</item>
+        <item>Outro</item>
+        <item>Personalizado</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Trabalho</item>
+        <item>Outro</item>
+        <item>Personalizado</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Residência</item>
+        <item>Móvel</item>
+        <item>Trabalho</item>
+        <item>Fax trabalho</item>
+        <item>Fax residência</item>
+        <item>Pager</item>
+        <item>Outro</item>
+        <item>Personalizado</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Residência</item>
+        <item>Trabalho</item>
+        <item>Outro</item>
+        <item>Personalizado</item>
+    </string-array>
+    <integer-array name="maps_starting_lat_lng">
+        <item>38707163</item>
+        <item>-9135517</item>
+    </integer-array>
+    <integer-array name="maps_starting_zoom">
+        <item>4</item>
+    </integer-array>
+    <string-array name="imAddressTypes">
+        <item>Residência</item>
+        <item>Trabalho</item>
+        <item>Outro</item>
+        <item>Personalizado</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>Muito grande</item>
+        <item>Grande</item>
+        <item>Médio</item>
+        <item>Pequeno</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>Branco</item>
+        <item>Preto</item>
+        <item>Cinzento</item>
+        <item>Vermelho</item>
+        <item>Verde</item>
+        <item>Amarelo</item>
+        <item>Azul</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>Sublinhado</item>
+        <item>Negrito</item>
+        <item>Itálico</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>Esquerda</item>
+        <item>Justificado</item>
+        <item>Direita</item>
+    </string-array>
+</resources>

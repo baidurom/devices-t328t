@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Kuća</item>
+        <item>Posao</item>
+        <item>Ostalo</item>
+        <item>Prilagođen</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Posao</item>
+        <item>Ostalo</item>
+        <item>Prilagođen</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Kuća</item>
+        <item>Mobilni</item>
+        <item>Posao</item>
+        <item>Poslovni faks</item>
+        <item>Kućni faks</item>
+        <item>Pejdžer</item>
+        <item>Ostalo</item>
+        <item>Prilagođen</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Kuća</item>
+        <item>Posao</item>
+        <item>Ostalo</item>
+        <item>Prilagođen</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Kuća</item>
+        <item>Posao</item>
+        <item>Ostalo</item>
+        <item>Prilagođen</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>Najveća</item>
+        <item>Velika</item>
+        <item>Srednja</item>
+        <item>Mala</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>Bela</item>
+        <item>Crna</item>
+        <item>Siva</item>
+        <item>Crvena</item>
+        <item>Zelena</item>
+        <item>Žuta</item>
+        <item>Plava</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>Podvučeno</item>
+        <item>Podebljano</item>
+        <item>Kurziv</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>Levo</item>
+        <item>Obostrano</item>
+        <item>Desno</item>
+    </string-array>
+</resources>

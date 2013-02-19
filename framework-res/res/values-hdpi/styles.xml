@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="label_off_m">
+        <item name="textSize">16.0px</item>
+        <item name="textStyle">bold</item>
+        <item name="textColor">#acaaa7</item>
+    </style>
+</resources>

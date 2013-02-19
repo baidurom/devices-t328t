@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>المنزل</item>
+        <item>العمل</item>
+        <item>أخرى</item>
+        <item>مخصص</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>العمل</item>
+        <item>أخرى</item>
+        <item>مخصص</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>المنزل</item>
+        <item>الجوال</item>
+        <item>العمل</item>
+        <item>فاكس عمل</item>
+        <item>فاكس منزل</item>
+        <item>جهاز النداء</item>
+        <item>أخرى</item>
+        <item>مخصص</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>المنزل</item>
+        <item>العمل</item>
+        <item>أخرى</item>
+        <item>مخصص</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>المنزل</item>
+        <item>العمل</item>
+        <item>أخرى</item>
+        <item>مخصص</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>الأكبر</item>
+        <item>كبير</item>
+        <item>متوسط</item>
+        <item>صغير</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>أبيض</item>
+        <item>أسود</item>
+        <item>رمادي</item>
+        <item>أحمر</item>
+        <item>أخضر</item>
+        <item>أصفر</item>
+        <item>أزرق</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>تسطير</item>
+        <item>خط غامق</item>
+        <item>مائل</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>يسار</item>
+        <item>ضبط</item>
+        <item>يمين</item>
+    </string-array>
+</resources>

@@ -1,0 +1,24 @@
+ro.baidu.build.hardware=T328T
+ro.baidu.build.hardware.version=1.0
+ro.baidu.build.software=yi_3.0
+ro.baidu.build.version.release=2.1
+
+ro.product.manufacturer=Baidu
+
+ro.config.notification_sound=Ding.mp3
+ro.config.ringtone=Echo.mp3
+ro.config.alarm_alert=alarm.mp3
+ro.config.rootperm.enable=1
+
+persist.sys.timezone=Asia/Shanghai
+
+# enable format of secondary storage.
+#ro.baidu.2nd_storage.format=enable
+
+# property to show/hide feature of defaultWrite Settings
+ro.baidu.default_write.settable=true
+
+# hide the soft mainkeys
+qemu.hw.mainkeys=1
+
+dev.defaultwallpaper=delete

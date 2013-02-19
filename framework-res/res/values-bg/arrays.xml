@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Начало</item>
+        <item>Служебен</item>
+        <item>Друг</item>
+        <item>По избор</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Служебен</item>
+        <item>Друг</item>
+        <item>По избор</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Начало</item>
+        <item>Мобилен</item>
+        <item>Служебен</item>
+        <item>Служебен факс</item>
+        <item>Домашен факс</item>
+        <item>Пейджър</item>
+        <item>Друг</item>
+        <item>По избор</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Начало</item>
+        <item>Служебен</item>
+        <item>Друг</item>
+        <item>По избор</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Начало</item>
+        <item>Служебен</item>
+        <item>Друг</item>
+        <item>По избор</item>
+    </string-array>
+    <array name="carrier_properties" />
+    <array name="select_text_editing_items">
+        <item>@string/font_size</item>
+        <item>@string/font_color</item>
+        <item>@string/font_settings</item>
+        <item>@string/font_alignment</item>
+    </array>
+    <string-array name="select_font_size_items">
+        <item>Най-голям</item>
+        <item>Голям</item>
+        <item>Среден</item>
+        <item>Малък</item>
+    </string-array>
+    <string-array name="select_font_color_items">
+        <item>Бяло</item>
+        <item>Черно</item>
+        <item>Сиво</item>
+        <item>Червено</item>
+        <item>Зелено</item>
+        <item>Жълто</item>
+        <item>Синьо</item>
+    </string-array>
+    <string-array name="select_font_settings_items">
+        <item>Подчертано</item>
+        <item>Удебелен</item>
+        <item>Курсив</item>
+    </string-array>
+    <string-array name="select_font_alignment_items">
+        <item>Наляво</item>
+        <item>Двустранно подравняване</item>
+        <item>Надясно</item>
+    </string-array>
+</resources>
