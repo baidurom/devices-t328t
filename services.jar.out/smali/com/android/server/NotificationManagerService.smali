@@ -4204,6 +4204,7 @@
     .end local v15           #N:I
     .end local v19           #count:I
     .end local v20           #i:I
+    :cond_9527
     :goto_1
     return-void
 
@@ -4425,6 +4426,20 @@
 
     .line 893
     .local v25, notiType:I
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move/from16 v2, p5
+
+    move-object/from16 v3, p7
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/android/server/NotificationManagerService;->isBlockedPackage(Ljava/lang/String;ILandroid/app/Notification;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_9527
+
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
@@ -6237,4 +6252,49 @@
 
     .line 572
     return-void
+.end method
+
+.method private isBlockedPackage(Ljava/lang/String;ILandroid/app/Notification;)Z
+    .locals 4
+    .parameter "packageName"
+    .parameter "id"
+    .parameter "notification"
+
+    .prologue
+    .line 879
+    const/4 v2, 0x0
+
+    .line 880
+    .local v2, rst:Z
+    const-string v3, "android"
+
+    invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    .line 881
+    invoke-static {}, Lcom/baidu/notificationdefense/NotificationDefenseManager;->getInstance()Lcom/baidu/notificationdefense/NotificationDefenseManager;
+
+    move-result-object v1
+
+    .line 882
+    .local v1, ndm:Lcom/baidu/notificationdefense/NotificationDefenseManager;
+    invoke-virtual {v1, p1, p2, p3}, Lcom/baidu/notificationdefense/NotificationDefenseManager;->defense(Ljava/lang/String;ILandroid/app/Notification;)Z
+
+    move-result v0
+
+    .line 883
+    .local v0, blocked:Z
+    if-eqz v0, :cond_0
+
+    .line 884
+    const/4 v2, 0x1
+
+    .line 887
+    .end local v0           #blocked:Z
+    .end local v1           #ndm:Lcom/baidu/notificationdefense/NotificationDefenseManager;
+    :cond_0
+    return v2
 .end method
