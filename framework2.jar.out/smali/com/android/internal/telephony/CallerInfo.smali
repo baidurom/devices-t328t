@@ -27,6 +27,14 @@
 
 .field private static sSkipVmCheck:Z
 
+.field public mPhotoHeight:I
+
+.field public mPhotoID:I
+
+.field public mPhotoWidth:I
+
+.field public mViewMode:I
+
 
 # instance fields
 .field public OrigDialString:Ljava/lang/String;
@@ -903,6 +911,61 @@
 
     .line 357
     iput-boolean v5, v1, Lcom/android/internal/telephony/CallerInfo;->contactExists:Z
+
+    const-string/jumbo v3, "width"
+
+    invoke-interface {p2, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v0
+
+    .line 218
+    invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v3
+
+    iput v3, v1, Lcom/android/internal/telephony/CallerInfo;->mPhotoWidth:I
+
+    .line 220
+    const-string v3, "height"
+
+    invoke-interface {p2, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v0
+
+    .line 221
+    invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v3
+
+    iput v3, v1, Lcom/android/internal/telephony/CallerInfo;->mPhotoHeight:I
+
+    .line 223
+    const-string/jumbo v3, "photo_id"
+
+    invoke-interface {p2, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v0
+
+    .line 224
+    invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v3
+
+    iput v3, v1, Lcom/android/internal/telephony/CallerInfo;->mPhotoID:I
+
+    .line 227
+    const-string/jumbo v3, "view_mode"
+
+    invoke-interface {p2, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v0
+
+    .line 228
+    invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v3
+
+    iput v3, v1, Lcom/android/internal/telephony/CallerInfo;->mViewMode:I
 
     goto/16 :goto_0
 
@@ -3258,7 +3321,7 @@
     .line 691
     .local v0, number:Ljava/lang/String;
     :goto_0
-    invoke-static {p1, v0}, Lcom/android/internal/telephony/CallerInfo;->getGeoDescription(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/android/internal/telephony/CallerInfo;->getGeoDescriptionBaidu(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -3271,6 +3334,68 @@
     .end local v0           #number:Ljava/lang/String;
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/CallerInfo;->phoneNumber:Ljava/lang/String;
+
+    goto :goto_0
+.end method
+
+.method private static getGeoDescriptionBaidu(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+    .parameter "context"
+    .parameter "number"
+
+    .prologue
+    .line 556
+    sget-boolean v0, Lcom/android/internal/telephony/CallerInfo;->VDBG:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "CallerInfo"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "getGeoDescription(\'"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "\')..."
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 558
+    :cond_0
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 559
+    const/4 v0, 0x0
+
+    .line 563
+    :goto_0
+    return-object v0
+
+    :cond_1
+    invoke-static {p0, p1}, Lcom/baidu/internal/telephony/CallLocationUtils;->getLocationDetail(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
 
     goto :goto_0
 .end method
