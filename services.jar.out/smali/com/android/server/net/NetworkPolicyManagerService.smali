@@ -4887,6 +4887,10 @@
 
     .line 1578
     :cond_1
+    invoke-direct {p0, v2, v3}, Lcom/android/server/net/NetworkPolicyManagerService;->getUidRulesBaidu(II)I
+
+    move-result v3
+
     if-nez v3, :cond_2
 
     .line 1579
@@ -6645,4 +6649,27 @@
 
     .line 1281
     return-void
+.end method
+
+.method private getUidRulesBaidu(II)I
+    .locals 2
+    .parameter "uidPolicy"
+    .parameter "orgUidRules"
+
+    .prologue
+    .line 1415
+    move v0, p2
+
+    .line 1416
+    .local v0, uidRules:I
+    and-int/lit8 v1, p1, 0x2
+
+    if-eqz v1, :cond_0
+
+    .line 1418
+    const/4 v0, 0x1
+
+    .line 1420
+    :cond_0
+    return v0
 .end method

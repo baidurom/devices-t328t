@@ -16,6 +16,7 @@
 
 .field public static final RULE_REJECT_METERED:I = 0x1
 
+.field public static final POLICY_REJECT_METERED:I = 0x2
 
 # instance fields
 .field private mService:Landroid/net/INetworkPolicyManager;
