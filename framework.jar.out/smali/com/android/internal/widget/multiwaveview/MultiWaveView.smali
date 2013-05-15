@@ -851,7 +851,7 @@
     return-void
 .end method
 
-.method private deactivateTargets()V
+.method public deactivateTargets()V
     .locals 3
 
     .prologue
@@ -4038,7 +4038,7 @@
 
     .line 273
     :pswitch_1
-    invoke-direct {p0}, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->deactivateTargets()V
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->deactivateTargets()V
 
     .line 274
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
@@ -4054,7 +4054,7 @@
     invoke-direct {p0}, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->stopHandleAnimation()V
 
     .line 279
-    invoke-direct {p0}, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->deactivateTargets()V
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->deactivateTargets()V
 
     .line 280
     invoke-direct {p0, v2}, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->showTargets(Z)V
@@ -5114,7 +5114,7 @@
 
     .prologue
     .line 597
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_1
 
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mVibrator:Landroid/os/Vibrator;
 
@@ -5136,11 +5136,12 @@
     iput-object v0, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mVibrator:Landroid/os/Vibrator;
 
     .line 602
+    :cond_0
     :goto_0
     return-void
 
     .line 600
-    :cond_0
+    :cond_1
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mVibrator:Landroid/os/Vibrator;
