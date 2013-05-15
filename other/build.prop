@@ -22,3 +22,4 @@ ro.baidu.default_write.settable=true
 qemu.hw.mainkeys=1
 
 dev.defaultwallpaper=delete
+ro.build.description=冰冻冷咖啡 1.19.1403.1 IML74K CL82971 release-keys
