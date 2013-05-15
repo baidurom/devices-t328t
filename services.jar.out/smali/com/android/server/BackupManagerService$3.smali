@@ -33,14 +33,14 @@
     .parameter
 
     .prologue
-    .line 4801
+    .line 4863
     iput-object p1, p0, Lcom/android/server/BackupManagerService$3;->this$0:Lcom/android/server/BackupManagerService;
 
     iput-object p2, p0, Lcom/android/server/BackupManagerService$3;->val$packageName:Ljava/lang/String;
 
     iput-object p3, p0, Lcom/android/server/BackupManagerService$3;->val$targets:Ljava/util/HashSet;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -51,7 +51,7 @@
     .locals 3
 
     .prologue
-    .line 4803
+    .line 4865
     iget-object v0, p0, Lcom/android/server/BackupManagerService$3;->this$0:Lcom/android/server/BackupManagerService;
 
     iget-object v1, p0, Lcom/android/server/BackupManagerService$3;->val$packageName:Ljava/lang/String;
@@ -59,8 +59,8 @@
     iget-object v2, p0, Lcom/android/server/BackupManagerService$3;->val$targets:Ljava/util/HashSet;
 
     #calls: Lcom/android/server/BackupManagerService;->dataChangedImpl(Ljava/lang/String;Ljava/util/HashSet;)V
-    invoke-static {v0, v1, v2}, Lcom/android/server/BackupManagerService;->access$1800(Lcom/android/server/BackupManagerService;Ljava/lang/String;Ljava/util/HashSet;)V
+    invoke-static {v0, v1, v2}, Lcom/android/server/BackupManagerService;->access$1900(Lcom/android/server/BackupManagerService;Ljava/lang/String;Ljava/util/HashSet;)V
 
-    .line 4804
+    .line 4866
     return-void
 .end method

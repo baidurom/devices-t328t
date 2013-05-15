@@ -37,8 +37,8 @@
     .locals 0
 
     .prologue
-    .line 2797
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 2859
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -51,34 +51,34 @@
     .prologue
     const/16 v2, 0x2c
 
-    .line 2809
+    .line 2871
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x80
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 2810
+    .line 2872
     .local v0, sb:Ljava/lang/StringBuilder;
     const-string v1, "FileMetadata{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2811
+    .line 2873
     iget-object v1, p0, Lcom/android/server/BackupManagerService$FileMetadata;->packageName:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 2812
+    .line 2874
     iget v1, p0, Lcom/android/server/BackupManagerService$FileMetadata;->type:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 2813
+    .line 2875
     iget-object v1, p0, Lcom/android/server/BackupManagerService$FileMetadata;->domain:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -93,17 +93,17 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 2814
+    .line 2876
     iget-wide v1, p0, Lcom/android/server/BackupManagerService$FileMetadata;->size:J
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 2815
+    .line 2877
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 2816
+    .line 2878
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
