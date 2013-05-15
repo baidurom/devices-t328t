@@ -62,7 +62,7 @@
 
     move-result v2
 
-    if-ne v2, v6, :cond_2
+    if-ne v2, v6, :cond_1
 
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -75,7 +75,7 @@
     move-result-object v0
 
     .local v0, name:Ljava/lang/CharSequence;
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     .line 52
     const v2, 0x10403bb
@@ -107,7 +107,7 @@
     invoke-virtual {p0, v5}, Lcom/android/server/am/AppErrorDialog;->setCancelable(Z)V
 
     .line 64
-    const/4 v2, -0x1
+    const/4 v2, -0x2
 
     const v3, 0x10403c2
 
@@ -123,13 +123,8 @@
 
     invoke-virtual {p0, v2, v3, v4}, Lcom/android/server/am/AppErrorDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
-    .line 68
-    iget-object v2, p3, Lcom/android/server/am/ProcessRecord;->errorReportReceiver:Landroid/content/ComponentName;
-
-    if-eqz v2, :cond_0
-
     .line 69
-    const/4 v2, -0x2
+    const/4 v2, -0x1
 
     const v3, 0x10403c3
 
@@ -146,7 +141,6 @@
     invoke-virtual {p0, v2, v3, v4}, Lcom/android/server/am/AppErrorDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
     .line 74
-    :cond_0
     const v2, 0x10403ba
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
@@ -196,7 +190,7 @@
     .line 77
     iget-boolean v2, p3, Lcom/android/server/am/ProcessRecord;->persistent:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
     .line 78
     invoke-virtual {p0}, Lcom/android/server/am/AppErrorDialog;->getWindow()Landroid/view/Window;
@@ -208,7 +202,7 @@
     invoke-virtual {v2, v3}, Landroid/view/Window;->setType(I)V
 
     .line 82
-    :cond_1
+    :cond_0
     iget-object v2, p0, Lcom/android/server/am/AppErrorDialog;->mHandler:Landroid/os/Handler;
 
     iget-object v3, p0, Lcom/android/server/am/AppErrorDialog;->mHandler:Landroid/os/Handler;
@@ -226,7 +220,7 @@
 
     .line 56
     .end local v0           #name:Ljava/lang/CharSequence;
-    :cond_2
+    :cond_1
     iget-object v0, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     .line 57
@@ -235,7 +229,7 @@
 
     new-array v3, v6, [Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/String;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v4
 
