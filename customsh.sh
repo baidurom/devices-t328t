@@ -9,8 +9,9 @@ if [ -d "$TARGET_SYSTEM_DIR/vendor/operator/app" ];then
 	rm -rf "$TARGET_SYSTEM_DIR/vendor/operator/app"
 fi
 
-if [ -d "$TARGET_SYSTEM_DIR/SYSTEM/customize/resource" ];then
-	rm -rf "$TARGET_SYSTEM_DIR/SYSTEM/customize/resource"
+if [ -d "$TARGET_SYSTEM_DIR/customize/resource" ];then
+	rm -rf "$TARGET_SYSTEM_DIR/customize/resource"
+	echo "remove $TARGET_SYSTEM_DIR/customize/resource"
 fi
 
 if [ -d "$TARGET_SYSTEM_DIR/media" ];then
