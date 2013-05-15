@@ -135,28 +135,50 @@
 
     .prologue
     .line 703
+    const/4 v0, 0x2
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    invoke-static {v0, v1, v2}, Lcom/baidu/server/dp/DynamicPermissionManager;->checkPermission(IZ[Ljava/lang/Object;)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    .line 738
+    :goto_0
+    return-void
+
+    .line 726
+    :cond_0
     const-wide/16 v0, 0x0
 
     cmp-long v0, p3, v0
 
-    if-gez v0, :cond_0
+    if-gez v0, :cond_1
 
     .line 704
     const-wide/16 p3, 0x0
 
     .line 706
-    :cond_0
+    :cond_1
     const/4 v0, 0x0
 
     cmpg-float v0, p5, v0
 
-    if-gez v0, :cond_1
+    if-gez v0, :cond_2
 
     .line 707
     const/4 p5, 0x0
 
     .line 711
-    :cond_1
+    :cond_2
     :try_start_0
     iget-object v0, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -176,9 +198,7 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 715
-    :goto_0
-    return-void
+    goto :goto_0
 
     .line 712
     :catch_0
@@ -207,28 +227,50 @@
 
     .prologue
     .line 568
+    const/4 v2, 0x2
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    invoke-static {v2, v3, v4}, Lcom/baidu/server/dp/DynamicPermissionManager;->checkPermission(IZ[Ljava/lang/Object;)I
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-ne v2, v3, :cond_0
+
+    .line 603
+    :goto_0
+    return-void
+
+    .line 584
+    :cond_0
     const-wide/16 v2, 0x0
 
     cmp-long v2, p3, v2
 
-    if-gez v2, :cond_0
+    if-gez v2, :cond_1
 
     .line 569
     const-wide/16 p3, 0x0
 
     .line 571
-    :cond_0
+    :cond_1
     const/4 v2, 0x0
 
     cmpg-float v2, p5, v2
 
-    if-gez v2, :cond_1
+    if-gez v2, :cond_2
 
     .line 572
     const/16 p5, 0x0
 
     .line 576
-    :cond_1
+    :cond_2
     :try_start_0
     iget-object v11, p0, Landroid/location/LocationManager;->mListeners:Ljava/util/HashMap;
 
@@ -250,7 +292,7 @@
 
     .line 578
     .local v9, transport:Landroid/location/LocationManager$ListenerTransport;
-    if-nez v9, :cond_2
+    if-nez v9, :cond_3
 
     .line 579
     new-instance v9, Landroid/location/LocationManager$ListenerTransport;
@@ -264,7 +306,7 @@
 
     .line 581
     .restart local v9       #transport:Landroid/location/LocationManager$ListenerTransport;
-    :cond_2
+    :cond_3
     iget-object v2, p0, Landroid/location/LocationManager;->mListeners:Ljava/util/HashMap;
 
     move-object/from16 v0, p7
@@ -289,11 +331,9 @@
     .line 583
     monitor-exit v11
 
-    .line 587
-    .end local v9           #transport:Landroid/location/LocationManager$ListenerTransport;
-    :goto_0
-    return-void
+    goto :goto_0
 
+    .end local v9           #transport:Landroid/location/LocationManager$ListenerTransport;
     .line 583
     :catchall_0
     move-exception v2
@@ -951,12 +991,34 @@
 .end method
 
 .method public getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
-    .locals 3
+    .locals 5
     .parameter "provider"
 
     .prologue
+    const/4 v1, 0x0
+
+    const/4 v4, 0x1
+
+    .line 1044
+    const/4 v2, 0x2
+
+    const/4 v3, 0x0
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    invoke-static {v2, v4, v3}, Lcom/baidu/server/dp/DynamicPermissionManager;->checkPermission(IZ[Ljava/lang/Object;)I
+
+    move-result v2
+
+    if-ne v2, v4, :cond_0
+
+    .line 1057
+    :goto_0
+    return-object v1
+
     .line 1020
-    if-nez p1, :cond_0
+    :cond_0
+    if-nez p1, :cond_1
 
     .line 1021
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -968,19 +1030,18 @@
     throw v1
 
     .line 1024
-    :cond_0
+    :cond_1
     :try_start_0
-    iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
+    iget-object v2, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
-    invoke-interface {v1, p1}, Landroid/location/ILocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
+    invoke-interface {v2, p1}, Landroid/location/ILocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v1
 
     .line 1027
-    :goto_0
-    return-object v1
+    goto :goto_0
 
     .line 1025
     :catch_0
@@ -988,14 +1049,11 @@
 
     .line 1026
     .local v0, ex:Landroid/os/RemoteException;
-    const-string v1, "LocationManager"
+    const-string v2, "LocationManager"
 
-    const-string v2, "getLastKnowLocation: RemoteException"
+    const-string v3, "getLastKnowLocation: RemoteException"
 
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 1027
-    const/4 v1, 0x0
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
 .end method

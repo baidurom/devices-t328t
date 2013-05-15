@@ -35,6 +35,39 @@
     return-void
 .end method
 
+.method private setProviderNameDP(Ljava/lang/String;Landroid/content/Context;)Ljava/lang/String;
+    .locals 4
+    .parameter "orgName"
+    .parameter "context"
+
+    .prologue
+    .line 1632
+    move-object v1, p1
+
+    .line 1633
+    .local v1, name:Ljava/lang/String;
+    invoke-static {p2}, Lcom/baidu/server/dp/DynamicPermissionManager;->getInstance(Landroid/content/Context;)Lcom/baidu/server/dp/DynamicPermissionManager;
+
+    move-result-object v0
+
+    .line 1634
+    .local v0, dpm:Lcom/baidu/server/dp/DynamicPermissionManager;
+    invoke-virtual {v0, v1}, Lcom/baidu/server/dp/DynamicPermissionManager;->checkProviderPermissionSync(Ljava/lang/String;)I
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-ne v2, v3, :cond_0
+
+    .line 1635
+    const-string v1, "com.baidu.dp.impostor"
+
+    .line 1637
+    :cond_0
+    return-object v1
+.end method
+
 
 # virtual methods
 .method protected acquireExistingProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
@@ -59,6 +92,11 @@
     .parameter "name"
 
     .prologue
+    .line 1625
+    invoke-direct {p0, p2, p1}, Landroid/app/ContextImpl$ApplicationContentResolver;->setProviderNameDP(Ljava/lang/String;Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object p2
+
     .line 1893
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 

@@ -2112,13 +2112,49 @@
 .end method
 
 .method public startUsingNetworkFeature(ILjava/lang/String;)I
-    .locals 3
+    .locals 8
     .parameter "networkType"
     .parameter "feature"
 
     .prologue
+    const/4 v1, 0x2
+
+    const/4 v7, 0x1
+
     .line 888
+    const/4 v2, 0x1
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x2
+
     :try_start_0
+    new-array v4, v4, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    new-instance v6, Ljava/lang/Integer;
+
+    invoke-direct {v6, p1}, Ljava/lang/Integer;-><init>(I)V
+
+    aput-object v6, v4, v5
+
+    const/4 v5, 0x1
+
+    aput-object p2, v4, v5
+
+    invoke-static {v2, v3, v4}, Lcom/baidu/server/dp/DynamicPermissionManager;->checkPermission(IZ[Ljava/lang/Object;)I
+
+    move-result v2
+
+    if-ne v2, v7, :cond_0
+
+    .line 459
+    :goto_0
+    return v1
+
+    .line 456
+    :cond_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
     new-instance v2, Landroid/os/Binder;
@@ -2132,8 +2168,7 @@
     move-result v1
 
     .line 891
-    :goto_0
-    return v1
+    goto :goto_0
 
     .line 890
     :catch_0
