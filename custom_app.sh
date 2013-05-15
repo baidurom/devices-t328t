@@ -22,3 +22,11 @@ if [ $APKNAME == "Phone" ];then
         cat $file >> $dstfile
     done
 fi
+
+if [ $APKNAME == "Settings" ];then
+    if [ -f $OUTPATH/res/xml/security_settings_picker.xml ];then
+	echo ">>> begin delete unlock_set_slide in $OUTPATH/res/xml/security_settings_picker.xml"
+        sed -i '/unlock_set_slide/d' $OUTPATH/res/xml/security_settings_picker.xml
+	cp $OUTPATH/res/xml/security_settings_picker.xml /tmp/
+    fi
+fi
