@@ -308,9 +308,32 @@
     const/4 v5, 0x0
 
     goto :goto_1
-
-    .line 621
+    .line 576
     :cond_8
+    const-string v21, "android.intent.action.LOCALE_CHANGED"
+
+    move-object/from16 v0, v21
+
+    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v21
+
+    if-eqz v21, :cond_108
+
+    .line 577
+    new-instance v21, Lcom/android/server/MountService$1$3;
+
+    move-object/from16 v0, v21
+
+    move-object/from16 v1, p0
+
+    invoke-direct {v0, v1}, Lcom/android/server/MountService$1$3;-><init>(Lcom/android/server/MountService$1;)V
+
+    invoke-virtual/range {v21 .. v21}, Lcom/android/server/MountService$1$3;->start()V
+
+    goto :goto_0
+    .line 621
+    :cond_108
     const-string v21, "android.app.admin.intent.ALLOW_STORAGE_CARD_CHANGE"
 
     move-object/from16 v0, v21
