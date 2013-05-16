@@ -10,6 +10,8 @@
 
 .field static final CALL_IN_RECEIVE:I = 0x2
 
+.field static final DEFUALT_MMS:Ljava/lang/String; = "com.android.mms"
+
 .field static final IDLE:I
 
 
@@ -789,6 +791,168 @@
         :pswitch_2
         :pswitch_3
     .end packed-switch
+.end method
+
+.method hookMessageBroadcast()V
+    .locals 9
+
+    .prologue
+    .line 194
+    iget-object v7, p0, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
+
+    invoke-virtual {v7}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 195
+    .local v0, action:Ljava/lang/String;
+    const-string v7, "android.provider.Telephony.SMS_RECEIVED"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_0
+
+    const-string v7, "android.provider.Telephony.WAP_PUSH_RECEIVED"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_5
+
+    .line 197
+    :cond_0
+    iget-object v7, p0, Lcom/android/server/am/BroadcastRecord;->receivers:Ljava/util/List;
+
+    invoke-interface {v7}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    .line 198
+    .local v4, len:I
+    add-int/lit8 v1, v4, -0x1
+
+    .local v1, i:I
+    :goto_0
+    if-ltz v1, :cond_5
+
+    .line 199
+    iget-object v7, p0, Lcom/android/server/am/BroadcastRecord;->receivers:Ljava/util/List;
+
+    invoke-interface {v7, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    .line 200
+    .local v6, r:Ljava/lang/Object;
+    const/4 v3, 0x0
+
+    .line 201
+    .local v3, isDefaultMms:Z
+    instance-of v7, v6, Lcom/android/server/am/BroadcastFilter;
+
+    if-eqz v7, :cond_3
+
+    move-object v2, v6
+
+    .line 202
+    check-cast v2, Lcom/android/server/am/BroadcastFilter;
+
+    .line 203
+    .local v2, info:Lcom/android/server/am/BroadcastFilter;
+    const-string v7, "com.android.mms"
+
+    iget-object v8, v2, Lcom/android/server/am/BroadcastFilter;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_1
+
+    .line 204
+    const/4 v3, 0x1
+
+    .line 214
+    .end local v2           #info:Lcom/android/server/am/BroadcastFilter;
+    :cond_1
+    :goto_1
+    if-eqz v3, :cond_2
+
+    .line 215
+    iget-object v7, p0, Lcom/android/server/am/BroadcastRecord;->receivers:Ljava/util/List;
+
+    invoke-interface {v7, v6}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    .line 216
+    iget-object v7, p0, Lcom/android/server/am/BroadcastRecord;->receivers:Ljava/util/List;
+
+    const/4 v8, 0x0
+
+    invoke-interface {v7, v8, v6}, Ljava/util/List;->add(ILjava/lang/Object;)V
+
+    .line 198
+    :cond_2
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_0
+
+    .line 206
+    :cond_3
+    instance-of v7, v6, Landroid/content/pm/ResolveInfo;
+
+    if-eqz v7, :cond_1
+
+    move-object v2, v6
+
+    .line 207
+    check-cast v2, Landroid/content/pm/ResolveInfo;
+
+    .line 208
+    .local v2, info:Landroid/content/pm/ResolveInfo;
+    iget-object v7, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    if-eqz v7, :cond_4
+
+    iget-object v7, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    iget-object v5, v7, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+
+    .line 209
+    .local v5, packageName:Ljava/lang/String;
+    :goto_2
+    const-string v7, "com.android.mms"
+
+    invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_1
+
+    .line 210
+    const/4 v3, 0x1
+
+    goto :goto_1
+
+    .line 208
+    .end local v5           #packageName:Ljava/lang/String;
+    :cond_4
+    iget-object v7, v2, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
+
+    iget-object v5, v7, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+
+    goto :goto_2
+
+    .line 220
+    .end local v1           #i:I
+    .end local v2           #info:Landroid/content/pm/ResolveInfo;
+    .end local v3           #isDefaultMms:Z
+    .end local v4           #len:I
+    .end local v6           #r:Ljava/lang/Object;
+    :cond_5
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;
