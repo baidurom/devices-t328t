@@ -40,6 +40,7 @@
 .field public static final LOCKSCREEN_BIOMETRIC_WEAK_FALLBACK:Ljava/lang/String; = "lockscreen.biometric_weak_fallback"
 
 .field private static final LOCKSCREEN_OPTIONS:Ljava/lang/String; = "lockscreen.options"
+.field public static final LOCKSCREEN_POWER_BUTTON_INSTANTLY_LOCKS:Ljava/lang/String; = "lockscreen.power_button_instantly_locks"
 
 .field private static final LOCK_PASSWORD_FILE:Ljava/lang/String; = "password.key"
 
@@ -1862,6 +1863,9 @@
 
     invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternUtils;->deleteGallery()V
 
+
+
+
     .line 488
     :cond_0
     const/high16 v0, 0x1
@@ -1883,6 +1887,9 @@
 
     invoke-direct {p0, v0, v1, v2}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
 
+    const-string v0, "lockscreen.lockmode_type"
+    const-wide/16 v1, 0x2
+    invoke-direct {p0, v0, v1, v2}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
     .line 492
     const-string/jumbo v0, "lockscreen.password_type_alternate"
 
@@ -2758,7 +2765,7 @@
 
     move-result-object v0
 
-    const v1, 0x1110023
+    const v1, #bool@config_voice_capable#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -2778,7 +2785,7 @@
 
     move-result-object v0
 
-    const v1, 0x111001e
+    const v1, #bool@config_enable_emergency_call_while_sim_locked#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -3057,7 +3064,7 @@
 
     move-result-object v0
 
-    const v1, 0x111001d
+    const v1, #bool@config_enable_puk_unlock_screen#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
