@@ -175,6 +175,8 @@
 
 
 # instance fields
+.field private final TrafficMonitorMessageReceiver:Landroid/content/BroadcastReceiver;
+
 .field protected final deliveryPendingList:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -11024,7 +11026,7 @@
     return-void
 .end method
 
-.method private prehandleMsg(Lcom/android/internal/telephony/SmsMessageBase;[[B)Z
+.method protected prehandleMsg(Lcom/android/internal/telephony/SmsMessageBase;[[B)Z
     .locals 3
     .parameter "sms"
     .parameter "pdus"
@@ -11086,7 +11088,7 @@
     goto :goto_0
 .end method
 
-.method private prehandleMsg([B[[B)Z
+.method protected prehandleMsg([B[[B)Z
     .locals 2
     .parameter "pdu"
     .parameter "pdus"
