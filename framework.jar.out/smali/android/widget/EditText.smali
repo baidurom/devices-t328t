@@ -25,7 +25,7 @@
 
     .prologue
     .line 54
-    const v0, 0x101006e
+    const v0, #attr@editTextStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/EditText;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -44,6 +44,7 @@
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 59
+    invoke-virtual {p0}, Landroid/widget/EditText;->enableMagnifier()V
     return-void
 .end method
 
@@ -80,11 +81,8 @@
 
     .prologue
     .line 70
-    invoke-static {}, Lcom/htc/textselection/HtcTextSelectionManager;->getInstance()Lcom/htc/textselection/HtcTextSelectionManager;
 
-    move-result-object v0
 
-    iput-object v0, p0, Landroid/widget/TextView;->mSelectionManager:Lcom/htc/textselection/HtcTextSelectionManager;
 
     .line 72
     invoke-static {}, Landroid/text/method/ArrowKeyMovementMethod;->getInstance()Landroid/text/method/MovementMethod;

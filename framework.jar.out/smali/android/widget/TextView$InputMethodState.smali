@@ -1,4 +1,4 @@
-.class public Landroid/widget/TextView$InputMethodState;
+.class Landroid/widget/TextView$InputMethodState;
 .super Ljava/lang/Object;
 .source "TextView.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
+    accessFlags = 0x8
     name = "InputMethodState"
 .end annotation
 
@@ -27,7 +27,7 @@
 
 .field mCursorChanged:Z
 
-.field public mCursorRectInWindow:Landroid/graphics/Rect;
+.field mCursorRectInWindow:Landroid/graphics/Rect;
 
 .field mExtracting:Landroid/view/inputmethod/ExtractedTextRequest;
 
@@ -35,37 +35,41 @@
 
 .field final mTmpExtracted:Landroid/view/inputmethod/ExtractedText;
 
-.field mTmpRectF:Landroid/graphics/RectF;
+.field mTmpOffset:[F
 
-.field final synthetic this$0:Landroid/widget/TextView;
+.field mTmpRectF:Landroid/graphics/RectF;
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/TextView;)V
+.method constructor <init>()V
     .locals 1
-    .parameter
 
     .prologue
-    .line 364
-    iput-object p1, p0, Landroid/widget/TextView$InputMethodState;->this$0:Landroid/widget/TextView;
+    .line 328
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
-    .line 365
+    .line 329
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/widget/TextView$InputMethodState;->mCursorRectInWindow:Landroid/graphics/Rect;
 
-    .line 366
+    .line 330
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Landroid/widget/TextView$InputMethodState;->mTmpRectF:Landroid/graphics/RectF;
 
-    .line 370
+    .line 331
+    const/4 v0, 0x2
+
+    new-array v0, v0, [F
+
+    iput-object v0, p0, Landroid/widget/TextView$InputMethodState;->mTmpOffset:[F
+
+    .line 333
     new-instance v0, Landroid/view/inputmethod/ExtractedText;
 
     invoke-direct {v0}, Landroid/view/inputmethod/ExtractedText;-><init>()V

@@ -21,9 +21,6 @@
 .method public abstract hide()V
 .end method
 
-.method public abstract isDragging()Z
-.end method
-
 .method public abstract onDetached()V
 .end method
 
