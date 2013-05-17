@@ -2409,7 +2409,7 @@
     <style name="Theme.DeviceDefault.Dialog" parent="@style/Theme.DeviceDefault">
         <item name="textAppearance">@style/TextAppearance.DeviceDefault</item>
         <item name="textAppearanceInverse">@style/TextAppearance.DeviceDefault.Inverse</item>
-        <item name="windowBackground">@drawable/dialog_full_holo_dark</item>
+        <item name="windowBackground">@drawable/yi_dialog_full_baidu_dark</item>
         <item name="windowFrame">@null</item>
         <item name="windowIsFloating">true</item>
         <item name="windowContentOverlay">@null</item>
@@ -2440,7 +2440,7 @@
     <style name="Theme.DeviceDefault.Light.Dialog" parent="@style/Theme.DeviceDefault.Light">
         <item name="textAppearance">@style/TextAppearance.DeviceDefault.Light</item>
         <item name="textAppearanceInverse">@style/TextAppearance.DeviceDefault.Light.Inverse</item>
-        <item name="windowBackground">@drawable/dialog_full_holo_light</item>
+        <item name="windowBackground">@drawable/yi_dialog_full_light</item>
         <item name="windowFrame">@null</item>
         <item name="windowIsFloating">true</item>
         <item name="windowContentOverlay">@null</item>
@@ -2509,7 +2509,6 @@
         <item name="imeExtractExitAnimation">@anim/input_method_extract_exit</item>
     </style>
     <style name="Theme.DeviceDefault.Light.DarkActionBar" parent="@style/Theme.DeviceDefault.Light">
-        <item name="windowContentOverlay">@drawable/ab_solid_shadow_holo</item>
         <item name="actionBarStyle">@style/Widget.DeviceDefault.Light.ActionBar.Solid.Inverse</item>
         <item name="actionDropDownStyle">@style/Widget.DeviceDefault.Spinner.DropDown.ActionBar</item>
         <item name="actionButtonStyle">@style/Widget.DeviceDefault.ActionButton</item>
@@ -2521,19 +2520,11 @@
         <item name="actionOverflowButtonStyle">@style/Widget.DeviceDefault.ActionButton.Overflow</item>
         <item name="actionModeCloseButtonStyle">@style/Widget.DeviceDefault.ActionButton.CloseMode</item>
         <item name="homeAsUpIndicator">@drawable/ic_ab_back_holo_dark</item>
-        <item name="actionModeCutDrawable">@drawable/ic_menu_cut_holo_dark</item>
-        <item name="actionModeCopyDrawable">@drawable/ic_menu_copy_holo_dark</item>
-        <item name="actionModePasteDrawable">@drawable/ic_menu_paste_holo_dark</item>
         <item name="actionMenuTextColor">?textColorPrimaryInverse</item>
-        <item name="actionModeSelectAllDrawable">@drawable/ic_menu_selectall_holo_dark</item>
         <item name="actionModeStyle">@style/Widget.DeviceDefault.Light.ActionMode.Inverse</item>
-        <item name="actionBarWidgetTheme">@style/Theme.DeviceDefault</item>
         <item name="actionBarDivider">@drawable/list_divider_holo_dark</item>
         <item name="actionBarItemBackground">@drawable/zzzhtc_item_background_holo_dark</item>
         <item name="actionModeSplitBackground">@drawable/zzzhtc_cab_background_bottom_holo_dark</item>
-        <item name="actionModeShareDrawable">@drawable/ic_menu_share_holo_dark</item>
-        <item name="actionModeFindDrawable">@drawable/ic_menu_find_holo_dark</item>
-        <item name="actionModeWebSearchDrawable">@drawable/ic_menu_search_holo_dark</item>
         <item name="actionModePopupWindowStyle">@style/Widget.DeviceDefault.PopupWindow.ActionMode</item>
     </style>
     <style name="Widget.DeviceDefault" parent="@style/Widget.Holo" />
@@ -2543,9 +2534,7 @@
     <style name="Widget.DeviceDefault.Button.Small" parent="@style/Widget.Holo.Button.Small">
         <item name="background">@drawable/zzzhtc_btn_default_holo_dark</item>
     </style>
-    <style name="Widget.DeviceDefault.Button.Inset" parent="@style/Widget.Holo.Button.Inset">
-        <item name="background">@drawable/zzzhtc_button_inset</item>
-    </style>
+    <style name="Widget.DeviceDefault.Button.Inset" parent="@style/Widget.Holo.Button.Inset" />
     <style name="Widget.DeviceDefault.Button.Toggle" parent="@style/Widget.Holo.Button.Toggle">
         <item name="background">@drawable/zzzhtc_btn_toggle_holo_dark</item>
     </style>
@@ -2566,9 +2555,7 @@
         <item name="background">@drawable/zzzhtc_btn_default_holo_dark</item>
     </style>
     <style name="Widget.DeviceDefault.ListView" parent="@style/Widget.Holo.ListView" />
-    <style name="Widget.DeviceDefault.PopupWindow" parent="@style/Widget.Holo.PopupWindow">
-        <item name="popupBackground">@drawable/zzzhtc_editbox_dropdown_background_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.PopupWindow" parent="@style/Widget.Holo.PopupWindow" />
     <style name="Widget.DeviceDefault.ProgressBar" parent="@style/Widget.Holo.ProgressBar" />
     <style name="Widget.DeviceDefault.ProgressBar.Horizontal" parent="@style/Widget.Holo.ProgressBar.Horizontal">
         <item name="indeterminateDrawable">@drawable/zzzhtc_progress_indeterminate_horizontal_holo</item>
@@ -2606,10 +2593,7 @@
         <item name="button">@drawable/zzzhtc_btn_star_holo_dark</item>
     </style>
     <style name="Widget.DeviceDefault.TabWidget" parent="@style/Widget.Holo.TabWidget" />
-    <style name="Widget.DeviceDefault.WebTextView" parent="@style/Widget.Holo.WebTextView">
-        <item name="dropDownSelector">@drawable/zzzhtc_list_selector_holo_dark</item>
-        <item name="popupBackground">@drawable/zzzhtc_spinner_dropdown_background</item>
-    </style>
+    <style name="Widget.DeviceDefault.WebTextView" parent="@style/Widget.Holo.WebTextView" />
     <style name="Widget.DeviceDefault.WebView" parent="@style/Widget.Holo.WebView" />
     <style name="Widget.DeviceDefault.DropDownItem" parent="@style/Widget.Holo.DropDownItem" />
     <style name="Widget.DeviceDefault.DropDownItem.Spinner" parent="@style/Widget.Holo.DropDownItem.Spinner" />
@@ -2639,11 +2623,6 @@
         <item name="background">@drawable/zzzhtc_tab_indicator_holo</item>
     </style>
     <style name="Widget.DeviceDefault.CalendarView" parent="@style/Widget.Holo.CalendarView">
-        <item name="selectedWeekBackgroundColor">#3300ff99</item>
-        <item name="focusedMonthDateColor">#ffffffff</item>
-        <item name="unfocusedMonthDateColor">#66ffffff</item>
-        <item name="weekNumberColor">#33ffffff</item>
-        <item name="weekSeparatorLineColor">#19ffffff</item>
         <item name="selectedDateVerticalBar">@drawable/zzzhtc_day_picker_week_view_dayline_holo</item>
     </style>
     <style name="Widget.DeviceDefault.DatePicker" parent="@style/Widget.Holo.DatePicker" />
@@ -2663,9 +2642,7 @@
     <style name="Widget.DeviceDefault.Light.Button.Small" parent="@style/Widget.Holo.Light.Button.Small">
         <item name="background">@drawable/zzzhtc_btn_default_holo_light</item>
     </style>
-    <style name="Widget.DeviceDefault.Light.Button.Inset" parent="@style/Widget.Holo.Light.Button.Inset">
-        <item name="background">@drawable/zzzhtc_btn_default_holo_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.Button.Inset" parent="@style/Widget.Holo.Light.Button.Inset" />
     <style name="Widget.DeviceDefault.Light.Button.Toggle" parent="@style/Widget.Holo.Light.Button.Toggle">
         <item name="background">@drawable/zzzhtc_btn_toggle_holo_light</item>
     </style>
@@ -2686,9 +2663,7 @@
         <item name="background">@drawable/zzzhtc_btn_default_holo_light</item>
     </style>
     <style name="Widget.DeviceDefault.Light.ListView" parent="@style/Widget.Holo.Light.ListView" />
-    <style name="Widget.DeviceDefault.Light.PopupWindow" parent="@style/Widget.Holo.Light.PopupWindow">
-        <item name="popupBackground">@drawable/zzzhtc_editbox_dropdown_background_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.PopupWindow" parent="@style/Widget.Holo.Light.PopupWindow" />
     <style name="Widget.DeviceDefault.Light.ProgressBar" parent="@style/Widget.Holo.Light.ProgressBar" />
     <style name="Widget.DeviceDefault.Light.ProgressBar.Horizontal" parent="@style/Widget.Holo.Light.ProgressBar.Horizontal">
         <item name="indeterminateDrawable">@drawable/zzzhtc_progress_indeterminate_horizontal_holo</item>
@@ -2728,10 +2703,7 @@
         <item name="button">@drawable/zzzhtc_btn_star_holo_light</item>
     </style>
     <style name="Widget.DeviceDefault.Light.TabWidget" parent="@style/Widget.Holo.Light.TabWidget" />
-    <style name="Widget.DeviceDefault.Light.WebTextView" parent="@style/Widget.Holo.Light.WebTextView">
-        <item name="dropDownSelector">@drawable/zzzhtc_list_selector_holo_light</item>
-        <item name="popupBackground">@drawable/zzzhtc_spinner_dropdown_background</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.WebTextView" parent="@style/Widget.Holo.Light.WebTextView" />
     <style name="Widget.DeviceDefault.Light.WebView" parent="@style/Widget.Holo.Light.WebView" />
     <style name="Widget.DeviceDefault.Light.DropDownItem" parent="@style/Widget.Holo.Light.DropDownItem" />
     <style name="Widget.DeviceDefault.Light.DropDownItem.Spinner" parent="@style/Widget.Holo.Light.DropDownItem.Spinner" />
@@ -2740,19 +2712,11 @@
         <item name="dropDownSelector">@drawable/zzzhtc_list_selector_holo_light</item>
         <item name="popupBackground">@drawable/zzzhtc_menu_dropdown_panel_holo_light</item>
     </style>
-    <style name="Widget.DeviceDefault.Light.PopupMenu" parent="@style/Widget.Holo.Light.PopupMenu">
-        <item name="dropDownSelector">@drawable/zzzhtc_list_selector_holo_light</item>
-        <item name="popupBackground">@drawable/zzzhtc_menu_dropdown_panel_holo_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.PopupMenu" parent="@style/Widget.DeviceDefault.Light.ListPopupWindow" />
     <style name="Widget.DeviceDefault.Light.Tab" parent="@style/Widget.Holo.Light.Tab">
         <item name="background">@drawable/zzzhtc_tab_indicator_holo</item>
     </style>
     <style name="Widget.DeviceDefault.Light.CalendarView" parent="@style/Widget.Holo.Light.CalendarView">
-        <item name="selectedWeekBackgroundColor">#330066ff</item>
-        <item name="focusedMonthDateColor">#ff000000</item>
-        <item name="unfocusedMonthDateColor">#7f08002b</item>
-        <item name="weekNumberColor">#7f080021</item>
-        <item name="weekSeparatorLineColor">#7f08002a</item>
         <item name="selectedDateVerticalBar">@drawable/zzzhtc_day_picker_week_view_dayline_holo</item>
     </style>
     <style name="Widget.DeviceDefault.Light.ActionButton" parent="@style/Widget.Holo.Light.ActionButton" />
@@ -3520,8 +3484,6 @@
     <style name="Widget.DeviceDefault.AbsListView" parent="@style/Widget.Holo.AbsListView" />
     <style name="Widget.DeviceDefault.Spinner.DropDown.ActionBar" parent="@style/Widget.Holo.Spinner.DropDown.ActionBar">
         <item name="background">@drawable/zzzhtc_spinner_ab_holo_dark</item>
-        <item name="dropDownSelector">@drawable/zzzhtc_list_selector_holo_dark</item>
-        <item name="popupBackground">@drawable/zzzhtc_menu_dropdown_panel_holo_dark</item>
     </style>
     <style name="Widget.DeviceDefault.PopupWindow.ActionMode" parent="@style/Widget.Holo.PopupWindow.ActionMode" />
     <style name="Widget.DeviceDefault.CompoundButton.Switch" parent="@style/Widget.Holo.CompoundButton.Switch">
@@ -3529,9 +3491,7 @@
         <item name="track">@drawable/zzzhtc_switch_track_holo_dark</item>
     </style>
     <style name="Widget.DeviceDefault.EditText.NumberPickerInputText" parent="@style/Widget.Holo.EditText.NumberPickerInputText" />
-    <style name="Widget.DeviceDefault.ExpandableListView.White" parent="@style/Widget.Holo.ExpandableListView.White">
-        <item name="groupIndicator">@drawable/zzzhtc_expander_group_holo_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.ExpandableListView.White" parent="@style/Widget.Holo.ExpandableListView.White" />
     <style name="Widget.DeviceDefault.Gallery" parent="@style/Widget.Holo.Gallery" />
     <style name="Widget.DeviceDefault.GestureOverlayView" parent="@style/Widget.Holo.GestureOverlayView" />
     <style name="Widget.DeviceDefault.ImageButton.NumberPickerDownButton" parent="@style/Widget.Holo.ImageButton.NumberPickerDownButton">
@@ -3540,9 +3500,7 @@
     <style name="Widget.DeviceDefault.ImageButton.NumberPickerUpButton" parent="@style/Widget.Holo.ImageButton.NumberPickerUpButton">
         <item name="src">@drawable/zzzhtc_numberpicker_up_btn_holo_dark</item>
     </style>
-    <style name="Widget.DeviceDefault.ImageWell" parent="@style/Widget.Holo.ImageWell">
-        <item name="background">@drawable/zzzhtc_panel_picture_frame_background</item>
-    </style>
+    <style name="Widget.DeviceDefault.ImageWell" parent="@style/Widget.Holo.ImageWell" />
     <style name="Widget.DeviceDefault.KeyboardView" parent="@style/Widget.Holo.KeyboardView" />
     <style name="Widget.DeviceDefault.ListView.White" parent="@style/Widget.Holo.ListView.White" />
     <style name="Widget.DeviceDefault.NumberPicker" parent="@style/Widget.Holo.NumberPicker">
@@ -3558,35 +3516,21 @@
     <style name="Widget.DeviceDefault.QuickContactBadgeSmall.WindowLarge" parent="@style/Widget.Holo.QuickContactBadgeSmall.WindowLarge" />
     <style name="Widget.DeviceDefault.QuickContactBadgeSmall.WindowMedium" parent="@style/Widget.Holo.QuickContactBadgeSmall.WindowMedium" />
     <style name="Widget.DeviceDefault.QuickContactBadgeSmall.WindowSmall" parent="@style/Widget.Holo.QuickContactBadgeSmall.WindowSmall" />
-    <style name="Widget.DeviceDefault.Spinner.DropDown" parent="@style/Widget.Holo.Spinner.DropDown">
-        <item name="background">@drawable/zzzhtc_spinner_background_holo_dark</item>
-        <item name="dropDownSelector">@drawable/zzzhtc_list_selector_holo_dark</item>
-        <item name="popupBackground">@drawable/zzzhtc_menu_dropdown_panel_holo_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.StackView" parent="@style/Widget.Holo.StackView">
-        <item name="resOutColor">@color/holo_blue_light</item>
-        <item name="clickColor">@color/holo_blue_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Spinner.DropDown" parent="@style/Widget.DeviceDefault.Spinner" />
+    <style name="Widget.DeviceDefault.StackView" parent="@style/Widget.Holo.StackView" />
     <style name="Widget.DeviceDefault.TextSelectHandle" parent="@style/Widget.Holo.TextSelectHandle" />
-    <style name="Widget.DeviceDefault.TextSuggestionsPopupWindow" parent="@style/Widget.Holo.TextSuggestionsPopupWindow">
-        <item name="dropDownSelector">@drawable/zzzhtc_list_selector_holo_dark</item>
-        <item name="popupBackground">@drawable/zzzhtc_text_edit_suggestions_window</item>
-    </style>
+    <style name="Widget.DeviceDefault.TextSuggestionsPopupWindow" parent="@style/Widget.Holo.TextSuggestionsPopupWindow" />
     <style name="Widget.DeviceDefault.TextView.ListSeparator" parent="@style/Widget.Holo.TextView.ListSeparator" />
     <style name="Widget.DeviceDefault.TimePicker" parent="@style/Widget.Holo.TimePicker" />
     <style name="Widget.DeviceDefault.Light.AbsListView" parent="@style/Widget.Holo.Light.AbsListView" />
     <style name="Widget.DeviceDefault.Light.Spinner.DropDown.ActionBar" parent="@style/Widget.Holo.Light.Spinner.DropDown.ActionBar">
         <item name="background">@drawable/zzzhtc_spinner_ab_holo_light</item>
-        <item name="dropDownSelector">@drawable/zzzhtc_list_selector_holo_light</item>
-        <item name="popupBackground">@drawable/zzzhtc_menu_dropdown_panel_holo_light</item>
     </style>
     <style name="Widget.DeviceDefault.Light.PopupWindow.ActionMode" parent="@style/Widget.Holo.Light.PopupWindow.ActionMode" />
     <style name="Widget.DeviceDefault.Light.Button.Borderless" parent="@style/Widget.Holo.Light.Button.Borderless" />
     <style name="Widget.DeviceDefault.Light.DatePicker" parent="@style/Widget.Holo.Light.DatePicker" />
     <style name="Widget.DeviceDefault.Light.EditText.NumberPickerInputText" parent="@style/Widget.Holo.Light.EditText.NumberPickerInputText" />
-    <style name="Widget.DeviceDefault.Light.ExpandableListView.White" parent="@style/Widget.Holo.Light.ExpandableListView.White">
-        <item name="groupIndicator">@drawable/zzzhtc_expander_group_holo_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.ExpandableListView.White" parent="@style/Widget.Holo.Light.ExpandableListView.White" />
     <style name="Widget.DeviceDefault.Light.Gallery" parent="@style/Widget.Holo.Light.Gallery" />
     <style name="Widget.DeviceDefault.Light.GestureOverlayView" parent="@style/Widget.Holo.Light.GestureOverlayView" />
     <style name="Widget.DeviceDefault.Light.ImageButton.NumberPickerDownButton" parent="@style/Widget.Holo.Light.ImageButton.NumberPickerDownButton">
@@ -3595,24 +3539,15 @@
     <style name="Widget.DeviceDefault.Light.ImageButton.NumberPickerUpButton" parent="@style/Widget.Holo.Light.ImageButton.NumberPickerUpButton">
         <item name="src">@drawable/zzzhtc_numberpicker_up_btn_holo_light</item>
     </style>
-    <style name="Widget.DeviceDefault.Light.ImageWell" parent="@style/Widget.Holo.Light.ImageWell">
-        <item name="background">@drawable/zzzhtc_panel_picture_frame_background</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.ImageWell" parent="@style/Widget.Holo.Light.ImageWell" />
     <style name="Widget.DeviceDefault.Light.ListView.White" parent="@style/Widget.Holo.Light.ListView.White" />
     <style name="Widget.DeviceDefault.Light.NumberPicker" parent="@style/Widget.Holo.Light.NumberPicker">
         <item name="selectionDivider">@drawable/zzzhtc_numberpicker_selection_divider</item>
     </style>
-    <style name="Widget.DeviceDefault.Light.Spinner.DropDown" parent="@style/Widget.Holo.Light.Spinner.DropDown">
-        <item name="background">@drawable/zzzhtc_spinner_background_holo_light</item>
-        <item name="dropDownSelector">@drawable/zzzhtc_list_selector_holo_light</item>
-        <item name="popupBackground">@drawable/zzzhtc_menu_dropdown_panel_holo_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.Spinner.DropDown" parent="@style/Widget.DeviceDefault.Light.Spinner" />
     <style name="Widget.DeviceDefault.Light.TextView.ListSeparator" parent="@style/Widget.Holo.Light.TextView.ListSeparator" />
     <style name="Widget.DeviceDefault.Light.TimePicker" parent="@style/Widget.Holo.Light.TimePicker" />
-    <style name="Widget.DeviceDefault.Light.TextSuggestionsPopupWindow" parent="@style/Widget.Holo.Light.TextSuggestionsPopupWindow">
-        <item name="dropDownSelector">@drawable/zzzhtc_list_selector_holo_light</item>
-        <item name="popupBackground">@drawable/zzzhtc_text_edit_suggestions_window</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.TextSuggestionsPopupWindow" parent="@style/Widget.Holo.Light.TextSuggestionsPopupWindow" />
     <style name="TextAppearance.DeviceDefault.Light" parent="@style/TextAppearance.Holo.Light" />
     <style name="TextAppearance.DeviceDefault.Light.Inverse" parent="@style/TextAppearance.Holo.Light.Inverse" />
     <style name="TextAppearance.DeviceDefault.Light.Large" parent="@style/TextAppearance.Holo.Light.Large" />
@@ -3660,7 +3595,6 @@
         <item name="bottomBright">@drawable/zzzhtc_dialog_bottom_holo_light</item>
         <item name="bottomMedium">@drawable/zzzhtc_dialog_bottom_holo_light</item>
         <item name="centerMedium">@drawable/zzzhtc_dialog_middle_holo_light</item>
-        <item name="layout">@layout/zzzhtc_alert_dialog_holo</item>
     </style>
     <style name="Animation.DeviceDefault.Activity" parent="@style/Animation.Holo.Activity" />
     <style name="Animation.DeviceDefault.Dialog" parent="@style/Animation.Holo.Dialog" />
