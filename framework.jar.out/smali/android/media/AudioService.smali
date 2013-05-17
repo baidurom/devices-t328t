@@ -374,7 +374,7 @@
 
 .field private mVoiceCapable:Z
 
-.field private mVolumePanel:Lcom/htc/view/VolumePanel;
+.field private mVolumePanel:Landroid/view/VolumePanel;
 
 .field private preRingerMode:I
 
@@ -824,11 +824,11 @@
     iput v5, p0, Landroid/media/AudioService;->SOUND_EFFECT_VOLUME_DB:I
 
     .line 472
-    new-instance v5, Lcom/htc/view/VolumePanel;
+    new-instance v5, Landroid/view/VolumePanel;
 
-    invoke-direct {v5, p1, p0}, Lcom/htc/view/VolumePanel;-><init>(Landroid/content/Context;Landroid/media/AudioService;)V
+    invoke-direct {v5, p1, p0}, Landroid/view/VolumePanel;-><init>(Landroid/content/Context;Landroid/media/AudioService;)V
 
-    iput-object v5, p0, Landroid/media/AudioService;->mVolumePanel:Lcom/htc/view/VolumePanel;
+    iput-object v5, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
 
     .line 473
     iput v3, p0, Landroid/media/AudioService;->mForcedUseForComm:I
@@ -8294,54 +8294,13 @@
 .end method
 
 .method private resetVolumePanel()V
-    .locals 3
+    .locals 0
 
     .prologue
-    .line 4548
-    iget-object v2, p0, Landroid/media/AudioService;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v2
-
-    iget-object v0, v2, Landroid/content/res/Configuration;->skin:Ljava/lang/String;
-
-    .line 4549
-    .local v0, skinPackage:Ljava/lang/String;
-    iget-object v2, p0, Landroid/media/AudioService;->mSkin:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
 
     .line 4554
-    :goto_0
     return-void
 
-    .line 4551
-    :cond_0
-    iput-object v0, p0, Landroid/media/AudioService;->mSkin:Ljava/lang/String;
-
-    .line 4552
-    iget-object v2, p0, Landroid/media/AudioService;->mContext:Landroid/content/Context;
-
-    invoke-direct {p0, v2}, Landroid/media/AudioService;->getSkinContext(Landroid/content/Context;)Landroid/content/Context;
-
-    move-result-object v1
-
-    .line 4553
-    .local v1, wrappedContext:Landroid/content/Context;
-    iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Lcom/htc/view/VolumePanel;
-
-    invoke-virtual {v2, v1}, Lcom/htc/view/VolumePanel;->resetProgressBar(Landroid/content/Context;)V
-
-    goto :goto_0
 .end method
 
 .method private restoreMediaButtonReceiver()V
@@ -8848,9 +8807,9 @@
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 991
-    iget-object v1, p0, Landroid/media/AudioService;->mVolumePanel:Lcom/htc/view/VolumePanel;
+    iget-object v1, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
 
-    invoke-virtual {v1, p1, p4}, Lcom/htc/view/VolumePanel;->postVolumeChanged(II)V
+    invoke-virtual {v1, p1, p4}, Landroid/view/VolumePanel;->postVolumeChanged(II)V
 
     .line 992
     const-string v1, "AudioService"
@@ -16756,43 +16715,10 @@
 .end method
 
 .method public setVolumePanelOrientation(I)V
-    .locals 3
+    .locals 0
     .parameter "orientation"
 
     .prologue
-    .line 1991
-    const-string v0, "AudioService"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "setVolumePanelOrientation("
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ")"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1992
-    iget-object v0, p0, Landroid/media/AudioService;->mVolumePanel:Lcom/htc/view/VolumePanel;
-
-    invoke-virtual {v0, p1}, Lcom/htc/view/VolumePanel;->setVolumePanelOrientation(I)V
 
     .line 1993
     return-void
