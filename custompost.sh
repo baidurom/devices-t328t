@@ -6,3 +6,7 @@
 # and so on
 
 echo "$0" 
+
+PRJROOT=$PWD
+
+cp $PRJROOT/other/recovery.img $PRJROOT/out/merged_target_files/BOOTABLE_IMAGES/
