@@ -19,7 +19,7 @@
 
 
 # direct methods
-.method private constructor <init>(Lcom/android/internal/telephony/SMSDispatcher;)V
+.method constructor <init>(Lcom/android/internal/telephony/SMSDispatcher;)V
     .locals 0
     .parameter
 
@@ -28,19 +28,7 @@
     iput-object p1, p0, Lcom/android/internal/telephony/SMSDispatcher$TrafficMonitorMessageReceiverClass;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/android/internal/telephony/SMSDispatcher;Lcom/android/internal/telephony/SMSDispatcher$1;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 1145
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/SMSDispatcher$TrafficMonitorMessageReceiverClass;-><init>(Lcom/android/internal/telephony/SMSDispatcher;)V
-
+    
     return-void
 .end method
 

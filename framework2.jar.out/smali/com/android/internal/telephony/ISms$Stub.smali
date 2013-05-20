@@ -132,6 +132,7 @@
 
 .field static final TRANSACTION_updateNvItem:I = 0x17
 
+.field static final TRANSACTION_sendText_1:I = 0x36
 
 # direct methods
 .method public constructor <init>()V
@@ -1488,6 +1489,108 @@
     .end local v6           #_arg3:Landroid/app/PendingIntent;
     .end local v7           #_arg4:Landroid/app/PendingIntent;
     .end local v8           #_arg5:Landroid/os/Bundle;
+
+    :sswitch_36
+    const-string v2, "com.android.internal.telephony.ISms"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 127
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 129
+    .restart local v3       #_arg0:Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 131
+    .restart local v4       #_arg1:Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 133
+    .local v5, _arg2:Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    if-eqz v2, :cond_1004
+
+    .line 134
+    sget-object v2, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p2
+
+    invoke-interface {v2, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/app/PendingIntent;
+
+    .line 140
+    .local v6, _arg3:Landroid/app/PendingIntent;
+    :goto_1005
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    if-eqz v2, :cond_1005
+
+    .line 141
+    sget-object v2, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p2
+
+    invoke-interface {v2, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/app/PendingIntent;
+
+    .restart local v7       #_arg4:Landroid/app/PendingIntent;
+    :goto_1006
+    move-object/from16 v2, p0
+
+    .line 146
+    invoke-virtual/range {v2 .. v7}, Lcom/android/internal/telephony/ISms$Stub;->sendText(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V
+
+    .line 147
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 148
+    const/4 v2, 0x1
+
+    goto/16 :goto_0
+
+    .line 137
+    .end local v6           #_arg3:Landroid/app/PendingIntent;
+    .end local v7           #_arg4:Landroid/app/PendingIntent;
+    :cond_1004
+    const/4 v6, 0x0
+
+    .restart local v6       #_arg3:Landroid/app/PendingIntent;
+    goto :goto_1005
+
+    .line 144
+    :cond_1005
+    const/4 v7, 0x0
+
+    .restart local v7       #_arg4:Landroid/app/PendingIntent;
+    goto :goto_1006
+
+    .line 152
+    .end local v3           #_arg0:Ljava/lang/String;
+    .end local v4           #_arg1:Ljava/lang/String;
+    .end local v5           #_arg2:Ljava/lang/String;
+    .end local v6           #_arg3:Landroid/app/PendingIntent;
+    .end local v7           #_arg4:Landroid/app/PendingIntent;
+    
     :sswitch_10
     const-string v2, "com.android.internal.telephony.ISms"
 
@@ -3558,6 +3661,7 @@
         0x33 -> :sswitch_33
         0x34 -> :sswitch_34
         0x35 -> :sswitch_35
+	0x36 -> :sswitch_36
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

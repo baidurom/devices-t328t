@@ -1829,6 +1829,21 @@
     return-void
 .end method
 
+.method public sendText(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V
+    .locals 0
+    .parameter "destAddr"
+    .parameter "scAddr"
+    .parameter "text"
+    .parameter "sentIntent"
+    .parameter "deliveryIntent"
+
+    .prologue
+
+    .line 151
+    return-void
+
+.end method
+
 .method public sendText(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;Landroid/os/Bundle;)V
     .locals 7
     .parameter "destAddr"

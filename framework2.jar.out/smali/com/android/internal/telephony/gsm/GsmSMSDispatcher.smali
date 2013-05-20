@@ -2103,6 +2103,36 @@
 
     .line 509
     :cond_9527
+
+    iget-object v9, p0, Lcom/android/internal/telephony/SMSDispatcher;->mContext:Landroid/content/Context;
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/SMSDispatcher;->getFormat()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-direct {p0, v9, p1, v4, v10}, Lcom/android/internal/telephony/SMSDispatcher;->prehandleTrafficMonitorMsg(Landroid/content/Context;Lcom/android/internal/telephony/SmsMessageBase;[[BLjava/lang/String;)V
+
+    .line 518
+    sget-boolean v9, Lcom/baidu/internal/telephony/SMSPlugin;->discard:Z
+
+    if-eqz v9, :cond_1004
+
+    iget-object v9, p0, Lcom/android/internal/telephony/SMSDispatcher;->mContext:Landroid/content/Context;
+
+    invoke-static {v9, p1}, Lcom/baidu/internal/telephony/SMSPlugin;->shouldFilterForTrafficMonitor(Landroid/content/Context;Lcom/android/internal/telephony/SmsMessageBase;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_1004
+
+    .line 519
+    const/4 v10, 0x1
+
+    goto/16 :goto_0
+
+    .line 520
+    :cond_1004
+
     invoke-virtual {p1}, Lcom/android/internal/telephony/SmsMessageBase;->getIndexOnIcc()I
 
     move-result v9

@@ -478,6 +478,13 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher;->deliveryPendingList:Ljava/util/ArrayList;
 
+    .line 1172
+    new-instance v0, Lcom/android/internal/telephony/SMSDispatcher$TrafficMonitorMessageReceiverClass;
+
+    invoke-direct {v0, p0}, Lcom/android/internal/telephony/SMSDispatcher$TrafficMonitorMessageReceiverClass;-><init>(Lcom/android/internal/telephony/SMSDispatcher;)V
+
+    iput-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher;->TrafficMonitorMessageReceiver:Landroid/content/BroadcastReceiver;
+
     .line 2697
     new-instance v0, Lcom/android/internal/telephony/SMSDispatcher$6;
 
@@ -614,6 +621,13 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher;->deliveryPendingList:Ljava/util/ArrayList;
+
+    .line 1172
+    new-instance v0, Lcom/android/internal/telephony/SMSDispatcher$TrafficMonitorMessageReceiverClass;
+
+    invoke-direct {v0, p0}, Lcom/android/internal/telephony/SMSDispatcher$TrafficMonitorMessageReceiverClass;-><init>(Lcom/android/internal/telephony/SMSDispatcher;)V
+
+    iput-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher;->TrafficMonitorMessageReceiver:Landroid/content/BroadcastReceiver;
 
     .line 2697
     new-instance v0, Lcom/android/internal/telephony/SMSDispatcher$6;
@@ -9344,6 +9358,48 @@
 
     .line 674
     :cond_9528
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/internal/telephony/SMSDispatcher;->mContext:Landroid/content/Context;
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/SMSDispatcher;->getFormat()Ljava/lang/String;
+
+    move-result-object v3
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v4, v27
+
+    invoke-direct {v0, v2, v1, v4, v3}, Lcom/android/internal/telephony/SMSDispatcher;->prehandleTrafficMonitorMsg(Landroid/content/Context;Lcom/android/internal/telephony/SmsMessageBase;[[BLjava/lang/String;)V
+
+    .line 518
+    sget-boolean v2, Lcom/baidu/internal/telephony/SMSPlugin;->discard:Z
+
+    if-eqz v2, :cond_1004
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/internal/telephony/SMSDispatcher;->mContext:Landroid/content/Context;
+
+    move-object/from16 v0, p1
+
+    invoke-static {v2, v0}, Lcom/baidu/internal/telephony/SMSPlugin;->shouldFilterForTrafficMonitor(Landroid/content/Context;Lcom/android/internal/telephony/SmsMessageBase;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1004
+
+    .line 519
+    const/4 v5, 0x1
+
+    goto/16 :goto_2
+
+    .line 520
+    :cond_1004
+
     move-object/from16 v0, p0
 
     move-object/from16 v1, v23
@@ -11113,3 +11169,27 @@
 
     return v1
 .end method
+
+.method private prehandleTrafficMonitorMsg(Landroid/content/Context;Lcom/android/internal/telephony/SmsMessageBase;[[BLjava/lang/String;)V
+    .locals 1
+    .parameter "mContext"
+    .parameter "sms"
+    .parameter "pdus"
+    .parameter "format"
+
+    .prologue
+    .line 1167
+    invoke-static {p1, p2}, Lcom/baidu/internal/telephony/SMSPlugin;->shouldFilterForTrafficMonitor(Landroid/content/Context;Lcom/android/internal/telephony/SmsMessageBase;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 1168
+    invoke-static {p1, p3, p4}, Lcom/baidu/internal/telephony/SMSPlugin;->dispatchTrafficMonitorSmsPdu(Landroid/content/Context;[[BLjava/lang/String;)V
+
+    .line 1170
+    :cond_0
+    return-void
+.end method
+
