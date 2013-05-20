@@ -619,10 +619,6 @@ service backuprestore /system/bin/backuprestore
     class main
     socket backuprestore stream 600 system system
 
-service alljoyn-daemon /system/xbin/alljoyn-daemon --internal --no-switch-user --no-bt
-    class main
-    oneshot
-
 service WordSegService /system/bin/WordSegService
 	class main
 	oneshot
