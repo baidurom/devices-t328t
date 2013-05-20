@@ -21,4 +21,5 @@ if [ -d "$TARGET_SYSTEM_DIR/media" ];then
        rm -rf "$TARGET_SYSTEM_DIR/media/shutanimation.zip"
 	rm -rf "$TARGET_SYSTEM_DIR/media/shutdownanimation.zip" 
        rm -rf "$TARGET_SYSTEM_DIR/media/audio/ringtones"
+       rm -rf "$TARGET_SYSTEM_DIR/media/audio/notifications"
 fi

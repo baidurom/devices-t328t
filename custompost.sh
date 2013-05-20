@@ -20,6 +20,15 @@ then
 	mkdir -p $PRJROOT/other/TMP
 fi
 
+$APKTOOL d -f $PRJOUT/merged_target_files/SYSTEM/app/FM_Radio.apk $PRJROOT/other/TMP/FM_Radio
+cp $PORT_ROOT/baidu/frameworks/overlay/baidu-4.0/baidu/packages/apps/BaiduFM/res/drawable-hdpi/ic_element_appicon_fmradio.png $PRJROOT/other/TMP/FM_Radio/res/drawable-hdpi/icon_launcher_fm_radio.png
+
+$APKTOOL b $PRJROOT/other/TMP/FM_Radio $PRJROOT/other/TMP/FM_Radio.apk
+$SIGN_KEY_TOOL platform $PRJROOT/other/TMP/FM_Radio.apk
+mv $PRJROOT/other/TMP/FM_Radio.apk.signed.aligned $PRJOUT/merged_target_files/SYSTEM/app/FM_Radio.apk
+
+rm $PRJROOT/other/TMP/FM_Radio* -rf
+
 merged_install_framework_params=`ls ~/apktool/framework/*[1-9].apk | sed 's/^/-I /g'`
 
 $APKTOOL if $PRJROOT/source/system/framework/framework-res.apk
