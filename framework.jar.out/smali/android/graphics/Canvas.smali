@@ -247,6 +247,16 @@
 .method public static native freeCaches()V
 .end method
 
+.method public static freeTextLayoutCaches()V
+    .locals 0
+
+    .prologue
+    .line 1643
+
+    .line 1644
+    return-void
+.end method
+
 .method private static native initRaster(I)I
 .end method
 

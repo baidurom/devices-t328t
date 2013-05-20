@@ -110,7 +110,7 @@
 
     .prologue
     .line 1278
-    const v0, 0x1020226
+    const v0, #id@up#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarView$HomeView;->findViewById(I)Landroid/view/View;
 
@@ -119,7 +119,7 @@
     iput-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/view/View;
 
     .line 1279
-    const v0, 0x102002c
+    const v0, #id@home#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarView$HomeView;->findViewById(I)Landroid/view/View;
 
@@ -221,11 +221,11 @@
     invoke-virtual {v14, v15, v10, v11, v0}, Landroid/view/View;->layout(IIII)V
 
     .line 1340
-    iget v14, v8, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v14, v8, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     add-int/2addr v14, v11
 
-    iget v15, v8, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v15, v8, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     add-int v9, v14, v15
 
@@ -279,7 +279,7 @@
 
     .line 1348
     .local v1, hCenter:I
-    iget v14, v4, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v14, v4, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     div-int/lit8 v15, v6, 0x2
 
@@ -293,7 +293,7 @@
 
     .line 1349
     .local v3, iconLeft:I
-    iget v14, v4, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v14, v4, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     div-int/lit8 v15, v2, 0x2
 
@@ -353,7 +353,7 @@
 
     .line 1290
     .local v10, upLp:Landroid/widget/FrameLayout$LayoutParams;
-    iget v0, v10, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v0, v10, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/view/View;
 
@@ -363,7 +363,7 @@
 
     add-int/2addr v0, v1
 
-    iget v1, v10, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v1, v10, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     add-int/2addr v0, v1
 
@@ -385,7 +385,7 @@
     .line 1292
     .local v3, width:I
     :goto_0
-    iget v0, v10, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v0, v10, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/view/View;
 
@@ -395,7 +395,7 @@
 
     add-int/2addr v0, v1
 
-    iget v1, v10, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v1, v10, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     add-int v6, v0, v1
 
@@ -424,7 +424,7 @@
 
     .line 1295
     .local v9, iconLp:Landroid/widget/FrameLayout$LayoutParams;
-    iget v0, v9, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v0, v9, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mIconView:Landroid/widget/ImageView;
 
@@ -434,14 +434,14 @@
 
     add-int/2addr v0, v1
 
-    iget v1, v9, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v1, v9, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     add-int/2addr v0, v1
 
     add-int/2addr v3, v0
 
     .line 1296
-    iget v0, v9, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v0, v9, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mIconView:Landroid/widget/ImageView;
 
@@ -451,7 +451,7 @@
 
     add-int/2addr v0, v1
 
-    iget v1, v9, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v1, v9, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     add-int/2addr v0, v1
 
