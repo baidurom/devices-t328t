@@ -9327,20 +9327,20 @@
     :cond_12
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, p1
 
     move-object/from16 v2, v27
 
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/SMSDispatcher;->prehandleMsg([B[[B)Z
+    invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/SMSDispatcher;->prehandleMsg(Lcom/android/internal/telephony/SmsMessageBase;[[B)Z
 
     move-result v3
 
     if-eqz v3, :cond_9528
 
     .line 671
-    const/4 v3, 0x1
+    const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 
     .line 674
     :cond_9528
@@ -11107,7 +11107,7 @@
 
     .line 1125
     .local v0, sms:Lcom/android/internal/telephony/SmsMessageBase;
-    invoke-direct {p0, v0, p2}, Lcom/android/internal/telephony/SMSDispatcher;->prehandleMsg(Lcom/android/internal/telephony/SmsMessageBase;[[B)Z
+    invoke-virtual {p0, v0, p2}, Lcom/android/internal/telephony/SMSDispatcher;->prehandleMsg(Lcom/android/internal/telephony/SmsMessageBase;[[B)Z
 
     move-result v1
 

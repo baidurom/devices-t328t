@@ -2088,7 +2088,7 @@
 
     .line 389
     :cond_f
-    invoke-direct {p0, p1, v4}, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher;->prehandleMsg(Lcom/android/internal/telephony/SmsMessageBase;[[B)Z
+    invoke-virtual {p0, p1, v4}, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher;->prehandleMsg(Lcom/android/internal/telephony/SmsMessageBase;[[B)Z
 
     move-result v1
 
