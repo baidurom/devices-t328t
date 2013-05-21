@@ -117,30 +117,6 @@
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 543
-    iget-object v4, p0, Landroid/widget/TabHost$LabelIndicatorStrategy;->this$0:Landroid/widget/TabHost;
-
-    #getter for: Landroid/widget/TabHost;->mTabLayoutId:I
-    invoke-static {v4}, Landroid/widget/TabHost;->access$900(Landroid/widget/TabHost;)I
-
-    move-result v4
-
-    const v5, 0x109009e
-
-    if-ne v4, v5, :cond_1
-
-    .line 544
-    const-string/jumbo v4, "tab_indicator_holo"
-
-    const v5, 0x108057c
-
-    invoke-static {v0, v4, v5}, Landroid/widget/HtcSkinUtil;->getDrawableResIdentifier(Landroid/content/Context;Ljava/lang/String;I)I
-
-    move-result v4
-
-    invoke-virtual {v2, v4}, Landroid/view/View;->setBackgroundResource(I)V
-
-    .line 552
-    :goto_0
     invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v4
@@ -172,18 +148,4 @@
     .line 558
     :cond_0
     return-object v2
-
-    .line 547
-    :cond_1
-    const-string/jumbo v4, "tab_indicator"
-
-    const v5, 0x108057a
-
-    invoke-static {v0, v4, v5}, Landroid/widget/HtcSkinUtil;->getDrawableResIdentifier(Landroid/content/Context;Ljava/lang/String;I)I
-
-    move-result v4
-
-    invoke-virtual {v2, v4}, Landroid/view/View;->setBackgroundResource(I)V
-
-    goto :goto_0
 .end method
