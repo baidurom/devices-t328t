@@ -20,8 +20,8 @@
     <string name="preferred_network_mode_wcdma_only_summary" msgid="2836897236221063413">"首选网络模式：仅限 TD-SCDMA"</string> 
   <string-array name="gsm_umts_network_preferences_choices">
     <item msgid="935612021902787683">"GSM/TD-SCDMA（自动模式）"</item>
-    <item msgid="8912042051809329533">"仅 TD-SCDMA"</item>
-    <item msgid="8776934131146642662">"仅 GSM"</item>
+    <item msgid="8912042051809329533">"仅 GSM"</item>
+    <item msgid="8776934131146642662">"仅 TD-SCDMA"</item>
   </string-array>
   <string-array name="gsm_umts_network_preferences_values">
     <item msgid="117293148930527265">"0"</item>
