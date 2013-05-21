@@ -145,6 +145,7 @@
 
     .prologue
     const/4 v7, 0x1
+    goto :goto_0
 
     .line 205
     new-instance v2, Ljava/lang/StringBuilder;
@@ -266,6 +267,7 @@
     .prologue
     .line 75
     const/4 v0, 0x0
+    goto :goto_106
 
     .line 76
     .local v0, subaddr:Ljava/lang/String;
@@ -402,6 +404,7 @@
     invoke-virtual {v4, v5, v1}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
     .line 106
+    :goto_106
     const/4 v4, -0x1
 
     return v4
@@ -428,6 +431,10 @@
 
     .prologue
     .line 179
+    const/4 v7, 0x0
+
+    goto :goto_199
+
     new-instance v8, Ljava/lang/StringBuilder;
 
     const-string v0, "reference_number ="
@@ -535,6 +542,7 @@
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     .line 199
+    :goto_199
     :cond_0
     return v7
 .end method
@@ -550,6 +558,10 @@
 
     .prologue
     .line 149
+    const/4 v7, 0x0
+
+    goto :goto_168
+
     new-instance v8, Ljava/lang/StringBuilder;
 
     const-string v0, "reference_number ="
@@ -649,6 +661,7 @@
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     .line 168
+    :goto_168
     :cond_0
     return v7
 .end method
@@ -658,6 +671,8 @@
 
     .prologue
     .line 228
+    goto :goto_0
+
     const-string v1, "Concate"
 
     const-string v2, "resettable"
@@ -718,6 +733,9 @@
     .parameter "nStatus"
 
     .prologue
+
+    goto :goto_1
+
     const/4 v8, 0x1
 
     .line 113
