@@ -23,3 +23,12 @@ if [ -d "$TARGET_SYSTEM_DIR/media" ];then
        rm -rf "$TARGET_SYSTEM_DIR/media/audio/ringtones"
        rm -rf "$TARGET_SYSTEM_DIR/media/audio/notifications"
 fi
+
+if [ -f "$TARGET_SYSTEM_DIR/bin/zchgd" ];then
+	rm -rf "$TARGET_SYSTEM_DIR/bin/zchgd"
+fi
+
+if [ -d "$TARGET_SYSTEM_DIR/media/zchgd" ];then
+	rm -rf "$TARGET_SYSTEM_DIR/media/zchgd"
+fi
+
