@@ -1804,7 +1804,59 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
+    .line 2398
+    if-eqz p7, :cond_1220
+
+    move-object/from16 v7, p7
+
+    .line 2399
+    const-string v4, "SMS_TRANSACTION_SRCADDR"
+
+    invoke-virtual {v7, v4}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v7, v4}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
+
+    const-string v4, "SMS_TRANSACTION_TEXT"
+
+    invoke-virtual {v7, v4}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v7, v4}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
+
+    invoke-virtual {v7}, Landroid/os/Bundle;->isEmpty()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1005
+
+    const/4 v7, 0x0
+
+    move-object/from16 p7, v7
+
+    :cond_1005
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p8
+
+    move-object/from16 v4, p3
+
+    move-object/from16 v5, p4
+
+    invoke-direct/range {v0 .. v5}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->checkSendSmsPermission(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1220
+
+    .line 151
+    goto :goto_0
+
     .line 220
+    :cond_1220
     iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
     move-object v1, p1
@@ -1826,6 +1878,7 @@
     invoke-virtual/range {v0 .. v8}, Lcom/android/internal/telephony/SMSDispatcher;->sendRawPduWithBundle([B[BLandroid/app/PendingIntent;Landroid/app/PendingIntent;ZZLandroid/os/Bundle;Ljava/lang/String;)V
 
     .line 221
+    :goto_0
     return-void
 .end method
 

@@ -4012,6 +4012,35 @@
     .line 262
     .restart local v22       #pdus:Landroid/telephony/SmsMessage$SubmitPdu;
     :cond_8
+
+    .line 254
+    if-nez p6, :cond_1006
+
+    .line 255
+    new-instance p6, Landroid/os/Bundle;
+
+    .end local p6
+    invoke-direct/range {p6 .. p6}, Landroid/os/Bundle;-><init>()V
+
+    .line 256
+    .restart local p6
+    :cond_1006
+
+    move-object/from16 v0, p6
+
+    const-string v4, "SMS_TRANSACTION_SRCADDR"
+
+    move-object/from16 v2, p2
+
+    invoke-virtual {v0, v4, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v4, "SMS_TRANSACTION_TEXT"
+
+    move-object/from16 v2, p3
+
+    invoke-virtual {v0, v4, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+
     move-object/from16 v0, v22
 
     iget-object v11, v0, Landroid/telephony/SmsMessage$SubmitPdu;->encodedScAddress:[B
@@ -4026,9 +4055,11 @@
 
     move-object/from16 v14, p5
 
-    move-object/from16 v17, p1
+    move-object/from16 v17, p6
 
-    invoke-direct/range {v10 .. v17}, Landroid/telephony/SmsManager;->sendRawPdu([B[BLandroid/app/PendingIntent;Landroid/app/PendingIntent;ZZLjava/lang/String;)V
+    move-object/from16 v18, p1
+
+    invoke-direct/range {v10 .. v18}, Landroid/telephony/SmsManager;->sendRawPduWithBundle([B[BLandroid/app/PendingIntent;Landroid/app/PendingIntent;ZZLandroid/os/Bundle;Ljava/lang/String;)V
 
     goto :goto_0
 .end method
@@ -4904,3 +4935,4 @@
 
     goto :goto_0
 .end method
+
