@@ -2317,7 +2317,7 @@
 
     new-instance v2, Landroid/net/NetworkPolicy;
 
-    const-wide/16 v7, -0x1
+    const-wide v7, 0x140000000L
 
     const-wide/16 v9, -0x1
 
