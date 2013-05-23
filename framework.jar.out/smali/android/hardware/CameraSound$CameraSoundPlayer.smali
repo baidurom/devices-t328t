@@ -291,7 +291,7 @@
     :try_start_0
     iget-object v2, p0, Landroid/hardware/CameraSound$CameraSoundPlayer;->mPlayer:Landroid/media/MediaPlayer;
 
-    iget v3, p0, Landroid/hardware/CameraSound$CameraSoundPlayer;->mAudioStreamType:I
+    const/4 v3, 0x2
 
     invoke-virtual {v2, v3}, Landroid/media/MediaPlayer;->setAudioStreamType(I)V
 
