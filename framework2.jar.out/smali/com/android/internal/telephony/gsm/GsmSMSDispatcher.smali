@@ -2110,7 +2110,7 @@
 
     move-result-object v10
 
-    invoke-direct {p0, v9, p1, v4, v10}, Lcom/android/internal/telephony/SMSDispatcher;->prehandleTrafficMonitorMsg(Landroid/content/Context;Lcom/android/internal/telephony/SmsMessageBase;[[BLjava/lang/String;)V
+    invoke-virtual {p0, v9, p1, v4, v10}, Lcom/android/internal/telephony/SMSDispatcher;->prehandleTrafficMonitorMsg(Landroid/content/Context;Lcom/android/internal/telephony/SmsMessageBase;[[BLjava/lang/String;)V
 
     .line 518
     sget-boolean v9, Lcom/baidu/internal/telephony/SMSPlugin;->discard:Z
