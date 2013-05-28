@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BaiduCameraSettings name="HTC T328T">
+    <UseDefaultPicturePreviewSize>true</UseDefaultPicturePreviewSize>
+    <Camera id="0">
+        <SettingItem name="colorEffect">
+            <BadValues>nullBadValues</BadValues>
+            <Requirement itemName="sceneMode"  equal="true">
+                <Values>auto</Values>
+            </Requirement>
+        </SettingItem>
+        <SettingItem name="whiteBalance">
+            <BadValues>nullBadValues</BadValues>
+            <Requirement itemName="sceneMode"  equal="true">
+                <Values>auto</Values>
+            </Requirement>
+        </SettingItem>
+        <SettingItem name="exposureCompensation">
+            <BadValues>nullBadValues</BadValues>
+            <Requirement itemName="sceneMode"  equal="true">
+                <Values>auto</Values>
+            </Requirement>
+        </SettingItem>
+    </Camera>
+</BaiduCameraSettings>

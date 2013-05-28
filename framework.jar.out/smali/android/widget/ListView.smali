@@ -644,10 +644,18 @@
 
     iput-boolean v7, p0, Landroid/widget/ListView;->mShouldTriggerAnimation:Z
 
+    new-instance v8, Landroid/os/Handler;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v7
+
+    invoke-direct {v8, v7}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
     .line 345
     new-instance v7, Landroid/view/GestureDetector;
 
-    invoke-direct {v7, p1, p0}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;)V
+    invoke-direct {v7, p1, p0, v8}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;Landroid/os/Handler;)V
 
     iput-object v7, p0, Landroid/widget/ListView;->mGestureDetector:Landroid/view/GestureDetector;
 
