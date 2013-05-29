@@ -26617,7 +26617,7 @@
     .line 11661
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mPolicy:Landroid/view/WindowManagerPolicy;
 
-    invoke-interface {v0}, Landroid/view/WindowManagerPolicy;->forcePasswordTimeout()V
+    invoke-interface {v0}, Landroid/view/WindowManagerPolicy;->lockNow()V
 
     .line 11662
     return-void
