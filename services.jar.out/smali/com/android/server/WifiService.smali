@@ -5860,7 +5860,7 @@
     .prologue
     const/4 v8, 0x0
 
-    const v7, 0x4020013
+    const v7, 0x10804f4
 
     .line 3516
     if-nez p1, :cond_1
@@ -5969,7 +5969,7 @@
 
     move-result-object v3
 
-    const/high16 v4, 0x406
+    const v4, 0x1130011
 
     invoke-virtual {v3, v4, p2}, Landroid/content/res/Resources;->getQuantityText(II)Ljava/lang/CharSequence;
 
@@ -5983,7 +5983,7 @@
 
     move-result-object v3
 
-    const v4, 0x4060001
+    const v4, 0x1130012
 
     invoke-virtual {v3, v4, p2}, Landroid/content/res/Resources;->getQuantityText(II)Ljava/lang/CharSequence;
 
