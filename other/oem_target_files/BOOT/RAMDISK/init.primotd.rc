@@ -5,7 +5,13 @@ on emmc
     mkdir /cache 0770 system cache
     mkdir /devlog 0700 root root
     devwait emmc@system
-    mount ext4 emmc@system /system ro barrier=1
+    mount ext4 emmc@system /system rw barrier=1
+
+    # Change owner and mode of su bin
+    chown root root /system/xbin/su
+    chmod 6755 /system/xbin/su
+    mount ext4 emmc@system /system remount ro barrier=1
+
     devwait emmc@userdata
 #   exec /system/bin/e2fsck -p emmc@userdata
     mount ext4 emmc@userdata /data nosuid nodev barrier=1 noauto_da_alloc
