@@ -339,10 +339,6 @@
 
     invoke-direct {v0, v4}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 59
-    .local v0, builder:Landroid/app/AlertDialog$Builder;
-    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->setSkinSelector()V
-
     .line 62
     new-instance v4, Lcom/android/internal/view/menu/ListMenuPresenter;
 
