@@ -1938,3 +1938,21 @@
     :cond_0
     return-void
 .end method
+.method public clearUSimGrpRecord(I)Z
+    .locals 1
+    .parameter "iccIndex"
+    .prologue
+    const/4 v0, 0x1
+    return v0
+.end method
+.method public updateUsimRecord(Lcom/android/internal/telephony/AdnRecord;Lcom/android/internal/telephony/AdnRecord;II)Z
+    .locals 1
+    .parameter "oldAdn"
+    .parameter "newAdn"
+    .parameter "iccIndex"
+    .parameter "tag"
+
+    .prologue
+    const/4 v0, 0x0
+    return v0
+.end method

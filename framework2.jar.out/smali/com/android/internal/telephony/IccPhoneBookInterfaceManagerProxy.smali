@@ -449,3 +449,49 @@
 
     goto :goto_0
 .end method
+
+.method public updateAdnRecordsInEfByIndexEx(ILandroid/content/ContentValues;ILjava/lang/String;)Z
+    .locals 1
+    .parameter "efid"
+    .parameter "values"
+    .parameter "index"
+    .parameter "pin2"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 73
+    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->updateAdnRecordsInEfByIndexEx(ILandroid/content/ContentValues;ILjava/lang/String;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public updateAdnRecordsInEfBySearchEx(ILandroid/content/ContentValues;Ljava/lang/String;)I
+    .locals 1
+    .parameter "efid"
+    .parameter "values"
+    .parameter "pin2"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 66
+    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
+
+    invoke-virtual {v0, p1, p2, p3}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->updateAdnRecordsInEfBySearchEx(ILandroid/content/ContentValues;Ljava/lang/String;)I
+
+    move-result v0
+
+    return v0
+.end method
+

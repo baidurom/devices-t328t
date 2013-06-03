@@ -255,6 +255,35 @@
     :goto_2
     iput-boolean v4, v7, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->success:Z
 
+
+
+    .line 88
+    iget-object v7, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager$1;->this$0:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
+
+    iget-object v8, v1, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
+
+    if-nez v8, :cond_1003
+
+    const/4 v8, -0x1
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    :goto_1002
+    check-cast v8, Ljava/lang/Integer;
+
+    check-cast v8, Ljava/lang/Integer;
+
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
+
+    move-result v8
+
+    iput v8, v7, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->index:I
+    
+    
+    
+
     .line 122
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager$1;->notifyPending(Landroid/os/AsyncResult;)V
 
@@ -277,6 +306,15 @@
 
     .line 121
     goto :goto_2
+
+    .line 88
+    :cond_1003
+    :try_start_1002
+    iget-object v8, v1, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
+    :try_end_1002
+    .catchall {:try_start_1002 .. :try_end_1002} :catchall_1
+
+    goto :goto_1002
 
     .line 126
     .end local v1           #ar:Landroid/os/AsyncResult;

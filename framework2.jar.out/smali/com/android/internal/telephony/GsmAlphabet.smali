@@ -4985,6 +4985,152 @@
     goto :goto_0
 .end method
 
+.method public static isAsciiStringAndToGsm8BitPacked(Ljava/lang/String;)[B
+    .locals 4
+    .parameter "s"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/internal/telephony/EncodeException;
+        }
+    .end annotation
+
+    .prologue
+    .line 615
+    const/4 v1, 0x0
+
+    .local v1, i:I
+    :goto_0
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_1
+
+    .line 617
+    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
+
+    .line 618
+    .local v0, c:I
+    const/16 v2, 0x80
+
+    if-lt v0, v2, :cond_0
+
+    .line 619
+    new-instance v2, Lcom/android/internal/telephony/EncodeException;
+
+    const-string/jumbo v3, "string is not ascii string"
+
+    invoke-direct {v2, v3}, Lcom/android/internal/telephony/EncodeException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    .line 615
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 622
+    .end local v0           #c:I
+    :cond_1
+    invoke-static {p0}, Lcom/android/internal/telephony/GsmAlphabet;->stringToGsm8BitPacked(Ljava/lang/String;)[B
+
+    move-result-object v2
+
+    return-object v2
+.end method
+
+.method public static isStringToGsm8Bit(Ljava/lang/String;)Ljava/lang/Boolean;
+    .locals 7
+    .parameter "s"
+
+    .prologue
+    const/4 v6, 0x0
+
+    const/16 v5, 0x20
+
+    .line 972
+    const/4 v1, 0x0
+
+    .local v1, i:I
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    .local v2, sz:I
+    :goto_0
+    if-ge v1, v2, :cond_2
+
+    .line 973
+    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
+
+    .line 974
+    .local v0, c:C
+    invoke-static {v0}, Lcom/android/internal/telephony/GsmAlphabet;->charToGsm(C)I
+
+    move-result v3
+
+    .line 975
+    .local v3, v:I
+    const/16 v4, 0x1b
+
+    if-ne v3, v4, :cond_0
+
+    .line 976
+    invoke-static {v0}, Lcom/android/internal/telephony/GsmAlphabet;->charToGsmExtended(C)I
+
+    move-result v3
+
+    .line 978
+    :cond_0
+    sget-object v4, Lcom/android/internal/telephony/GsmAlphabet;->sCharsToGsmTables:[Landroid/util/SparseIntArray;
+
+    aget-object v4, v4, v6
+
+    invoke-virtual {v4, v5, v5}, Landroid/util/SparseIntArray;->get(II)I
+
+    move-result v4
+
+    if-ne v3, v4, :cond_1
+
+    if-eq v0, v5, :cond_1
+
+    .line 979
+    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v4
+
+    .line 982
+    .end local v0           #c:C
+    .end local v3           #v:I
+    :goto_1
+    return-object v4
+
+    .line 972
+    .restart local v0       #c:C
+    .restart local v3       #v:I
+    :cond_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 982
+    .end local v0           #c:C
+    .end local v3           #v:I
+    :cond_2
+    const/4 v4, 0x1
+
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v4
+
+    goto :goto_1
+.end method
+
 .method private static packSmsChar([BII)V
     .locals 4
     .parameter "packedChars"
