@@ -2059,7 +2059,7 @@
     return-wide v1
 
     :cond_1
-    const-wide/16 v1, 0x3a98
+    const-wide/16 v1, 0x1388
 
     monitor-exit v3
 

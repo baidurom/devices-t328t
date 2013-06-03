@@ -121,7 +121,7 @@
 
 #the value of this static final field might be set in the static constructor
 .field static final IS_USER_BUILD:Z = false
-.field static final KEY_DISPATCHING_TIMEOUT:I = 0x3a98
+.field static final KEY_DISPATCHING_TIMEOUT:I = 0x1388
 
 .field static final KILL_APPLICATION_MSG:I = 0x16
 
