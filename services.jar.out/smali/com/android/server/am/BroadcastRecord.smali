@@ -10,9 +10,11 @@
 
 .field static final CALL_IN_RECEIVE:I = 0x2
 
-.field static final DEFUALT_MMS:Ljava/lang/String; = "com.android.mms"
-
 .field static final IDLE:I
+
+.field static final SPECIAL_SMS_PACKAGE:[Ljava/lang/String;
+
+.field static final SPECIAL_SMS_PACKAGE_LEN:I
 
 
 # instance fields
@@ -74,6 +76,39 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 3
+
+    .prologue
+    .line 193
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    const-string v2, "com.baidu.security"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    const-string v2, "com.android.mms"
+
+    aput-object v2, v0, v1
+
+    sput-object v0, Lcom/android/server/am/BroadcastRecord;->SPECIAL_SMS_PACKAGE:[Ljava/lang/String;
+
+    .line 197
+    sget-object v0, Lcom/android/server/am/BroadcastRecord;->SPECIAL_SMS_PACKAGE:[Ljava/lang/String;
+
+    array-length v0, v0
+
+    sput v0, Lcom/android/server/am/BroadcastRecord;->SPECIAL_SMS_PACKAGE_LEN:I
+
+    return-void
+.end method
+
 .method constructor <init>(Landroid/content/Intent;Lcom/android/server/am/ProcessRecord;Ljava/lang/String;IILjava/lang/String;Ljava/util/List;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;ZZZ)V
     .locals 1
     .parameter "_intent"
@@ -794,165 +829,260 @@
 .end method
 
 .method hookMessageBroadcast()V
-    .locals 9
+    .locals 11
 
     .prologue
-    .line 194
-    iget-object v7, p0, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
+    const/4 v10, 0x0
 
-    invoke-virtual {v7}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    .line 210
+    iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
+
+    invoke-virtual {v9}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 195
+    .line 211
     .local v0, action:Ljava/lang/String;
-    const-string v7, "android.provider.Telephony.SMS_RECEIVED"
+    const-string v9, "android.provider.Telephony.SMS_RECEIVED"
 
-    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v7
+    move-result v9
 
-    if-nez v7, :cond_0
+    if-nez v9, :cond_0
 
-    const-string v7, "android.provider.Telephony.WAP_PUSH_RECEIVED"
+    const-string v9, "android.provider.Telephony.WAP_PUSH_RECEIVED"
 
-    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v7
+    move-result v9
 
-    if-eqz v7, :cond_5
+    if-eqz v9, :cond_8
 
-    .line 197
+    .line 213
     :cond_0
-    iget-object v7, p0, Lcom/android/server/am/BroadcastRecord;->receivers:Ljava/util/List;
+    sget v9, Lcom/android/server/am/BroadcastRecord;->SPECIAL_SMS_PACKAGE_LEN:I
 
-    invoke-interface {v7}, Ljava/util/List;->size()I
+    new-array v8, v9, [Ljava/util/ArrayList;
+
+    .line 214
+    .local v8, specialPackageIndex:[Ljava/util/ArrayList;
+    iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->receivers:Ljava/util/List;
+
+    invoke-interface {v9}, Ljava/util/List;->size()I
 
     move-result v4
 
-    .line 198
+    .line 215
     .local v4, len:I
+    const/4 v2, -0x1
+
+    .line 216
+    .local v2, index:I
     add-int/lit8 v1, v4, -0x1
 
     .local v1, i:I
     :goto_0
-    if-ltz v1, :cond_5
+    if-ltz v1, :cond_6
 
-    .line 199
-    iget-object v7, p0, Lcom/android/server/am/BroadcastRecord;->receivers:Ljava/util/List;
+    .line 217
+    const/4 v2, -0x1
 
-    invoke-interface {v7, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    .line 218
+    iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->receivers:Ljava/util/List;
 
-    move-result-object v6
+    invoke-interface {v9, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    .line 200
-    .local v6, r:Ljava/lang/Object;
-    const/4 v3, 0x0
+    move-result-object v7
 
-    .line 201
-    .local v3, isDefaultMms:Z
-    instance-of v7, v6, Lcom/android/server/am/BroadcastFilter;
+    .line 219
+    .local v7, r:Ljava/lang/Object;
+    instance-of v9, v7, Lcom/android/server/am/BroadcastFilter;
 
-    if-eqz v7, :cond_3
+    if-eqz v9, :cond_4
 
-    move-object v2, v6
+    move-object v3, v7
 
-    .line 202
-    check-cast v2, Lcom/android/server/am/BroadcastFilter;
+    .line 220
+    check-cast v3, Lcom/android/server/am/BroadcastFilter;
 
-    .line 203
-    .local v2, info:Lcom/android/server/am/BroadcastFilter;
-    const-string v7, "com.android.mms"
+    .line 221
+    .local v3, info:Lcom/android/server/am/BroadcastFilter;
+    iget-object v9, v3, Lcom/android/server/am/BroadcastFilter;->packageName:Ljava/lang/String;
 
-    iget-object v8, v2, Lcom/android/server/am/BroadcastFilter;->packageName:Ljava/lang/String;
+    invoke-virtual {p0, v9}, Lcom/android/server/am/BroadcastRecord;->isSpecialPackage(Ljava/lang/String;)I
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v2
 
-    move-result v7
-
-    if-eqz v7, :cond_1
-
-    .line 204
-    const/4 v3, 0x1
-
-    .line 214
-    .end local v2           #info:Lcom/android/server/am/BroadcastFilter;
+    .line 229
+    .end local v3           #info:Lcom/android/server/am/BroadcastFilter;
     :cond_1
     :goto_1
-    if-eqz v3, :cond_2
+    const/4 v9, -0x1
 
-    .line 215
-    iget-object v7, p0, Lcom/android/server/am/BroadcastRecord;->receivers:Ljava/util/List;
+    if-le v2, v9, :cond_3
 
-    invoke-interface {v7, v6}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+    .line 230
+    iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->receivers:Ljava/util/List;
+
+    invoke-interface {v9, v7}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    .line 231
+    aget-object v5, v8, v2
+
+    .line 232
+    .local v5, list:Ljava/util/ArrayList;
+    if-nez v5, :cond_2
+
+    .line 233
+    new-instance v5, Ljava/util/ArrayList;
+
+    .end local v5           #list:Ljava/util/ArrayList;
+    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
+
+    .line 234
+    .restart local v5       #list:Ljava/util/ArrayList;
+    aput-object v5, v8, v2
+
+    .line 236
+    :cond_2
+    aget-object v9, v8, v2
+
+    invoke-virtual {v9, v10, v7}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     .line 216
-    iget-object v7, p0, Lcom/android/server/am/BroadcastRecord;->receivers:Ljava/util/List;
-
-    const/4 v8, 0x0
-
-    invoke-interface {v7, v8, v6}, Ljava/util/List;->add(ILjava/lang/Object;)V
-
-    .line 198
-    :cond_2
+    .end local v5           #list:Ljava/util/ArrayList;
+    :cond_3
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    .line 206
-    :cond_3
-    instance-of v7, v6, Landroid/content/pm/ResolveInfo;
+    .line 222
+    :cond_4
+    instance-of v9, v7, Landroid/content/pm/ResolveInfo;
 
-    if-eqz v7, :cond_1
+    if-eqz v9, :cond_1
 
-    move-object v2, v6
+    move-object v3, v7
 
-    .line 207
-    check-cast v2, Landroid/content/pm/ResolveInfo;
+    .line 223
+    check-cast v3, Landroid/content/pm/ResolveInfo;
 
-    .line 208
-    .local v2, info:Landroid/content/pm/ResolveInfo;
-    iget-object v7, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+    .line 224
+    .local v3, info:Landroid/content/pm/ResolveInfo;
+    iget-object v9, v3, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    if-eqz v7, :cond_4
+    if-eqz v9, :cond_5
 
-    iget-object v7, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+    iget-object v9, v3, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v5, v7, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v9, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
-    .line 209
-    .local v5, packageName:Ljava/lang/String;
+    .line 226
+    .local v6, packageName:Ljava/lang/String;
     :goto_2
-    const-string v7, "com.android.mms"
+    invoke-virtual {p0, v6}, Lcom/android/server/am/BroadcastRecord;->isSpecialPackage(Ljava/lang/String;)I
 
-    invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_1
-
-    .line 210
-    const/4 v3, 0x1
+    move-result v2
 
     goto :goto_1
 
-    .line 208
-    .end local v5           #packageName:Ljava/lang/String;
-    :cond_4
-    iget-object v7, v2, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
+    .line 224
+    .end local v6           #packageName:Ljava/lang/String;
+    :cond_5
+    iget-object v9, v3, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v5, v7, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v9, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
     goto :goto_2
 
-    .line 220
+    .line 239
+    .end local v3           #info:Landroid/content/pm/ResolveInfo;
+    .end local v7           #r:Ljava/lang/Object;
+    :cond_6
+    sget v4, Lcom/android/server/am/BroadcastRecord;->SPECIAL_SMS_PACKAGE_LEN:I
+
+    .line 240
+    add-int/lit8 v1, v4, -0x1
+
+    :goto_3
+    if-ltz v1, :cond_8
+
+    .line 241
+    aget-object v5, v8, v1
+
+    .line 242
+    .restart local v5       #list:Ljava/util/ArrayList;
+    if-eqz v5, :cond_7
+
+    .line 243
+    iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->receivers:Ljava/util/List;
+
+    invoke-interface {v9, v10, v5}, Ljava/util/List;->addAll(ILjava/util/Collection;)Z
+
+    .line 244
+    invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
+
+    .line 240
+    :cond_7
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_3
+
+    .line 248
     .end local v1           #i:I
-    .end local v2           #info:Landroid/content/pm/ResolveInfo;
-    .end local v3           #isDefaultMms:Z
+    .end local v2           #index:I
     .end local v4           #len:I
-    .end local v6           #r:Ljava/lang/Object;
-    :cond_5
+    .end local v5           #list:Ljava/util/ArrayList;
+    .end local v8           #specialPackageIndex:[Ljava/util/ArrayList;
+    :cond_8
     return-void
+.end method
+
+.method isSpecialPackage(Ljava/lang/String;)I
+    .locals 3
+    .parameter "packageName"
+
+    .prologue
+    .line 200
+    sget v1, Lcom/android/server/am/BroadcastRecord;->SPECIAL_SMS_PACKAGE_LEN:I
+
+    .line 201
+    .local v1, len:I
+    add-int/lit8 v0, v1, -0x1
+
+    .local v0, i:I
+    :goto_0
+    if-ltz v0, :cond_1
+
+    .line 202
+    sget-object v2, Lcom/android/server/am/BroadcastRecord;->SPECIAL_SMS_PACKAGE:[Ljava/lang/String;
+
+    aget-object v2, v2, v0
+
+    invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 206
+    .end local v0           #i:I
+    :goto_1
+    return v0
+
+    .line 201
+    .restart local v0       #i:I
+    :cond_0
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    .line 206
+    :cond_1
+    const/4 v0, -0x1
+
+    goto :goto_1
 .end method
 
 .method public toString()Ljava/lang/String;
