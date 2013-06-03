@@ -16,7 +16,7 @@ persist.sys.timezone=Asia/Shanghai
 #ro.baidu.2nd_storage.format=enable
 
 # property to show/hide feature of defaultWrite Settings
-ro.baidu.default_write.settable=true
+#ro.baidu.default_write.settable=true
 
 # hide the soft mainkeys
 qemu.hw.mainkeys=1
