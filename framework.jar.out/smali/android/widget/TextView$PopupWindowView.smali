@@ -55,52 +55,52 @@
     .parameter
 
     .prologue
-    .line 11601
+    .line 11504
     iput-object p1, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 11587
+    .line 11490
     new-instance v0, Landroid/util/DisplayMetrics;
 
     invoke-direct {v0}, Landroid/util/DisplayMetrics;-><init>()V
 
     iput-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
-    .line 11589
+    .line 11492
     const/16 v0, 0x12c
 
     iput v0, p0, Landroid/widget/TextView$PopupWindowView;->DELAY:I
 
-    .line 11597
+    .line 11500
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
-    .line 11599
+    .line 11502
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mVisibleList:Ljava/util/ArrayList;
 
-    .line 11611
+    .line 11514
     new-instance v0, Landroid/widget/TextView$PopupWindowView$1;
 
     invoke-direct {v0, p0}, Landroid/widget/TextView$PopupWindowView$1;-><init>(Landroid/widget/TextView$PopupWindowView;)V
 
     iput-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mHider:Ljava/lang/Runnable;
 
-    .line 11602
+    .line 11505
     iput-object p1, p0, Landroid/widget/TextView$PopupWindowView;->mParent:Landroid/view/View;
 
-    .line 11603
+    .line 11506
     new-instance v0, Landroid/widget/PopupWindow;
 
     #getter for: Landroid/widget/TextView;->mContext:Landroid/content/Context;
-    invoke-static {p1}, Landroid/widget/TextView;->access$7800(Landroid/widget/TextView;)Landroid/content/Context;
+    invoke-static {p1}, Landroid/widget/TextView;->access$7900(Landroid/widget/TextView;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -108,14 +108,14 @@
 
     iput-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mWindow:Landroid/widget/PopupWindow;
 
-    .line 11604
+    .line 11507
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v2, #color@transparent#t
+    const v2, 0x106000d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -123,7 +123,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 11605
+    .line 11508
     return-void
 .end method
 
@@ -134,24 +134,24 @@
     .parameter "max"
 
     .prologue
-    .line 11799
+    .line 11702
     if-gt p1, p2, :cond_1
 
-    .line 11800
+    .line 11703
     add-int/lit8 p1, p2, 0x1
 
-    .line 11804
+    .line 11707
     .end local p1
     :cond_0
     :goto_0
     return p1
 
-    .line 11801
+    .line 11704
     .restart local p1
     :cond_1
     if-lt p1, p3, :cond_0
 
-    .line 11802
+    .line 11705
     add-int/lit8 p1, p3, -0x1
 
     goto :goto_0
@@ -161,7 +161,7 @@
     .locals 3
 
     .prologue
-    .line 11788
+    .line 11691
     const-string v0, "TextView"
 
     const/4 v1, 0x3
@@ -172,14 +172,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 11789
+    .line 11692
     const-string v0, "TextView"
 
     const-string v1, "==============================="
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 11790
+    .line 11693
     const-string v0, "TextView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -206,7 +206,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 11791
+    .line 11694
     const-string v0, "TextView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -233,7 +233,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 11792
+    .line 11695
     const-string v0, "TextView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -260,7 +260,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 11793
+    .line 11696
     const-string v0, "TextView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -287,14 +287,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 11794
+    .line 11697
     const-string v0, "TextView"
 
     const-string v1, "==============================="
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 11796
+    .line 11699
     :cond_0
     return-void
 .end method
@@ -303,11 +303,11 @@
     .locals 2
 
     .prologue
-    .line 11668
+    .line 11571
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Landroid/widget/TextView;->access$8000(Landroid/widget/TextView;)Landroid/content/Context;
+    invoke-static {v0}, Landroid/widget/TextView;->access$8100(Landroid/widget/TextView;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -327,7 +327,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
-    .line 11669
+    .line 11572
     return-void
 .end method
 
@@ -343,31 +343,7 @@
 
     const/4 v10, 0x0
 
-    .line 11745
-    iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
-
-    #getter for: Landroid/widget/TextView;->mContext:Landroid/content/Context;
-    invoke-static {v6}, Landroid/widget/TextView;->access$8100(Landroid/widget/TextView;)Landroid/content/Context;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v6
-
-    iget-object v7, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
-
-    #getter for: Landroid/widget/TextView;->mTextSelectHandleRes:I
-    invoke-static {v7}, Landroid/widget/TextView;->access$6600(Landroid/widget/TextView;)I
-
-    move-result v7
-
-    invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    .line 11746
-    .local v2, handle:Landroid/graphics/drawable/Drawable;
+    .line 11648
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mContext:Landroid/content/Context;
@@ -379,11 +355,35 @@
 
     move-result-object v6
 
+    iget-object v7, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
+
+    #getter for: Landroid/widget/TextView;->mTextSelectHandleRes:I
+    invoke-static {v7}, Landroid/widget/TextView;->access$6700(Landroid/widget/TextView;)I
+
+    move-result v7
+
+    invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v2
+
+    .line 11649
+    .local v2, handle:Landroid/graphics/drawable/Drawable;
+    iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
+
+    #getter for: Landroid/widget/TextView;->mContext:Landroid/content/Context;
+    invoke-static {v6}, Landroid/widget/TextView;->access$8300(Landroid/widget/TextView;)Landroid/content/Context;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v6
+
     invoke-virtual {v6}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v1
 
-    .line 11748
+    .line 11651
     .local v1, displayMetrics:Landroid/util/DisplayMetrics;
     iget v6, p0, Landroid/widget/TextView$PopupWindowView;->mCursorType:I
 
@@ -405,7 +405,7 @@
 
     sub-int v4, v6, v7
 
-    .line 11749
+    .line 11652
     .local v4, lineTop:I
     :goto_0
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
@@ -423,12 +423,12 @@
 
     move-result v3
 
-    .line 11750
+    .line 11653
     .local v3, lineBottom:I
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mSpacingMult:F
-    invoke-static {v6}, Landroid/widget/TextView;->access$6300(Landroid/widget/TextView;)F
+    invoke-static {v6}, Landroid/widget/TextView;->access$6400(Landroid/widget/TextView;)F
 
     move-result v6
 
@@ -443,7 +443,7 @@
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mSpacingAdd:F
-    invoke-static {v6}, Landroid/widget/TextView;->access$6400(Landroid/widget/TextView;)F
+    invoke-static {v6}, Landroid/widget/TextView;->access$6500(Landroid/widget/TextView;)F
 
     move-result v6
 
@@ -455,7 +455,7 @@
 
     if-eqz v6, :cond_6
 
-    .line 11751
+    .line 11654
     :cond_0
     iget v6, v1, Landroid/util/DisplayMetrics;->density:F
 
@@ -465,7 +465,7 @@
 
     float-to-int v5, v6
 
-    .line 11752
+    .line 11655
     .local v5, offsetToBaseLine:I
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
@@ -483,20 +483,20 @@
 
     add-int v3, v6, v5
 
-    .line 11757
+    .line 11660
     .end local v5           #offsetToBaseLine:I
     :goto_3
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     iget-object v0, v6, Landroid/widget/TextView;->mTempCoords:[I
 
-    .line 11758
+    .line 11661
     .local v0, coords:[I
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     invoke-virtual {v6, v0}, Landroid/widget/TextView;->getLocationInWindow([I)V
 
-    .line 11760
+    .line 11663
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     iget-object v7, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
@@ -519,7 +519,7 @@
 
     iput v7, v6, Landroid/graphics/Rect;->left:I
 
-    .line 11761
+    .line 11664
     iget-object v7, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     if-eqz p1, :cond_8
@@ -531,7 +531,7 @@
     :goto_4
     iput v6, v7, Landroid/graphics/Rect;->top:I
 
-    .line 11763
+    .line 11666
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     iget-object v7, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
@@ -544,7 +544,7 @@
 
     iput v7, v6, Landroid/graphics/Rect;->right:I
 
-    .line 11764
+    .line 11667
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     iget-object v7, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
@@ -557,15 +557,15 @@
 
     iput v7, v6, Landroid/graphics/Rect;->bottom:I
 
-    .line 11766
+    .line 11669
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     iget-object v7, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     #calls: Landroid/widget/TextView;->convertFromViewportToContentCoordinates(Landroid/graphics/Rect;)V
-    invoke-static {v6, v7}, Landroid/widget/TextView;->access$8300(Landroid/widget/TextView;Landroid/graphics/Rect;)V
+    invoke-static {v6, v7}, Landroid/widget/TextView;->access$8400(Landroid/widget/TextView;Landroid/graphics/Rect;)V
 
-    .line 11768
+    .line 11671
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     iget v7, v6, Landroid/graphics/Rect;->left:I
@@ -576,7 +576,7 @@
 
     iput v7, v6, Landroid/graphics/Rect;->left:I
 
-    .line 11769
+    .line 11672
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     iget v7, v6, Landroid/graphics/Rect;->top:I
@@ -589,7 +589,7 @@
 
     iput v7, v6, Landroid/graphics/Rect;->top:I
 
-    .line 11776
+    .line 11679
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->left:I
@@ -604,7 +604,7 @@
 
     if-ge v6, v7, :cond_1
 
-    .line 11777
+    .line 11680
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     aget v7, v0, v10
@@ -617,7 +617,7 @@
 
     iput v7, v6, Landroid/graphics/Rect;->left:I
 
-    .line 11778
+    .line 11681
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     iget-object v7, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
@@ -630,7 +630,7 @@
 
     iput v7, v6, Landroid/graphics/Rect;->right:I
 
-    .line 11781
+    .line 11684
     :cond_1
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
@@ -647,14 +647,14 @@
     iget-object v8, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mRight:I
-    invoke-static {v8}, Landroid/widget/TextView;->access$8400(Landroid/widget/TextView;)I
+    invoke-static {v8}, Landroid/widget/TextView;->access$8500(Landroid/widget/TextView;)I
 
     move-result v8
 
     iget-object v9, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mLeft:I
-    invoke-static {v9}, Landroid/widget/TextView;->access$8500(Landroid/widget/TextView;)I
+    invoke-static {v9}, Landroid/widget/TextView;->access$8600(Landroid/widget/TextView;)I
 
     move-result v9
 
@@ -664,7 +664,7 @@
 
     if-le v6, v7, :cond_2
 
-    .line 11782
+    .line 11685
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     aget v7, v0, v10
@@ -672,14 +672,14 @@
     iget-object v8, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mRight:I
-    invoke-static {v8}, Landroid/widget/TextView;->access$8600(Landroid/widget/TextView;)I
+    invoke-static {v8}, Landroid/widget/TextView;->access$8700(Landroid/widget/TextView;)I
 
     move-result v8
 
     iget-object v9, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mLeft:I
-    invoke-static {v9}, Landroid/widget/TextView;->access$8700(Landroid/widget/TextView;)I
+    invoke-static {v9}, Landroid/widget/TextView;->access$8800(Landroid/widget/TextView;)I
 
     move-result v9
 
@@ -695,7 +695,7 @@
 
     iput v7, v6, Landroid/graphics/Rect;->left:I
 
-    .line 11783
+    .line 11686
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     iget-object v7, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
@@ -708,11 +708,11 @@
 
     iput v7, v6, Landroid/graphics/Rect;->right:I
 
-    .line 11785
+    .line 11688
     :cond_2
     return-void
 
-    .line 11748
+    .line 11651
     .end local v0           #coords:[I
     .end local v3           #lineBottom:I
     .end local v4           #lineTop:I
@@ -732,7 +732,7 @@
     :cond_4
     move v6, p4
 
-    .line 11749
+    .line 11652
     goto/16 :goto_1
 
     .restart local v3       #lineBottom:I
@@ -740,10 +740,10 @@
     :cond_5
     move p3, p4
 
-    .line 11752
+    .line 11655
     goto/16 :goto_2
 
-    .line 11754
+    .line 11657
     .end local v5           #offsetToBaseLine:I
     :cond_6
     iget-object v6, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
@@ -768,7 +768,7 @@
 
     goto :goto_5
 
-    .line 11761
+    .line 11664
     .end local p3
     .restart local v0       #coords:[I
     :cond_8
@@ -787,19 +787,19 @@
     .locals 2
 
     .prologue
-    .line 11623
+    .line 11526
     invoke-virtual {p0}, Landroid/widget/TextView$PopupWindowView;->isShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 11624
+    .line 11527
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->dismiss()V
 
-    .line 11626
+    .line 11529
     :cond_0
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
@@ -807,7 +807,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 11627
+    .line 11530
     return-void
 .end method
 
@@ -815,7 +815,7 @@
     .locals 2
 
     .prologue
-    .line 11698
+    .line 11601
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     iget-object v0, v0, Landroid/widget/TextView;->mLayout:Landroid/text/Layout;
@@ -837,14 +837,14 @@
     .locals 8
 
     .prologue
-    .line 11674
+    .line 11577
     iget-object v7, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     invoke-virtual {v7}, Landroid/widget/TextView;->getSelectionStart()I
 
     move-result v5
 
-    .line 11675
+    .line 11578
     .local v5, start:I
     iget-object v7, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
@@ -852,7 +852,7 @@
 
     move-result v1
 
-    .line 11677
+    .line 11580
     .local v1, end:I
     iget-object v7, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
@@ -862,7 +862,7 @@
 
     move-result v6
 
-    .line 11678
+    .line 11581
     .local v6, startLine:I
     iget-object v7, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
@@ -872,22 +872,22 @@
 
     move-result v2
 
-    .line 11680
+    .line 11583
     .local v2, endLine:I
     if-ne v6, v2, :cond_1
 
-    .line 11681
+    .line 11584
     add-int v7, v5, v1
 
     div-int/lit8 v0, v7, 0x2
 
-    .line 11690
+    .line 11593
     .local v0, center:I
     :cond_0
     :goto_0
     return v0
 
-    .line 11683
+    .line 11586
     .end local v0           #center:I
     :cond_1
     iget-object v7, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
@@ -898,7 +898,7 @@
 
     move-result v4
 
-    .line 11684
+    .line 11587
     .local v4, lastOffset:I
     iget-object v7, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
@@ -908,17 +908,17 @@
 
     move-result v3
 
-    .line 11685
+    .line 11588
     .local v3, firstOffset:I
     add-int v7, v3, v4
 
     div-int/lit8 v0, v7, 0x2
 
-    .line 11686
+    .line 11589
     .restart local v0       #center:I
     if-ge v0, v5, :cond_0
 
-    .line 11687
+    .line 11590
     move v0, v5
 
     goto :goto_0
@@ -928,7 +928,7 @@
     .locals 2
 
     .prologue
-    .line 11694
+    .line 11597
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     iget-object v0, v0, Landroid/widget/TextView;->mLayout:Landroid/text/Layout;
@@ -950,14 +950,14 @@
     .locals 4
 
     .prologue
-    .line 11618
+    .line 11521
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     iget-object v1, p0, Landroid/widget/TextView$PopupWindowView;->mHider:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 11619
+    .line 11522
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     iget-object v1, p0, Landroid/widget/TextView$PopupWindowView;->mHider:Ljava/lang/Runnable;
@@ -968,7 +968,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/widget/TextView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 11620
+    .line 11523
     return-void
 .end method
 
@@ -976,7 +976,7 @@
     .locals 1
 
     .prologue
-    .line 11608
+    .line 11511
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mWindow:Landroid/widget/PopupWindow;
 
     if-eqz v0, :cond_0
@@ -1004,7 +1004,7 @@
     .locals 1
 
     .prologue
-    .line 11664
+    .line 11567
     const/4 v0, 0x0
 
     return v0
@@ -1021,11 +1021,11 @@
 
     const/4 v2, 0x1
 
-    .line 11630
+    .line 11533
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Landroid/widget/TextView;->access$7900(Landroid/widget/TextView;)Landroid/content/Context;
+    invoke-static {v0}, Landroid/widget/TextView;->access$8000(Landroid/widget/TextView;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -1033,31 +1033,31 @@
 
     invoke-static {v0, v1}, Landroid/util/FeatureData;->onEvent(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 11631
+    .line 11534
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mMagnifierController:Landroid/widget/TextView$MagnifierController;
-    invoke-static {v0}, Landroid/widget/TextView;->access$7100(Landroid/widget/TextView;)Landroid/widget/TextView$MagnifierController;
+    invoke-static {v0}, Landroid/widget/TextView;->access$7200(Landroid/widget/TextView;)Landroid/widget/TextView$MagnifierController;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 11632
+    .line 11535
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mMagnifierController:Landroid/widget/TextView$MagnifierController;
-    invoke-static {v0}, Landroid/widget/TextView;->access$7100(Landroid/widget/TextView;)Landroid/widget/TextView$MagnifierController;
+    invoke-static {v0}, Landroid/widget/TextView;->access$7200(Landroid/widget/TextView;)Landroid/widget/TextView$MagnifierController;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/widget/TextView$MagnifierController;->dismiss()V
 
-    .line 11635
+    .line 11538
     :cond_0
     iput p1, p0, Landroid/widget/TextView$PopupWindowView;->mCursorType:I
 
-    .line 11637
+    .line 11540
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
@@ -1066,12 +1066,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 11638
+    .line 11541
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->dismiss()V
 
-    .line 11642
+    .line 11545
     :cond_1
     invoke-virtual {p0}, Landroid/widget/TextView$PopupWindowView;->setupView()Z
 
@@ -1079,11 +1079,11 @@
 
     if-nez v0, :cond_2
 
-    .line 11658
+    .line 11561
     :goto_0
     return-void
 
-    .line 11646
+    .line 11549
     :cond_2
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mWindow:Landroid/widget/PopupWindow;
 
@@ -1091,49 +1091,49 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setContentView(Landroid/view/View;)V
 
-    .line 11647
+    .line 11550
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0, v3}, Landroid/widget/PopupWindow;->setWidth(I)V
 
-    .line 11648
+    .line 11551
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0, v3}, Landroid/widget/PopupWindow;->setHeight(I)V
 
-    .line 11649
+    .line 11552
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mWindow:Landroid/widget/PopupWindow;
 
-    const v1, #style@Animation.OptionsPanel#t
+    const v1, 0x10301db
 
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
-    .line 11650
+    .line 11553
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mWindow:Landroid/widget/PopupWindow;
 
     const/16 v1, 0x3ea
 
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
 
-    .line 11651
+    .line 11554
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0, v2}, Landroid/widget/PopupWindow;->setSplitTouchEnabled(Z)V
 
-    .line 11652
+    .line 11555
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0, v2}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
-    .line 11653
+    .line 11556
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0, v4}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
 
-    .line 11655
+    .line 11558
     invoke-virtual {p0, v2}, Landroid/widget/TextView$PopupWindowView;->updateLocation(Z)V
 
-    .line 11657
+    .line 11560
     iget-object v0, p0, Landroid/widget/TextView$PopupWindowView;->mWindow:Landroid/widget/PopupWindow;
 
     iget-object v1, p0, Landroid/widget/TextView$PopupWindowView;->mParent:Landroid/view/View;
@@ -1162,40 +1162,40 @@
 
     const/4 v10, -0x2
 
-    .line 11702
+    .line 11605
     iget-object v9, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     iget-object v9, v9, Landroid/widget/TextView;->mLayout:Landroid/text/Layout;
 
     if-nez v9, :cond_1
 
-    .line 11741
+    .line 11644
     :cond_0
     :goto_0
     return-void
 
-    .line 11706
+    .line 11609
     :cond_1
     invoke-direct {p0}, Landroid/widget/TextView$PopupWindowView;->recordScreenSize()V
 
-    .line 11709
+    .line 11612
     invoke-static {v10, v11}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v7
 
-    .line 11710
+    .line 11613
     .local v7, widthMeasureSpec:I
     invoke-static {v10, v11}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v3
 
-    .line 11711
+    .line 11614
     .local v3, heightMeasureSpec:I
     iget-object v9, p0, Landroid/widget/TextView$PopupWindowView;->mContainer:Landroid/view/View;
 
     invoke-virtual {v9, v7, v3}, Landroid/view/View;->measure(II)V
 
-    .line 11712
+    .line 11615
     iget-object v9, p0, Landroid/widget/TextView$PopupWindowView;->mContainer:Landroid/view/View;
 
     invoke-virtual {v9}, Landroid/view/View;->getMeasuredWidth()I
@@ -1204,7 +1204,7 @@
 
     iput v9, p0, Landroid/widget/TextView$PopupWindowView;->mContainerWidth:I
 
-    .line 11713
+    .line 11616
     iget-object v9, p0, Landroid/widget/TextView$PopupWindowView;->mContainer:Landroid/view/View;
 
     invoke-virtual {v9}, Landroid/view/View;->getMeasuredHeight()I
@@ -1213,39 +1213,39 @@
 
     iput v9, p0, Landroid/widget/TextView$PopupWindowView;->mContainerHeight:I
 
-    .line 11715
+    .line 11618
     invoke-virtual {p0}, Landroid/widget/TextView$PopupWindowView;->getStartLine()I
 
     move-result v5
 
-    .line 11716
+    .line 11619
     .local v5, startLine:I
     invoke-virtual {p0}, Landroid/widget/TextView$PopupWindowView;->getEndLine()I
 
     move-result v1
 
-    .line 11717
+    .line 11620
     .local v1, endLine:I
     invoke-virtual {p0}, Landroid/widget/TextView$PopupWindowView;->getOffsetCenter()I
 
     move-result v0
 
-    .line 11719
+    .line 11622
     .local v0, center:I
     invoke-direct {p0, p1, v0, v5, v1}, Landroid/widget/TextView$PopupWindowView;->updateBounds(ZIII)V
 
-    .line 11722
+    .line 11625
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    .line 11723
+    .line 11626
     .local v2, frame:Landroid/graphics/Rect;
     iget-object v9, p0, Landroid/widget/TextView$PopupWindowView;->this$0:Landroid/widget/TextView;
 
     invoke-virtual {v9, v2}, Landroid/widget/TextView;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
 
-    .line 11725
+    .line 11628
     iget-object v9, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->top:I
@@ -1264,7 +1264,7 @@
 
     move-result v6
 
-    .line 11726
+    .line 11629
     .local v6, tmp:I
     iget-object v9, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
@@ -1272,16 +1272,16 @@
 
     if-eq v6, v9, :cond_2
 
-    .line 11727
+    .line 11630
     if-nez p1, :cond_3
 
     const/4 p1, 0x1
 
-    .line 11728
+    .line 11631
     :goto_1
     invoke-direct {p0, p1, v0, v5, v1}, Landroid/widget/TextView$PopupWindowView;->updateBounds(ZIII)V
 
-    .line 11729
+    .line 11632
     iget-object v9, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     iget-object v10, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
@@ -1304,11 +1304,11 @@
 
     iput v10, v9, Landroid/graphics/Rect;->top:I
 
-    .line 11733
+    .line 11636
     :cond_2
     const/4 v4, 0x0
 
-    .line 11736
+    .line 11639
     .local v4, shift:I
     iget-object v9, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
@@ -1326,21 +1326,21 @@
 
     move-result v6
 
-    .line 11737
+    .line 11640
     iget-object v8, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     iget v8, v8, Landroid/graphics/Rect;->left:I
 
     if-eq v8, v6, :cond_0
 
-    .line 11738
+    .line 11641
     iget-object v8, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     iget v8, v8, Landroid/graphics/Rect;->left:I
 
     sub-int v4, v6, v8
 
-    .line 11739
+    .line 11642
     iget-object v8, p0, Landroid/widget/TextView$PopupWindowView;->mBounds:Landroid/graphics/Rect;
 
     iput v6, v8, Landroid/graphics/Rect;->left:I
@@ -1351,6 +1351,6 @@
     :cond_3
     move p1, v8
 
-    .line 11727
+    .line 11630
     goto :goto_1
 .end method

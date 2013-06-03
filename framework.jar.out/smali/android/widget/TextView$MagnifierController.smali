@@ -24,13 +24,13 @@
     .parameter
 
     .prologue
-    .line 11539
+    .line 11442
     iput-object p1, p0, Landroid/widget/TextView$MagnifierController;->this$0:Landroid/widget/TextView;
 
-    .line 11540
+    .line 11443
     invoke-direct {p0, p1}, Landroid/widget/TextView$PopupWindowView;-><init>(Landroid/widget/TextView;)V
 
-    .line 11541
+    .line 11444
     return-void
 .end method
 
@@ -40,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 11563
+    .line 11466
     invoke-virtual {p0}, Landroid/widget/TextView$MagnifierController;->getStartLine()I
 
     move-result v0
@@ -52,21 +52,21 @@
     .locals 2
 
     .prologue
-    .line 11567
+    .line 11470
     iget v0, p0, Landroid/widget/TextView$MagnifierController;->mCursorType:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 11568
+    .line 11471
     iget-object v0, p0, Landroid/widget/TextView$MagnifierController;->this$0:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getSelectionEnd()I
 
     move-result v0
 
-    .line 11570
+    .line 11473
     :goto_0
     return v0
 
@@ -84,14 +84,14 @@
     .locals 2
 
     .prologue
-    .line 11555
+    .line 11458
     iget v0, p0, Landroid/widget/TextView$MagnifierController;->mCursorType:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 11556
+    .line 11459
     iget-object v0, p0, Landroid/widget/TextView$MagnifierController;->this$0:Landroid/widget/TextView;
 
     iget-object v0, v0, Landroid/widget/TextView;->mLayout:Landroid/text/Layout;
@@ -106,7 +106,7 @@
 
     move-result v0
 
-    .line 11558
+    .line 11461
     :goto_0
     return v0
 
@@ -132,18 +132,18 @@
     .locals 3
 
     .prologue
-    .line 11545
+    .line 11448
     iget-object v0, p0, Landroid/widget/TextView$MagnifierController;->mContainer:Landroid/view/View;
 
     if-nez v0, :cond_0
 
-    .line 11546
+    .line 11449
     new-instance v0, Lcom/android/internal/widget/MagnifierView;
 
     iget-object v1, p0, Landroid/widget/TextView$MagnifierController;->this$0:Landroid/widget/TextView;
 
     #getter for: Landroid/widget/TextView;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Landroid/widget/TextView;->access$7700(Landroid/widget/TextView;)Landroid/content/Context;
+    invoke-static {v1}, Landroid/widget/TextView;->access$7800(Landroid/widget/TextView;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -153,7 +153,7 @@
 
     iput-object v0, p0, Landroid/widget/TextView$MagnifierController;->mContainer:Landroid/view/View;
 
-    .line 11549
+    .line 11452
     :cond_0
     iget-object v0, p0, Landroid/widget/TextView$MagnifierController;->mContainer:Landroid/view/View;
 
@@ -165,7 +165,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/MagnifierView;->updateMagnifierPosition(I)V
 
-    .line 11551
+    .line 11454
     const/4 v0, 0x1
 
     return v0
@@ -176,14 +176,14 @@
     .parameter "cursorType"
 
     .prologue
-    .line 11575
+    .line 11478
     invoke-virtual {p0}, Landroid/widget/TextView$MagnifierController;->isShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 11576
+    .line 11479
     iget-object v0, p0, Landroid/widget/TextView$MagnifierController;->mContainer:Landroid/view/View;
 
     check-cast v0, Lcom/android/internal/widget/MagnifierView;
@@ -194,12 +194,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/MagnifierView;->updateMagnifierPosition(I)V
 
-    .line 11577
+    .line 11480
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/widget/TextView$MagnifierController;->updateLocation(Z)V
 
-    .line 11578
+    .line 11481
     iget-object v0, p0, Landroid/widget/TextView$MagnifierController;->mWindow:Landroid/widget/PopupWindow;
 
     iget-object v1, p0, Landroid/widget/TextView$MagnifierController;->mBounds:Landroid/graphics/Rect;
@@ -216,11 +216,11 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/PopupWindow;->update(IIII)V
 
-    .line 11582
+    .line 11485
     :goto_0
     return-void
 
-    .line 11580
+    .line 11483
     :cond_0
     invoke-virtual {p0, p1}, Landroid/widget/TextView$MagnifierController;->show(I)V
 

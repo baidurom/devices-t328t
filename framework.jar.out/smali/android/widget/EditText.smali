@@ -44,7 +44,6 @@
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 59
-    invoke-virtual {p0}, Landroid/widget/EditText;->enableMagnifier()V
     return-void
 .end method
 
