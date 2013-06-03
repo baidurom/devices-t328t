@@ -20,6 +20,6 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds. -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-   <add-resource type="bool" name="config_pbap_support"/>
    <bool name="config_pbap_support">false</bool>
+   <bool name="config_global_action_reboot">true</bool>
 </resources>
