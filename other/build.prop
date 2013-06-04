@@ -23,6 +23,7 @@ qemu.hw.mainkeys=1
 
 dev.defaultwallpaper=delete
 ro.build.description=冰冻冷咖啡 1.19.1403.1 IML74K CL82971 release-keys
+ro.build.fingerprint=htccn_chs_cmcc/htc_primotd/primotd:4.0.3/IMM76/82971.1:user/release-keys
 
 ro.product.device.alias=t328t,T328T
 
