@@ -32,7 +32,7 @@ name="DownloadProviderUi.apk" certificate="tools/security/media.x509.pem" privat
 name="DrmProvider.apk" certificate="tools/security/media.x509.pem" private_key="tools/security/media.pk8"
 name="FilePicker.apk" certificate="PRESIGNED" private_key=""
 name="Flashlight.apk" certificate="PRESIGNED" private_key=""
-name="FM_Radio.apk" certificate="PRESIGNED" private_key=""
+name="FM_Radio.apk" certificate="tools/security/platform.x509.pem" private_key="tools/security/platform.pk8"
 name="FMRadioService.apk" certificate="tools/security/platform.x509.pem" private_key="tools/security/platform.pk8"
 name="framework-htc-res.apk" certificate="tools/security/platform.x509.pem" private_key="tools/security/platform.pk8"
 name="framework-res.apk" certificate="tools/security/platform.x509.pem" private_key="tools/security/platform.pk8"
