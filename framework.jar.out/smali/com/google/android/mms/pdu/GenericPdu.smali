@@ -6,30 +6,28 @@
 # instance fields
 .field mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
-.field private mPhoneType:I
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 1
 
     .prologue
-    .line 33
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 31
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 26
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
-    .line 34
+    .line 32
     new-instance v0, Lcom/google/android/mms/pdu/PduHeaders;
 
     invoke-direct {v0}, Lcom/google/android/mms/pdu/PduHeaders;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
-    .line 35
+    .line 33
     return-void
 .end method
 
@@ -38,18 +36,18 @@
     .parameter "headers"
 
     .prologue
-    .line 42
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 40
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 26
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
-    .line 43
+    .line 41
     iput-object p1, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
-    .line 44
+    .line 42
     return-void
 .end method
 
@@ -59,7 +57,7 @@
     .locals 2
 
     .prologue
-    .line 113
+    .line 101
     iget-object v0, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
     const/16 v1, 0x89
@@ -75,7 +73,7 @@
     .locals 2
 
     .prologue
-    .line 71
+    .line 59
     iget-object v0, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
     const/16 v1, 0x8c
@@ -91,7 +89,7 @@
     .locals 2
 
     .prologue
-    .line 91
+    .line 79
     iget-object v0, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
     const/16 v1, 0x8d
@@ -107,20 +105,10 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 50
     iget-object v0, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
     return-object v0
-.end method
-
-.method public getPhoneType()I
-    .locals 1
-
-    .prologue
-    .line 61
-    iget v0, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPhoneType:I
-
-    return v0
 .end method
 
 .method public setFrom(Lcom/google/android/mms/pdu/EncodedStringValue;)V
@@ -128,14 +116,14 @@
     .parameter "value"
 
     .prologue
-    .line 123
+    .line 111
     iget-object v0, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
     const/16 v1, 0x89
 
     invoke-virtual {v0, p1, v1}, Lcom/google/android/mms/pdu/PduHeaders;->setEncodedStringValue(Lcom/google/android/mms/pdu/EncodedStringValue;I)V
 
-    .line 124
+    .line 112
     return-void
 .end method
 
@@ -149,14 +137,14 @@
     .end annotation
 
     .prologue
-    .line 82
+    .line 70
     iget-object v0, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
     const/16 v1, 0x8c
 
     invoke-virtual {v0, p1, v1}, Lcom/google/android/mms/pdu/PduHeaders;->setOctet(II)V
 
-    .line 83
+    .line 71
     return-void
 .end method
 
@@ -170,25 +158,13 @@
     .end annotation
 
     .prologue
-    .line 102
+    .line 90
     iget-object v0, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
     const/16 v1, 0x8d
 
     invoke-virtual {v0, p1, v1}, Lcom/google/android/mms/pdu/PduHeaders;->setOctet(II)V
 
-    .line 103
-    return-void
-.end method
-
-.method public setPhoneType(I)V
-    .locals 0
-    .parameter "phoneType"
-
-    .prologue
-    .line 57
-    iput p1, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPhoneType:I
-
-    .line 58
+    .line 91
     return-void
 .end method
