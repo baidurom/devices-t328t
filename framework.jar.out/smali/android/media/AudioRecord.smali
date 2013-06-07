@@ -207,6 +207,20 @@
 
     .line 228
     :cond_0
+    const/16 v0, 0x6
+
+    if-ne p1, v0, :cond_1000
+
+    const/4 v0, 0x1
+
+    move/16 p1, v0
+
+    const-string v1, "audioSource: VOICE_RECOGNITION->MIC"
+
+    invoke-static {v1}, Landroid/media/AudioRecord;->logd(Ljava/lang/String;)V
+
+    :cond_1000
+
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/media/AudioRecord;->audioParamCheck(IIII)V
 
     .line 230
