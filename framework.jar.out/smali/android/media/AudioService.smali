@@ -3663,34 +3663,34 @@
 .end method
 
 .method private checkForRingerModeChange(III)Z
-    .locals 11
+    .locals 10
     .parameter "oldIndex"
     .parameter "direction"
     .parameter "streamType"
 
     .prologue
-    const/4 v6, 0x2
-
     const/4 v5, 0x0
 
-    const/4 v10, -0x1
+    const/4 v6, 0x2
+
+    const/4 v9, -0x1
 
     const/4 v4, 0x1
 
-    .line 2777
+    .line 1670
     const/4 v0, 0x1
 
-    .line 2778
+    .line 1671
     .local v0, adjustVolumeIndex:Z
     iget v1, p0, Landroid/media/AudioService;->mRingerMode:I
 
-    .line 2779
+    .line 1672
     .local v1, newRingerMode:I
     add-int/lit8 v7, p1, 0x5
 
     div-int/lit8 v2, v7, 0xa
 
-    .line 2780
+    .line 1673
     .local v2, uiIndex:I
     iget-object v7, p0, Landroid/media/AudioService;->mContentResolver:Landroid/content/ContentResolver;
 
@@ -3704,89 +3704,32 @@
 
     move v3, v4
 
-    .line 2782
+    .line 1675
     .local v3, vibeInSilent:Z
     :goto_0
-    const-string v7, "AudioService"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "checkForRingerModeChange: oldIndex = "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v9, ", direction = "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v9, " , streamType = "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v9, " , MAX="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    iget-object v9, p0, Landroid/media/AudioService;->MAX_STREAM_VOLUME:[I
-
-    aget v9, v9, p3
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2791
     iget v7, p0, Landroid/media/AudioService;->mRingerMode:I
 
-    if-ne v7, v6, :cond_8
+    if-ne v7, v6, :cond_7
 
-    .line 2792
-    if-ne p2, v10, :cond_7
+    .line 1676
+    if-ne p2, v9, :cond_3
 
-    if-gt v2, v4, :cond_7
+    if-gt v2, v4, :cond_3
 
-    .line 2795
+    .line 1679
     if-nez v3, :cond_0
 
     iget v7, p0, Landroid/media/AudioService;->mPrevVolDirection:I
 
-    if-eq v7, v10, :cond_1
+    if-eq v7, v9, :cond_1
 
-    .line 2797
+    .line 1681
     :cond_0
     if-eqz v3, :cond_6
 
-    move v1, v5
+    move v1, v4
 
-    .line 2799
+    .line 1683
     :cond_1
     :goto_1
     if-eqz v2, :cond_2
@@ -3795,7 +3738,7 @@
 
     iget v4, p0, Landroid/media/AudioService;->mPrevVolDirection:I
 
-    if-ne v4, v10, :cond_3
+    if-ne v4, v9, :cond_3
 
     iget-boolean v4, p0, Landroid/media/AudioService;->mVoiceCapable:Z
 
@@ -3803,134 +3746,94 @@
 
     if-ne p3, v6, :cond_3
 
-    .line 2803
+    .line 1687
     :cond_2
     const/4 v0, 0x0
 
-    .line 2838
+    .line 1709
     :cond_3
     :goto_2
     iget v4, p0, Landroid/media/AudioService;->mRingerMode:I
 
     if-eq v1, v4, :cond_4
 
-    .line 2839
+    .line 1710
     invoke-virtual {p0, v1}, Landroid/media/AudioService;->setRingerMode(I)V
 
-    .line 2842
+    .line 1713
     :cond_4
     iput p2, p0, Landroid/media/AudioService;->mPrevVolDirection:I
 
-    .line 2844
+    .line 1715
     return v0
 
     .end local v3           #vibeInSilent:Z
     :cond_5
     move v3, v5
 
-    .line 2780
+    .line 1673
     goto :goto_0
 
     .restart local v3       #vibeInSilent:Z
     :cond_6
-    move v1, v4
+    move v1, v5
 
-    .line 2797
+    .line 1681
     goto :goto_1
 
-    .line 2806
+    .line 1690
     :cond_7
-    iget-object v5, p0, Landroid/media/AudioService;->MAX_STREAM_VOLUME:[I
+    iget v5, p0, Landroid/media/AudioService;->mRingerMode:I
 
-    aget v5, v5, p3
+    if-ne v5, v4, :cond_a
 
-    add-int/lit8 v5, v5, -0x1
+    .line 1691
+    if-ne p2, v9, :cond_9
 
-    if-lt v2, v5, :cond_3
+    .line 1693
+    iget v4, p0, Landroid/media/AudioService;->mPrevVolDirection:I
 
-    if-ne p2, v4, :cond_3
+    if-eq v4, v9, :cond_8
 
-    invoke-direct {p0}, Landroid/media/AudioService;->applyOutdoorMode()Z
+    .line 1694
+    const/4 v1, 0x0
 
-    move-result v4
-
-    if-eqz v4, :cond_3
-
-    .line 2807
-    const/4 v1, 0x3
-
-    goto :goto_2
-
-    .line 2810
+    .line 1699
     :cond_8
-    iget v7, p0, Landroid/media/AudioService;->mRingerMode:I
-
-    if-nez v7, :cond_b
-
-    .line 2811
-    if-ne p2, v10, :cond_a
-
-    .line 2814
-    const/4 v1, 0x1
-
-    .line 2819
-    :cond_9
     :goto_3
     const/4 v0, 0x0
 
     goto :goto_2
 
-    .line 2816
-    :cond_a
-    if-ne p2, v4, :cond_9
+    .line 1696
+    :cond_9
+    if-ne p2, v4, :cond_8
 
-    .line 2817
+    .line 1697
     const/4 v1, 0x2
 
     goto :goto_3
 
-    .line 2821
+    .line 1701
+    :cond_a
+    if-ne p2, v4, :cond_b
+
+    .line 1704
+    if-eqz v3, :cond_c
+
+    move v1, v4
+
+    .line 1706
     :cond_b
-    iget v7, p0, Landroid/media/AudioService;->mRingerMode:I
-
-    const/4 v8, 0x3
-
-    if-ne v7, v8, :cond_d
-
-    .line 2822
-    if-ne p2, v10, :cond_c
-
-    .line 2823
-    const/4 v1, 0x2
-
-    goto :goto_2
-
-    .line 2825
-    :cond_c
-    const/4 v0, 0x0
-
-    goto :goto_2
-
-    .line 2829
-    :cond_d
-    if-ne p2, v4, :cond_e
-
-    .line 2832
-    if-eqz v3, :cond_f
-
-    move v1, v5
-
-    .line 2834
-    :cond_e
     :goto_4
     const/4 v0, 0x0
 
     goto :goto_2
 
-    :cond_f
+    :cond_c
     move v1, v6
 
-    .line 2832
+    .line 1704
     goto :goto_4
 .end method
 
