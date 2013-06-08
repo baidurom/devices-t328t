@@ -30,3 +30,7 @@ if [ $APKNAME == "Settings" ];then
 	cp $OUTPATH/res/xml/security_settings_picker.xml /tmp/
     fi
 fi
+
+if [ $APKNAME == "framework-res" ];then
+	find $OUTPATH -type d -name "*xhdpi" | xargs rm -rf
+fi
