@@ -841,7 +841,7 @@
 
     .line 354
     .restart local v0       #imageDescId:I
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     .line 355
     goto :goto_1
@@ -858,7 +858,7 @@
 
     .line 360
     .restart local v0       #imageDescId:I
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     .line 361
     goto :goto_1
