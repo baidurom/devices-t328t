@@ -535,7 +535,7 @@
 
     .line 891
     .local v2, inputStream:Ljava/io/InputStream;
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_1
 
     :try_start_0
     const-string v7, ""
@@ -544,38 +544,61 @@
 
     move-result v7
 
-    if-nez v7, :cond_0
+    if-nez v7, :cond_1
 
     .line 893
+    if-eqz p3, :cond_0
+
+    const-string v7, "com.htc.fm.png"
+
+    invoke-virtual {v7, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_0
+
+    const-string v7, "com.htc.fm"
+
+    invoke-virtual {v7, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_0
+
+    .line 894
+    const-string p1, "com.baidu.fm.png"
+
+    .line 897
+    :cond_0
     new-instance v6, Ljava/lang/StringBuffer;
 
     const-string v7, "/data/data/com.baidu.thememanager.ui/files"
 
     invoke-direct {v6, v7}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 
-    .line 895
+    .line 899
     .local v6, sb:Ljava/lang/StringBuffer;
     sget-object v7, Ljava/io/File;->separator:Ljava/lang/String;
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 896
-    if-eqz p3, :cond_1
+    .line 900
+    if-eqz p3, :cond_2
 
     const-string v7, "icons"
 
     :goto_0
     invoke-virtual {v6, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 897
+    .line 901
     sget-object v7, Ljava/io/File;->separator:Ljava/lang/String;
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 898
+    .line 902
     invoke-virtual {v6, p1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 900
+    .line 904
     new-instance v1, Ljava/io/File;
 
     invoke-virtual {v6}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
@@ -584,15 +607,15 @@
 
     invoke-direct {v1, v7}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 902
+    .line 906
     .local v1, file:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v7
 
-    if-eqz v7, :cond_2
+    if-eqz v7, :cond_3
 
-    .line 903
+    .line 907
     new-instance v3, Ljava/io/FileInputStream;
 
     invoke-direct {v3, v1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
@@ -601,57 +624,57 @@
     .local v3, inputStream:Ljava/io/InputStream;
     move-object v2, v3
 
-    .line 925
+    .line 929
     .end local v1           #file:Ljava/io/File;
     .end local v3           #inputStream:Ljava/io/InputStream;
     .end local v6           #sb:Ljava/lang/StringBuffer;
     .end local p2
     .restart local v2       #inputStream:Ljava/io/InputStream;
-    :cond_0
+    :cond_1
     :goto_1
     return-object v2
 
     .restart local v6       #sb:Ljava/lang/StringBuffer;
     .restart local p2
-    :cond_1
+    :cond_2
     move-object v7, p2
 
-    .line 896
+    .line 900
     goto :goto_0
 
-    .line 906
+    .line 910
     .restart local v1       #file:Ljava/io/File;
-    :cond_2
+    :cond_3
     new-instance v5, Ljava/lang/StringBuffer;
 
     const-string v7, "/system/etc/baidu/theme"
 
     invoke-direct {v5, v7}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 
-    .line 907
+    .line 911
     .local v5, ovlPath:Ljava/lang/StringBuffer;
     sget-object v7, Ljava/io/File;->separator:Ljava/lang/String;
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 908
-    if-eqz p3, :cond_3
+    .line 912
+    if-eqz p3, :cond_4
 
     const-string p2, "icons"
 
     .end local p2
-    :cond_3
+    :cond_4
     invoke-virtual {v5, p2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 909
+    .line 913
     sget-object v7, Ljava/io/File;->separator:Ljava/lang/String;
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 910
+    .line 914
     invoke-virtual {v5, p1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 911
+    .line 915
     new-instance v4, Ljava/io/File;
 
     invoke-virtual {v5}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
@@ -660,15 +683,15 @@
 
     invoke-direct {v4, v7}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 912
+    .line 916
     .local v4, ovlFile:Ljava/io/File;
     invoke-virtual {v4}, Ljava/io/File;->exists()Z
 
     move-result v7
 
-    if-eqz v7, :cond_0
+    if-eqz v7, :cond_1
 
-    .line 913
+    .line 917
     new-instance v3, Ljava/io/FileInputStream;
 
     invoke-direct {v3, v4}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
@@ -684,7 +707,7 @@
     .restart local v2       #inputStream:Ljava/io/InputStream;
     goto :goto_1
 
-    .line 919
+    .line 923
     .end local v1           #file:Ljava/io/File;
     .end local v4           #ovlFile:Ljava/io/File;
     .end local v5           #ovlPath:Ljava/lang/StringBuffer;
@@ -692,18 +715,18 @@
     :catch_0
     move-exception v0
 
-    .line 920
+    .line 924
     .local v0, e:Ljava/io/FileNotFoundException;
     invoke-virtual {v0}, Ljava/io/FileNotFoundException;->printStackTrace()V
 
     goto :goto_1
 
-    .line 921
+    .line 925
     .end local v0           #e:Ljava/io/FileNotFoundException;
     :catch_1
     move-exception v0
 
-    .line 922
+    .line 926
     .local v0, e:Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
