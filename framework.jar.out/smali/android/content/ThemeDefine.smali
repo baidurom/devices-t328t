@@ -134,6 +134,14 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    sget-object v0, Landroid/content/ThemeDefine;->IconPath:Ljava/util/HashMap;
+
+    const-string v1, "/ic_launcher_smsmms.png"
+
+    const-string v2, "com.android.mms"
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 107
     return-void
 .end method
