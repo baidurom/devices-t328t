@@ -32,5 +32,5 @@ if [ $APKNAME == "Settings" ];then
 fi
 
 if [ $APKNAME == "framework-res" ];then
-	find $OUTPATH -type d -name "*xhdpi" | xargs rm -rf
+        rm -rf $OUTPATH/res/values-xhdpi
 fi
