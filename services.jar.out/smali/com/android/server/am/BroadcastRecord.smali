@@ -93,7 +93,7 @@
 
     const/4 v1, 0x1
 
-    const-string v2, "com.android.mms"
+    const-string v2, "com.android.contacts"
 
     aput-object v2, v0, v1
 
