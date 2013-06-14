@@ -21,14 +21,4 @@ if [ $APKNAME == "android.policy" ];then
 
         cat $file >> $dstfile
     done
-    cd $OUTPATH
-    patch -p0 < $PRJROOT/other/patch_for_policy/*.patch
-    if [ $? != "0" -o -f smali/com/baidu/keyguard/rom/sdk/ConstellationView/ConstellationViewHelper.smali.orig ];then
-         echo "ERROR: can not apply patch for policy to avoid reboot"
-	 cp smali/com/baidu/keyguard/rom/sdk/ConstellationView/ConstellationViewHelper.smali.orig smali/com/baidu/keyguard/rom/sdk/ConstellationView/ConstellationViewHelper.smali
-	 cd -
-	 exit 1
-    fi
-    echo "patch for policy SUCCESS"
-    cd -
 fi
