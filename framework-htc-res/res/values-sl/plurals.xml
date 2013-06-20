@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="secure_wifi_available">
+        <item quantity="other">Najdena brezžična omrežja</item>
+        <item quantity="one">Najdeno brezžično omrežje</item>
+    </plurals>
+    <plurals name="secure_wifi_available_detailed">
+        <item quantity="other">Na voljo so brezžična omrežja</item>
+        <item quantity="one">Na voljo je brezžično omrežje</item>
+    </plurals>
+</resources>

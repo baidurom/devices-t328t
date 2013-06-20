@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="seekbar_length">615</integer>
+    <integer name="signalbar_space">4</integer>
+    <integer name="japan_seekbar_length">504</integer>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.htc.widget.HtcOverlapLayout android:orientation="vertical" android:id="@id/edit_preset" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:htcfooter="http://schemas.android.com/apk/res/com.htc">
+    <com.htc.widget.HtcFooter android:id="@id/edit_footer" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.htc.widget.HtcFooterButton android:id="@com.htc:attr/fullDark" android:text="@string/cancel" htcfooter:footerButtonImage="@com.htc:drawable/icon_btn_cancel_dark" />
+        <com.htc.widget.HtcFooterButton android:id="@com.htc:attr/fakescreenStyle" android:text="@com.htc:string/va_save" htcfooter:footerButtonImage="@com.htc:drawable/icon_btn_save_dark" />
+    </com.htc.widget.HtcFooter>
+    <ScrollView android:id="@id/scrollView" android:background="#ffffffff" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <LinearLayout android:orientation="vertical" android:id="@id/mainScreen" android:background="@com.htc:drawable/common_list_item_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:id="@id/edit_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@com.htc:dimen/margin_m" android:layout_marginRight="@com.htc:dimen/margin_m" android:text="@string/fm_preset_edit_title" android:singleLine="true" style="@com.htc:style/list_secondary_xs" />
+                <com.htc.widget.HtcAutoCompleteTextView android:layout_gravity="left" android:id="@id/preset_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@com.htc:dimen/margin_m" android:layout_marginRight="@com.htc:dimen/margin_m" android:layout_marginBottom="@com.htc:dimen/margin_s" android:scrollHorizontally="true" android:singleLine="true" style="@com.htc:style/list_primary_s" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</com.htc.widget.HtcOverlapLayout>

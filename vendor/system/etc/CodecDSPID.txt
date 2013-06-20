@@ -1,0 +1,52 @@
+Header, RPO#TD_soundeffet_2012_0420
+## Group for phone ##
+Phone_Default,/system/etc/soundimage/Sound_Phone_Original_REC.txt
+Phone_Handset_Dualmic,/system/etc/soundimage/Sound_Phone_Original_REC.txt
+Phone_Speaker_Dualmic,/system/etc/soundimage/Sound_Phone_Original_SPK.txt
+Phone_Headset,/system/etc/soundimage/Sound_Phone_Original_HP.txt
+Phone_HAC,
+Phone_TTY,
+Phone_BT,/system/etc/soundimage/Sound_Phone_Original_BT.txt
+Phone_Handset_Dualmic_WB,
+Phone_Speaker_Dualmic_WB,
+Phone_Headset_WB,
+Phone_Dock,
+
+## Group for playback ## 
+Playback_Default,
+Playback_Speaker_Default,/system/etc/soundimage/Sound_Original_SPK.txt
+Playback_Headset_Generic,
+Playback_Headset_urBeats,
+Playback_Headset_Solo,
+Playback_Headset_Pro,
+Playback_Headset_Studio,
+Playback_SPK_Beats,
+Playback_Dock,
+
+## Group for recording ##
+Record_Default,/system/etc/soundimage/Sound_Original_Recording.txt
+Record_V_Mono,/system/etc/soundimage/Sound_Original_Recording.txt
+Record_V_IMIC_Landscape_Stereo,/system/etc/soundimage/Sound_Original_Recording.txt
+Record_V_IMIC_Portrait_Stereo,/system/etc/soundimage/Sound_Original_Recording.txt
+Record_A_VoiceRecoder_AMR,/system/etc/soundimage/Sound_Original_Recording.txt
+Record_A_VOiceRecoder_AAC,/system/etc/soundimage/Sound_Original_Recording.txt
+Record_A_Note_Recording,/system/etc/soundimage/Sound_Original_Recording.txt
+Record_A_Speaker_VR,/system/etc/soundimage/Sound_Original_Recording.txt
+
+## Group for FM ##
+FM_Headset,/system/etc/soundimage/Sound_FM_HP.txt
+FM_Speaker,/system/etc/soundimage/Sound_FM_SPK.txt
+
+
+
+## Group for VOIP ##
+VOIP_Receiver,
+VOIP_Speaker,
+VOIP_Headset,
+VOIP_BT,
+
+#################
+SKYPE_Receiver,
+SKYPE_Speaker,
+SPYPE_Headset,
+

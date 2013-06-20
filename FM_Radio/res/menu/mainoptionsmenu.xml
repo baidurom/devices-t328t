@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/music_action_soundhound" android:id="@id/OPTION_SOUNDHOUND" android:visible="false" android:title="@string/sound_hound" android:showAsAction="never" />
+    <item android:icon="@com.htc:drawable/icon_btn_list_view_dark" android:id="@id/OPTION_PRESETS" android:title="@string/string_all_presets" android:showAsAction="always" />
+    <item android:icon="@drawable/icon_btn_power_on_dark" android:id="@id/OPTION_POWER" android:title="@string/button_power" android:showAsAction="always" />
+    <item android:id="@id/OPTION_ADD" android:title="@com.htc:string/va_add" />
+    <item android:id="@id/OPTION_MUTE" android:title="@com.htc:string/st_mute" />
+    <item android:id="@id/OPTION_STEREO" android:title="@string/fm_option_stereo" />
+    <item android:id="@id/OPTION_SPEAKER" android:title="@string/fm_option_headset" />
+    <item android:id="@id/OPTION_SCANSAVE" android:title="@string/fm_option_scansave" />
+    <item android:id="@id/OPTION_BAND_SWITCH" android:visible="false" android:title="@string/fm_option_band_jp" />
+</menu>

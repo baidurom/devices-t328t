@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="message">false</item>
+    <item type="id" name="remind">false</item>
+    <item type="id" name="remind_me">false</item>
+    <item type="id" name="menu_tips">false</item>
+    <item type="id" name="menu_message">false</item>
+    <item type="id" name="menu_remind_me_cb">false</item>
+    <item type="id" name="menu_remind_me_text">false</item>
+    <item type="id" name="wifi_p2p_wps_pin">false</item>
+</resources>

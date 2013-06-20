@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">Wi-Fi כבוי</string>
+    <string name="vzw_wifi_off_notify_description">הקש כדי להפעיל Wi-Fi</string>
+    <string name="vzw_wifi_noap_notify_title">לא אותרו רשתות Wi-Fi</string>
+    <string name="vzw_wifi_noap_notify_description">הקש כדי לעבור להגדרות</string>
+    <string name="vzw_wifi_notconnect_notify_title">ישנן רשתות אלחוטיות זמינות</string>
+    <string name="vzw_wifi_notconnect_notify_description">הקש כדי להציג רשתות אלחוטיות זמינות</string>
+    <string name="vzw_wifi_connected_notify_title">מחובר אל:</string>
+    <string name="vzw_wifi_connected_notify_description">הקש כדי לעבור להגדרות</string>
+    <string name="permlab_accessWirelessDisplayService">השתמש ב-WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">אפשר ליישום להשתמש בכל ה-API של WirelessDisplayService</string>
+    <string name="shutdown_hw_reset_notify_text">לאיתחול הטלפון, המשך ללחוץ לחיצה ממושכת על כפתור ההפעלה למשך %1$d שניות.</string>
+    <string name="shutdown_hw_reset_notify_text_singular">לאיתחול הטלפון, המשך ללחוץ לחיצה ממושכת על כפתור ההפעלה לשניה 1.</string>
+    <string name="powerOptions_power_off_status">כבה טלפון</string>
+    <string name="powerOptions_restart">אתחל</string>
+    <string name="powerOptions_restart_status">סגור את כל היישומים ואתחל את הטלפון</string>
+    <string name="dongle_noti_text_connected">מחובר</string>
+    <string name="dongle_noti_text_disconnected">מנותק</string>
+    <string name="dongle_noti_ticker_connected">התקן Media Link HD מחובר</string>
+    <string name="navigation_bar_menu_title">טיפים</string>
+    <string name="navigation_bar_menu_message">לחץ לחיצה ממושכת על כפתור \"יישומים אחרונים\" בצד הימני נתחת למסך כדי לצפות בתפריט היישום.</string>
+    <string name="navigation_bar_menu_remind_me">אל תציג שוב הודעה זו</string>
+    <string name="ringtone_default_with_actual">Default ringtone</string>
+    <string name="ringtone_default_notification_with_actual">התראת ברירת מחדל</string>
+    <string name="ringtone_default_alarm_with_actual">Default alarm</string>
+    <string name="ni_timeout_listview_title">כל ההודעה</string>
+    <string name="ni_timeout_listview_item_title">תם הזמן לבקשת המיקום</string>
+    <string name="ni_timeout_default_accept">"מבקש את מיקומך.
+המיקום נשלח."</string>
+    <string name="ni_timeout_default_deny">"מבקש את מיקומך.
+בקשת המיקום תידחה כשיתם הזמן."</string>
+    <string name="ni_timeout_dialog_title">תם הזמן למיקום</string>
+    <string name="ni_dialog_default_accept">"מבקש את מיקומך.
+קבל כדי להחזיר מיקום כשיתם הזמן. האם ברצונך לשלוח את זה?"</string>
+    <string name="ni_dialog_default_deny">"מבקש את מיקומך.
+סרב לחזור למיקומך כאשר תם הזמן. האם ברצונך לשלוח זאת?"</string>
+    <string name="ni_notification_tile">בקשת מיקום AGPS</string>
+    <string name="ni_timeout_notification_tile">בקשת מיקום AGPS</string>
+    <string name="ni_timeout_notification_message">הודעה שלא נקראה</string>
+    <string name="ni_timeout_notification_tickerText">תם הזמן לבקשת המיקום</string>
+    <string name="ni_phone_interaction_message">הופעלה בקשת מיקום מרחוק. האם ברצונך להמשיך את בקשת המיקום?</string>
+</resources>

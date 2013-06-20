@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="htc_mCnMonths">
+        <item>正月</item>
+        <item>二月</item>
+        <item>三月</item>
+        <item>四月</item>
+        <item>五月</item>
+        <item>六月</item>
+        <item>七月</item>
+        <item>八月</item>
+        <item>九月</item>
+        <item>十月</item>
+        <item>十一月</item>
+        <item>十二月</item>
+    </string-array>
+    <string-array name="htc_mCnDays">
+        <item>初一</item>
+        <item>初二</item>
+        <item>初三</item>
+        <item>初四</item>
+        <item>初五</item>
+        <item>初六</item>
+        <item>初七</item>
+        <item>初八</item>
+        <item>初九</item>
+        <item>初十</item>
+        <item>十一</item>
+        <item>十二</item>
+        <item>十三</item>
+        <item>十四</item>
+        <item>十五</item>
+        <item>十六</item>
+        <item>十七</item>
+        <item>十八</item>
+        <item>十九</item>
+        <item>二十</item>
+        <item>廿一</item>
+        <item>廿二</item>
+        <item>廿三</item>
+        <item>廿四</item>
+        <item>廿五</item>
+        <item>廿六</item>
+        <item>廿七</item>
+        <item>廿八</item>
+        <item>廿九</item>
+        <item>三十</item>
+    </string-array>
+    <string-array name="htc_mCnDaysSmall">
+        <item>初一</item>
+        <item>初二</item>
+        <item>初三</item>
+        <item>初四</item>
+        <item>初五</item>
+        <item>初六</item>
+        <item>初七</item>
+        <item>初八</item>
+        <item>初九</item>
+        <item>初十</item>
+        <item>十一</item>
+        <item>十二</item>
+        <item>十三</item>
+        <item>十四</item>
+        <item>十五</item>
+        <item>十六</item>
+        <item>十七</item>
+        <item>十八</item>
+        <item>十九</item>
+        <item>二十</item>
+        <item>廿一</item>
+        <item>廿二</item>
+        <item>廿三</item>
+        <item>廿四</item>
+        <item>廿五</item>
+        <item>廿六</item>
+        <item>廿七</item>
+        <item>廿八</item>
+        <item>廿九</item>
+    </string-array>
+    <string-array name="htc_mCnGans">
+        <item>甲</item>
+        <item>乙</item>
+        <item>丙</item>
+        <item>丁</item>
+        <item>戊</item>
+        <item>己</item>
+        <item>庚</item>
+        <item>辛</item>
+        <item>壬</item>
+        <item>癸</item>
+    </string-array>
+    <string-array name="htc_mCnZhis">
+        <item>子</item>
+        <item>丑</item>
+        <item>寅</item>
+        <item>卯</item>
+        <item>辰</item>
+        <item>巳</item>
+        <item>午</item>
+        <item>未</item>
+        <item>申</item>
+        <item>酉</item>
+        <item>戌</item>
+        <item>亥</item>
+    </string-array>
+    <string-array name="htc_mCnZodiacs">
+        <item>鼠</item>
+        <item>牛</item>
+        <item>虎</item>
+        <item>兔</item>
+        <item>龍</item>
+        <item>蛇</item>
+        <item>馬</item>
+        <item>羊</item>
+        <item>猴</item>
+        <item>雞</item>
+        <item>狗</item>
+        <item>豬</item>
+    </string-array>
+    <string-array name="htc_mSolarTerms">
+        <item>小寒</item>
+        <item>大寒</item>
+        <item>立春</item>
+        <item>雨水</item>
+        <item>驚蟄</item>
+        <item>春分</item>
+        <item>清明</item>
+        <item>穀雨</item>
+        <item>立夏</item>
+        <item>小滿</item>
+        <item>芒種</item>
+        <item>夏至</item>
+        <item>小暑</item>
+        <item>大暑</item>
+        <item>立秋</item>
+        <item>處暑</item>
+        <item>白露</item>
+        <item>秋分</item>
+        <item>寒露</item>
+        <item>霜降</item>
+        <item>立冬</item>
+        <item>小雪</item>
+        <item>大雪</item>
+        <item>冬至</item>
+    </string-array>
+    <string-array name="htc_SolarHolidays">
+        <item>元旦</item>
+        <item>情人節</item>
+        <item>婦女節</item>
+        <item>植樹節</item>
+        <item>勞動節</item>
+        <item>青年節</item>
+        <item>兒童節</item>
+        <item>建黨節</item>
+        <item>建軍節</item>
+        <item>教師節</item>
+        <item>國慶日</item>
+        <item>耶誕節</item>
+    </string-array>
+    <string-array name="htc_SolarHolidays_date">
+        <item>0101</item>
+        <item>0214</item>
+        <item>0308</item>
+        <item>0312</item>
+        <item>0501</item>
+        <item>0504</item>
+        <item>0601</item>
+        <item>0701</item>
+        <item>0801</item>
+        <item>0910</item>
+        <item>1001</item>
+        <item>1225</item>
+    </string-array>
+    <string-array name="htc_LunarHolidays">
+        <item>春節</item>
+        <item>元宵節</item>
+        <item>端午節</item>
+        <item>七夕</item>
+        <item>中秋節</item>
+        <item>重陽節</item>
+    </string-array>
+    <string-array name="htc_LunarHolidays_date">
+        <item>0101</item>
+        <item>0115</item>
+        <item>0505</item>
+        <item>0707</item>
+        <item>0815</item>
+        <item>0909</item>
+    </string-array>
+    <string-array name="htc_Japanease_Holidays_date">
+        <item>0101</item>
+        <item>0211</item>
+        <item>0429</item>
+        <item>0503</item>
+        <item>0504</item>
+        <item>0505</item>
+        <item>1103</item>
+        <item>1123</item>
+        <item>1223</item>
+    </string-array>
+    <string-array name="htc_Japanease_Holidays">
+        <item>元日</item>
+        <item>建国記念の日</item>
+        <item>昭和の日</item>
+        <item>憲法記念日</item>
+        <item>みどり の日</item>
+        <item>こども の日</item>
+        <item>文化の日</item>
+        <item>勤労感謝の日</item>
+        <item>天皇誕生日</item>
+    </string-array>
+    <string-array name="localized_opertator_name">
+        <item>45412,CMCC PEOPLES</item>
+        <item>46000,CMCC</item>
+        <item>46001,China Unicom</item>
+        <item>46002,CMCC</item>
+        <item>46003,China Telcom</item>
+        <item>46007,CMCC</item>
+        <item>45502,China Telecom(Macau)</item>
+        <item>45429,PCCW Mobile CDMA</item>
+        <item>46601,Far EasTone</item>
+        <item>46605,APBW</item>
+        <item>46606,TUNTEX</item>
+        <item>46668,ACeS</item>
+        <item>46688,KGT-Online</item>
+        <item>46689,VIBO</item>
+        <item>46692,Chunghwa</item>
+        <item>46693,MOBITAI</item>
+        <item>46697,TW Mobile</item>
+        <item>46699,TransAsia</item>
+    </string-array>
+    <integer-array name="htc_config_threeFingersSwipeVibePattern">
+        <item>0</item>
+        <item>30</item>
+    </integer-array>
+    <integer-array name="htc_config_virtualKeyVibePattern">
+        <item>0</item>
+        <item>20</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+</resources>

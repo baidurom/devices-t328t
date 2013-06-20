@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">Wi-Fi Pois päältä</string>
+    <string name="vzw_wifi_off_notify_description">Napauta käynnistääksesi Wi-Fin</string>
+    <string name="vzw_wifi_noap_notify_title">Wi-Fi-verkkoja ei tunnisteta</string>
+    <string name="vzw_wifi_noap_notify_description">Napauta siirtyäksesi asetuksiin</string>
+    <string name="vzw_wifi_notconnect_notify_title">Langattomat verkot käytettävissä</string>
+    <string name="vzw_wifi_notconnect_notify_description">Napauta nähdäksesi käytettävissä olevat langattomat verkot</string>
+    <string name="vzw_wifi_connected_notify_title">Liitetty kohteeseen:</string>
+    <string name="vzw_wifi_connected_notify_description">Napauta siirtyäksesi asetuksiin</string>
+    <string name="permlab_accessWirelessDisplayService">käytä WirelessDisplayService-palvelua</string>
+    <string name="permdesc_accessWirelessDisplayService">Anna sovelluksen käyttää kaikkia WirelessDisplayService API -palveluja</string>
+    <string name="shutdown_hw_reset_notify_text">Käynnistä puhelin uudelleen pitämällä virtapainiketta painettuna %1$d sekuntia.</string>
+    <string name="shutdown_hw_reset_notify_text_singular">Käynnistä puhelin uudelleen pitämällä virtapainiketta painettuna 1 sekunti.</string>
+    <string name="powerOptions_power_off_status">Sulje puhelin</string>
+    <string name="powerOptions_restart">Käynnistä uudelleen</string>
+    <string name="powerOptions_restart_status">Sulje kaikki sovellukset ja käynnistä puhelin uudelleen</string>
+    <string name="dongle_noti_text_connected">Yhdistetty</string>
+    <string name="dongle_noti_text_disconnected">Irrotettu</string>
+    <string name="dongle_noti_ticker_connected">Media Link HD -laite yhdistetty</string>
+    <string name="navigation_bar_menu_title">Vinkit</string>
+    <string name="navigation_bar_menu_message">Pidä näytössä oikealla alhaalla olevaa Viimeisimmät sovellukset -painiketta painettuna nähdäksesi tämän sovelluksen valikon.</string>
+    <string name="navigation_bar_menu_remind_me">Älä näytä tätä viestiä uudelleen</string>
+    <string name="ringtone_default_with_actual">Oletussoittoääni</string>
+    <string name="ringtone_default_notification_with_actual">Oletusilmoitus</string>
+    <string name="ringtone_default_alarm_with_actual">Oletushälytys</string>
+    <string name="ni_timeout_listview_title">Kaikki viestit</string>
+    <string name="ni_timeout_listview_item_title">Sijainnin pyynnön aikakatkaisu</string>
+    <string name="ni_timeout_default_accept">"pyytää sijaintiasi.
+Sijaintia lähetetään."</string>
+    <string name="ni_timeout_default_deny">"pyytää sijaintiasi.
+Sijainti kielletään aikakatkaisussa."</string>
+    <string name="ni_timeout_dialog_title">Sijainnin aikakatkaisu</string>
+    <string name="ni_dialog_default_accept">"pyytää sijaintiasi.
+Hyväksy palataksesi sijaintiin aikakatkaisussa. Haluatko lähettää sen?"</string>
+    <string name="ni_dialog_default_deny">"pyytää sijaintiasi.
+Kiellä palataksesi sijaintiin aikakatkaisussa. Haluatko lähettää sen?"</string>
+    <string name="ni_notification_tile">AGPS sijaintipyyntö</string>
+    <string name="ni_timeout_notification_tile">AGPS sijaintipyyntö</string>
+    <string name="ni_timeout_notification_message">Lukematon viesti</string>
+    <string name="ni_timeout_notification_tickerText">Sijainnin pyynnön aikakatkaisu</string>
+    <string name="ni_phone_interaction_message">Etäsijainnin pyyntö aktivoituu. Haluatko jatkaa sijainnin pyyntöä?</string>
+</resources>

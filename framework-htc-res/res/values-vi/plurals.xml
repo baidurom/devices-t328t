@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="secure_wifi_available">
+        <item quantity="other">Đã tìm thấy các mạng Wi-Fi</item>
+        <item quantity="one">Đã tìm thấy mạng Wi-Fi</item>
+    </plurals>
+    <plurals name="secure_wifi_available_detailed">
+        <item quantity="other">Các mạng Wi-Fi sẵn sàng</item>
+        <item quantity="one">Mạng Wi-Fi sẵn sàng</item>
+    </plurals>
+</resources>

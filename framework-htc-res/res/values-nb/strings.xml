@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">Wi-Fi av</string>
+    <string name="vzw_wifi_off_notify_description">Trykk for å slå Wi-Fi på</string>
+    <string name="vzw_wifi_noap_notify_title">Ingen Wi-Fi-nettverk oppdaget</string>
+    <string name="vzw_wifi_noap_notify_description">Klikk for å gå til innstillinger</string>
+    <string name="vzw_wifi_notconnect_notify_title">Tilgjengelige trådløse nettverk</string>
+    <string name="vzw_wifi_notconnect_notify_description">Trykk for å se tilgjengelige trådløse nettverk</string>
+    <string name="vzw_wifi_connected_notify_title">Koblet til:</string>
+    <string name="vzw_wifi_connected_notify_description">Klikk for å gå til innstillinger</string>
+    <string name="permlab_accessWirelessDisplayService">bruk WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">Lar en applikasjon bruke hele WirelessDisplayService API</string>
+    <string name="shutdown_hw_reset_notify_text">Fortsett å trykke og holde strømknappen i %1$d sekunder for å starte telefonen på nytt.</string>
+    <string name="shutdown_hw_reset_notify_text_singular">Fortsett å trykke og holde strømknappen i 1 sekund for å starte telefonen på nytt.</string>
+    <string name="powerOptions_power_off_status">Steng av telefonen</string>
+    <string name="powerOptions_restart">Start på nytt</string>
+    <string name="powerOptions_restart_status">Lukk alle applikasjoner og start telefonen på nytt</string>
+    <string name="dongle_noti_text_connected">Tilkoblet</string>
+    <string name="dongle_noti_text_disconnected">Frakoblet</string>
+    <string name="dongle_noti_ticker_connected">Media Link HD-enhet koblet til</string>
+    <string name="navigation_bar_menu_title">Tips</string>
+    <string name="navigation_bar_menu_message">Trykk og hold Nylige apper-knappen på høyre side under skjermen for å se menyen for denne appen.</string>
+    <string name="navigation_bar_menu_remind_me">Ikke vis denne meldingen igjen</string>
+    <string name="ringtone_default_with_actual">Standard ringetone</string>
+    <string name="ringtone_default_notification_with_actual">Standardvarsling</string>
+    <string name="ringtone_default_alarm_with_actual">Standardalarm</string>
+    <string name="ni_timeout_listview_title">Hele meldingen</string>
+    <string name="ni_timeout_listview_item_title">Tidsavbrudd for plasseringsanmodning</string>
+    <string name="ni_timeout_default_accept">"ber om plasseringen din.
+Plasseringen overføres."</string>
+    <string name="ni_timeout_default_deny">"ber om din plassering.
+Plassering blir avvist ved tidsavbrudd."</string>
+    <string name="ni_timeout_dialog_title">Plasseringstidsavbrudd</string>
+    <string name="ni_dialog_default_accept">"ber om din plassering.
+Godta å returnere plassering ved tidsavbrudd. Vil du sende den?"</string>
+    <string name="ni_dialog_default_deny">"ber om din plassering.
+Avvis å returnere plassering ved tidsavbrudd. Vil du sende den?"</string>
+    <string name="ni_notification_tile">Anmodning om AGPS-plassering</string>
+    <string name="ni_timeout_notification_tile">Anmodning om AGPS-plassering</string>
+    <string name="ni_timeout_notification_message">Ulest melding</string>
+    <string name="ni_timeout_notification_tickerText">Tidsavbrudd for plasseringsanmodning</string>
+    <string name="ni_phone_interaction_message">En ekstern plasseringsanmodning aktiveres. Vil du fortsette plasseringsanmodningen?</string>
+</resources>

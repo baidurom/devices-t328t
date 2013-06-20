@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="fmradio_db_version">1</integer>
+    <integer name="FreqRollBar_Helf_Heigh">125</integer>
+    <integer name="RightMarginOfPresetTitleInList">63</integer>
+    <integer name="ListItemHeightOfPresetTitleInList">73</integer>
+    <integer name="default_band">0</integer>
+</resources>

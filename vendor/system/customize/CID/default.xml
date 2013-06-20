@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<customization_form>
+  <category name="system">
+    <module name="locale">
+      <function>
+        <set name="single">
+          <item name="total_list">en_CN;zh_CN;zh_TW;</item>
+          <item type="boolean" name="en_CN">yes</item>
+          <item type="boolean" name="zh_CN">yes</item>
+          <item type="boolean" name="zh_TW">yes</item>
+        </set>
+      </function>
+    </module>
+    <module name="InputMethod">
+      <function name="IME_language_set">
+        <set name="single">
+          <item type="boolean" name="English">yes</item>
+        </set>
+      </function>
+      <function name="IME_sip_set">
+        <set name="single">
+          <item name="total_list">Handwriting;ZuhYin;CangJie;PinYin;Stroke;</item>
+          <item type="boolean" name="Handwriting">yes</item>
+          <item type="boolean" name="ZuhYin">no</item>
+          <item type="boolean" name="CangJie">no</item>
+          <item type="boolean" name="PinYin">yes</item>
+          <item type="boolean" name="Stroke">yes</item>
+        </set>
+      </function>
+    </module>
+    <module name="deviceData">
+      <function>
+        <set name="single">
+          <item name="device_name">HTC T328t</item>
+        </set>
+      </function>
+    </module>
+    <module name="deviceData1">
+      <function>
+        <set name="single">
+          <item name="sw_number">1.0.0.T328t</item>
+        </set>
+      </function>
+    </module>
+    <module name="Settings">
+      <function name="screen_timeout">
+        <set name="plenty">
+          <item name="value1">15000</item>
+          <item name="value2">30000</item>
+          <item name="value3">45000</item>
+          <item name="value4">60000</item>
+          <item name="value5">120000</item>
+          <item name="value6">600000</item>
+          <item name="value7">-1</item>
+        </set>
+      </function>
+    </module>
+    <module name="defaultAutoTime">
+      <function>
+        <set name="single">
+          <item name="default">0</item>
+        </set>
+      </function>
+    </module>
+    <module name="defaultTime1224">
+      <function>
+        <set name="single">
+          <item name="default">24</item>
+        </set>
+      </function>
+    </module>
+    <module name="defaultTimeZone">
+      <function>
+        <set name="single">
+          <item name="default">Asia/Shanghai</item>
+        </set>
+      </function>
+    </module>
+    <module name="defaultAutoTimeZone">
+      <function>
+        <set name="single">
+          <item name="default">0</item>
+        </set>
+      </function>
+    </module>
+  </category>
+  <category name="application">
+    <module name="OOBE">
+      <function name="Step_Config">
+        <set name="single">
+          <item name="Location_Consent" type="boolean">no</item>
+          <item name="Dropbox" type="boolean">no</item>
+        </set>
+      </function>
+      <function name="Account_Config">
+        <set name="single">
+          <item name="GMail" type="boolean">no</item>
+        </set>
+      </function>
+    </module>
+    <module name="Crash_Report">
+      <function name="setting">
+        <set name="single">
+          <item name="turn_off_report" type="boolean">yes</item>
+          <item name="turn_off_application_log" type="boolean">yes</item>
+        </set>
+      </function>
+    </module>
+    <module name="MediaScanner">
+      <function name="default_locale">
+        <set name="single">
+          <item name="locale">zh_CN</item>
+        </set>
+      </function>
+    </module>
+    <module name="Wifihotspot">
+      <function name="usermanagement">
+        <set name="plenty" max="15">
+          <item name="max_connection">5</item>
+          <item name="connection_array">8</item>
+        </set>
+      </function>
+    </module>
+    <module name="Phone">
+      <function name="ip_dial">
+        <set name="single">
+          <item name="enabled">true</item>
+          <item name="number1">17951</item>
+          <item name="number2">12593</item>
+        </set>
+      </function>
+    </module>
+    <module name="worldclock">
+      <function name="settings">
+        <set name="single">
+          <item name="offAlarm">true</item>
+        </set>
+      </function>
+    </module>
+  </category>
+  <BootConfiguration>
+    <BootAnimation animation="/system/customize/resource/hTC_bootup.zip" audio="/system/customize/resource/htc_boot.mp3" audiostart="cmcc" />
+  </BootConfiguration>
+  <ShutdownConfiguration>
+    <ShutdownAnimation image_png="/system/customize/resource/htc_downanimation.zip" image="" fps="30" audio="/system/customize/resource/htc_boot.mp3" useAudio="1" />
+  </ShutdownConfiguration>
+  <category name="SettingsProvider">
+    <module name="res">
+      <function name="values">
+        <set name="single">
+          <item name="def_animation_scale">0%;0%</item>
+          <item name="def_install_non_market_apps">1</item>
+          <item name="def_airplane_mode_toggleable_radios">null</item>
+          <item name="def_htc_mobile_network_on">true</item>
+          <item name="def_2g_on">2</item>
+        </set>
+      </function>
+    </module>
+  </category>
+  <category name="Settings">
+    <module name="list">
+      <function name="blocked_applications">
+        <set name="single">
+          <item name="0">cn.com.fetion</item>
+          <item name="1">com.mogenesis.product.pim</item>
+          <item name="2">com.cmcc.mv</item>
+          <item name="3">com.ophone.reader.ui</item>
+          <item name="4">com.aspire.mm</item>
+          <item name="5">com.htc.android.teeter</item>
+          <item name="6">com.htc.friendstream</item>
+          <item name="7">com.mapbar.android.mapbarmap</item>
+          <item name="8">com.sina.mfweibo</item>
+          <item name="9">com.renren.mobile.android</item>
+          <item name="10">com.kaixin001.activity</item>
+          <item name="11">com.htc.laputa.HtcLaputaInstaller</item>
+          <item name="12">com.inventec.dreye.htc</item>
+          <item name="13">com.aspire.g3wlan.client</item>
+          <item name="14">com.adobe.reader</item>
+          <item name="15">com.infraware.docmaster</item>
+          <item name="16">com.soco</item>
+        </set>
+      </function>
+    </module>
+    <module name="properties">
+      <function>
+        <set name="single">
+          <item name="market_name">HTC T328t</item>
+        </set>
+      </function>
+    </module>
+  </category>
+  <category name="framework">
+    <module name="ShareVia">
+      <function name="settings">
+        <set name="single">
+          <item name="com.htc.socialnetwork.facebook">7</item>
+          <item name="com.htc.htctwitter">6</item>
+          <item name="com.htc.android.mail">5</item>
+          <item name="com.dropbox.android">4</item>
+          <item name="com.htc.cloudstorage.skydrive">3</item>
+          <item name="com.htc.notes">2</item>
+          <item name="com.android.bluetooth">1</item>
+        </set>
+      </function>
+    </module>
+  </category>
+</customization_form>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="secure_wifi_available">
+        <item quantity="other">找到 Wi-Fi 網路</item>
+        <item quantity="one">找到 Wi-Fi 網路</item>
+    </plurals>
+    <plurals name="secure_wifi_available_detailed">
+        <item quantity="other">有可用的 Wi-Fi 網路</item>
+        <item quantity="one">有一個可用的 Wi-Fi 網路</item>
+    </plurals>
+</resources>

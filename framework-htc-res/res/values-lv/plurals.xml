@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="secure_wifi_available">
+        <item quantity="other">Atrasti Wi-Fi tīkli</item>
+        <item quantity="one">Atrasts Wi-Fi tīkls</item>
+    </plurals>
+    <plurals name="secure_wifi_available_detailed">
+        <item quantity="other">Pieejami Wi-Fi tīkli</item>
+        <item quantity="one">Pieejams Wi-Fi tīkls</item>
+    </plurals>
+</resources>

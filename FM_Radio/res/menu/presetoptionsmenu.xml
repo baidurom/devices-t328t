@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@com.htc:drawable/icon_btn_edit_dark" android:id="@id/MODE_RENAME" android:title="@com.htc:string/va_rename" android:showAsAction="always" />
+    <item android:icon="@com.htc:drawable/icon_btn_delete_dark" android:id="@id/MODE_DELETE" android:title="@string/delete" android:showAsAction="always" />
+    <item android:icon="@com.htc:drawable/icon_btn_add_dark" android:id="@id/MODE_ADD" android:title="@com.htc:string/va_add" android:showAsAction="always" />
+    <item android:icon="@drawable/icon_btn_selected_all_dark" android:id="@id/MODE_SELECT_ALL" android:visible="false" android:title="@string/select_all" android:showAsAction="never" />
+    <item android:icon="@drawable/icon_btn_unselect_all_dark" android:id="@id/MODE_UNSELECT_ALL" android:visible="false" android:title="@string/unselect_all" android:showAsAction="never" />
+</menu>

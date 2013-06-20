@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="secure_wifi_available">
+        <item quantity="other">Znaleziono sieci Wi-Fi</item>
+        <item quantity="one">Znaleziono sieć Wi-Fi</item>
+    </plurals>
+    <plurals name="secure_wifi_available_detailed">
+        <item quantity="other">Sieci Wi-Fi są dostępne</item>
+        <item quantity="one">Sieć Wi-Fi jest dostępna</item>
+    </plurals>
+</resources>

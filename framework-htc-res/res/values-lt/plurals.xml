@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="secure_wifi_available">
+        <item quantity="other">Rasta Wi-Fi tinklų</item>
+        <item quantity="one">Rastas Wi-Fi tinklas</item>
+    </plurals>
+    <plurals name="secure_wifi_available_detailed">
+        <item quantity="other">Pasiekiami Wi-Fi tinklai</item>
+        <item quantity="one">Yra pasiekiamas Wi-Fi tinklas</item>
+    </plurals>
+</resources>

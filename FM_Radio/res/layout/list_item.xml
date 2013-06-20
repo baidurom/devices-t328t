@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.htc.widget.HtcListItem android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:htc="http://schemas.android.com/apk/res/com.htc">
+    <TextView android:id="@id/channel_freq" android:layout_width="fill_parent" android:layout_marginLeft="@com.htc:dimen/margin_m" style="@com.htc:style/list_primary_m_bold" />
+    <TextView android:id="@id/channel_mhz" android:layout_marginLeft="@com.htc:dimen/margin_m" android:text="@string/fm_label_mhz" style="@com.htc:style/list_primary_m_bold" />
+    <com.htc.widget.HtcListItem2LineText android:ellipsize="end" android:id="@id/channel_name" android:layout_marginLeft="@com.htc:dimen/margin_m" android:singleLine="true" style="@com.htc:style/list_primary_m_bold" />
+    <LinearLayout android:layout_gravity="right" android:orientation="horizontal" android:id="@id/browserList" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:id="@id/icon_nowplaying" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@com.htc:drawable/icon_indicator_sound" />
+        <com.htc.widget.HtcDeleteButton android:id="@id/delete_button" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+</com.htc.widget.HtcListItem>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">Мережа Wi-Fi вимкнута</string>
+    <string name="vzw_wifi_off_notify_description">Натисніть, щоб увімкнути Wi-Fi</string>
+    <string name="vzw_wifi_noap_notify_title">Мереж Wi-Fi не виявлено</string>
+    <string name="vzw_wifi_noap_notify_description">Натисніть, щоб перейти до налаштувань</string>
+    <string name="vzw_wifi_notconnect_notify_title">Доступні безпроводові мережі</string>
+    <string name="vzw_wifi_notconnect_notify_description">Натисніть, щоб переглянути доступні безпроводові мережі</string>
+    <string name="vzw_wifi_connected_notify_title">"З'єднано з:"</string>
+    <string name="vzw_wifi_connected_notify_description">Натисніть, щоб перейти до налаштувань</string>
+    <string name="permlab_accessWirelessDisplayService">використання WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">Дозвіл програмі використовувати усі API WirelessDisplayService</string>
+    <string name="shutdown_hw_reset_notify_text">Щоб перезапустити телефон, натисніть і утримуйте кнопку живлення протягом %1$d секунд.</string>
+    <string name="shutdown_hw_reset_notify_text_singular">Щоб перезапустити телефон, натисніть і утримуйте кнопку живлення протягом 1 секунди.</string>
+    <string name="powerOptions_power_off_status">Вимкнути телефон</string>
+    <string name="powerOptions_restart">Перезапуск</string>
+    <string name="powerOptions_restart_status">Закрити всі програми й перезапустити телефон</string>
+    <string name="dongle_noti_text_connected">"З'єднано"</string>
+    <string name="dongle_noti_text_disconnected">"Роз'єднано"</string>
+    <string name="dongle_noti_ticker_connected">"Пристрій Media Link HD під'єднано"</string>
+    <string name="navigation_bar_menu_title">Підказки</string>
+    <string name="navigation_bar_menu_message">Натисніть і утримуйте кнопку Останні програми у правій нижній частині екрана, щоб відкрити меню для цієї програми.</string>
+    <string name="navigation_bar_menu_remind_me">Більше не показувати це повідомлення</string>
+    <string name="ringtone_default_with_actual">Мелодія дзвінка за умовчанням</string>
+    <string name="ringtone_default_notification_with_actual">Сповіщення за умовчанням</string>
+    <string name="ringtone_default_alarm_with_actual">Сигнал за умовчанням</string>
+    <string name="ni_timeout_listview_title">All message</string>
+    <string name="ni_timeout_listview_item_title">Location request timeout</string>
+    <string name="ni_timeout_default_accept">"is requesting your location.
+Location is transmitting."</string>
+    <string name="ni_timeout_default_deny">"is requesting your location.
+Location is denied when timeout."</string>
+    <string name="ni_timeout_dialog_title">Location timeout</string>
+    <string name="ni_dialog_default_accept">"is requesting your location.
+Accept to return location when timeout. Do you want to send it?"</string>
+    <string name="ni_dialog_default_deny">"is requesting your location.
+Deny to return location when timeout. Do you want to send it?"</string>
+    <string name="ni_notification_tile">AGPS location request</string>
+    <string name="ni_timeout_notification_tile">AGPS location request</string>
+    <string name="ni_timeout_notification_message">Unread message</string>
+    <string name="ni_timeout_notification_tickerText">Location request timeout</string>
+    <string name="ni_phone_interaction_message">A remote location request is activating. Do you want to continue the location request?</string>
+</resources>

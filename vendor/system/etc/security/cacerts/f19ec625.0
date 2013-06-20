@@ -1,0 +1,75 @@
+-----BEGIN CERTIFICATE-----
+MIIDSzCCAjOgAwIBAgIBATANBgkqhkiG9w0BAQsFADBVMSgwJgYDVQQLEx9PcGVu
+Q2hhbm5lbCBQcmltYXJ5IENlcnRpZmljYXRlMRwwGgYDVQQKExNTRVZFTiBOZXR3
+b3JrcyBJbmMuMQswCQYDVQQGEwJVUzAeFw0xMTA3MDYyMzM3NDJaFw0zNjA3Mjky
+MzM3NDJaMFUxKDAmBgNVBAsTH09wZW5DaGFubmVsIFByaW1hcnkgQ2VydGlmaWNh
+dGUxHDAaBgNVBAoTE1NFVkVOIE5ldHdvcmtzIEluYy4xCzAJBgNVBAYTAlVTMIIB
+IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqevKKpa2lgDDbMdTzA4vAorb
+hWJwCxArAhBcXWhPbMi5RBsY3IBUGi1VfAObV3kSy+wnEyvZJf1EADxKHmeV8Fve
+cyru9n0dRM3dh9twJcsG5oT+xTF+m+cjQnJYkrzv75c0yPa00hGPx99svDiAu7pc
+yfRhYPSZd1ynf3DxqX1C0c00nhU7yhxYSdsoOuiMuEAo/i3KRFzjt3MuCwbvKw/l
+yyuPtx4ObyCjBbjdS24jos2V0+wJqd334kG06IMMKj3orArfjziBDuae0CCn4itZ
+nnxCfJNJ2HsG+6YWHAgqnXEiA0C56DQ347GO78N8RKows/PJ4afABT4i1dOb1wID
+AQABoyYwJDASBgNVHRMBAf8ECDAGAQH/AgEBMA4GA1UdDwEB/wQEAwIBhjANBgkq
+hkiG9w0BAQsFAAOCAQEAiSWCapUi2YZWdjpHliNlJitv6l3ygXJZ/1cUR7Ho3dL1
+yknzfClP0yk0ZOafWa0ezkBDIruEP01ELRQgOheGkbkm1kRjpE0k5QFnFy14Vwza
+lg1KjHcpIWT2tNPUNlxlqxvxhBI/7XtUOYdG8NVz17v6EkB9cKZJanoz0PSP3Ri9
+DOW8cNPYaZK0Pz0DiGDnBSXUP0/nkEQNEPfEWlRgg5mkgEJdUJh2no42q1LsVldb
+4WLwHQJkFxK9gLcWDBbiQPYaw1oV9qlJTb8o6gxFGHR+KdAx8TWqRI5cS+AogvM4
+04zmAzmwrQEKO3E9/EemWDHLRCu1MHtFIUmXH3mb2w==
+-----END CERTIFICATE-----
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: OU=OpenChannel Primary Certificate, O=SEVEN Networks Inc., C=US
+        Validity
+            Not Before: Jul  6 23:37:42 2011 GMT
+            Not After : Jul 29 23:37:42 2036 GMT
+        Subject: OU=OpenChannel Primary Certificate, O=SEVEN Networks Inc., C=US
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (2048 bit)
+                Modulus (2048 bit):
+                    00:a9:eb:ca:2a:96:b6:96:00:c3:6c:c7:53:cc:0e:
+                    2f:02:8a:db:85:62:70:0b:10:2b:02:10:5c:5d:68:
+                    4f:6c:c8:b9:44:1b:18:dc:80:54:1a:2d:55:7c:03:
+                    9b:57:79:12:cb:ec:27:13:2b:d9:25:fd:44:00:3c:
+                    4a:1e:67:95:f0:5b:de:73:2a:ee:f6:7d:1d:44:cd:
+                    dd:87:db:70:25:cb:06:e6:84:fe:c5:31:7e:9b:e7:
+                    23:42:72:58:92:bc:ef:ef:97:34:c8:f6:b4:d2:11:
+                    8f:c7:df:6c:bc:38:80:bb:ba:5c:c9:f4:61:60:f4:
+                    99:77:5c:a7:7f:70:f1:a9:7d:42:d1:cd:34:9e:15:
+                    3b:ca:1c:58:49:db:28:3a:e8:8c:b8:40:28:fe:2d:
+                    ca:44:5c:e3:b7:73:2e:0b:06:ef:2b:0f:e5:cb:2b:
+                    8f:b7:1e:0e:6f:20:a3:05:b8:dd:4b:6e:23:a2:cd:
+                    95:d3:ec:09:a9:dd:f7:e2:41:b4:e8:83:0c:2a:3d:
+                    e8:ac:0a:df:8f:38:81:0e:e6:9e:d0:20:a7:e2:2b:
+                    59:9e:7c:42:7c:93:49:d8:7b:06:fb:a6:16:1c:08:
+                    2a:9d:71:22:03:40:b9:e8:34:37:e3:b1:8e:ef:c3:
+                    7c:44:aa:30:b3:f3:c9:e1:a7:c0:05:3e:22:d5:d3:
+                    9b:d7
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:TRUE, pathlen:1
+            X509v3 Key Usage: critical
+                Digital Signature, Certificate Sign, CRL Sign
+    Signature Algorithm: sha256WithRSAEncryption
+        89:25:82:6a:95:22:d9:86:56:76:3a:47:96:23:65:26:2b:6f:
+        ea:5d:f2:81:72:59:ff:57:14:47:b1:e8:dd:d2:f5:ca:49:f3:
+        7c:29:4f:d3:29:34:64:e6:9f:59:ad:1e:ce:40:43:22:bb:84:
+        3f:4d:44:2d:14:20:3a:17:86:91:b9:26:d6:44:63:a4:4d:24:
+        e5:01:67:17:2d:78:57:0c:da:96:0d:4a:8c:77:29:21:64:f6:
+        b4:d3:d4:36:5c:65:ab:1b:f1:84:12:3f:ed:7b:54:39:87:46:
+        f0:d5:73:d7:bb:fa:12:40:7d:70:a6:49:6a:7a:33:d0:f4:8f:
+        dd:18:bd:0c:e5:bc:70:d3:d8:69:92:b4:3f:3d:03:88:60:e7:
+        05:25:d4:3f:4f:e7:90:44:0d:10:f7:c4:5a:54:60:83:99:a4:
+        80:42:5d:50:98:76:9e:8e:36:ab:52:ec:56:57:5b:e1:62:f0:
+        1d:02:64:17:12:bd:80:b7:16:0c:16:e2:40:f6:1a:c3:5a:15:
+        f6:a9:49:4d:bf:28:ea:0c:45:18:74:7e:29:d0:31:f1:35:aa:
+        44:8e:5c:4b:e0:28:82:f3:38:d3:8c:e6:03:39:b0:ad:01:0a:
+        3b:71:3d:fc:47:a6:58:31:cb:44:2b:b5:30:7b:45:21:49:97:
+        1f:79:9b:db
+SHA1 Fingerprint=9A:AD:2B:50:D5:C3:96:18:9F:F9:A6:72:90:88:10:6F:DC:95:A2:7C

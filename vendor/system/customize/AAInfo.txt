@@ -1,0 +1,6 @@
+TaskID : 273004
+Project : PRIMO_TD_ICS_40A
+SKU : HTCCN CHS CMCC[1403]
+ROM Ver : 1.19.1403.1
+Customization Id : 375797
+RCMS Id : 143

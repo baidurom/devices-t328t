@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="15" android:versionName="4.0.3-eng..20120725.131209" package="com.htc.framework" coreApp="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
+    <application android:hasCode="false" allowSkinChange="true" />
+    <permission android:label="@string/permlab_accessWirelessDisplayService" android:name="android.permission.WIRELESSDISPLAY" android:protectionLevel="normal" android:permissionGroup="android.permission-group.NETWORK" android:description="@string/permdesc_accessWirelessDisplayService" />
+</manifest>

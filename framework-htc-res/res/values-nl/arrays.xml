@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="localized_opertator_name">
+        <item>45412,CMCC PEOPLES</item>
+        <item>46000,CMCC</item>
+        <item>46001,China Unicom</item>
+        <item>46002,CMCC</item>
+        <item>46003,China Telcom</item>
+        <item>46007,CMCC</item>
+        <item>45502, China Telecom (Macau)</item>
+        <item>45429, PCCW Mobiel CDMA</item>
+        <item>46601,Far EasTone</item>
+        <item>46605,APBW</item>
+        <item>46606,TUNTEX</item>
+        <item>46668,ACeS</item>
+        <item>46688,KGT-Online</item>
+        <item>46689,VIBO</item>
+        <item>46692,Chunghwa</item>
+        <item>46693,MOBITAI</item>
+        <item>46697,TW Mobile</item>
+        <item>46699,TransAsia</item>
+    </string-array>
+</resources>

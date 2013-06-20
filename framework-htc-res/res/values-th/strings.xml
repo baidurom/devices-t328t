@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">ปิด Wi-Fi</string>
+    <string name="vzw_wifi_off_notify_description">แตะเพื่อเปิด Wi-Fi</string>
+    <string name="vzw_wifi_noap_notify_title">ตรวจหาไม่พบเครือข่าย Wi-Fi</string>
+    <string name="vzw_wifi_noap_notify_description">แตะเพื่อไปยังการตั้งค่า</string>
+    <string name="vzw_wifi_notconnect_notify_title">เครือข่ายไร้สายที่มีให้เลือก</string>
+    <string name="vzw_wifi_notconnect_notify_description">แตะเพื่อดูเครือข่ายไร้สายที่มีให้เลือก</string>
+    <string name="vzw_wifi_connected_notify_title">เชื่อมต่อไปยัง:</string>
+    <string name="vzw_wifi_connected_notify_description">แตะเพื่อไปยังการตั้งค่า</string>
+    <string name="permlab_accessWirelessDisplayService">use WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">Allows an application to use all of WirelessDisplayService API</string>
+    <string name="shutdown_hw_reset_notify_text">เพื่อรีสตาร์ทโทรศัพท์ของคุณ ให้กดปุ่มพาวเวอร์ค้างไว้เป็นเวลา %1$d วินาที</string>
+    <string name="shutdown_hw_reset_notify_text_singular">เพื่อรีสตาร์ทโทรศัพท์ของคุณ ให้กดปุ่มพาวเวอร์ค้างไว้เป็นเวลา 1 วินาที</string>
+    <string name="powerOptions_power_off_status">ปิดโทรศัพท์</string>
+    <string name="powerOptions_restart">เริ่มใหม่</string>
+    <string name="powerOptions_restart_status">ปิดแอพพลิเคชั่นทั้งหมดแล้วรีสตาร์ทโทรศัพท์</string>
+    <string name="dongle_noti_text_connected">เชื่อมต่อแล้ว</string>
+    <string name="dongle_noti_text_disconnected">ยุติการเชื่อมต่อ</string>
+    <string name="dongle_noti_ticker_connected">อุปกรณ์ Media Link HD ได้รับการเชื่อมต่อ</string>
+    <string name="navigation_bar_menu_title">เคล็ดลับ</string>
+    <string name="navigation_bar_menu_message">กดปุ่มแอพพลิเคชั่นก่อนหน้าที่ด้านขวาล่างของหน้าจอนี้เพื่อดูเมนูสำหรับแอพพลิเคชั่นนี้</string>
+    <string name="navigation_bar_menu_remind_me">อย่าแสดงข้อความนี้อีก</string>
+    <string name="ringtone_default_with_actual">ค่าเริ่มต้นเสียงเรียกเข้า</string>
+    <string name="ringtone_default_notification_with_actual">ค่าเริ่มต้นการแจ้งเตือน</string>
+    <string name="ringtone_default_alarm_with_actual">ค่าเริ่มต้นการปลุก</string>
+    <string name="ni_timeout_listview_title">ข้อความทั้งหมด</string>
+    <string name="ni_timeout_listview_item_title">การร้องขอตำแหน่งหมดเวลาที่กำหนด</string>
+    <string name="ni_timeout_default_accept">"กำลังร้องขอตำแหน่งของคุณ 
+กำลังทำการส่งตำแหน่ง"</string>
+    <string name="ni_timeout_default_deny">"ต้องการตำแหน่งของคุณ 
+ตำแหน่งถูกปฎิเสธเมื่อหมดเวลาที่กำหนด"</string>
+    <string name="ni_timeout_dialog_title">หมดเวลาการทำงานที่กำหนดของ Location</string>
+    <string name="ni_dialog_default_accept">"ต้องการตำแหน่งของคุณ 
+ตกลงเพื่อย้อนกลับตำแหน่งเมื่อหมดเวลาที่กำหนด คุณต้องการส่งหรือไม่?"</string>
+    <string name="ni_dialog_default_deny">"ต้องการตำแหน่งของคุณ 
+ปฏิเสธเพื่อย้อนกลับตำแหน่งเมื่อหมดเวลาที่กำหนด คุณต้องการส่งหรือไม่?"</string>
+    <string name="ni_notification_tile">ต้องการตำแหน่ง AGPS</string>
+    <string name="ni_timeout_notification_tile">ต้องการตำแหน่ง AGPS</string>
+    <string name="ni_timeout_notification_message">ข้อความที่ไม่ได้อ่าน</string>
+    <string name="ni_timeout_notification_tickerText">การร้องขอตำแหน่งหมดเวลาที่กำหนด</string>
+    <string name="ni_phone_interaction_message">การร้องขอตำแหน่งจากระยะไกลกำลังเปิดทำงานอยู่ คุณต้องการดำเนินการร้องขอตำแหน่งต่อไปหรือไม่</string>
+</resources>

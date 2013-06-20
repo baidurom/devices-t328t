@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">Brezžična povezava je izključena</string>
+    <string name="vzw_wifi_off_notify_description">Tapnite, da vključite brezžično povezavo</string>
+    <string name="vzw_wifi_noap_notify_title">Ni zaznanih brezžičnih omrežij</string>
+    <string name="vzw_wifi_noap_notify_description">Tapnite, da odprete nastavitve</string>
+    <string name="vzw_wifi_notconnect_notify_title">Razpoložljiva brezžična omrežja</string>
+    <string name="vzw_wifi_notconnect_notify_description">Tapnite, da si ogledate razpoložljiva brezžična omrežja</string>
+    <string name="vzw_wifi_connected_notify_title">Povezano z:</string>
+    <string name="vzw_wifi_connected_notify_description">Tapnite, da odprete nastavitve</string>
+    <string name="permlab_accessWirelessDisplayService">uporabi WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">Omogoči aplikaciji uporabiti vse od WirelessDisplayService API</string>
+    <string name="shutdown_hw_reset_notify_text">Če želite telefon ponovno zagnati, pritiskajte in držite gumb za vklop %1$d sekund.</string>
+    <string name="shutdown_hw_reset_notify_text_singular">Če želite telefon ponovno zagnati, pritiskajte in držite gumb za vklop 1 sekundo.</string>
+    <string name="powerOptions_power_off_status">Izklop telefona</string>
+    <string name="powerOptions_restart">Ponovni zagon</string>
+    <string name="powerOptions_restart_status">Zaprite vse aplikacije in ponovno zaženite telefon</string>
+    <string name="dongle_noti_text_connected">Povezan</string>
+    <string name="dongle_noti_text_disconnected">Povezava je prekinjena</string>
+    <string name="dongle_noti_ticker_connected">Povezana je naprava Media Link HD</string>
+    <string name="navigation_bar_menu_title">Napotki</string>
+    <string name="navigation_bar_menu_message">Pritisnite in držite gumb Nedavne aplikacije na desni strani pod zaslonom, da odprete meni za to aplikacijo.</string>
+    <string name="navigation_bar_menu_remind_me">Tega sporočila ne pokaži več</string>
+    <string name="ringtone_default_with_actual">Privzeti ton zvonjenja</string>
+    <string name="ringtone_default_notification_with_actual">Privzeto obvestilo</string>
+    <string name="ringtone_default_alarm_with_actual">Privzeti alarm</string>
+    <string name="ni_timeout_listview_title">Vsa sporočila</string>
+    <string name="ni_timeout_listview_item_title">Časovna omejitev za lokacijski zahtevek je potekla</string>
+    <string name="ni_timeout_default_accept">"želi pridobiti podatek o vaši lokaciji.
+Pošiljam podatek o lokaciji."</string>
+    <string name="ni_timeout_default_deny">"želi pridobiti podatek o vaši lokaciji.
+Lokacijski zahtevek bo po poteku časovne omejitve zavrnjen."</string>
+    <string name="ni_timeout_dialog_title">Časovna omejitev za pošiljanje podatka o lokaciji je potekla</string>
+    <string name="ni_dialog_default_accept">"želi pridobiti podatek o vaši lokaciji.
+Lokacijski zahtevek sprejmite, da bi ga poslali do poteka časovne omejitve. Želite poslati podatek?"</string>
+    <string name="ni_dialog_default_deny">"želi pridobiti podatek o vaši lokaciji.
+Po poteku časovne omejitve zavrni lokacijski zahtevek. Želite poslati podatek?"</string>
+    <string name="ni_notification_tile">Zahtevek po lokaciji AGPS</string>
+    <string name="ni_timeout_notification_tile">Zahtevek po lokaciji AGPS</string>
+    <string name="ni_timeout_notification_message">Neprebrana sporočila</string>
+    <string name="ni_timeout_notification_tickerText">Časovna omejitev za lokacijski zahtevek je potekla</string>
+    <string name="ni_phone_interaction_message">Aktiviran bo zahtevek po lokaciji. Želite lokacijski zahtevek izvesti do konca?</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="frequences">
+        <item>87500</item>
+        <item>90000</item>
+        <item>105000</item>
+        <item>108000</item>
+    </integer-array>
+    <integer-array name="positions">
+        <item>14</item>
+        <item>42</item>
+        <item>342</item>
+        <item>353</item>
+    </integer-array>
+    <string-array name="switchers">
+        <item>switcher1</item>
+    </string-array>
+    <string-array name="weeklist">
+        <item>1 week</item>
+        <item>2 weeks</item>
+        <item>3 weeks</item>
+        <item>4 weeks</item>
+        <item>5 weeks</item>
+        <item>6 weeks</item>
+        <item>7 weeks</item>
+        <item>8 weeks</item>
+        <item>9 weeks</item>
+        <item>10 weeks</item>
+        <item>11 weeks</item>
+        <item>12 weeks</item>
+    </string-array>
+</resources>

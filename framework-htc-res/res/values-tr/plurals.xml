@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="secure_wifi_available">
+        <item quantity="other">Wi-Fi ağları bulundu</item>
+        <item quantity="one">Wi-Fi ağı bulundu</item>
+    </plurals>
+    <plurals name="secure_wifi_available_detailed">
+        <item quantity="other">Wi-Fi ağları mevcut</item>
+        <item quantity="one">Bir Wi-Fi ağı mevcut</item>
+    </plurals>
+</resources>

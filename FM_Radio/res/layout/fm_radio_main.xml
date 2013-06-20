@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:fm="http://schemas.android.com/apk/res/com.htc.fm">
+    <ImageView android:id="@id/bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/fmradio_bg_panel_off" />
+    <TextView android:textSize="@dimen/freq_text_view_size" android:textColor="#9fdbec" android:ellipsize="end" android:id="@id/text_freq" android:layout_width="@dimen/freq_text_view_width" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/htc_margin_m_m2" android:layout_marginTop="@dimen/freq_text_view_top" android:singleLine="true" />
+    <RelativeLayout android:id="@id/indicator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/indicator_relative_layout_top" android:layout_below="@id/bg">
+        <ImageView android:background="@drawable/fmradio_bg_tuner_panel_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/indicator_tuner_bg_image_view_top" />
+        <ImageView android:id="@id/tuner_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/fmradio_bg_tuner_panel" />
+    </RelativeLayout>
+    <com.htc.fm.ui.widget.FMSeekBar android:id="@id/seekbar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/seekbar_left" android:layout_marginTop="@dimen/seekbar_top" android:layout_below="@id/bg" fm:length="@integer/seekbar_length" fm:lineIndicator="@drawable/fmradio_tuner_divider" fm:triangleIndicator="@drawable/fmradio_indicator_rest" />
+    <com.htc.fm.ui.widget.FreqRollBar android:id="@id/container2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/freq_rollbar_left" android:layout_marginTop="@dimen/freq_rollbar_top">
+        <ImageSwitcher android:id="@id/switcher4" android:layout_width="@dimen/freq_rollbar_number_width" android:layout_height="@dimen/freq_rollbar_number_height" />
+        <ImageSwitcher android:id="@id/switcher3" android:layout_width="@dimen/freq_rollbar_number_width" android:layout_height="@dimen/freq_rollbar_number_height" android:layout_marginLeft="@dimen/freq_rollbar_number_gap" />
+        <ImageSwitcher android:id="@id/switcher2" android:layout_width="@dimen/freq_rollbar_number_width" android:layout_height="@dimen/freq_rollbar_number_height" android:layout_marginLeft="@dimen/freq_rollbar_number_gap" />
+        <ImageSwitcher android:id="@id/switcher" android:layout_width="@dimen/freq_rollbar_number_width" android:layout_height="@dimen/freq_rollbar_number_height" android:layout_marginLeft="@dimen/freq_rollbar_number_gap2" />
+    </com.htc.fm.ui.widget.FreqRollBar>
+    <com.htc.fm.ui.widget.MirrorFace android:id="@id/container3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/freq_rollbar_left" android:layout_marginTop="@dimen/mirror_face_top">
+        <ImageSwitcher android:id="@id/switcher4Reverse" android:layout_width="@dimen/freq_rollbar_number_width" android:layout_height="@dimen/freq_rollbar_number_height" />
+        <ImageSwitcher android:id="@id/switcher3Reverse" android:layout_width="@dimen/freq_rollbar_number_width" android:layout_height="@dimen/freq_rollbar_number_height" android:layout_marginLeft="@dimen/freq_rollbar_number_gap" />
+        <ImageSwitcher android:id="@id/switcher2Reverse" android:layout_width="@dimen/freq_rollbar_number_width" android:layout_height="@dimen/freq_rollbar_number_height" android:layout_marginLeft="@dimen/freq_rollbar_number_gap" />
+        <ImageSwitcher android:id="@id/switcherReverse" android:layout_width="@dimen/freq_rollbar_number_width" android:layout_height="@dimen/freq_rollbar_number_height" android:layout_marginLeft="@dimen/freq_rollbar_number_gap2" />
+    </com.htc.fm.ui.widget.MirrorFace>
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dot_relative_layout_left" android:layout_marginTop="@dimen/dot_relative_layout_top">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/fmradio_digit_point" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dot_relative_layout_left" android:layout_marginTop="@dimen/dot_reverse_relative_layout_top">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/fmradio_digit_point_reverse" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/mhz_relative_layout_left" android:layout_marginTop="@dimen/mhz_relative_layout_top">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/fmradio_mhz" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/mhz_relative_layout_left" android:layout_marginTop="@dimen/mhz_reverse_relative_layout_top">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/fmradio_mhz_reverse" />
+    </RelativeLayout>
+    <com.htc.fm.ui.widget.SignalBar android:id="@id/signalbar" android:paddingLeft="@dimen/signalbar_padding_left" android:paddingRight="@dimen/signalbar_padding_right" android:layout_width="fill_parent" android:layout_height="@dimen/signalbar_height" android:layout_marginTop="@dimen/signalbar_top" android:layout_alignTop="@id/bg" fm:maxCount="9" fm:space="@integer/signalbar_space" fm:onResID="@drawable/fmradio_signal_on" fm:offResID="@drawable/fmradio_signal_off" fm:mirror="true" />
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignTop="@id/bg">
+        <ImageView android:id="@id/digit_cover" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/fmradio_bg_digit_cover_off" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/buttons" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/footer_relative_layout_top" android:layout_below="@id/indicator">
+        <com.htc.fm.ui.widget.FMRepeatingImageButton android:id="@id/btn_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/footer_button1_left" android:layout_centerVertical="true" backgroundMode="dark" />
+        <com.htc.widget.HtcRimImageButton android:id="@id/seekBack" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/footer_button2_left" backgroundMode="dark" />
+        <com.htc.widget.HtcRimImageButton android:id="@id/seekNext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/footer_button3_left" backgroundMode="dark" />
+        <com.htc.fm.ui.widget.FMRepeatingImageButton android:id="@id/btn_next" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/footer_button4_left" android:layout_centerVertical="true" backgroundMode="dark" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">Wi-Fi απενεργοποιημένο</string>
+    <string name="vzw_wifi_off_notify_description">Πιέστε για να ενεργοποιήσετε το Wi-Fi</string>
+    <string name="vzw_wifi_noap_notify_title">Δεν εντοπίστηκαν δίκτυα Wi-Fi</string>
+    <string name="vzw_wifi_noap_notify_description">Πιέστε για μετάβαση στις ρυθμίσεις</string>
+    <string name="vzw_wifi_notconnect_notify_title">Διαθέσιμα ασύρματα δίκτυα</string>
+    <string name="vzw_wifi_notconnect_notify_description">Πιέστε για να δείτε τα διαθέσιμα ασύρματα δίκτυα</string>
+    <string name="vzw_wifi_connected_notify_title">Συνδεδεμένο σε:</string>
+    <string name="vzw_wifi_connected_notify_description">Πιέστε για μετάβαση στις ρυθμίσεις</string>
+    <string name="permlab_accessWirelessDisplayService">use WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">Allows an application to use all of WirelessDisplayService API</string>
+    <string name="shutdown_hw_reset_notify_text">Για να επανεκκινήσετε το τηλέφωνό σας, συνεχίστε να πατάτε παρατεταμένα το κουμπί λειτουργίας επί %1$d δευτερόλεπτα.</string>
+    <string name="shutdown_hw_reset_notify_text_singular">Για να επανεκκινήσετε το τηλέφωνό σας, συνεχίστε να πατάτε παρατεταμένα το κουμπί λειτουργίας επί 1 δευτερόλεπτο.</string>
+    <string name="powerOptions_power_off_status">Τερματισμός λειτουργίας τηλεφώνου</string>
+    <string name="powerOptions_restart">Επανεκκίνηση</string>
+    <string name="powerOptions_restart_status">Κλείσιμο όλων των εφαρμογών και επανεκκίνηση του τηλεφώνου</string>
+    <string name="dongle_noti_text_connected">Συνδεδεμένο</string>
+    <string name="dongle_noti_text_disconnected">Αποσυνδεδεμένο</string>
+    <string name="dongle_noti_ticker_connected">Συσκευή Media Link HD συνδεδεμένη</string>
+    <string name="navigation_bar_menu_title">Συμβουλές</string>
+    <string name="navigation_bar_menu_message">Πατήστε παρατεταμένα το κουμπί Πρόσφατες εφαρμογές στη δεξιά πλευρά κάτω από την οθόνη, για να δείτε το μενού για αυτήν την εφαρμογή.</string>
+    <string name="navigation_bar_menu_remind_me">Να μην εμφανιστεί ξανά αυτό το μήνυμα</string>
+    <string name="ringtone_default_with_actual">Προεπιλεγμένος ήχος κλήσης</string>
+    <string name="ringtone_default_notification_with_actual">Προεπιλεγμένη ειδοποίηση</string>
+    <string name="ringtone_default_alarm_with_actual">Προεπιλεγμένη αφύπνιση</string>
+    <string name="ni_timeout_listview_title">Όλα τα μηνύματα</string>
+    <string name="ni_timeout_listview_item_title">Λήξη χρόνου αίτησης τοποθεσίας</string>
+    <string name="ni_timeout_default_accept">"ζητά την τοποθεσία σας.
+Η τοποθεσία μεταδίδεται."</string>
+    <string name="ni_timeout_default_deny">"ζητά την τοποθεσία σας.
+Άρνηση τοποθεσίας με τη λήξη του χρόνου."</string>
+    <string name="ni_timeout_dialog_title">Λήξη χρόνου τοποθεσίας</string>
+    <string name="ni_dialog_default_accept">"ζητά την τοποθεσία σας.
+Αποδοχή απόδοσης τοποθεσίας με τη λήξη του χρόνου. Θέλετε να αποσταλεί;"</string>
+    <string name="ni_dialog_default_deny">"ζητά την τοποθεσία σας.
+Άρνηση απόδοσης τοποθεσίας με τη λήξη του χρόνου. Θέλετε να αποσταλεί;"</string>
+    <string name="ni_notification_tile">Αίτηση τοποθεσίας AGPS</string>
+    <string name="ni_timeout_notification_tile">Αίτηση τοποθεσίας AGPS</string>
+    <string name="ni_timeout_notification_message">Μη αναγνωσμένο μήνυμα</string>
+    <string name="ni_timeout_notification_tickerText">Λήξη χρόνου αίτησης τοποθεσίας</string>
+    <string name="ni_phone_interaction_message">Ενεργοποιείται μια απομακρυσμένη αίτηση τοποθεσίας. Επιθυμείτε να συνεχίσετε την αίτηση τοποθεσίας;</string>
+</resources>

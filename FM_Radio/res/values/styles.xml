@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="fakeScreen">
+        <item name="com.htc:fakescreenFooterEnable">false</item>
+    </style>
+</resources>

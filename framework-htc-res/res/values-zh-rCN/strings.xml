@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="imProtocolYiLiao">翼聊</string>
+    <string name="vzw_wifi_off_notify_title">WLAN 关闭</string>
+    <string name="vzw_wifi_off_notify_description">点击打开 WLAN</string>
+    <string name="vzw_wifi_noap_notify_title">未检测到 WLAN 连接</string>
+    <string name="vzw_wifi_noap_notify_description">点击进入设置</string>
+    <string name="vzw_wifi_notconnect_notify_title">无线网络可用</string>
+    <string name="vzw_wifi_notconnect_notify_description">点击查看可用无线网络</string>
+    <string name="vzw_wifi_connected_notify_title">已连接到：</string>
+    <string name="vzw_wifi_connected_notify_description">点击进入设置</string>
+    <string name="permlab_accessWirelessDisplayService">使用 WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">允许一个应用程序使用所有 WirelessDisplayService API</string>
+    <string name="shutdown_hw_reset_notify_text">要重启手机，长按电源按钮 %1$d 秒。</string>
+    <string name="shutdown_hw_reset_notify_text_singular">要重启手机，长按电源按钮 1 秒。</string>
+    <string name="powerOptions_power_off_status">关闭手机</string>
+    <string name="powerOptions_restart">重新启动</string>
+    <string name="powerOptions_restart_status">关闭所有应用程序并重启手机</string>
+    <string name="dongle_noti_text_connected">已连接</string>
+    <string name="dongle_noti_text_disconnected">已断开连接</string>
+    <string name="dongle_noti_ticker_connected">Media Link HD 设备已连接</string>
+    <string name="navigation_bar_menu_title">提示</string>
+    <string name="navigation_bar_menu_message">长按屏幕下方右边的最近应用程序按钮，查看应用程序菜单。</string>
+    <string name="navigation_bar_menu_remind_me">不再显示此信息。</string>
+    <string name="ringtone_default_with_actual">默认铃声</string>
+    <string name="ringtone_default_notification_with_actual">默认通知</string>
+    <string name="ringtone_default_alarm_with_actual">默认闹钟</string>
+    <string name="ni_timeout_listview_title">所有信息</string>
+    <string name="ni_timeout_listview_item_title">位置请求超时</string>
+    <string name="ni_timeout_default_accept">"正在请求您所在的位置。
+位置正在传输。"</string>
+    <string name="ni_timeout_default_deny">"正在请求您所在的位置。
+位置因超时被拒绝。"</string>
+    <string name="ni_timeout_dialog_title">位置超时</string>
+    <string name="ni_dialog_default_accept">"正在请求您所在的位置。
+接受在超时时返回位置。是否要发送？"</string>
+    <string name="ni_dialog_default_deny">"正在请求您所在的位置。
+拒绝在超时时返回位置。是否要发送？"</string>
+    <string name="ni_notification_tile">AGPS 位置请求</string>
+    <string name="ni_timeout_notification_tile">AGPS 位置请求</string>
+    <string name="ni_timeout_notification_message">未读信息</string>
+    <string name="ni_timeout_notification_tickerText">位置请求超时</string>
+    <string name="ni_phone_interaction_message">远程位置请求正在激活。是否要继续该位置请求？</string>
+</resources>

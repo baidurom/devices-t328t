@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.htc.widget.HtcOverlapLayout android:orientation="vertical" android:id="@id/list_block" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:htcfooter="http://schemas.android.com/apk/res/com.htc">
+    <com.htc.widget.HtcListView android:id="@id/list_view" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:drawSelectorOnTop="false" android:cacheColorHint="@android:color/transparent" android:dividerHeight="1.0dip" android:layout_weight="1.0" />
+    <com.htc.widget.HtcFooter android:id="@id/presets_footer" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.htc.widget.HtcFooterButton android:id="@id/cmd_presets_cancel" android:text="@string/cancel" htcfooter:footerButtonImage="@com.htc:drawable/icon_btn_cancel_dark" />
+        <com.htc.widget.HtcFooterButton android:enabled="false" android:id="@id/cmd_presets_delete" android:text="@string/delete" htcfooter:footerButtonImage="@com.htc:drawable/icon_btn_delete_dark" />
+    </com.htc.widget.HtcFooter>
+</com.htc.widget.HtcOverlapLayout>

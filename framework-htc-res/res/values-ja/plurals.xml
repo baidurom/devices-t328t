@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="secure_wifi_available">
+        <item quantity="other">Wi-Fi ネットワークが検出されました</item>
+        <item quantity="one">Wi-Fi ネットワークが検出されました</item>
+    </plurals>
+    <plurals name="secure_wifi_available_detailed">
+        <item quantity="other">Wi-Fi ネットワークが有効です</item>
+        <item quantity="one">1つの Wi-Fi ネットワークが有効です</item>
+    </plurals>
+</resources>

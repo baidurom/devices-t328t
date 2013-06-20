@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">WLAN aus</string>
+    <string name="vzw_wifi_off_notify_description">Antippen, um WLAN zu aktivieren</string>
+    <string name="vzw_wifi_noap_notify_title">Keine WLAN-Netzwerke gefunden</string>
+    <string name="vzw_wifi_noap_notify_description">Antippen, um nach Einstellungen zu wechseln</string>
+    <string name="vzw_wifi_notconnect_notify_title">Drahtlos-Netzwerke verfügbar</string>
+    <string name="vzw_wifi_notconnect_notify_description">Antippen, um drahtlose Netzwerke anzuzeigen</string>
+    <string name="vzw_wifi_connected_notify_title">Verbunden mit:</string>
+    <string name="vzw_wifi_connected_notify_description">Antippen, um nach Einstellungen zu wechseln</string>
+    <string name="permlab_accessWirelessDisplayService">use WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">Allows an application to use all of WirelessDisplayService API</string>
+    <string name="shutdown_hw_reset_notify_text">Halten Sie die Ein/Aus-Taste weiterhin %1$d Sekunde lang gedrückt, um das Telefon neu zu starten.</string>
+    <string name="shutdown_hw_reset_notify_text_singular">Halten Sie die Ein/Aus-Taste weiterhin 1 Sekunde lang gedrückt, um das Telefon neu zu starten.</string>
+    <string name="powerOptions_power_off_status">Telefon ausschalten</string>
+    <string name="powerOptions_restart">Neu starten</string>
+    <string name="powerOptions_restart_status">Alle Apps beenden und Telefon neu starten</string>
+    <string name="dongle_noti_text_connected">Verbunden</string>
+    <string name="dongle_noti_text_disconnected">Getrennt</string>
+    <string name="dongle_noti_ticker_connected">Media Link HD Gerät angeschlossen</string>
+    <string name="navigation_bar_menu_title">Tipps</string>
+    <string name="navigation_bar_menu_message">Drücken und halten Sie die Schaltfläche Letzte Apps auf der rechten Seite unter dem Fenster, um das Menü für diese App aufzurufen.</string>
+    <string name="navigation_bar_menu_remind_me">Diese Meldung nicht wieder anzeigen</string>
+    <string name="ringtone_default_with_actual">Standard-Klingelton</string>
+    <string name="ringtone_default_notification_with_actual">Standardbenachrichtigung</string>
+    <string name="ringtone_default_alarm_with_actual">Standardwecker</string>
+    <string name="ni_timeout_listview_title">Alle Nachrichten</string>
+    <string name="ni_timeout_listview_item_title">Standortabfrage Zeitablauf</string>
+    <string name="ni_timeout_default_accept">"ruft Ihren Standort ab.
+Standort wird übermittelt."</string>
+    <string name="ni_timeout_default_deny">"ruft Ihren Standort ab.
+Standort bei Zeitablauf verweigert."</string>
+    <string name="ni_timeout_dialog_title">Standort Zeitablauf</string>
+    <string name="ni_dialog_default_accept">"ruft Ihren Standort ab.
+Bei Zeitablauf Standort anzeigen erlauben. Senden?"</string>
+    <string name="ni_dialog_default_deny">"ruft Ihren Standort ab.
+Bei Zeitablauf Standort anzeigen verweigern. Senden?"</string>
+    <string name="ni_notification_tile">AGPS Standortabfrage</string>
+    <string name="ni_timeout_notification_tile">AGPS Standortabfrage</string>
+    <string name="ni_timeout_notification_message">Ungelesene Nachricht</string>
+    <string name="ni_timeout_notification_tickerText">Standortabfrage Zeitablauf</string>
+    <string name="ni_phone_interaction_message">Eine Remote Standortabfrage ist aktiv. Möchten Sie mit der Standortabfrage fortfahren?</string>
+</resources>

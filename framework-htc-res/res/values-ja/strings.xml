@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">Wi-Fi オフ</string>
+    <string name="vzw_wifi_off_notify_description">タップして Wi-Fi をオンにする</string>
+    <string name="vzw_wifi_noap_notify_title">Wi-Fi ネットワークが検出されませんでした</string>
+    <string name="vzw_wifi_noap_notify_description">タップして設定を開きます</string>
+    <string name="vzw_wifi_notconnect_notify_title">ワイヤレス ネットワークが有効です</string>
+    <string name="vzw_wifi_notconnect_notify_description">タップして有効なワイヤレス ネットワークを表示します</string>
+    <string name="vzw_wifi_connected_notify_title">接続先:</string>
+    <string name="vzw_wifi_connected_notify_description">タップして設定を開きます</string>
+    <string name="permlab_accessWirelessDisplayService">use WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">Allows an application to use all of WirelessDisplayService API</string>
+    <string name="shutdown_hw_reset_notify_text">電話を再起動するには、電源ボタンを %1$d 秒間押したままにしてください。</string>
+    <string name="shutdown_hw_reset_notify_text_singular">電話を再起動するには、電源ボタンを 1 秒間押したままにしてください。</string>
+    <string name="powerOptions_power_off_status">電話をシャットダウン</string>
+    <string name="powerOptions_restart">再起動</string>
+    <string name="powerOptions_restart_status">全てのアプリケーションを閉じて電話を再起動します</string>
+    <string name="dongle_noti_text_connected">接続済み</string>
+    <string name="dongle_noti_text_disconnected">切断完了</string>
+    <string name="dongle_noti_ticker_connected">Media Link HD デバイスが接続されています</string>
+    <string name="navigation_bar_menu_title">ヒント</string>
+    <string name="navigation_bar_menu_message">スクリーンの下右側にある [最近使用したアプリケーション] ボタンを押したままにすると、このアプリのメニューが表示されます。</string>
+    <string name="navigation_bar_menu_remind_me">次回からこのメッセージを表示しない</string>
+    <string name="ringtone_default_with_actual">既定の着信音</string>
+    <string name="ringtone_default_notification_with_actual">既定の通知</string>
+    <string name="ringtone_default_alarm_with_actual">既定のアラーム</string>
+    <string name="ni_timeout_listview_title">すべてのメッセージ</string>
+    <string name="ni_timeout_listview_item_title">位置要求がタイムアウト</string>
+    <string name="ni_timeout_default_accept">"はあなたの位置を要求しています。
+位置は送信中です。"</string>
+    <string name="ni_timeout_default_deny">"はあなたの位置を要求しています。
+タイムアウト時に位置は拒否されます。"</string>
+    <string name="ni_timeout_dialog_title">位置タイムアウト</string>
+    <string name="ni_dialog_default_accept">"はあなたの位置を要求しています。
+タイムアウト時に位置へ戻ることに同意します。それを送信しますか?"</string>
+    <string name="ni_dialog_default_deny">"はあなたの位置を要求しています。
+タイムアウト時に位置へ戻ることを拒否します。それを送信しますか?"</string>
+    <string name="ni_notification_tile">AGPS 位置要求</string>
+    <string name="ni_timeout_notification_tile">AGPS 位置要求</string>
+    <string name="ni_timeout_notification_message">未読のメッセージ</string>
+    <string name="ni_timeout_notification_tickerText">位置要求がタイムアウト</string>
+    <string name="ni_phone_interaction_message">リモート位置要求が有効になっています。位置要求を続行しますか?</string>
+</resources>

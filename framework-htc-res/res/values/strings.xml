@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="imProtocolYiLiao">Yiliao</string>
+    <string name="vzw_wifi_off_notify_title">Wi-Fi Off</string>
+    <string name="vzw_wifi_off_notify_description">Tap to turn Wi-Fi on</string>
+    <string name="vzw_wifi_noap_notify_title">No Wi-Fi Networks Detected</string>
+    <string name="vzw_wifi_noap_notify_description">Tap to go to settings</string>
+    <string name="vzw_wifi_notconnect_notify_title">Wireless Networks Available</string>
+    <string name="vzw_wifi_notconnect_notify_description">Tap to see available wireless networks</string>
+    <string name="vzw_wifi_connected_notify_title">Connected to:</string>
+    <string name="vzw_wifi_connected_notify_description">Tap to go to settings</string>
+    <string name="permlab_accessWirelessDisplayService">use WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">Allows an application to use all of WirelessDisplayService API</string>
+    <string name="shutdown_hw_reset_notify_text">To restart your phone, continue to press and hold the power button for %1$d seconds.</string>
+    <string name="shutdown_hw_reset_notify_text_singular">To restart your phone, continue to press and hold the power button for 1 second.</string>
+    <string name="powerOptions_power_off_status">Shut phone down</string>
+    <string name="powerOptions_restart">Restart</string>
+    <string name="powerOptions_restart_status">Close all apps and restart phone</string>
+    <string name="dongle_noti_text_connected">Connected</string>
+    <string name="dongle_noti_text_disconnected">Disconnected</string>
+    <string name="dongle_noti_ticker_connected">Media Link HD device connected</string>
+    <string name="navigation_bar_menu_title">Tips</string>
+    <string name="navigation_bar_menu_message">Press and hold the Recent apps button on the right side below the screen to see the menu for this app.</string>
+    <string name="navigation_bar_menu_remind_me">"Don't show this message again"</string>
+    <string name="ringtone_default_with_actual">Default ringtone</string>
+    <string name="ringtone_default_notification_with_actual">Default notification</string>
+    <string name="ringtone_default_alarm_with_actual">Default alarm</string>
+    <string name="ni_timeout_listview_title">All message</string>
+    <string name="ni_timeout_listview_item_title">Location request timeout</string>
+    <string name="ni_timeout_default_accept">"is requesting your location.
+Location is transmitting."</string>
+    <string name="ni_timeout_default_deny">"is requesting your location.
+Location is denied when timeout."</string>
+    <string name="ni_timeout_dialog_title">Location timeout</string>
+    <string name="ni_dialog_default_accept">"is requesting your location.
+Accept to return location when timeout. Do you want to send it?"</string>
+    <string name="ni_dialog_default_deny">"is requesting your location.
+Deny to return location when timeout. Do you want to send it?"</string>
+    <string name="ni_notification_tile">AGPS location request</string>
+    <string name="ni_timeout_notification_tile">AGPS location request</string>
+    <string name="ni_timeout_notification_message">Unread message</string>
+    <string name="ni_timeout_notification_tickerText">Location request timeout</string>
+    <string name="ni_phone_interaction_message">A remote location request is activating. Do you want to continue the location request?</string>
+</resources>

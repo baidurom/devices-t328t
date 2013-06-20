@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">Wi-Fi Tắt</string>
+    <string name="vzw_wifi_off_notify_description">Chạm để bật Wi-Fi</string>
+    <string name="vzw_wifi_noap_notify_title">Không phát hiện có mạng Wi-Fi nào</string>
+    <string name="vzw_wifi_noap_notify_description">Chạm để đi đến cài đặt</string>
+    <string name="vzw_wifi_notconnect_notify_title">Mạng không dây sẵn sàng</string>
+    <string name="vzw_wifi_notconnect_notify_description">Chạm để xem các mạng không dây sẵn sàng</string>
+    <string name="vzw_wifi_connected_notify_title">Đã kết nối vào:</string>
+    <string name="vzw_wifi_connected_notify_description">Chạm để đi đến cài đặt</string>
+    <string name="permlab_accessWirelessDisplayService">use WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">Allows an application to use all of WirelessDisplayService API</string>
+    <string name="shutdown_hw_reset_notify_text">Để khởi động lại điện thoại của bạn, tiếp tục bấm và giữ phím nguồn trong %1$d giây.</string>
+    <string name="shutdown_hw_reset_notify_text_singular">Để khởi động lại điện thoại của bạn, tiếp tục bấm và giữ phím nguồn trong 1 giây.</string>
+    <string name="powerOptions_power_off_status">Tắt điện thoại</string>
+    <string name="powerOptions_restart">Khởi động lại</string>
+    <string name="powerOptions_restart_status">Đóng tất cả ứng dụng và khởi động máy lại</string>
+    <string name="dongle_noti_text_connected">Đã kết nối</string>
+    <string name="dongle_noti_text_disconnected">Đã ngừng kết nối</string>
+    <string name="dongle_noti_ticker_connected">Thiết bị Media Link HD được kết nối</string>
+    <string name="navigation_bar_menu_title">Gợi ý</string>
+    <string name="navigation_bar_menu_message">Nhấn và giữ phím Ứng dụng gần đây ở phía bên phải bên dưới màn hình để xem menu ứng dụng này.</string>
+    <string name="navigation_bar_menu_remind_me">Không hiện tin nhắn này lại</string>
+    <string name="ringtone_default_with_actual">Nhạc chuông mặc định</string>
+    <string name="ringtone_default_notification_with_actual">Thông báo mặc định</string>
+    <string name="ringtone_default_alarm_with_actual">Báo thức mặc định</string>
+    <string name="ni_timeout_listview_title">Tất cả các tin nhắn</string>
+    <string name="ni_timeout_listview_item_title">Hết thời gian yêu cầu vị trí</string>
+    <string name="ni_timeout_default_accept">"đang yêu cầu vị trí của bạn.
+Vị trí đang được truyền đi."</string>
+    <string name="ni_timeout_default_deny">"đang yêu cầu vị trí của bạn.
+Vị trí bị từ chối khi hết thời gian."</string>
+    <string name="ni_timeout_dialog_title">Hết thời gian xác định vị trí</string>
+    <string name="ni_dialog_default_accept">"đang yêu cầu vị trí của bạn.
+Chấp nhận để trả về thông tin vị trí khi hết thời gian. Bạn có muốn gửi?"</string>
+    <string name="ni_dialog_default_deny">"đang yêu cầu vị trí của bạn.
+Từ chối trả về thông tin vị trí khi hết thời gian. Bạn có muốn gửi?"</string>
+    <string name="ni_notification_tile">Yêu cầu vị trí AGPS</string>
+    <string name="ni_timeout_notification_tile">Yêu cầu vị trí AGPS</string>
+    <string name="ni_timeout_notification_message">Tin nhắn chưa đọc</string>
+    <string name="ni_timeout_notification_tickerText">Hết thời gian yêu cầu vị trí</string>
+    <string name="ni_phone_interaction_message">Một yêu cầu vị trí từ xa đang được kích hoạt. Bạn có muốn tiếp tục yêu cầu vị trí?</string>
+</resources>

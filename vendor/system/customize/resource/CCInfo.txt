@@ -1,0 +1,5 @@
+﻿Project: PRIMO_TD_ICS_40A
+SKU: HTCCN CMCC ROM
+ROM Build ID: 375797
+Build ID: 375798; SKU: HTCCN CMCC ROM default; CID: default; MNS: default
+Datetime: 2012/05/14 11:05:11

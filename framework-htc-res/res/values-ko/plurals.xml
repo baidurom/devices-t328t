@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="secure_wifi_available">
+        <item quantity="other">Wi-Fi 네트워크 발견</item>
+        <item quantity="one">Wi-Fi 네트워크 발견</item>
+    </plurals>
+    <plurals name="secure_wifi_available_detailed">
+        <item quantity="other">Wi-Fi 네트워크를 사용할 수 있음</item>
+        <item quantity="one">Wi-Fi 네트워크를 사용할 수 있음</item>
+    </plurals>
+</resources>

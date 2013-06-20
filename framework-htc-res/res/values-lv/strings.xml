@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">Wi-Fi izslēgts</string>
+    <string name="vzw_wifi_off_notify_description">Piesitiet, lai ieslēgtu Wi-Fi</string>
+    <string name="vzw_wifi_noap_notify_title">Nav atrastu Wi-Fi tīklu</string>
+    <string name="vzw_wifi_noap_notify_description">Piesitiet, lai dotos uz iestatījumiem</string>
+    <string name="vzw_wifi_notconnect_notify_title">Pieejami bezvadu tīkli</string>
+    <string name="vzw_wifi_notconnect_notify_description">Piesitiet, lai redzētu pieejamos bezvadu tīklus</string>
+    <string name="vzw_wifi_connected_notify_title">Savienots ar:</string>
+    <string name="vzw_wifi_connected_notify_description">Piesitiet, lai dotos uz iestatījumiem</string>
+    <string name="permlab_accessWirelessDisplayService">use WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">Allows an application to use all of WirelessDisplayService API</string>
+    <string name="shutdown_hw_reset_notify_text">Lai atiestatītu tālruni, nospiest un turēt nospiestu barošanas pogu %1$d sekundes.</string>
+    <string name="shutdown_hw_reset_notify_text_singular">Lai atiestatītu tālruni, nospiest un turēt nospiestu barošanas pogu 1 sekundi.</string>
+    <string name="powerOptions_power_off_status">Beidzēt tālruni</string>
+    <string name="powerOptions_restart">Restartēt</string>
+    <string name="powerOptions_restart_status">Aizveriet visas lietojumprogrammas un restartējiet tālruni</string>
+    <string name="dongle_noti_text_connected">Savienots</string>
+    <string name="dongle_noti_text_disconnected">Atvienots</string>
+    <string name="dongle_noti_ticker_connected">Pievienota Media Link HD ierīce</string>
+    <string name="navigation_bar_menu_title">Padomi</string>
+    <string name="navigation_bar_menu_message">Nospiediet un turiet nospiestu pogu Nesenās lietojumprogrammas labajā pusē ekrāna apakšā, lai redzētu šīs lietojumprogrammas izvēlni.</string>
+    <string name="navigation_bar_menu_remind_me">Šo ziņojumu vairs nerādīt</string>
+    <string name="ringtone_default_with_actual">Noklusētais zvana signāls</string>
+    <string name="ringtone_default_notification_with_actual">Noklusētais paziņojums</string>
+    <string name="ringtone_default_alarm_with_actual">Noklusētais modinātājs</string>
+    <string name="ni_timeout_listview_title">Viss ziņojums</string>
+    <string name="ni_timeout_listview_item_title">Atrašanās vietas pieprasījuma noildze</string>
+    <string name="ni_timeout_default_accept">"prasa jūsu atrašanās vietu.
+Atrašanās vieta tiek pārraidīta."</string>
+    <string name="ni_timeout_default_deny">"pieprasa jūsu atrašanās vietu.
+Atrašanās vieta ir liegta, ja ir noildze."</string>
+    <string name="ni_timeout_dialog_title">Atrašanās vietas noildze</string>
+    <string name="ni_dialog_default_accept">"pieprasa jūsu atrašanās vietu.
+Piekrītiet, lai atjaunotu atrašanās vietu, kad ir noildze. Vai vēlaties to sūtīt?"</string>
+    <string name="ni_dialog_default_deny">"pieprasa jūsu atrašanās vietu.
+Noraidiet, lai atjaunotu atrašanās vietu, kad ir noildze. Vai vēlaties to sūtīt?"</string>
+    <string name="ni_notification_tile">AGPS atrašanās vietas pieprasījums</string>
+    <string name="ni_timeout_notification_tile">AGPS atrašanās vietas pieprasījums</string>
+    <string name="ni_timeout_notification_message">Nelasīta ziņa</string>
+    <string name="ni_timeout_notification_tickerText">Atrašanās vietas pieprasījuma noildze</string>
+    <string name="ni_phone_interaction_message">Tiek aktivizēts attālās atrašanās vietas pieprasījums. Vai vēlaties turpināt atrašanās vietas pieprasījumu?</string>
+</resources>

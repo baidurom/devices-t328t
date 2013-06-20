@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="resolution">
+        <enum name="hvga" value="0" />
+        <enum name="qvga" value="1" />
+        <enum name="wvga" value="2" />
+        <enum name="wqvga" value="3" />
+    </attr>
+    <attr name="length" format="integer" />
+    <attr name="lineIndicator" format="reference" />
+    <attr name="triangleIndicator" format="reference" />
+    <attr name="switchers" format="reference" />
+    <attr name="maxCount" format="integer" />
+    <attr name="space" format="integer" />
+    <attr name="onResID" format="reference" />
+    <attr name="offResID" format="reference" />
+    <attr name="mirror" format="boolean" />
+</resources>

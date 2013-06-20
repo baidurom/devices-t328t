@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="freq_text_view_top">157.0px</dimen>
+    <dimen name="freq_text_view_size">17.0sp</dimen>
+    <dimen name="indicator_relative_layout_top">28.0px</dimen>
+    <dimen name="indicator_tuner_bg_image_view_top">38.0px</dimen>
+    <dimen name="seekbar_left">322.0px</dimen>
+    <dimen name="seekbar_top">66.0px</dimen>
+    <dimen name="freq_rollbar_left">380.0px</dimen>
+    <dimen name="freq_rollbar_top">39.0px</dimen>
+    <dimen name="freq_rollbar_number_width">106.0px</dimen>
+    <dimen name="freq_rollbar_number_height">160.0px</dimen>
+    <dimen name="freq_rollbar_number_gap">11.0px</dimen>
+    <dimen name="freq_rollbar_number_gap2">74.0px</dimen>
+    <dimen name="mirror_face_top">201.0px</dimen>
+    <dimen name="dot_relative_layout_left">712.0px</dimen>
+    <dimen name="dot_relative_layout_top">39.0px</dimen>
+    <dimen name="dot_reverse_relative_layout_top">201.0px</dimen>
+    <dimen name="mhz_relative_layout_left">960.0px</dimen>
+    <dimen name="mhz_relative_layout_top">181.0px</dimen>
+    <dimen name="mhz_reverse_relative_layout_top">201.0px</dimen>
+    <dimen name="signalbar_height">326.0px</dimen>
+    <dimen name="signalbar_top">39.0px</dimen>
+    <item type="dimen" name="signalbar_padding_left">@com.htc:dimen/margin_s_3</item>
+    <item type="dimen" name="signalbar_padding_right">@com.htc:dimen/margin_s_3</item>
+    <dimen name="footer_relative_layout_top">52.0px</dimen>
+    <dimen name="footer_button1_left">400.0px</dimen>
+    <dimen name="footer_button2_left">520.0px</dimen>
+    <dimen name="footer_button3_left">660.0px</dimen>
+    <dimen name="footer_button4_left">800.0px</dimen>
+    <dimen name="japan_seekbar_left_margin">373.0px</dimen>
+    <dimen name="japan_seekbar_top_margin">315.0px</dimen>
+    <dimen name="list_item_height">106.0px</dimen>
+    <dimen name="freq_text_view_right">940.0px</dimen>
+    <dimen name="cover_panel_top">248.0px</dimen>
+    <dimen name="cover_panel_width">1280.0px</dimen>
+    <dimen name="cover_panel_height">316.0px</dimen>
+    <dimen name="text_freq_width">264.0px</dimen>
+</resources>

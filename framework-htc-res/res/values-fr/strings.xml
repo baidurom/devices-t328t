@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">Wi-Fi désactivé</string>
+    <string name="vzw_wifi_off_notify_description">Appuyer pour activer le Wi-Fi</string>
+    <string name="vzw_wifi_noap_notify_title">Aucun réseau Wi-Fi détecté</string>
+    <string name="vzw_wifi_noap_notify_description">Appuyer pour aller aux paramètres</string>
+    <string name="vzw_wifi_notconnect_notify_title">Réseaux sans fil disponibles</string>
+    <string name="vzw_wifi_notconnect_notify_description">Appuyez pour voir les réseaux sans fil disponibles</string>
+    <string name="vzw_wifi_connected_notify_title">Connecté à :</string>
+    <string name="vzw_wifi_connected_notify_description">Appuyer pour aller aux paramètres</string>
+    <string name="permlab_accessWirelessDisplayService">use WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">Allows an application to use all of WirelessDisplayService API</string>
+    <string name="shutdown_hw_reset_notify_text">"Pour redémarrer votre téléphone, continuez à appuyer et maintenez le bouton d'alimentation pendant %1$d secondes."</string>
+    <string name="shutdown_hw_reset_notify_text_singular">"Pour redémarrer votre téléphone, continuez à appuyer et maintenez le bouton d'alimentation pendant 1 seconde."</string>
+    <string name="powerOptions_power_off_status">Éteindre le téléphone</string>
+    <string name="powerOptions_restart">Redémarrer</string>
+    <string name="powerOptions_restart_status">Fermer toutes les applis et redémarrer le téléphone</string>
+    <string name="dongle_noti_text_connected">Connecté</string>
+    <string name="dongle_noti_text_disconnected">Déconnecté</string>
+    <string name="dongle_noti_ticker_connected">Appareil Media Link HD connecté</string>
+    <string name="navigation_bar_menu_title">Conseils</string>
+    <string name="navigation_bar_menu_message">"Appuyez et maintenez le bouton Applis récentes sur le côté droit sous l'écran pour afficher le menu de cette appli."</string>
+    <string name="navigation_bar_menu_remind_me">Ne plus afficher ce message</string>
+    <string name="ringtone_default_with_actual">Sonnerie par défaut</string>
+    <string name="ringtone_default_notification_with_actual">Notification par défaut</string>
+    <string name="ringtone_default_alarm_with_actual">Alarme par défaut</string>
+    <string name="ni_timeout_listview_title">Tout le message</string>
+    <string name="ni_timeout_listview_item_title">Expiration de la demande de localisation</string>
+    <string name="ni_timeout_default_accept">"demande votre localisation.
+La localisation est transmise."</string>
+    <string name="ni_timeout_default_deny">"demande votre localisation.
+La localisation est refusée à l'expiration."</string>
+    <string name="ni_timeout_dialog_title">Expiration de la localisation</string>
+    <string name="ni_dialog_default_accept">"demande votre localisation.
+Accepter de retourner la localisation à l'expiration. Voulez-vous l'envoyer ?"</string>
+    <string name="ni_dialog_default_deny">"demande votre localisation.
+Refuser de retourner la localisation à l'expiration. Voulez-vous l'envoyer ?"</string>
+    <string name="ni_notification_tile">Demande de localisation AGPS</string>
+    <string name="ni_timeout_notification_tile">Demande de localisation AGPS</string>
+    <string name="ni_timeout_notification_message">Message non lu</string>
+    <string name="ni_timeout_notification_tickerText">Expiration de la demande de localisation</string>
+    <string name="ni_phone_interaction_message">"Une demande de localisation distante s'active. Souhaitez-vous continuer la demande de localisation ?"</string>
+</resources>

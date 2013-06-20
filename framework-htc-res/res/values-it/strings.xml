@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">Wi-Fi disattivo</string>
+    <string name="vzw_wifi_off_notify_description">Toccare per attivare il Wi-Fi</string>
+    <string name="vzw_wifi_noap_notify_title">Nessuna rete Wi-Fi rilevata</string>
+    <string name="vzw_wifi_noap_notify_description">Toccare per passare alle impostazioni</string>
+    <string name="vzw_wifi_notconnect_notify_title">Reti wireless disponibili</string>
+    <string name="vzw_wifi_notconnect_notify_description">Toccare per visualizzare le reti wireless disponibili</string>
+    <string name="vzw_wifi_connected_notify_title">Connesso a:</string>
+    <string name="vzw_wifi_connected_notify_description">Toccare per passare alle impostazioni</string>
+    <string name="permlab_accessWirelessDisplayService">usa WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">Consente ad una applicazione di usare tutte le API di WirelessDisplayService</string>
+    <string name="shutdown_hw_reset_notify_text">Per riavviare il telefono, tenere premuto il pulsante di accensione per %1$d secondi.</string>
+    <string name="shutdown_hw_reset_notify_text_singular">Per riavviare il telefono, tenere premuto il pulsante di accensione per 1 secondo.</string>
+    <string name="powerOptions_power_off_status">Spegni telefono</string>
+    <string name="powerOptions_restart">Riavvia</string>
+    <string name="powerOptions_restart_status">Chiudere tutte le applicazioni e riavviare il telefono</string>
+    <string name="dongle_noti_text_connected">Connesso</string>
+    <string name="dongle_noti_text_disconnected">Disconnesso</string>
+    <string name="dongle_noti_ticker_connected">Dispositivo Media Link HD connesso</string>
+    <string name="navigation_bar_menu_title">Suggerimenti</string>
+    <string name="navigation_bar_menu_message">"Tenere premuto il pulsante Applicazioni recenti sul lato inferiore destro dello schermo per visualizzare il menu dell'applicazione."</string>
+    <string name="navigation_bar_menu_remind_me">Non mostrare di nuovo questo messaggio</string>
+    <string name="ringtone_default_with_actual">Suoneria predefinita</string>
+    <string name="ringtone_default_notification_with_actual">Notifica predefinita</string>
+    <string name="ringtone_default_alarm_with_actual">Allarme predefinito</string>
+    <string name="ni_timeout_listview_title">Tutti i messaggi</string>
+    <string name="ni_timeout_listview_item_title">Timeout richiesta posizione</string>
+    <string name="ni_timeout_default_accept">"sta richiedendo la posizione.
+Trasmissione della posizione in corso."</string>
+    <string name="ni_timeout_default_deny">"sta richiedendo la posizione.
+Posizione rifiutata durante il timeout."</string>
+    <string name="ni_timeout_dialog_title">Timeout posizione</string>
+    <string name="ni_dialog_default_accept">"sta richiedendo la posizione.
+Accettare per tornane alla posizione durante il timeout. Inviarlo?"</string>
+    <string name="ni_dialog_default_deny">"sta richiedendo la posizione.
+Negare per tornane alla posizione durante il timeout. Inviarlo?"</string>
+    <string name="ni_notification_tile">Richiesta posizione AGPS</string>
+    <string name="ni_timeout_notification_tile">Richiesta posizione AGPS</string>
+    <string name="ni_timeout_notification_message">Messaggio non letto</string>
+    <string name="ni_timeout_notification_tickerText">Timeout richiesta posizione</string>
+    <string name="ni_phone_interaction_message">Attivazione della richiesta di posizione remota. Cotinuare con la richiesta di posizione?</string>
+</resources>

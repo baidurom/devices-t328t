@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="secure_wifi_available">
+        <item quantity="other">Nalezeny sítě Wi-Fi</item>
+        <item quantity="one">Nalezena síť Wi-Fi</item>
+    </plurals>
+    <plurals name="secure_wifi_available_detailed">
+        <item quantity="other">K dispozici jsou sítě Wi-Fi</item>
+        <item quantity="one">K dispozici je síť Wi-Fi</item>
+    </plurals>
+</resources>

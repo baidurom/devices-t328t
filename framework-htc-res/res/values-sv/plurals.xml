@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="secure_wifi_available">
+        <item quantity="other">Wi-Fi-nätverk hittades</item>
+        <item quantity="one">Wi-Fi-nätverk hittat</item>
+    </plurals>
+    <plurals name="secure_wifi_available_detailed">
+        <item quantity="other">Wi-Fi-nätverk finns tillgängliga</item>
+        <item quantity="one">Ett Wi-Fi-nätverk finns tillgängligt</item>
+    </plurals>
+</resources>

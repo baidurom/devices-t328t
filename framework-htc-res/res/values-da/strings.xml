@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">Wi-Fi Fra</string>
+    <string name="vzw_wifi_off_notify_description">Tryk for at slå Wi-Fi til</string>
+    <string name="vzw_wifi_noap_notify_title">Intet Wi-Fi-netværk fundet</string>
+    <string name="vzw_wifi_noap_notify_description">Tryk for at gå til indstillinger</string>
+    <string name="vzw_wifi_notconnect_notify_title">Trådløs netværk tilgængelige</string>
+    <string name="vzw_wifi_notconnect_notify_description">Tryk for at se tilgængelige trådløse netværk</string>
+    <string name="vzw_wifi_connected_notify_title">Har forbindelse til:</string>
+    <string name="vzw_wifi_connected_notify_description">Tryk for at gå til indstillinger</string>
+    <string name="permlab_accessWirelessDisplayService">brug WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">"Gør det muligt for et program at bruge hele API'en WirelessDisplayService"</string>
+    <string name="shutdown_hw_reset_notify_text">For at genstarte din telefon, skal du fortsætte med at trykke og holde strømknappen i %1$d sekunder.</string>
+    <string name="shutdown_hw_reset_notify_text_singular">For at genstarte din telefon, skal du fortsætte med at trykke og holde strømknappen i 1 sekund.</string>
+    <string name="powerOptions_power_off_status">Luk telefonen</string>
+    <string name="powerOptions_restart">Genstart</string>
+    <string name="powerOptions_restart_status">Luk alle programmer, og genstart telefonen</string>
+    <string name="dongle_noti_text_connected">Forbundet</string>
+    <string name="dongle_noti_text_disconnected">Frakoblet</string>
+    <string name="dongle_noti_ticker_connected">Media Link HD-enhed forbundet</string>
+    <string name="navigation_bar_menu_title">Tips</string>
+    <string name="navigation_bar_menu_message">Tryk og hold på knappen for Nylige programmer på højre side under skærmen for at se menuen for programmet.</string>
+    <string name="navigation_bar_menu_remind_me">Vis ikke denne meddelelse igen</string>
+    <string name="ringtone_default_with_actual">Standardringetone</string>
+    <string name="ringtone_default_notification_with_actual">Standardmeddelelse</string>
+    <string name="ringtone_default_alarm_with_actual">Standardalarm</string>
+    <string name="ni_timeout_listview_title">Alle meddelelser</string>
+    <string name="ni_timeout_listview_item_title">Timeout i placeringanmodning</string>
+    <string name="ni_timeout_default_accept">"anmoder om dig placering.
+Placering overføres."</string>
+    <string name="ni_timeout_default_deny">"anmoder om din placering.
+Placering nægtes ved timeout."</string>
+    <string name="ni_timeout_dialog_title">Placeringstimeout</string>
+    <string name="ni_dialog_default_accept">"anmoder om din placering.
+Accepter at returnere placering ved timeout. Vil du sende den?"</string>
+    <string name="ni_dialog_default_deny">"anmoder om din placering.
+Nægt at returnere placering ved timeout. Vil du sende den?"</string>
+    <string name="ni_notification_tile">AGPS-placeringsanmodning</string>
+    <string name="ni_timeout_notification_tile">AGPS-placeringsanmodning</string>
+    <string name="ni_timeout_notification_message">Ulæst meddelelse</string>
+    <string name="ni_timeout_notification_tickerText">Timeout i placeringanmodning</string>
+    <string name="ni_phone_interaction_message">En fjernplaceringsanmodning aktiveres. Vil du fortsætte med placeringsanmodningen?</string>
+</resources>

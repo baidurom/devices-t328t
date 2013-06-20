@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="300364255" android:versionName="3.0.2216242727.364255.318825" package="com.htc.fm"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <permission android:name="com.htc.fm.permission.FMRadioPresets" android:protectionLevel="signatureOrSystem" />
+    <permission android:name="com.htc.fm.permission.FMRadioEdit" android:protectionLevel="signatureOrSystem" />
+    <uses-permission android:name="com.htc.fm.permission.FMRadioPresets" />
+    <uses-permission android:name="com.htc.fm.permission.FMRadioEdit" />
+    <uses-permission android:name="com.htc.fmservice.permission.FMRadioService" />
+    <uses-permission android:name="com.htc.taskmanager.permission.killapp" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.htc.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_DRM" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-sdk android:minSdkVersion="15" />
+    <application android:label="@string/fm_app_name" android:icon="@drawable/icon_launcher_fm_radio" android:hardwareAccelerated="false" allowSkinChange="true">
+        <activity android:name=".activity.FMRadioEdit" android:permission="com.htc.fm.permission.FMRadioEdit" android:exported="true" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT" />
+                <data android:mimeType="application/fm" android:scheme="content" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/fakeScreen" android:label="@string/fm_all_presets_title" android:name=".activity.FMRadioPresets" android:permission="com.htc.fm.permission.FMRadioPresets" android:exported="true" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <data android:mimeType="application/fm" android:scheme="content" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/fakeScreen" android:label="@string/fm_app_name" android:icon="@drawable/icon_launcher_fm_radio" android:name=".activity.FMRadioMain" android:taskAffinity="android.task.fmradio" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="htcfm" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.htc.fm.TUNNER_VIEWER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <provider android:name=".provider.FMRadioProvider" android:authorities="com.htc.fm.provider" />
+        <service android:name=".uihelper.service.UIService" android:process=":uihelper">
+            <intent-filter>
+                <action android:name="com.htc.fm.uihelper" />
+            </intent-filter>
+        </service>
+        <receiver android:name=".receiver.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".uihelper.receiver.MediaButtonsReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.bluetooth.avrcp.intent.action.AVRCP_PANEL_OPERATION" />
+            </intent-filter>
+        </receiver>
+    </application>
+    <HTC-SDK version="4.11" />
+</manifest>

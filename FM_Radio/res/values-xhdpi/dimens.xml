@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="dimen" name="htc_margin_m_m2">@com.htc:dimen/margin_m</item>
+    <dimen name="freq_text_view_top">150.0px</dimen>
+    <dimen name="freq_text_view_size">17.0sp</dimen>
+    <dimen name="freq_text_view_width">680.0px</dimen>
+    <dimen name="indicator_relative_layout_top">77.0px</dimen>
+    <dimen name="indicator_tuner_bg_image_view_top">38.0px</dimen>
+    <dimen name="seekbar_left">42.0px</dimen>
+    <dimen name="seekbar_top">116.0px</dimen>
+    <dimen name="freq_rollbar_left">67.0px</dimen>
+    <dimen name="freq_rollbar_top">247.0px</dimen>
+    <dimen name="freq_rollbar_number_width">106.0px</dimen>
+    <dimen name="freq_rollbar_number_height">160.0px</dimen>
+    <dimen name="freq_rollbar_number_gap">11.0px</dimen>
+    <dimen name="freq_rollbar_number_gap2">74.0px</dimen>
+    <dimen name="mirror_face_top">409.0px</dimen>
+    <dimen name="dot_relative_layout_left">389.0px</dimen>
+    <dimen name="dot_relative_layout_top">247.0px</dimen>
+    <dimen name="dot_reverse_relative_layout_top">409.0px</dimen>
+    <dimen name="mhz_relative_layout_left">607.0px</dimen>
+    <dimen name="mhz_relative_layout_top">389.0px</dimen>
+    <dimen name="mhz_reverse_relative_layout_top">409.0px</dimen>
+    <dimen name="signalbar_height">322.0px</dimen>
+    <dimen name="signalbar_top">247.0px</dimen>
+    <item type="dimen" name="signalbar_padding_left">@com.htc:dimen/margin_m</item>
+    <item type="dimen" name="signalbar_padding_right">@com.htc:dimen/margin_m</item>
+    <dimen name="footer_relative_layout_top">105.0px</dimen>
+    <dimen name="footer_button1_left">120.0px</dimen>
+    <dimen name="footer_button2_left">240.0px</dimen>
+    <dimen name="footer_button3_left">380.0px</dimen>
+    <dimen name="footer_button4_left">520.0px</dimen>
+    <dimen name="japan_seekbar_left_margin">93.0px</dimen>
+    <dimen name="japan_seekbar_top_margin">770.0px</dimen>
+    <dimen name="list_item_height">106.0px</dimen>
+</resources>

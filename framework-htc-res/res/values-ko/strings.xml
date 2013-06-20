@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">Wi-Fi 끄기</string>
+    <string name="vzw_wifi_off_notify_description">눌러서 Wi-Fi 켜기</string>
+    <string name="vzw_wifi_noap_notify_title">Wi-Fi 네트워크를 찾지 못함</string>
+    <string name="vzw_wifi_noap_notify_description">눌러서 설정으로 이동</string>
+    <string name="vzw_wifi_notconnect_notify_title">무선 네트워크 사용 가능</string>
+    <string name="vzw_wifi_notconnect_notify_description">사용 가능한 무선 네트워크를 보려면 누르십시오</string>
+    <string name="vzw_wifi_connected_notify_title">다음 대상에 연결됨:</string>
+    <string name="vzw_wifi_connected_notify_description">눌러서 설정으로 이동</string>
+    <string name="permlab_accessWirelessDisplayService">use WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">Allows an application to use all of WirelessDisplayService API</string>
+    <string name="shutdown_hw_reset_notify_text">휴대폰을 다시 시작하려면 전원 단추를 %1$d초 동안 누르고 계십시오.</string>
+    <string name="shutdown_hw_reset_notify_text_singular">휴대폰을 다시 시작하려면 전원 단추를 1초 동안 누르고 계십시오.</string>
+    <string name="powerOptions_power_off_status">휴대폰 끄기</string>
+    <string name="powerOptions_restart">다시 시작</string>
+    <string name="powerOptions_restart_status">모든 응용 프로그램을 닫고 휴대폰 다시 시작</string>
+    <string name="dongle_noti_text_connected">연결됨</string>
+    <string name="dongle_noti_text_disconnected">연결 끊김</string>
+    <string name="dongle_noti_ticker_connected">Media Link HD 장치가 연결됨</string>
+    <string name="navigation_bar_menu_title">팁</string>
+    <string name="navigation_bar_menu_message">이 응용 프로그램의 메뉴를 보려면 화면 오른쪽 아래에 있는 최근 응용 프로그램 단추를 길게 누르십시오.</string>
+    <string name="navigation_bar_menu_remind_me">이 메시지를 다시 표시 안 함</string>
+    <string name="ringtone_default_with_actual">기본 벨소리</string>
+    <string name="ringtone_default_notification_with_actual">기본 알림</string>
+    <string name="ringtone_default_alarm_with_actual">기본 알람</string>
+    <string name="ni_timeout_listview_title">모든 메시지</string>
+    <string name="ni_timeout_listview_item_title">위치 요청 시간 초과</string>
+    <string name="ni_timeout_default_accept">"위치를 요청하고 있습니다.
+위치를 전송하고 있습니다."</string>
+    <string name="ni_timeout_default_deny">"위치를 요청하고 있습니다.
+시간이 초과되면 위치가 거부됩니다."</string>
+    <string name="ni_timeout_dialog_title">위치 시간 초과</string>
+    <string name="ni_dialog_default_accept">"위치를 요청하고 있습니다.
+시간이 초과될 때 위치로 돌아오려면 수락하십시오. 보내시겠습니까?"</string>
+    <string name="ni_dialog_default_deny">"위치를 요청하고 있습니다.
+시간이 초과될 때 위치로 돌아오려면 거부하십시오. 보내시겠습니까?"</string>
+    <string name="ni_notification_tile">AGPS 위치 요청</string>
+    <string name="ni_timeout_notification_tile">AGPS 위치 요청</string>
+    <string name="ni_timeout_notification_message">읽지 않은 메시지</string>
+    <string name="ni_timeout_notification_tickerText">위치 요청 시간 초과</string>
+    <string name="ni_phone_interaction_message">원격 위치 요청이 활성화되어 있습니다. 위치 요청을 계속하시겠습니까?</string>
+</resources>

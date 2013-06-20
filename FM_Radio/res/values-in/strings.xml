@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="string_add_preset">Tambahkan Prasetel</string>
+    <string name="string_scan_up">Pindai naik</string>
+    <string name="string_scan_back">Pindai mundur</string>
+    <string name="string_all_presets">Prasetel</string>
+    <string name="sound_hound">Dapatkan info</string>
+    <string name="button_power">Daya</string>
+    <string name="htc_new_songs_playlist">Tambahkan daftar putar</string>
+    <string name="sdcard_missing_message">Kartu SD hilang</string>
+    <string name="sdcard_busy_message">Kartu SD tidak tersedia karena sedang digunakan sebagai penyimpanan USB. Cabut USB untuk mengakses kartu SD.</string>
+    <string name="rollbar_dot">.</string>
+    <string name="search_settings_description">Artis, album, dan trek</string>
+    <string name="htc_deleting_songs">Menghapus lagu. Harap tunggu...</string>
+    <string name="htc_private_app">Musik HTC</string>
+    <string name="fm_app_name">Radio FM</string>
+    <string name="fm_label_seek">Memindai. Harap tunggu...</string>
+    <string name="fm_label_turning_off">Mematikan...</string>
+    <string name="fm_mute_off">Suarakan</string>
+    <string name="fm_option_stereo">Stereo</string>
+    <string name="fm_option_mono">Mono</string>
+    <string name="fm_option_band_jp">Jepang</string>
+    <string name="fm_option_band">Eropa</string>
+    <string name="fm_option_speaker">Pengeras suara</string>
+    <string name="fm_option_headset">Headset</string>
+    <string name="fm_speaker_on">Pengeras suara hidup</string>
+    <string name="fm_headset_on">Headset hidup</string>
+    <string name="fm_option_scansave">Pindai &amp; Simpan</string>
+    <string name="fm_label_edit_message">Pilih prasetel untuk diedit</string>
+    <string name="fm_dialog_no_headset_msg">Diperlukan headset untuk berfungsi sebagai antena. Colokkan headset dan coba lagi.</string>
+    <string name="fm_dialog_scanning">Memindai…</string>
+    <string name="fm_dialog_ask_to_seek_msg">Tidak ada saluran prasetel. Anda ingin mencari dan menyimpan?</string>
+    <string name="fm_dialog_airplane_msg">Tuner FM tidak tersedia dalam Mode pesawat.</string>
+    <string name="fm_dialog_turning_on_label">FM hidup…</string>
+    <string name="fm_dialog_no_channel_msg">Tidak ditemukan saluran, harap coba lagi nanti.</string>
+    <string name="fm_new_preset">Tambahkan prasetel</string>
+    <string name="fm_editor_hint_add_preset ">Nama prasetel</string>
+    <string name="fm_all_presets_title">Semua prasetel</string>
+    <string name="fm_delete_presets_title">Hapus prasetel</string>
+    <string name="fm_comfirm_scanning">Hapus semua prasetel dan pindau saluran yang tersedia?</string>
+    <string name="fm_preset_edit_title">Nama prasetel untuk</string>
+    <string name="drm_interval_type_msg">Berkas ini dapat digunakan selama %s menit. Anda ingin memutarnya sekarang?</string>
+</resources>

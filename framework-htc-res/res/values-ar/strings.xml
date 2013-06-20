@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">Wi-Fi غير فعال</string>
+    <string name="vzw_wifi_off_notify_description">اضغط لتشغيل Wi-Fi</string>
+    <string name="vzw_wifi_noap_notify_title">لم يتم اكتشاف شبكات Wi-Fi</string>
+    <string name="vzw_wifi_noap_notify_description">اضغط للانتقال إلى الإعدادات</string>
+    <string name="vzw_wifi_notconnect_notify_title">الشبكات اللاسلكية المتوفرة</string>
+    <string name="vzw_wifi_notconnect_notify_description">اضغط لترى الشبكات اللاسلكية المتاحة</string>
+    <string name="vzw_wifi_connected_notify_title">متصل بـ:</string>
+    <string name="vzw_wifi_connected_notify_description">اضغط للانتقال إلى الإعدادات</string>
+    <string name="permlab_accessWirelessDisplayService">استخدم WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">السماح لتطبيق باستخدام واجهة برمجة WirelessDisplayService</string>
+    <string name="shutdown_hw_reset_notify_text">لإعادة تشغيل هاتفك، اضغط مع الاستمرار على زر الطاقة لمدة %1$d ثانية/ثوان.</string>
+    <string name="shutdown_hw_reset_notify_text_singular">لإعادة تشغيل هاتفك، اضغط مع الاستمرار على زر الطاقة لمدة ثانية واحدة.</string>
+    <string name="powerOptions_power_off_status">إيقاف التشغيل</string>
+    <string name="powerOptions_restart">إعادة التشغيل</string>
+    <string name="powerOptions_restart_status">إغلاق كل التطبيقات وإعادة التشغيل</string>
+    <string name="dongle_noti_text_connected">متصل</string>
+    <string name="dongle_noti_text_disconnected">غير متصل</string>
+    <string name="dongle_noti_ticker_connected">تم توصيل جهاز Media Link HD</string>
+    <string name="navigation_bar_menu_title">تلميحات</string>
+    <string name="navigation_bar_menu_message">اضغط مع الاستمرار على زر التطبيقات الحديثة أسفل يمين الشاشة لترى القائمة الخاصة بهذا التطبيق.</string>
+    <string name="navigation_bar_menu_remind_me">عدم إظهار هذه الرسالة مرة أخرى</string>
+    <string name="ringtone_default_with_actual">Default ringtone</string>
+    <string name="ringtone_default_notification_with_actual">الإخطار الافتراضي</string>
+    <string name="ringtone_default_alarm_with_actual">Default alarm</string>
+    <string name="ni_timeout_listview_title">كل الرسالة</string>
+    <string name="ni_timeout_listview_item_title">مهلة طلب الموقع</string>
+    <string name="ni_timeout_default_accept">"يطلب معرفة موقعك.
+جاري نقل معلومات الموقع."</string>
+    <string name="ni_timeout_default_deny">"يطلب معرفة موقعك.
+تم رفض طلب الموقع بعد انتهاء المهلة."</string>
+    <string name="ni_timeout_dialog_title">مهلة الموقع</string>
+    <string name="ni_dialog_default_accept">"يطلب معرفة موقعك.
+قم بالموافقة على إعادة الموقع بعد انتهاء المهلة. هل تريد إرساله؟"</string>
+    <string name="ni_dialog_default_deny">"يطلب معرفة موقعك.
+قم برفض إعادة الموقع بعد انتهاء المهلة. هل تريد إرساله؟"</string>
+    <string name="ni_notification_tile">طلب موقع AGPS</string>
+    <string name="ni_timeout_notification_tile">طلب موقع AGPS</string>
+    <string name="ni_timeout_notification_message">رسالة غير مقروءة</string>
+    <string name="ni_timeout_notification_tickerText">مهلة طلب الموقع</string>
+    <string name="ni_phone_interaction_message">جاري تنشيط طلب الموقع عن بعد. هل تريد متابعة طلب الموقع؟</string>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">Wi-Fi oprit</string>
+    <string name="vzw_wifi_off_notify_description">Apăsaţi pentru a porni Wi-Fi</string>
+    <string name="vzw_wifi_noap_notify_title">Nu au fost detectate reţele Wi-Fi</string>
+    <string name="vzw_wifi_noap_notify_description">Apăsaţi pentru a accesa setările</string>
+    <string name="vzw_wifi_notconnect_notify_title">Reţele wireless disponibile</string>
+    <string name="vzw_wifi_notconnect_notify_description">Apăsaţi pentru a vizualiza reţelele wireless disponibile</string>
+    <string name="vzw_wifi_connected_notify_title">Conectat la:</string>
+    <string name="vzw_wifi_connected_notify_description">Apăsaţi pentru a accesa setările</string>
+    <string name="permlab_accessWirelessDisplayService">utilizare servicii Wireless Display</string>
+    <string name="permdesc_accessWirelessDisplayService">Permite unei aplicaţii să utilizeze totate serviciile Wireless Display API</string>
+    <string name="shutdown_hw_reset_notify_text">Pentru a reporni telefonul, ţineţi apăsat în continuu butonul de pornire timp de %1$d secunde.</string>
+    <string name="shutdown_hw_reset_notify_text_singular">Pentru a reporni telefonul, ţineţi apăsat în continuu butonul de pornire timp de 1 secundă.</string>
+    <string name="powerOptions_power_off_status">Oprire telefon</string>
+    <string name="powerOptions_restart">Repornire</string>
+    <string name="powerOptions_restart_status">Închide toate aplicaţiile şi reporneşte telefonul</string>
+    <string name="dongle_noti_text_connected">Conectat</string>
+    <string name="dongle_noti_text_disconnected">Deconectat</string>
+    <string name="dongle_noti_ticker_connected">Dispozitivul Media Link HD conectat</string>
+    <string name="navigation_bar_menu_title">Sfaturi</string>
+    <string name="navigation_bar_menu_message">Ţineţi apăsat butonul Aplicaţii recente din partea dreaptă de sub ecran pentru a afişa meniul pentru această aplicaţie.</string>
+    <string name="navigation_bar_menu_remind_me">Nu mai afişa acest mesaj</string>
+    <string name="ringtone_default_with_actual">Ton de apel implicit</string>
+    <string name="ringtone_default_notification_with_actual">Notificare implicită</string>
+    <string name="ringtone_default_alarm_with_actual">Alarmă implicită</string>
+    <string name="ni_timeout_listview_title">Toate mesajele</string>
+    <string name="ni_timeout_listview_item_title">Cerere de locaţie expirată</string>
+    <string name="ni_timeout_default_accept">"solicită informaţii despre locaţia dvs.
+Locaţia se transmite."</string>
+    <string name="ni_timeout_default_deny">"solicită informaţii despre locaţia dvs.
+Locaţia este refuzată când expiră timpul."</string>
+    <string name="ni_timeout_dialog_title">Locaţie expirată</string>
+    <string name="ni_dialog_default_accept">"solicită informaţii despre locaţia dvs.
+Returnarea locaţiei este acceptată când expiră timpul. Doriţi să o trimiteţi?"</string>
+    <string name="ni_dialog_default_deny">"solicită informaţii despre locaţia dvs.
+Returnarea locaţiei este refuzată când expiră timpul. Doriţi să o trimiteţi?"</string>
+    <string name="ni_notification_tile">Cerere de locaţie AGPS</string>
+    <string name="ni_timeout_notification_tile">Cerere de locaţie AGPS</string>
+    <string name="ni_timeout_notification_message">Mesaj necitit</string>
+    <string name="ni_timeout_notification_tickerText">Cerere de locaţie expirată</string>
+    <string name="ni_phone_interaction_message">Se activează o cerere de locaţie de la distanţă. Continuaţi cu cererea de locaţie?</string>
+</resources>

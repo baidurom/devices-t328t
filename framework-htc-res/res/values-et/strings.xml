@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vzw_wifi_off_notify_title">WiFi väljas</string>
+    <string name="vzw_wifi_off_notify_description">Toksake WiFi sisselülitamiseks</string>
+    <string name="vzw_wifi_noap_notify_title">WiFi-võrke ei tuvastatud</string>
+    <string name="vzw_wifi_noap_notify_description">Toksake seadete avamiseks</string>
+    <string name="vzw_wifi_notconnect_notify_title">Juhtmevabad võrgud on saadaval</string>
+    <string name="vzw_wifi_notconnect_notify_description">Toksake saadaolevate juhtmevabade võrkude kuvamiseks</string>
+    <string name="vzw_wifi_connected_notify_title">Ühendatud seadmega:</string>
+    <string name="vzw_wifi_connected_notify_description">Toksake seadete avamiseks</string>
+    <string name="permlab_accessWirelessDisplayService">use WirelessDisplayService</string>
+    <string name="permdesc_accessWirelessDisplayService">Allows an application to use all of WirelessDisplayService API</string>
+    <string name="shutdown_hw_reset_notify_text">Telefoni taaskäivitamiseks vajutage toitenuppu ja hoidke seda all %1$d sekundit.</string>
+    <string name="shutdown_hw_reset_notify_text_singular">Telefoni taaskäivitamiseks vajutage toitenuppu ja hoidke seda all 1 sekund.</string>
+    <string name="powerOptions_power_off_status">Lülita telefon välja</string>
+    <string name="powerOptions_restart">Taaskäivita</string>
+    <string name="powerOptions_restart_status">Sulge kõik rakendused ja taaskäivita telefon</string>
+    <string name="dongle_noti_text_connected">Ühendatud</string>
+    <string name="dongle_noti_text_disconnected">Ühendus on katkestatud</string>
+    <string name="dongle_noti_ticker_connected">Media Link HD seade on ühendatud</string>
+    <string name="navigation_bar_menu_title">Näpunäited</string>
+    <string name="navigation_bar_menu_message">Vajutage ja hoidke all hiljutiste rakenduste nuppu ekraani paremal äärel, et näha selle rakenduse menüüd.</string>
+    <string name="navigation_bar_menu_remind_me">Ära näita seda teadet enam</string>
+    <string name="ringtone_default_with_actual">Vaikehelin</string>
+    <string name="ringtone_default_notification_with_actual">Vaiketeavitus</string>
+    <string name="ringtone_default_alarm_with_actual">Vaikimisi meeldetuletus</string>
+    <string name="ni_timeout_listview_title">Kogu sõnum</string>
+    <string name="ni_timeout_listview_item_title">Asukoha taotluse aegumine</string>
+    <string name="ni_timeout_default_accept">"taotleb teie asukohta.
+Asukoht edastab."</string>
+    <string name="ni_timeout_default_deny">"taotleb teie asukohta.
+Asukohast keeldutakse aegumisel."</string>
+    <string name="ni_timeout_dialog_title">Asukoha aegumine</string>
+    <string name="ni_dialog_default_accept">"taotleb teie asukohta.
+Nõustuge asukohta naasmiseks aegumisel. Kas soovite selle saata?"</string>
+    <string name="ni_dialog_default_deny">"taotleb teie asukohta.
+Keelduge asukohta naasmiseks aegumisel. Kas soovite selle saata?"</string>
+    <string name="ni_notification_tile">AGPS-i asukoha taotlus</string>
+    <string name="ni_timeout_notification_tile">AGPS-i asukoha taotlus</string>
+    <string name="ni_timeout_notification_message">Lugemata sõnum</string>
+    <string name="ni_timeout_notification_tickerText">Asukoha taotluse ajalõpp</string>
+    <string name="ni_phone_interaction_message">Kaugasukoha taotlus aktiveerub. Kas soovite jätkata seda asukoha taotlust?</string>
+</resources>
