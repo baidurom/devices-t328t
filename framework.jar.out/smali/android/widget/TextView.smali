@@ -27667,13 +27667,28 @@
 
     if-eq v0, v8, :cond_3
 
-    if-ne v0, v9, :cond_4
+    if-ne v0, v9, :cond_5
 
     .line 8379
     :cond_3
-    iget-object v8, p0, Landroid/widget/TextView;->mMagnifierPopupWindow:Landroid/widget/PopupWindow;
+    invoke-virtual {p0}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v8
 
     if-eqz v8, :cond_4
+
+    .line 8380
+    invoke-virtual {p0}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v8
+
+    invoke-interface {v8, v10}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+
+    .line 8382
+    :cond_4
+    iget-object v8, p0, Landroid/widget/TextView;->mMagnifierPopupWindow:Landroid/widget/PopupWindow;
+
+    if-eqz v8, :cond_5
 
     iget-object v8, p0, Landroid/widget/TextView;->mMagnifierPopupWindow:Landroid/widget/PopupWindow;
 
@@ -27681,7 +27696,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_4
+    if-eqz v8, :cond_5
 
     .line 8380
     iget-object v8, p0, Landroid/widget/TextView;->mMagnifierPopupWindow:Landroid/widget/PopupWindow;
@@ -27710,38 +27725,38 @@
     iput-boolean v9, p0, Landroid/widget/TextView;->mDiscardNextActionUp:Z
 
     .line 8393
-    :cond_4
+    :cond_5
     iget-boolean v8, p0, Landroid/widget/TextView;->mDiscardNextActionUp:Z
 
-    if-eqz v8, :cond_6
+    if-eqz v8, :cond_7
 
-    if-ne v0, v9, :cond_6
+    if-ne v0, v9, :cond_7
 
     .line 8394
     iput-boolean v10, p0, Landroid/widget/TextView;->mDiscardNextActionUp:Z
 
     .line 8454
     .end local v5           #superResult:Z
-    :cond_5
+    :cond_6
     :goto_0
     return v5
 
     .line 8398
     .restart local v5       #superResult:Z
-    :cond_6
-    if-ne v0, v9, :cond_f
+    :cond_7
+    if-ne v0, v9, :cond_10
 
     invoke-virtual {p0}, Landroid/widget/TextView;->shouldIgnoreActionUpEvent()Z
 
     move-result v8
 
-    if-nez v8, :cond_f
+    if-nez v8, :cond_10
 
     invoke-virtual {p0}, Landroid/widget/TextView;->isFocused()Z
 
     move-result v8
 
-    if-eqz v8, :cond_f
+    if-eqz v8, :cond_10
 
     move v6, v9
 
@@ -27750,30 +27765,30 @@
     :goto_1
     iget-object v8, p0, Landroid/widget/TextView;->mMovement:Landroid/text/method/MovementMethod;
 
-    if-nez v8, :cond_7
+    if-nez v8, :cond_8
 
     invoke-virtual {p0}, Landroid/widget/TextView;->onCheckIsTextEditor()Z
 
     move-result v8
 
-    if-eqz v8, :cond_5
+    if-eqz v8, :cond_6
 
-    :cond_7
+    :cond_8
     invoke-virtual {p0}, Landroid/widget/TextView;->isEnabled()Z
 
     move-result v8
 
-    if-eqz v8, :cond_5
+    if-eqz v8, :cond_6
 
     iget-object v8, p0, Landroid/widget/TextView;->mText:Ljava/lang/CharSequence;
 
     instance-of v8, v8, Landroid/text/Spannable;
 
-    if-eqz v8, :cond_5
+    if-eqz v8, :cond_6
 
     iget-object v8, p0, Landroid/widget/TextView;->mLayout:Landroid/text/Layout;
 
-    if-eqz v8, :cond_5
+    if-eqz v8, :cond_6
 
     .line 8403
     const/4 v1, 0x0
@@ -27782,7 +27797,7 @@
     .local v1, handled:Z
     iget-object v8, p0, Landroid/widget/TextView;->mMovement:Landroid/text/method/MovementMethod;
 
-    if-eqz v8, :cond_8
+    if-eqz v8, :cond_9
 
     .line 8406
     iget-object v11, p0, Landroid/widget/TextView;->mMovement:Landroid/text/method/MovementMethod;
@@ -27798,20 +27813,20 @@
     or-int/2addr v1, v8
 
     .line 8409
-    :cond_8
-    if-eqz v6, :cond_9
+    :cond_9
+    if-eqz v6, :cond_a
 
     iget-boolean v8, p0, Landroid/widget/TextView;->mLinksClickable:Z
 
-    if-eqz v8, :cond_9
+    if-eqz v8, :cond_a
 
     iget v8, p0, Landroid/widget/TextView;->mAutoLinkMask:I
 
-    if-eqz v8, :cond_9
+    if-eqz v8, :cond_a
 
     iget-boolean v8, p0, Landroid/widget/TextView;->mTextIsSelectable:Z
 
-    if-eqz v8, :cond_9
+    if-eqz v8, :cond_a
 
     .line 8413
     iget-object v8, p0, Landroid/widget/TextView;->mText:Ljava/lang/CharSequence;
@@ -27838,7 +27853,7 @@
     .local v3, links:[Landroid/text/style/ClickableSpan;
     array-length v8, v3
 
-    if-eqz v8, :cond_9
+    if-eqz v8, :cond_a
 
     .line 8417
     aget-object v8, v3, v10
@@ -27850,21 +27865,21 @@
 
     .line 8422
     .end local v3           #links:[Landroid/text/style/ClickableSpan;
-    :cond_9
-    if-eqz v6, :cond_e
+    :cond_a
+    if-eqz v6, :cond_f
 
     invoke-direct {p0}, Landroid/widget/TextView;->isTextEditable()Z
 
     move-result v8
 
-    if-nez v8, :cond_a
+    if-nez v8, :cond_b
 
     iget-boolean v8, p0, Landroid/widget/TextView;->mTextIsSelectable:Z
 
-    if-eqz v8, :cond_e
+    if-eqz v8, :cond_f
 
     .line 8424
-    :cond_a
+    :cond_b
     invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->peekInstance()Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v2
@@ -27876,20 +27891,20 @@
     .line 8426
     iget-boolean v8, p0, Landroid/widget/TextView;->mTextIsSelectable:Z
 
-    if-nez v8, :cond_b
+    if-nez v8, :cond_c
 
     iget-boolean v8, p0, Landroid/widget/TextView;->mSoftInputShownOnFocus:Z
 
-    if-eqz v8, :cond_b
+    if-eqz v8, :cond_c
 
     .line 8427
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_11
 
     invoke-virtual {v2, p0, v10}, Landroid/view/inputmethod/InputMethodManager;->showSoftInput(Landroid/view/View;I)Z
 
     move-result v8
 
-    if-eqz v8, :cond_10
+    if-eqz v8, :cond_11
 
     move v8, v9
 
@@ -27897,16 +27912,16 @@
     or-int/2addr v1, v8
 
     .line 8430
-    :cond_b
+    :cond_c
     iget-boolean v8, p0, Landroid/widget/TextView;->mSelectAllOnFocus:Z
 
-    if-eqz v8, :cond_11
+    if-eqz v8, :cond_12
 
     invoke-virtual {p0}, Landroid/widget/TextView;->didTouchFocusSelect()Z
 
     move-result v8
 
-    if-eqz v8, :cond_11
+    if-eqz v8, :cond_12
 
     move v4, v9
 
@@ -27916,7 +27931,7 @@
     invoke-direct {p0}, Landroid/widget/TextView;->hideControllers()V
 
     .line 8432
-    if-nez v4, :cond_d
+    if-nez v4, :cond_e
 
     iget-object v8, p0, Landroid/widget/TextView;->mText:Ljava/lang/CharSequence;
 
@@ -27924,12 +27939,12 @@
 
     move-result v8
 
-    if-lez v8, :cond_d
+    if-lez v8, :cond_e
 
     .line 8433
     iget-object v8, p0, Landroid/widget/TextView;->mSpellChecker:Landroid/widget/SpellChecker;
 
-    if-eqz v8, :cond_c
+    if-eqz v8, :cond_d
 
     .line 8435
     iget-object v8, p0, Landroid/widget/TextView;->mSpellChecker:Landroid/widget/SpellChecker;
@@ -27937,33 +27952,33 @@
     invoke-virtual {v8}, Landroid/widget/SpellChecker;->onSelectionChanged()V
 
     .line 8437
-    :cond_c
+    :cond_d
     invoke-direct {p0}, Landroid/widget/TextView;->extractedTextModeWillBeStarted()Z
 
     move-result v8
 
-    if-nez v8, :cond_d
+    if-nez v8, :cond_e
 
     .line 8438
     invoke-direct {p0}, Landroid/widget/TextView;->isCursorInsideEasyCorrectionSpan()Z
 
     move-result v8
 
-    if-eqz v8, :cond_12
+    if-eqz v8, :cond_13
 
     .line 8439
     invoke-virtual {p0}, Landroid/widget/TextView;->showSuggestions()V
 
     .line 8446
-    :cond_d
+    :cond_e
     :goto_4
     const/4 v1, 0x1
 
     .line 8449
     .end local v2           #imm:Landroid/view/inputmethod/InputMethodManager;
     .end local v4           #selectAllGotFocus:Z
-    :cond_e
-    if-eqz v1, :cond_5
+    :cond_f
+    if-eqz v1, :cond_6
 
     move v5, v9
 
@@ -27972,7 +27987,7 @@
 
     .end local v1           #handled:Z
     .end local v6           #touchIsFinished:Z
-    :cond_f
+    :cond_10
     move v6, v10
 
     .line 8398
@@ -27981,13 +27996,13 @@
     .restart local v1       #handled:Z
     .restart local v2       #imm:Landroid/view/inputmethod/InputMethodManager;
     .restart local v6       #touchIsFinished:Z
-    :cond_10
+    :cond_11
     move v8, v10
 
     .line 8427
     goto :goto_2
 
-    :cond_11
+    :cond_12
     move v4, v10
 
     .line 8430
@@ -27995,12 +28010,12 @@
 
     .line 8440
     .restart local v4       #selectAllGotFocus:Z
-    :cond_12
+    :cond_13
     invoke-virtual {p0}, Landroid/widget/TextView;->hasInsertionController()Z
 
     move-result v8
 
-    if-eqz v8, :cond_d
+    if-eqz v8, :cond_e
 
     .line 8441
     invoke-virtual {p0}, Landroid/widget/TextView;->getInsertionController()Landroid/widget/TextView$InsertionPointCursorController;
@@ -28168,9 +28183,9 @@
     .locals 12
 
     .prologue
-    const/4 v11, 0x1
+    const/4 v11, 0x0
 
-    const/4 v10, 0x0
+    const/4 v10, 0x1
 
     .line 9320
     const/4 v2, 0x0
@@ -28188,7 +28203,7 @@
     if-eqz v8, :cond_0
 
     .line 9324
-    iput-boolean v11, p0, Landroid/widget/TextView;->mDiscardNextActionUp:Z
+    iput-boolean v10, p0, Landroid/widget/TextView;->mDiscardNextActionUp:Z
 
     .line 9325
     const/4 v2, 0x1
@@ -28202,15 +28217,30 @@
     invoke-static {v8, v9}, Landroid/util/FeatureData;->onEvent(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 9329
-    if-nez v2, :cond_1
+    if-nez v2, :cond_2
 
     invoke-virtual {p0}, Landroid/widget/TextView;->isTextSelectable()Z
 
     move-result v8
 
+    if-eqz v8, :cond_2
+
+    .line 9334
+    invoke-virtual {p0}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v8
+
     if-eqz v8, :cond_1
 
     .line 9331
+    invoke-virtual {p0}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v8
+
+    invoke-interface {v8, v10}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+
+    .line 9337
+    :cond_1
     invoke-direct {p0}, Landroid/widget/TextView;->startSelectionActionMode()Z
 
     .line 9332
@@ -28230,8 +28260,8 @@
     const/4 v2, 0x1
 
     .line 9339
-    :cond_1
-    if-nez v2, :cond_2
+    :cond_2
+    if-nez v2, :cond_3
 
     iget v8, p0, Landroid/widget/TextView;->mLastDownPositionX:F
 
@@ -28241,11 +28271,11 @@
 
     move-result v8
 
-    if-nez v8, :cond_2
+    if-nez v8, :cond_3
 
     iget-boolean v8, p0, Landroid/widget/TextView;->mInsertionControllerEnabled:Z
 
-    if-eqz v8, :cond_2
+    if-eqz v8, :cond_3
 
     .line 9341
     iget v8, p0, Landroid/widget/TextView;->mLastDownPositionX:F
@@ -28282,19 +28312,19 @@
 
     .line 9349
     .end local v4           #offset:I
-    :cond_2
-    if-nez v2, :cond_3
+    :cond_3
+    if-nez v2, :cond_4
 
     iget-object v8, p0, Landroid/widget/TextView;->mSelectionActionMode:Landroid/view/ActionMode;
 
-    if-eqz v8, :cond_3
+    if-eqz v8, :cond_4
 
     .line 9350
     invoke-direct {p0}, Landroid/widget/TextView;->touchPositionIsInSelection()Z
 
     move-result v8
 
-    if-eqz v8, :cond_7
+    if-eqz v8, :cond_8
 
     .line 9352
     invoke-virtual {p0}, Landroid/widget/TextView;->getSelectionStart()I
@@ -28333,7 +28363,7 @@
 
     move-result-object v8
 
-    invoke-virtual {p0, v0, v8, v3, v10}, Landroid/widget/TextView;->startDrag(Landroid/content/ClipData;Landroid/view/View$DragShadowBuilder;Ljava/lang/Object;I)Z
+    invoke-virtual {p0, v0, v8, v3, v11}, Landroid/widget/TextView;->startDrag(Landroid/content/ClipData;Landroid/view/View$DragShadowBuilder;Ljava/lang/Object;I)Z
 
     .line 9358
     invoke-direct {p0}, Landroid/widget/TextView;->stopSelectionActionMode()V
@@ -28348,8 +28378,8 @@
     const/4 v2, 0x1
 
     .line 9368
-    :cond_3
-    if-nez v2, :cond_4
+    :cond_4
+    if-nez v2, :cond_5
 
     .line 9369
     invoke-direct {p0}, Landroid/widget/TextView;->startSelectionActionMode()Z
@@ -28359,25 +28389,25 @@
     move v7, v2
 
     .line 9372
-    :cond_4
-    if-eqz v7, :cond_5
-
-    .line 9373
-    invoke-virtual {p0, v10}, Landroid/widget/TextView;->performHapticFeedback(I)Z
-
-    .line 9376
     :cond_5
-    if-eqz v2, :cond_6
+    if-eqz v7, :cond_6
 
     .line 9377
-    iput-boolean v11, p0, Landroid/widget/TextView;->mDiscardNextActionUp:Z
+    invoke-virtual {p0, v11}, Landroid/widget/TextView;->performHapticFeedback(I)Z
 
     .line 9380
     :cond_6
+    if-eqz v2, :cond_7
+
+    .line 9383
+    iput-boolean v10, p0, Landroid/widget/TextView;->mDiscardNextActionUp:Z
+
+    .line 9386
+    :cond_7
     return v2
 
-    .line 9360
-    :cond_7
+    .line 9366
+    :cond_8
     invoke-virtual {p0}, Landroid/widget/TextView;->getSelectionController()Landroid/widget/TextView$SelectionModifierCursorController;
 
     move-result-object v8
