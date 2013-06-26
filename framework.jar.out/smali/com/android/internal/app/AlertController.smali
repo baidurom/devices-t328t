@@ -518,8 +518,55 @@
     return-void
 .end method
 
+.method private correctCustomPanelBackground(Landroid/widget/LinearLayout;Landroid/view/View;ZZ)V
+    .locals 4
+    .parameter "contentPanel"
+    .parameter "customPanel"
+    .parameter "hasButtons"
+    .parameter "hasTitle"
+
+    .prologue
+    .line 740
+    const v1, #layout@yi_alert_dialog_baidu_light#t
+
+    .line 741
+    .local v1, layoutId:I
+    if-eqz p2, :cond_0
+
+    iget v2, p0, Lcom/android/internal/app/AlertController;->mAlertDialogLayout:I
+
+    if-ne v2, v1, :cond_0
+
+    invoke-virtual {p1}, Landroid/widget/LinearLayout;->getVisibility()I
+
+    move-result v2
+
+    const/16 v3, 0x8
+
+    if-eq v2, v3, :cond_0
+
+    if-eqz p3, :cond_0
+
+    if-eqz p4, :cond_0
+
+    .line 743
+    const v0, #drawable@yi_dialog_middle_custom_baidu_light#t
+
+    .line 744
+    .local v0, customBackgroundId:I
+    if-eqz v0, :cond_0
+
+    .line 745
+    invoke-virtual {p2, v0}, Landroid/view/View;->setBackgroundResource(I)V
+
+    .line 748
+    .end local v0           #customBackgroundId:I
+    :cond_0
+    return-void
+.end method
+
 .method private setBackground(Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroid/view/View;ZLandroid/content/res/TypedArray;ZLandroid/view/View;)V
-    .locals 22
+    .locals 24
     .parameter "topPanel"
     .parameter "contentPanel"
     .parameter "customPanel"
@@ -529,488 +576,604 @@
     .parameter "buttonPanel"
 
     .prologue
-    .line 592
-    const/16 v19, 0x0
+    .line 593
+    const/16 v21, 0x0
 
-    const v20, 0x1080440
+    const v22, 0x1080440
 
     move-object/from16 v0, p5
 
-    move/from16 v1, v19
+    move/from16 v1, v21
 
-    move/from16 v2, v20
+    move/from16 v2, v22
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v11
+
+    .line 595
+    .local v11, fullDark:I
+    const/16 v21, 0x1
+
+    const v22, 0x1080448
+
+    move-object/from16 v0, p5
+
+    move/from16 v1, v21
+
+    move/from16 v2, v22
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v18
+
+    .line 597
+    .local v18, topDark:I
+    const/16 v21, 0x2
+
+    const v22, 0x108043d
+
+    move-object/from16 v0, p5
+
+    move/from16 v1, v21
+
+    move/from16 v2, v22
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v9
 
-    .line 594
-    .local v9, fullDark:I
-    const/16 v19, 0x1
+    .line 599
+    .local v9, centerDark:I
+    const/16 v21, 0x3
 
-    const v20, 0x1080448
-
-    move-object/from16 v0, p5
-
-    move/from16 v1, v19
-
-    move/from16 v2, v20
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v16
-
-    .line 596
-    .local v16, topDark:I
-    const/16 v19, 0x2
-
-    const v20, 0x108043d
+    const v22, 0x108043a
 
     move-object/from16 v0, p5
 
-    move/from16 v1, v19
+    move/from16 v1, v21
 
-    move/from16 v2, v20
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v7
-
-    .line 598
-    .local v7, centerDark:I
-    const/16 v19, 0x3
-
-    const v20, 0x108043a
-
-    move-object/from16 v0, p5
-
-    move/from16 v1, v19
-
-    move/from16 v2, v20
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v4
-
-    .line 600
-    .local v4, bottomDark:I
-    const/16 v19, 0x4
-
-    const v20, 0x108043f
-
-    move-object/from16 v0, p5
-
-    move/from16 v1, v19
-
-    move/from16 v2, v20
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v8
-
-    .line 602
-    .local v8, fullBright:I
-    const/16 v19, 0x5
-
-    const v20, 0x1080447
-
-    move-object/from16 v0, p5
-
-    move/from16 v1, v19
-
-    move/from16 v2, v20
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v15
-
-    .line 604
-    .local v15, topBright:I
-    const/16 v19, 0x6
-
-    const v20, 0x108043c
-
-    move-object/from16 v0, p5
-
-    move/from16 v1, v19
-
-    move/from16 v2, v20
+    move/from16 v2, v22
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v6
 
-    .line 606
-    .local v6, centerBright:I
-    const/16 v19, 0x7
+    .line 601
+    .local v6, bottomDark:I
+    const/16 v21, 0x4
 
-    const v20, 0x1080439
+    const v22, 0x108043f
 
     move-object/from16 v0, p5
 
-    move/from16 v1, v19
+    move/from16 v1, v21
 
-    move/from16 v2, v20
+    move/from16 v2, v22
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    move-result v3
+    move-result v10
 
-    .line 608
-    .local v3, bottomBright:I
-    const/16 v19, 0x8
+    .line 603
+    .local v10, fullBright:I
+    const/16 v21, 0x5
 
-    const v20, 0x108043b
+    const v22, 0x1080447
 
     move-object/from16 v0, p5
 
-    move/from16 v1, v19
+    move/from16 v1, v21
 
-    move/from16 v2, v20
+    move/from16 v2, v22
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v17
+
+    .line 605
+    .local v17, topBright:I
+    const/16 v21, 0x6
+
+    const v22, 0x108043c
+
+    move-object/from16 v0, p5
+
+    move/from16 v1, v21
+
+    move/from16 v2, v22
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v8
+
+    .line 607
+    .local v8, centerBright:I
+    const/16 v21, 0x7
+
+    const v22, 0x1080439
+
+    move-object/from16 v0, p5
+
+    move/from16 v1, v21
+
+    move/from16 v2, v22
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v5
 
-    .line 620
-    .local v5, bottomMedium:I
-    const/16 v19, 0x4
+    .line 609
+    .local v5, bottomBright:I
+    const/16 v21, 0x8
 
-    move/from16 v0, v19
+    const v22, 0x108043b
+
+    move-object/from16 v0, p5
+
+    move/from16 v1, v21
+
+    move/from16 v2, v22
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v7
+
+    .line 621
+    .local v7, bottomMedium:I
+    const/16 v21, 0x4
+
+    move/from16 v0, v21
 
     new-array v0, v0, [Landroid/view/View;
 
-    move-object/from16 v18, v0
-
-    .line 621
-    .local v18, views:[Landroid/view/View;
-    const/16 v19, 0x4
-
-    move/from16 v0, v19
-
-    new-array v12, v0, [Z
+    move-object/from16 v20, v0
 
     .line 622
-    .local v12, light:[Z
-    const/4 v11, 0x0
+    .local v20, views:[Landroid/view/View;
+    const/16 v21, 0x4
+
+    move/from16 v0, v21
+
+    new-array v14, v0, [Z
 
     .line 623
-    .local v11, lastView:Landroid/view/View;
-    const/4 v10, 0x0
-
-    .line 625
-    .local v10, lastLight:Z
+    .local v14, light:[Z
     const/4 v13, 0x0
 
+    .line 624
+    .local v13, lastView:Landroid/view/View;
+    const/4 v12, 0x0
+
     .line 626
-    .local v13, pos:I
-    if-eqz p6, :cond_0
+    .local v12, lastLight:Z
+    const/4 v15, 0x0
 
     .line 627
-    aput-object p1, v18, v13
+    .local v15, pos:I
+    if-eqz p6, :cond_0
 
     .line 628
-    const/16 v19, 0x0
-
-    aput-boolean v19, v12, v13
+    aput-object p1, v20, v15
 
     .line 629
-    add-int/lit8 v13, v13, 0x1
+    const/16 v21, 0x0
 
-    .line 637
+    aput-boolean v21, v14, v15
+
+    .line 630
+    add-int/lit8 v15, v15, 0x1
+
+    .line 638
     :cond_0
     invoke-virtual/range {p2 .. p2}, Landroid/widget/LinearLayout;->getVisibility()I
 
-    move-result v19
+    move-result v21
 
-    const/16 v20, 0x8
+    const/16 v22, 0x8
 
-    move/from16 v0, v19
+    move/from16 v0, v21
 
-    move/from16 v1, v20
+    move/from16 v1, v22
 
-    if-ne v0, v1, :cond_1
+    if-ne v0, v1, :cond_3
 
-    const/16 p2, 0x0
+    const/16 v21, 0x0
 
-    .end local p2
-    :cond_1
-    aput-object p2, v18, v13
+    :goto_0
+    aput-object v21, v20, v15
 
-    .line 639
+    .line 640
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
 
-    move-object/from16 v19, v0
+    move-object/from16 v21, v0
 
-    if-eqz v19, :cond_4
+    if-eqz v21, :cond_4
 
-    const/16 v19, 0x1
+    const/16 v21, 0x1
 
-    :goto_0
-    aput-boolean v19, v12, v13
-
-    .line 640
-    add-int/lit8 v13, v13, 0x1
+    :goto_1
+    aput-boolean v21, v14, v15
 
     .line 641
-    if-eqz p3, :cond_2
+    add-int/lit8 v15, v15, 0x1
 
     .line 642
-    aput-object p3, v18, v13
+    if-eqz p3, :cond_1
 
     .line 643
+    aput-object p3, v20, v15
+
+    .line 644
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/internal/app/AlertController;->mForceInverseBackground:Z
 
-    move/from16 v19, v0
+    move/from16 v21, v0
 
-    aput-boolean v19, v12, v13
+    aput-boolean v21, v14, v15
 
-    .line 644
-    add-int/lit8 v13, v13, 0x1
-
-    .line 646
-    :cond_2
-    if-eqz p4, :cond_3
+    .line 645
+    add-int/lit8 v15, v15, 0x1
 
     .line 647
-    aput-object p7, v18, v13
+    :cond_1
+    if-eqz p4, :cond_2
 
     .line 648
-    const/16 v19, 0x1
+    aput-object p7, v20, v15
 
-    aput-boolean v19, v12, v13
+    .line 649
+    const/16 v21, 0x1
 
-    .line 651
-    :cond_3
-    const/4 v14, 0x0
+    aput-boolean v21, v14, v15
 
     .line 652
-    .local v14, setView:Z
-    const/4 v13, 0x0
+    :cond_2
+    const/16 v16, 0x0
 
-    :goto_1
-    move-object/from16 v0, v18
+    .line 653
+    .local v16, setView:Z
+    const/4 v15, 0x0
+
+    :goto_2
+    move-object/from16 v0, v20
 
     array-length v0, v0
 
-    move/from16 v19, v0
+    move/from16 v21, v0
 
-    move/from16 v0, v19
+    move/from16 v0, v21
 
-    if-ge v13, v0, :cond_a
-
-    .line 653
-    aget-object v17, v18, v13
+    if-ge v15, v0, :cond_a
 
     .line 654
-    .local v17, v:Landroid/view/View;
-    if-nez v17, :cond_5
+    aget-object v19, v20, v15
 
-    .line 652
-    :goto_2
-    add-int/lit8 v13, v13, 0x1
+    .line 655
+    .local v19, v:Landroid/view/View;
+    if-nez v19, :cond_5
 
-    goto :goto_1
-
-    .line 639
-    .end local v14           #setView:Z
-    .end local v17           #v:Landroid/view/View;
-    :cond_4
-    const/16 v19, 0x0
-
-    goto :goto_0
-
-    .line 657
-    .restart local v14       #setView:Z
-    .restart local v17       #v:Landroid/view/View;
-    :cond_5
-    if-eqz v11, :cond_6
-
-    .line 658
-    if-nez v14, :cond_8
-
-    .line 659
-    if-eqz v10, :cond_7
-
-    move/from16 v19, v15
-
+    .line 653
     :goto_3
-    move/from16 v0, v19
-
-    invoke-virtual {v11, v0}, Landroid/view/View;->setBackgroundResource(I)V
-
-    .line 663
-    :goto_4
-    const/4 v14, 0x1
-
-    .line 665
-    :cond_6
-    move-object/from16 v11, v17
-
-    .line 666
-    aget-boolean v10, v12, v13
+    add-int/lit8 v15, v15, 0x1
 
     goto :goto_2
 
-    :cond_7
-    move/from16 v19, v16
+    .end local v16           #setView:Z
+    .end local v19           #v:Landroid/view/View;
+    :cond_3
+    move-object/from16 v21, p2
+
+    .line 638
+    goto :goto_0
+
+    .line 640
+    :cond_4
+    const/16 v21, 0x0
+
+    goto :goto_1
+
+    .line 658
+    .restart local v16       #setView:Z
+    .restart local v19       #v:Landroid/view/View;
+    :cond_5
+    if-eqz v13, :cond_6
 
     .line 659
+    if-nez v16, :cond_8
+
+    .line 660
+    if-eqz v12, :cond_7
+
+    move/from16 v21, v17
+
+    :goto_4
+    move/from16 v0, v21
+
+    invoke-virtual {v13, v0}, Landroid/view/View;->setBackgroundResource(I)V
+
+    .line 664
+    :goto_5
+    const/16 v16, 0x1
+
+    .line 666
+    :cond_6
+    move-object/from16 v13, v19
+
+    .line 667
+    aget-boolean v12, v14, v15
+
     goto :goto_3
 
-    .line 661
-    :cond_8
-    if-eqz v10, :cond_9
+    :cond_7
+    move/from16 v21, v18
 
-    move/from16 v19, v6
-
-    :goto_5
-    move/from16 v0, v19
-
-    invoke-virtual {v11, v0}, Landroid/view/View;->setBackgroundResource(I)V
-
+    .line 660
     goto :goto_4
 
-    :cond_9
-    move/from16 v19, v7
+    .line 662
+    :cond_8
+    if-eqz v12, :cond_9
+
+    move/from16 v21, v8
+
+    :goto_6
+    move/from16 v0, v21
+
+    invoke-virtual {v13, v0}, Landroid/view/View;->setBackgroundResource(I)V
 
     goto :goto_5
 
-    .line 669
-    .end local v17           #v:Landroid/view/View;
-    :cond_a
-    if-eqz v11, :cond_b
+    :cond_9
+    move/from16 v21, v9
+
+    goto :goto_6
 
     .line 670
-    if-eqz v14, :cond_f
+    .end local v19           #v:Landroid/view/View;
+    :cond_a
+    if-eqz v13, :cond_b
 
-    .line 675
-    if-eqz v10, :cond_e
+    .line 671
+    if-eqz v16, :cond_10
 
-    if-eqz p4, :cond_d
+    .line 676
+    if-eqz v12, :cond_f
 
-    .end local v5           #bottomMedium:I
-    :goto_6
-    invoke-virtual {v11, v5}, Landroid/view/View;->setBackgroundResource(I)V
+    if-eqz p4, :cond_e
 
-    .line 707
-    .end local v8           #fullBright:I
-    :cond_b
+    .end local v7           #bottomMedium:I
     :goto_7
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
-
-    move-object/from16 v19, v0
-
-    if-eqz v19, :cond_c
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/app/AlertController;->mAdapter:Landroid/widget/ListAdapter;
-
-    move-object/from16 v19, v0
-
-    if-eqz v19, :cond_c
+    invoke-virtual {v13, v7}, Landroid/view/View;->setBackgroundResource(I)V
 
     .line 708
+    .end local v10           #fullBright:I
+    :cond_b
+    :goto_8
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
 
-    move-object/from16 v19, v0
+    move-object/from16 v21, v0
+
+    if-eqz v21, :cond_d
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/app/AlertController;->mAdapter:Landroid/widget/ListAdapter;
 
-    move-object/from16 v20, v0
+    move-object/from16 v21, v0
 
-    invoke-virtual/range {v19 .. v20}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
+    if-eqz v21, :cond_d
 
     .line 709
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/app/AlertController;->mCheckedItem:I
+    iget-object v0, v0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
 
-    move/from16 v19, v0
+    move-object/from16 v21, v0
 
-    const/16 v20, -0x1
+    move-object/from16 v0, p0
 
-    move/from16 v0, v19
+    iget-object v0, v0, Lcom/android/internal/app/AlertController;->mAdapter:Landroid/widget/ListAdapter;
 
-    move/from16 v1, v20
+    move-object/from16 v22, v0
 
-    if-le v0, v1, :cond_c
+    invoke-virtual/range {v21 .. v22}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
     .line 710
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
-
-    move-object/from16 v19, v0
-
-    move-object/from16 v0, p0
-
     iget v0, v0, Lcom/android/internal/app/AlertController;->mCheckedItem:I
 
-    move/from16 v20, v0
+    move/from16 v21, v0
 
-    const/16 v21, 0x1
+    const/16 v22, -0x1
 
-    invoke-virtual/range {v19 .. v21}, Landroid/widget/ListView;->setItemChecked(IZ)V
+    move/from16 v0, v21
+
+    move/from16 v1, v22
+
+    if-le v0, v1, :cond_c
 
     .line 711
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
 
-    move-object/from16 v19, v0
+    move-object/from16 v21, v0
 
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/app/AlertController;->mCheckedItem:I
 
-    move/from16 v20, v0
+    move/from16 v22, v0
 
-    invoke-virtual/range {v19 .. v20}, Landroid/widget/ListView;->setSelection(I)V
+    const/16 v23, 0x1
 
-    .line 714
+    invoke-virtual/range {v21 .. v23}, Landroid/widget/ListView;->setItemChecked(IZ)V
+
+    .line 712
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
+
+    move-object/from16 v21, v0
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/internal/app/AlertController;->mCheckedItem:I
+
+    move/from16 v22, v0
+
+    invoke-virtual/range {v21 .. v22}, Landroid/widget/ListView;->setSelection(I)V
+
+    .line 715
     :cond_c
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
+
+    move-object/from16 v21, v0
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v21
+
+    move-object/from16 v2, p3
+
+    move/from16 v3, p4
+
+    move/from16 v4, p6
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/android/internal/app/AlertController;->setFilletListViewCornerType(Landroid/widget/ListView;Landroid/view/View;ZZ)V
+
+    .line 718
+    :cond_d
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p2
+
+    move-object/from16 v2, p3
+
+    move/from16 v3, p4
+
+    move/from16 v4, p6
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/android/internal/app/AlertController;->correctCustomPanelBackground(Landroid/widget/LinearLayout;Landroid/view/View;ZZ)V
+
+    .line 719
     return-void
 
-    .restart local v5       #bottomMedium:I
-    .restart local v8       #fullBright:I
-    :cond_d
-    move v5, v3
-
-    .line 675
-    goto :goto_6
-
+    .restart local v7       #bottomMedium:I
+    .restart local v10       #fullBright:I
     :cond_e
-    move v5, v4
+    move v7, v5
 
-    goto :goto_6
+    .line 676
+    goto :goto_7
 
-    .line 678
     :cond_f
-    if-eqz v10, :cond_10
-
-    .end local v8           #fullBright:I
-    :goto_8
-    invoke-virtual {v11, v8}, Landroid/view/View;->setBackgroundResource(I)V
+    move v7, v6
 
     goto :goto_7
 
-    .restart local v8       #fullBright:I
+    .line 679
     :cond_10
-    move v8, v9
+    if-eqz v12, :cond_11
+
+    .end local v10           #fullBright:I
+    :goto_9
+    invoke-virtual {v13, v10}, Landroid/view/View;->setBackgroundResource(I)V
 
     goto :goto_8
+
+    .restart local v10       #fullBright:I
+    :cond_11
+    move v10, v11
+
+    goto :goto_9
+.end method
+
+.method private setFilletListViewCornerType(Landroid/widget/ListView;Landroid/view/View;ZZ)V
+    .locals 1
+    .parameter "listView"
+    .parameter "customPanel"
+    .parameter "hasButtons"
+    .parameter "hasTitle"
+
+    .prologue
+    .line 722
+    instance-of v0, p1, Lcom/android/internal/widget/RecycleFilletListView;
+
+    if-eqz v0, :cond_1
+
+    .line 723
+    if-eqz p4, :cond_3
+
+    .line 724
+    if-nez p3, :cond_0
+
+    if-eqz p2, :cond_2
+
+    .line 725
+    :cond_0
+    check-cast p1, Lcom/android/internal/widget/RecycleFilletListView;
+
+    .end local p1
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Lcom/android/internal/widget/RecycleFilletListView;->setCornerType(I)V
+
+    .line 737
+    :cond_1
+    :goto_0
+    return-void
+
+    .line 727
+    .restart local p1
+    :cond_2
+    check-cast p1, Lcom/android/internal/widget/RecycleFilletListView;
+
+    .end local p1
+    const/4 v0, 0x2
+
+    invoke-virtual {p1, v0}, Lcom/android/internal/widget/RecycleFilletListView;->setCornerType(I)V
+
+    goto :goto_0
+
+    .line 730
+    .restart local p1
+    :cond_3
+    if-nez p3, :cond_4
+
+    if-eqz p2, :cond_5
+
+    .line 731
+    :cond_4
+    check-cast p1, Lcom/android/internal/widget/RecycleFilletListView;
+
+    .end local p1
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, v0}, Lcom/android/internal/widget/RecycleFilletListView;->setCornerType(I)V
+
+    goto :goto_0
+
+    .line 733
+    .restart local p1
+    :cond_5
+    check-cast p1, Lcom/android/internal/widget/RecycleFilletListView;
+
+    .end local p1
+    const/4 v0, 0x3
+
+    invoke-virtual {p1, v0}, Lcom/android/internal/widget/RecycleFilletListView;->setCornerType(I)V
+
+    goto :goto_0
 .end method
 
 .method private setupButtons()Z
