@@ -263,6 +263,31 @@
     return-void
 .end method
 
+.method private getStringArray(Ljava/lang/String;)[Ljava/lang/String;
+    .locals 1
+    .parameter "str"
+
+    .prologue
+    .line 410
+    if-eqz p1, :cond_0
+
+    .line 411
+    const-string v0, ","
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 412
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method private updateEfForIccType(I)I
     .locals 2
     .parameter "efid"
