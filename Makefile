@@ -41,6 +41,12 @@ BAIDU_SERVER_BUILD_ENABLE := true
 DALVIK_VM_BUILD := 28
 
 ##############################################################################
+# Default DENSITY setting is hdpi
+# this depends on the device's resolution
+#-----------------------------------------------------------------------------
+DENSITY := hdpi
+
+##############################################################################
 # This value will control the method of pack or unpack image and so on
 # you can use mtk/qualcomm/ti/nvidia
 #-----------------------------------------------------------------------------
@@ -157,5 +163,7 @@ override_property += \
 #-----------------------------------------------------------------------------
 remove_property += \
     dev.defaultwallpaper
+
+include $(PWD)/vendor.remove.mk
 
 include $(PORT_BUILD)/main.mk
