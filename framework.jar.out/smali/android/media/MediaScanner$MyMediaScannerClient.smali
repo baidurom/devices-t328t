@@ -1201,9 +1201,39 @@
     .line 981
     .restart local v11       #result:Landroid/net/Uri;
     :cond_17
+
+    if-nez p2, :cond_9827
+
+    if-nez p3, :cond_9827
+
+    if-nez p4, :cond_9827
+
     move-object/from16 v0, v18
 
     invoke-virtual {v8, v14, v0}, Landroid/media/MediaInserter;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)V
+
+    goto/16 :goto_4
+
+    :cond_9827
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/media/MediaScanner$MyMediaScannerClient;->this$0:Landroid/media/MediaScanner;
+
+    move-object/from16 v19, v0
+
+    #getter for: Landroid/media/MediaScanner;->mMediaProvider:Landroid/content/IContentProvider;
+    invoke-static/range {v19 .. v19}, Landroid/media/MediaScanner;->access$1100(Landroid/media/MediaScanner;)Landroid/content/IContentProvider;
+
+    move-result-object v19
+
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, v18
+
+    invoke-interface {v0, v14, v1}, Landroid/content/IContentProvider;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
+
+    move-result-object v11
 
     goto/16 :goto_4
 
