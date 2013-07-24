@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sdcard_unmount" product="default">Unmount SD card</string>
+    <string name="sdcard_format" product="default">Erase SD card</string>
+    <string name="sdcard_setting" product="default">SD card</string>
+    <string name="sdcard_settings_not_present_status" product="default">No SD card</string>
+    <string name="sdcard_settings_mass_storage_status" product="default">SD card is being used as a mass storage device</string>
+    <string name="sdcard_settings_unmounted_status" product="default">It\'s now safe to remove the SD card</string>
+    <string name="sdcard_settings_bad_removal_status" product="default">SD card was removed while still in use!</string>
+    <string name="sdcard_settings_scanning_status" product="default">Scanning SD card for media\u2026</string>
+    <string name="sdcard_settings_read_only_status" product="default">SD card mounted read-only</string>
+    <string name="sd_card_settings_label" product="default">SD card</string>
+    <string name="storage_settings_summary" product="default">Unmount SD card, view available storage</string>
+    <string name="sd_memory" product="default">SD card</string>
+    <string name="sd_eject" product="default">Unmount SD card</string>
+    <string name="sd_eject_summary" product="default">Unmount the SD card so you can safely remove it</string>
+    <string name="sd_insert_summary" product="default">Insert an SD card for mounting</string>
+    <string name="sd_mount" product="default">Mount SD card</string>
+    <string name="sd_mount_summary" product="default"></string>
+    <string name="sd_format" product="default">Erase SD card</string>
+    <string name="sd_format_summary" product="default">Erases all data on the SD card, such as music and photos</string>
+    <string name="dlg_confirm_unmount_title" product="default">Unmount SD card?</string>
+    <string name="dlg_confirm_unmount_text" product="default">If you unmount the SD card, some apps you are using will stop and may be unavailable until you remount the SD card.</string>
+    <string name="dlg_error_unmount_title" product="default"></string>
+    <string name="dlg_error_unmount_text" product="default">Couldn\'t unmount SD card. Try again later.</string>
+    <string name="unmount_inform_text" product="default">SD card will be unmounted.</string>
+    <string name="master_clear_desc_erase_external_storage" product="default">"\n\nTo clear music, pictures, and other user data, the <b>storage device</b> needs to be erased."</string>
+    <string name="media_format_title" product="default">Erase SD card</string>
+    <string name="media_format_summary" product="default">Erases all data on the SD card</string>
+    <string name="media_format_desc" product="default">Erase the SD card? You will lose <b>all</b> data on the card!</string>
+    <string name="media_format_button_text" product="default">Erase SD card</string>
+    <string name="media_format_final_desc" product="default">Erase the SD card, deleting all files stored there? You can\'t reverse this action!</string>
+    <string name="media_format_gesture_explanation" product="default">You must draw your unlock pattern to confirm that you want to erase the SD card.</string>
+    <string name="external_data_size_label" product="default">SD card</string>
+    <string name="filter_apps_onsdcard" product="default">On SD card</string>
+    <string name="sd_card_storage" product="default">SD card storage</string>
+    <string name="move_app_to_sdcard" product="default">Move to SD card</string>
+    <string name="credentials_install" product="default">Install from SD card</string>
+    <string name="credentials_install_summary" product="default">Install certificates from SD card</string>
+</resources>
