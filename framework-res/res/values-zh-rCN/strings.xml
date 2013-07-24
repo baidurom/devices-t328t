@@ -738,7 +738,7 @@
     <string name="lockscreen_pattern_wrong">很抱歉，请重试</string>
     <string name="lockscreen_password_wrong">很抱歉，请重试</string>
     <string name="lockscreen_plugged_in">正在充电，%d%%</string>
-    <string name="lockscreen_charged">已充电。</string>
+    <string name="lockscreen_charged">已充满。</string>
     <string name="lockscreen_battery_short">%d%%</string>
     <string name="lockscreen_low_battery">连接您的充电器。</string>
     <string name="lockscreen_missing_sim_message_short">没有 SIM 卡。</string>
