@@ -1960,3 +1960,10 @@
     :cond_0
     return-void
 .end method
+
+.method public setTextCursorDrawableToNull()V
+    .locals 0
+
+    .prologue
+    return-void
+.end method
