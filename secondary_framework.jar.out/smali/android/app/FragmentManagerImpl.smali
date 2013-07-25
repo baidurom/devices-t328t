@@ -7396,17 +7396,28 @@
     :cond_4
     iget-boolean v1, p1, Landroid/app/Fragment;->mUserVisibleHint:Z
 
-    if-nez v1, :cond_5
+    if-nez v1, :cond_6
 
-    .line 1544
+    .line 1541
+    if-nez v0, :cond_5
+
+    .line 1542
+    new-instance v0, Landroid/os/Bundle;
+
+    .end local v0           #result:Landroid/os/Bundle;
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    .line 1545
+    .restart local v0       #result:Landroid/os/Bundle;
+    :cond_5
     const-string v1, "android:user_visible_hint"
 
     iget-boolean v2, p1, Landroid/app/Fragment;->mUserVisibleHint:Z
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 1547
-    :cond_5
+    .line 1548
+    :cond_6
     return-object v0
 .end method
 
