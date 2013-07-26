@@ -4568,6 +4568,8 @@
 
     move-result-object v0
 
+    if-eqz v0, :cond_6
+
     .line 2331
     .local v0, childs:[Ljava/lang/String;
     const/4 v1, 0x0
