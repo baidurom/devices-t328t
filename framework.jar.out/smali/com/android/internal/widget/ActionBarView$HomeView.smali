@@ -50,7 +50,33 @@
     return-void
 .end method
 
+.method private getOffset()I
+    .locals 2
 
+    .prologue
+    .line 1300
+    const/high16 v0, 0x40c0
+
+    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarView$HomeView;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v0, v1
+
+    float-to-int v0, v0
+
+    return v0
+.end method
 # virtual methods
 .method public dispatchHoverEvent(Landroid/view/MotionEvent;)Z
     .locals 1
@@ -94,7 +120,8 @@
 
     if-ne v0, v1, :cond_0
 
-    iget v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpWidth:I
+    invoke-direct {p0}, Lcom/android/internal/widget/ActionBarView$HomeView;->getOffset()I
+    move-result v0
 
     :goto_0
     return v0
