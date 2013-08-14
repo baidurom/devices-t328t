@@ -541,9 +541,8 @@
 
     if-eq p3, v1, :cond_0
 
-    const-string v1, "com.android.contacts"
 
-    invoke-virtual {p2, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-static {p2}, Landroid/content/ThemeDefine;->isSpecialPackage(Ljava/lang/String;)Z
 
     move-result v1
 
