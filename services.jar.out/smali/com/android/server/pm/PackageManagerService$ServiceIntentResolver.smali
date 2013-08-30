@@ -362,7 +362,7 @@
 .end method
 
 .method protected isFilterStopped(Landroid/content/pm/PackageParser$ServiceIntentInfo;)Z
-    .locals 4
+    .locals 5
     .parameter "filter"
 
     .prologue
@@ -387,6 +387,30 @@
     if-eqz v1, :cond_0
 
     .line 5144
+    iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$ServiceIntentResolver;->this$0:Lcom/android/server/pm/PackageManagerService;
+
+    iget-object v3, v3, Lcom/android/server/pm/PackageManagerService;->mSettings:Lcom/android/server/pm/Settings;
+
+    iget-object v4, v0, Landroid/content/pm/PackageParser$Package;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Lcom/android/server/pm/Settings;->isThirdBaiduApps(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    .line 4658
+    iget-boolean v2, v1, Lcom/android/server/pm/PackageSetting;->stopped:Z
+
+    .line 4665
+    .end local v1           #ps:Lcom/android/server/pm/PackageSetting;
+    :cond_0
+    :goto_0
+    return v2
+
+    .line 4662
+    .restart local v1       #ps:Lcom/android/server/pm/PackageSetting;
+    :cond_1
     iget-boolean v3, v1, Lcom/android/server/pm/PackageSettingBase;->stopped:Z
 
     if-eqz v3, :cond_0
@@ -399,10 +423,7 @@
 
     const/4 v2, 0x1
 
-    .line 5147
-    .end local v1           #ps:Lcom/android/server/pm/PackageSetting;
-    :cond_0
-    return v2
+    goto :goto_0
 .end method
 
 .method protected newResult(Landroid/content/pm/PackageParser$ServiceIntentInfo;I)Landroid/content/pm/ResolveInfo;

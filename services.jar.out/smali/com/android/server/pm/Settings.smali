@@ -180,6 +180,8 @@
 
 .field mSysPkgsInitXml:Z
 
+.field private mThirdBaiduApps:[Ljava/lang/String;
+
 .field private final mUserIds:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -196,12 +198,12 @@
 
 # direct methods
 .method constructor <init>()V
-    .locals 5
+    .locals 6
 
     .prologue
     const/4 v3, 0x0
 
-    const/4 v4, -0x1
+    const/4 v5, -0x1
 
     .line 156
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -309,6 +311,49 @@
 
     .line 144
     iput-boolean v3, p0, Lcom/android/server/pm/Settings;->mSysPkgsInitXml:Z
+    
+    .line 144
+    const/4 v2, 0x6
+
+    new-array v2, v2, [Ljava/lang/String;
+
+    const/4 v3, 0x0
+
+    const-string v4, "com.baidu.browser.apps"
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x1
+
+    const-string v4, "com.baidu.appsearch"
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x2
+
+    const-string v4, "com.baidu.voiceassistant"
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x3
+
+    const-string v4, "com.baidu.searchbox"
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x4
+
+    const-string v4, "com.baidu.BaiduMap"
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x5
+
+    const-string v4, "com.baidu.netdisk"
+
+    aput-object v4, v2, v3
+
+    iput-object v2, p0, Lcom/android/server/pm/Settings;->mThirdBaiduApps:[Ljava/lang/String;
 
     .line 154
     new-instance v2, Ljava/util/ArrayList;
@@ -341,7 +386,7 @@
 
     const/16 v3, 0x1fd
 
-    invoke-static {v2, v3, v4, v4}, Landroid/os/FileUtils;->setPermissions(Ljava/lang/String;III)I
+    invoke-static {v2, v3, v5, v5}, Landroid/os/FileUtils;->setPermissions(Ljava/lang/String;III)I
 
     .line 164
     new-instance v2, Ljava/io/File;
@@ -1133,9 +1178,16 @@
     .line 405
     and-int/lit8 v2, p9, 0x1
 
-    if-nez v2, :cond_8
+    if-eqz v2, :cond_1008
+
+    invoke-virtual {p0, p1}, Lcom/android/server/pm/Settings;->isThirdBaiduApps(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_8
 
     .line 411
+    :cond_1008
     const/4 v2, 0x1
 
     iput-boolean v2, v1, Lcom/android/server/pm/PackageSettingBase;->stopped:Z
@@ -7683,6 +7735,57 @@
     iget-boolean v1, p1, Landroid/content/pm/ComponentInfo;->enabled:Z
 
     goto :goto_0
+.end method
+
+.method isThirdBaiduApps(Ljava/lang/String;)Z
+    .locals 5
+    .parameter "pkg"
+
+    .prologue
+    .line 153
+    iget-object v0, p0, Lcom/android/server/pm/Settings;->mThirdBaiduApps:[Ljava/lang/String;
+
+    .local v0, arr$:[Ljava/lang/String;
+    array-length v2, v0
+
+    .local v2, len$:I
+    const/4 v1, 0x0
+
+    .local v1, i$:I
+    :goto_0
+    if-ge v1, v2, :cond_1
+
+    aget-object v3, v0, v1
+
+    .line 154
+    .local v3, str:Ljava/lang/String;
+    invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    .line 155
+    const/4 v4, 0x1
+
+    .line 158
+    .end local v3           #str:Ljava/lang/String;
+    :goto_1
+    return v4
+
+    .line 153
+    .restart local v3       #str:Ljava/lang/String;
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 158
+    .end local v3           #str:Ljava/lang/String;
+    :cond_1
+    const/4 v4, 0x0
+
+    goto :goto_1
 .end method
 
 .method peekPackageLPr(Ljava/lang/String;)Lcom/android/server/pm/PackageSetting;
