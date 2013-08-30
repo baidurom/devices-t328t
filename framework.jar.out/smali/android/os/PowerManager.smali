@@ -1063,3 +1063,27 @@
 
     goto :goto_0
 .end method
+
+.method public setButtonLight(I)V
+    .locals 1
+    .parameter "brightness"
+
+    .prologue
+    .line 486
+    :try_start_0
+    iget-object v0, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
+
+    invoke-interface {v0, p1}, Landroid/os/IPowerManager;->setButtonLight(I)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 489
+    :goto_0
+    return-void
+
+    .line 487
+    :catch_0
+    move-exception v0
+
+    goto :goto_0
+.end method

@@ -135,6 +135,14 @@
     .end annotation
 .end method
 
+.method public abstract setButtonLight(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract setMaximumScreenOffTimeount(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

@@ -16536,3 +16536,95 @@
     .line 3894
     return-void
 .end method
+
+.method public setButtonLight(I)V
+    .locals 3
+    .parameter "brightness"
+
+    .prologue
+    .line 2936
+    iget-object v0, p0, Lcom/android/server/PowerManagerService;->mContext:Landroid/content/Context;
+
+    const-string v1, "android.permission.DEVICE_POWER"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 2937
+    iget-object v1, p0, Lcom/android/server/PowerManagerService;->mLocks:Lcom/android/server/PowerManagerService$LockList;
+
+    monitor-enter v1
+
+    .line 2939
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/PowerManagerService;->mButtonLight:Lcom/android/server/LightsService$Light;
+
+    if-eqz v0, :cond_0
+
+    .line 2941
+    iget-object v0, p0, Lcom/android/server/PowerManagerService;->mButtonLight:Lcom/android/server/LightsService$Light;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2}, Lcom/android/server/LightsService$Light;->setBrightness(I)V
+
+    .line 2942
+    iget v0, p0, Lcom/android/server/PowerManagerService;->mPowerState:I
+
+    and-int/lit8 v0, v0, -0x5
+
+    iput v0, p0, Lcom/android/server/PowerManagerService;->mPowerState:I
+
+    .line 2943
+    iget v0, p0, Lcom/android/server/PowerManagerService;->mUserState:I
+
+    and-int/lit8 v0, v0, -0x5
+
+    iput v0, p0, Lcom/android/server/PowerManagerService;->mUserState:I
+
+    .line 2945
+    :cond_0
+    monitor-exit v1
+
+    .line 2946
+    return-void
+
+    .line 2945
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method private isButtonLightDisabled()Z
+    .locals 3
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 2949
+    iget-object v1, p0, Lcom/android/server/PowerManagerService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "button_light_off"
+
+    invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
+.end method
+

@@ -74,6 +74,8 @@
     .end annotation
 .end field
 
+.field public static final BUTTON_LIGHT_OFF:Ljava/lang/String; = "button_light_off"
+
 .field public static final CALENDAR_NOTIFICATION_SOUND:Ljava/lang/String; = "cal_notification"
 
 .field public static final CALENDAR_SHOW_LUNAR:Ljava/lang/String; = "calendar_show_lunar"

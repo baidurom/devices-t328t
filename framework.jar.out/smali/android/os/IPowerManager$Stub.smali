@@ -66,6 +66,8 @@
 
 .field static final TRANSACTION_timeSinceScreenOn:I = 0x15
 
+.field static final TRANSACTION_setButtonLight:I = 0x1a
+
 .field static final TRANSACTION_updateWakeLockWorkSource:I = 0x2
 
 .field static final TRANSACTION_userActivity:I = 0x6
@@ -1035,6 +1037,27 @@
 
     goto :goto_a
 
+    .line 244
+    :sswitch_1a
+    const-string v0, "android.os.IPowerManager"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 246
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 247
+    .local v0, _arg0:I
+    invoke-virtual {p0, v0}, Landroid/os/IPowerManager$Stub;->setButtonLight(I)V
+
+    .line 248
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
+
     .line 39
     :sswitch_data_0
     .sparse-switch
@@ -1063,6 +1086,7 @@
         0x17 -> :sswitch_17
         0x18 -> :sswitch_18
         0x19 -> :sswitch_19
+        0x1a -> :sswitch_1a
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method
