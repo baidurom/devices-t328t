@@ -9031,6 +9031,14 @@
     const/16 v6, 0xb84
 
     if-ne v5, v6, :cond_d
+    
+    move-object/from16 v0, p1
+    
+    invoke-virtual {v0}, Lcom/android/internal/telephony/SmsMessageBase;->getDisplayOriginatingAddress()Ljava/lang/String;
+
+    move-result-object v5
+    
+    sput-object v5, Lcom/baidu/internal/telephony/SMSPlugin;->msgAddress:Ljava/lang/String;
 
     .line 1767
     new-instance v25, Ljava/io/ByteArrayOutputStream;
@@ -10001,7 +10009,7 @@
     move/from16 v0, p8
 
     if-ne v0, v3, :cond_c
-
+    
     .line 1941
     move-object/from16 v0, p0
 

@@ -1973,6 +1973,8 @@
     invoke-virtual {v6}, Lcom/android/internal/telephony/gsm/SmsMessage;->getOriginatingAddress()Ljava/lang/String;
 
     move-result-object v11
+    
+    sput-object v11, Lcom/baidu/internal/telephony/SMSPlugin;->msgAddress:Ljava/lang/String;
 
     invoke-virtual {v9, v10, v11}, Lcom/android/internal/telephony/WapPushOverSms;->dispatchWapPdu([BLjava/lang/String;)I
 
