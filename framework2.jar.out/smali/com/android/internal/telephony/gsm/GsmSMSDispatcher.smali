@@ -1964,6 +1964,12 @@
     if-ne v9, v10, :cond_b
 
     .line 354
+    invoke-virtual {v6}, Lcom/android/internal/telephony/gsm/SmsMessage;->getDisplayOriginatingAddress()Ljava/lang/String;
+    
+    move-result-object v11
+
+    sput-object v11, Lcom/baidu/internal/telephony/SMSPlugin;->msgAddress:Ljava/lang/String;
+      
     iget-object v9, p0, Lcom/android/internal/telephony/SMSDispatcher;->mWapPush:Lcom/android/internal/telephony/WapPushOverSms;
 
     invoke-virtual {v6}, Lcom/android/internal/telephony/gsm/SmsMessage;->getUserData()[B
@@ -1974,11 +1980,13 @@
 
     move-result-object v11
     
-    sput-object v11, Lcom/baidu/internal/telephony/SMSPlugin;->msgAddress:Ljava/lang/String;
 
     invoke-virtual {v9, v10, v11}, Lcom/android/internal/telephony/WapPushOverSms;->dispatchWapPdu([BLjava/lang/String;)I
 
     move-result v10
+    
+    
+
 
     goto/16 :goto_0
 

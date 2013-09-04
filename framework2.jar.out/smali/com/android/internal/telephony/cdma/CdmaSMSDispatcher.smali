@@ -2927,6 +2927,12 @@
     if-ne v0, v1, :cond_20
 
     .line 540
+    invoke-virtual/range {v17 .. v17}, Lcom/android/internal/telephony/cdma/SmsMessage;->getDisplayOriginatingAddress()Ljava/lang/String;
+
+    move-result-object v25
+    
+    sput-object v25, Lcom/baidu/internal/telephony/SMSPlugin;->msgAddress:Ljava/lang/String;
+      
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/SMSDispatcher;->mWapPush:Lcom/android/internal/telephony/WapPushOverSms;
@@ -2941,11 +2947,13 @@
 
     move-result-object v25
     
-    sput-object v25, Lcom/baidu/internal/telephony/SMSPlugin;->msgAddress:Ljava/lang/String;
 
     invoke-virtual/range {v23 .. v25}, Lcom/android/internal/telephony/WapPushOverSms;->dispatchWapPdu([BLjava/lang/String;)I
 
     move-result v23
+    
+
+    
 
     goto/16 :goto_0
 
