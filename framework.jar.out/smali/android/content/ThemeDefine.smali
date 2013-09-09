@@ -176,7 +176,7 @@
 
     const-string v1, "/ic_launcher_shortcut_contact.png"
 
-    const-string v2, "ic_launcher_shortcut_contact.png"
+    const-string v2, "ic_launcher_shortcut_contact"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -185,7 +185,7 @@
 
     const-string v1, "/ic_launcher_shortcut_directdial.png"
 
-    const-string v2, "ic_launcher_shortcut_directdial.png"
+    const-string v2, "ic_launcher_shortcut_directdial"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -194,7 +194,7 @@
 
     const-string v1, "/ic_launcher_shortcut_directmessage.png"
 
-    const-string v2, "ic_launcher_shortcut_directmessage.png"
+    const-string v2, "ic_launcher_shortcut_directmessage"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
