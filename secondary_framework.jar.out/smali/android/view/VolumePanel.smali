@@ -1861,6 +1861,11 @@
     invoke-direct {p0}, Landroid/view/VolumePanel;->createSliders()V
 
     .line 531
+    iget v4, p0, Landroid/view/VolumePanel;->mActiveStreamType:I
+
+    invoke-direct {p0, v4}, Landroid/view/VolumePanel;->reorderSliders(I)V
+
+    .line 532
     :cond_4
     iget-object v4, p0, Landroid/view/VolumePanel;->mPanel:Landroid/view/ViewGroup;
 
