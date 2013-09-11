@@ -20,7 +20,10 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds. -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-   <bool name="config_global_action_reboot">true</bool>
-   <bool name="config_pbap_support">false</bool>
-   <bool name="config_close_button_backlight">true</bool>
+    <bool name="config_global_action_reboot">true</bool>
+    <bool name="config_pbap_support">false</bool>
+    <bool name="config_close_button_backlight">true</bool>
+
+    <!-- This value add a switch in Settings, which can close Notification LED -->
+    <bool name="config_intrusiveNotificationLed">true</bool>
 </resources>
