@@ -2522,6 +2522,11 @@
 
     .line 1535
     :cond_7
+
+    iget-boolean v1, p0, Lcom/android/server/NotificationManagerService;->mNotificationPulseEnabled:Z
+
+    if-eqz v1, :cond_1002
+
     const-string v1, "NotificationService"
 
     const-string v2, "dual Led for notification"
@@ -2540,6 +2545,7 @@
 
     invoke-virtual {v1, v5, v6, v2, v4}, Lcom/android/server/LightsService$Light;->setFlashing(IIII)V
 
+    :cond_1002
     goto/16 :goto_0
 .end method
 
