@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/internal/app/ShutdownThread;->shutdown(Landroid/content/Context;Z)V
+    value = Lcom/android/internal/app/ShutdownThread;->shutdownInner(Landroid/content/Context;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 128
+    .line 154
     iput-object p1, p0, Lcom/android/internal/app/ShutdownThread$3;->val$context:Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,12 +43,12 @@
     .parameter "which"
 
     .prologue
-    .line 130
+    .line 156
     iget-object v0, p0, Lcom/android/internal/app/ShutdownThread$3;->val$context:Landroid/content/Context;
 
     #calls: Lcom/android/internal/app/ShutdownThread;->beginShutdownSequence(Landroid/content/Context;)V
     invoke-static {v0}, Lcom/android/internal/app/ShutdownThread;->access$000(Landroid/content/Context;)V
 
-    .line 131
+    .line 157
     return-void
 .end method

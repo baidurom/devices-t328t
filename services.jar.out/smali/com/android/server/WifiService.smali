@@ -197,6 +197,8 @@
 
 .field private mInterfaceName:Ljava/lang/String;
 
+.field private mIsReceiverRegistered:Z
+
 .field private final mLocks:Lcom/android/server/WifiService$LockList;
 
 .field private final mMhsReceiver:Landroid/content/BroadcastReceiver;
@@ -285,6 +287,8 @@
 .field private mWifiEnabled:Z
 
 .field private mWifiEnabledByDock:Z
+
+.field private mWifiOffForQb:Z
 
 .field private final mWifiStateMachine:Landroid/net/wifi/WifiStateMachine;
 
@@ -440,6 +444,8 @@
 
     iput-object v6, p0, Lcom/android/server/WifiService;->mAirplaneModeOn:Ljava/util/concurrent/atomic/AtomicBoolean;
 
+    iput-boolean v9, p0, Lcom/android/server/WifiService;->mIsReceiverRegistered:Z
+
     .line 340
     new-instance v6, Ljava/util/concurrent/atomic/AtomicInteger;
 
@@ -508,6 +514,9 @@
 
     iput-object v6, p0, Lcom/android/server/WifiService;->mTmpWorkSource:Landroid/os/WorkSource;
 
+    .line 593
+    iput-boolean v9, p0, Lcom/android/server/WifiService;->mWifiOffForQb:Z
+    
     .line 2388
     new-instance v6, Lcom/android/server/WifiService$17;
 
@@ -7164,6 +7173,10 @@
     sget-boolean v8, Landroid/net/wifi/p2p/WifiP2pService;->mIsWifiP2pEnabled:Z
 
     if-nez v8, :cond_16
+    
+    iget-boolean v8, p0, Lcom/android/server/WifiService;->mWifiOffForQb:Z
+
+    if-nez v8, :cond_16
 
     .line 2746
     if-eqz v5, :cond_15
@@ -12104,3 +12117,16 @@
 
     throw v6
 .end method
+
+.method public declared-synchronized setWifiEnabledForQb(Z)Z
+    .locals 1
+    .parameter "enable"
+
+    .prologue
+    invoke-virtual {p0, p1}, Lcom/android/server/WifiService;->setWifiEnabled(Z)Z
+    
+    move-result v0
+    
+    return v0
+.end method
+

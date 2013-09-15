@@ -202,6 +202,7 @@
 
 .field static final TRANSACTION_updateWifiLockWorkSource:I = 0x24
 
+.field static final TRANSACTION_setWifiEnabledForQb:I = 0x59
 
 # direct methods
 .method public constructor <init>()V
@@ -2996,6 +2997,50 @@
 
     goto/16 :goto_0
 
+    .line 177
+    :sswitch_59
+    const-string v9, "android.net.wifi.IWifiManager"
+
+    invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 179
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v9
+
+    if-eqz v9, :cond_9b
+
+    move v0, v8
+
+    .line 180
+    .restart local v0       #_arg0:Z
+    :goto_1005
+    invoke-virtual {p0, v0}, Landroid/net/wifi/IWifiManager$Stub;->setWifiEnabledForQb(Z)Z
+
+    move-result v4
+
+    .line 181
+    .restart local v4       #_result:Z
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 182
+    if-eqz v4, :cond_9a
+
+    move v7, v8
+
+    :cond_9a
+    invoke-virtual {p3, v7}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto/16 :goto_0
+
+    .end local v0           #_arg0:Z
+    .end local v4           #_result:Z
+    :cond_9b
+    move v0, v7
+
+    .line 179
+    goto :goto_1005
+
     .line 43
     nop
 
@@ -3089,6 +3134,7 @@
         0x56 -> :sswitch_56
         0x57 -> :sswitch_57
         0x58 -> :sswitch_58
+        0x59 -> :sswitch_59
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

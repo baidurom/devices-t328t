@@ -8,6 +8,7 @@
     value = {
         Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;,
         Lcom/android/server/net/NetworkStatsService$UidStatsKey;,
+        Lcom/android/server/net/NetworkStatsService$QuickbootBroadcastReceiver;,
         Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings;
     }
 .end annotation
@@ -163,6 +164,8 @@
 .field private mPollIntent:Landroid/app/PendingIntent;
 
 .field private mPollReceiver:Landroid/content/BroadcastReceiver;
+
+.field private mQbReceiver:Landroid/content/BroadcastReceiver;
 
 .field private mRemovedReceiver:Landroid/content/BroadcastReceiver;
 
@@ -330,6 +333,14 @@
     invoke-direct {v3, v6, v7, v4}, Landroid/net/NetworkStats;-><init>(JI)V
 
     iput-object v3, p0, Lcom/android/server/net/NetworkStatsService;->mOperations:Landroid/net/NetworkStats;
+
+    new-instance v1, Lcom/android/server/net/NetworkStatsService$QuickbootBroadcastReceiver;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Lcom/android/server/net/NetworkStatsService$QuickbootBroadcastReceiver;-><init>(Lcom/android/server/net/NetworkStatsService;Lcom/android/server/net/NetworkStatsService$1;)V
+
+    iput-object v1, p0, Lcom/android/server/net/NetworkStatsService;->mQbReceiver:Landroid/content/BroadcastReceiver;
 
     .line 271
     new-instance v3, Ljava/lang/Object;
@@ -695,6 +706,17 @@
     return-void
 .end method
 
+.method static synthetic access$101(Lcom/android/server/net/NetworkStatsService;)Ljava/lang/Object;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 128
+    iget-object v0, p0, Lcom/android/server/net/NetworkStatsService;->mStatsLock:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
 .method static synthetic access$1000(Lcom/android/server/net/NetworkStatsService;)I
     .locals 1
     .parameter "x0"
@@ -725,6 +747,17 @@
     .prologue
     .line 147
     invoke-direct {p0}, Lcom/android/server/net/NetworkStatsService;->registerGlobalAlert()V
+
+    return-void
+.end method
+
+.method static synthetic access$201(Lcom/android/server/net/NetworkStatsService;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 128
+    invoke-direct {p0}, Lcom/android/server/net/NetworkStatsService;->qbShutdownLocked()V
 
     return-void
 .end method
@@ -5729,6 +5762,29 @@
     goto :goto_0
 .end method
 
+.method private registerQbReceiver()V
+    .locals 3
+
+    .prologue
+    .line 325
+    new-instance v0, Landroid/content/IntentFilter;
+
+    const-string v1, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN"
+
+    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    .line 326
+    .local v0, qbFilter:Landroid/content/IntentFilter;
+    iget-object v1, p0, Lcom/android/server/net/NetworkStatsService;->mContext:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/android/server/net/NetworkStatsService;->mQbReceiver:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+    .line 327
+    return-void
+.end method
+
 .method private removeUidLocked(I)V
     .locals 8
     .parameter "uid"
@@ -8758,6 +8814,9 @@
     invoke-virtual {v5, v6, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     .line 374
+    invoke-direct {p0}, Lcom/android/server/net/NetworkStatsService;->registerQbReceiver()V
+
+    .line 308
     :try_start_1
     iget-object v5, p0, Lcom/android/server/net/NetworkStatsService;->mNetworkManager:Landroid/os/INetworkManagementService;
 
@@ -8824,4 +8883,33 @@
     move-exception v5
 
     goto :goto_2
+.end method
+
+.method private qbShutdownLocked()V
+    .locals 1
+
+    .prologue
+    .line 330
+    iget-boolean v0, p0, Lcom/android/server/net/NetworkStatsService;->mNetworkStatsLoaded:Z
+
+    if-eqz v0, :cond_0
+
+    .line 331
+    invoke-direct {p0}, Lcom/android/server/net/NetworkStatsService;->writeNetworkDevStatsLocked()V
+
+    .line 332
+    invoke-direct {p0}, Lcom/android/server/net/NetworkStatsService;->writeNetworkXtStatsLocked()V
+
+    .line 334
+    :cond_0
+    iget-boolean v0, p0, Lcom/android/server/net/NetworkStatsService;->mUidStatsLoaded:Z
+
+    if-eqz v0, :cond_1
+
+    .line 335
+    invoke-direct {p0}, Lcom/android/server/net/NetworkStatsService;->writeUidStatsLocked()V
+
+    .line 337
+    :cond_1
+    return-void
 .end method

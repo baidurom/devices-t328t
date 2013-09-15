@@ -29,6 +29,8 @@
 
 .field public static final INTERVAL_HOUR:J = 0x36ee80L
 
+.field public static final POWEROFF_WAKEUP:I = 0x4
+
 .field public static final RTC:I = 0x1
 
 .field public static final RTC_WAKEUP:I = 0x0

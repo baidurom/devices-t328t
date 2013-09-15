@@ -215,6 +215,8 @@
 
 .field static final localLOGV:Z = false
 
+.field public static mQbShutdownBgd:Landroid/view/View;
+
 .field static mCallbacks:Ljava/util/ArrayList; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -6200,6 +6202,11 @@
     .restart local v22       #receivers:Ljava/util/List;
     :cond_17
     :goto_6
+    move-object/from16 v0, v43
+
+    invoke-static {v14, v0}, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->filterReceiversForQbShutdown(Ljava/util/List;Landroid/content/Intent;)V
+
+    .line 12370
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/am/ActivityManagerService;->mLruProcesses:Ljava/util/ArrayList;
@@ -17549,6 +17556,315 @@
     .catchall {:try_start_b .. :try_end_b} :catchall_1
 
     goto :goto_1
+.end method
+
+.method private static dumpStackTraces(Ljava/lang/String;Ljava/util/ArrayList;Lcom/android/internal/os/ProcessStats;Landroid/util/SparseArray;)V
+    .locals 9
+    .parameter "tracesPath"
+    .parameter
+    .parameter "processStats"
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;",
+            "Lcom/android/internal/os/ProcessStats;",
+            "Landroid/util/SparseArray",
+            "<",
+            "Ljava/lang/Boolean;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 2921
+    .local p1, firstPids:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Integer;>;"
+    .local p3, lastPids:Landroid/util/SparseArray;,"Landroid/util/SparseArray<Ljava/lang/Boolean;>;"
+    new-instance v5, Lcom/android/server/am/ActivityManagerService$4;
+
+    const/16 v7, 0x8
+
+    invoke-direct {v5, p0, v7}, Lcom/android/server/am/ActivityManagerService$4;-><init>(Ljava/lang/String;I)V
+
+    .line 2926
+    .local v5, observer:Landroid/os/FileObserver;
+    :try_start_0
+    invoke-virtual {v5}, Landroid/os/FileObserver;->startWatching()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
+
+    .line 2929
+    if-eqz p1, :cond_0
+
+    .line 2931
+    :try_start_1
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    .line 2932
+    .local v3, num:I
+    const/4 v2, 0x0
+
+    .local v2, i:I
+    :goto_0
+    if-ge v2, v3, :cond_0
+
+    .line 2933
+    monitor-enter v5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_3
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+
+    .line 2934
+    :try_start_2
+    invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Ljava/lang/Integer;
+
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
+
+    move-result v7
+
+    const/4 v8, 0x3
+
+    invoke-static {v7, v8}, Landroid/os/Process;->sendSignal(II)V
+
+    .line 2935
+    const-wide/16 v7, 0xc8
+
+    invoke-virtual {v5, v7, v8}, Ljava/lang/Object;->wait(J)V
+
+    .line 2936
+    monitor-exit v5
+
+    .line 2932
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    .line 2936
+    :catchall_0
+    move-exception v7
+
+    monitor-exit v5
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :try_start_3
+    throw v7
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_3
+    .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_0
+
+    .line 2938
+    .end local v2           #i:I
+    .end local v3           #num:I
+    :catch_0
+    move-exception v1
+
+    .line 2939
+    .local v1, e:Ljava/lang/InterruptedException;
+    :try_start_4
+    const-string v7, "ActivityManager"
+
+    invoke-static {v7, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 2944
+    .end local v1           #e:Ljava/lang/InterruptedException;
+    :cond_0
+    if-eqz p2, :cond_2
+
+    .line 2945
+    invoke-virtual {p2}, Lcom/android/internal/os/ProcessStats;->init()V
+
+    .line 2946
+    invoke-static {}, Ljava/lang/System;->gc()V
+
+    .line 2947
+    invoke-virtual {p2}, Lcom/android/internal/os/ProcessStats;->update()V
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_3
+
+    .line 2949
+    :try_start_5
+    monitor-enter p2
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_3
+    .catch Ljava/lang/InterruptedException; {:try_start_5 .. :try_end_5} :catch_1
+
+    .line 2950
+    const-wide/16 v7, 0x1f4
+
+    :try_start_6
+    invoke-virtual {p2, v7, v8}, Ljava/lang/Object;->wait(J)V
+
+    .line 2951
+    monitor-exit p2
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
+
+    .line 2954
+    :goto_1
+    :try_start_7
+    invoke-virtual {p2}, Lcom/android/internal/os/ProcessStats;->update()V
+
+    .line 2957
+    invoke-virtual {p2}, Lcom/android/internal/os/ProcessStats;->countWorkingStats()I
+
+    move-result v0
+
+    .line 2958
+    .local v0, N:I
+    const/4 v4, 0x0
+
+    .line 2959
+    .local v4, numProcs:I
+    const/4 v2, 0x0
+
+    .restart local v2       #i:I
+    :goto_2
+    if-ge v2, v0, :cond_2
+
+    const/4 v7, 0x5
+
+    if-ge v4, v7, :cond_2
+
+    .line 2960
+    invoke-virtual {p2, v2}, Lcom/android/internal/os/ProcessStats;->getWorkingStats(I)Lcom/android/internal/os/ProcessStats$Stats;
+
+    move-result-object v6
+
+    .line 2961
+    .local v6, stats:Lcom/android/internal/os/ProcessStats$Stats;
+    iget v7, v6, Lcom/android/internal/os/ProcessStats$Stats;->pid:I
+
+    invoke-virtual {p3, v7}, Landroid/util/SparseArray;->indexOfKey(I)I
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_3
+
+    move-result v7
+
+    if-ltz v7, :cond_1
+
+    .line 2962
+    add-int/lit8 v4, v4, 0x1
+
+    .line 2964
+    :try_start_8
+    monitor-enter v5
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_3
+    .catch Ljava/lang/InterruptedException; {:try_start_8 .. :try_end_8} :catch_2
+
+    .line 2965
+    :try_start_9
+    iget v7, v6, Lcom/android/internal/os/ProcessStats$Stats;->pid:I
+
+    const/4 v8, 0x3
+
+    invoke-static {v7, v8}, Landroid/os/Process;->sendSignal(II)V
+
+    .line 2966
+    const-wide/16 v7, 0xc8
+
+    invoke-virtual {v5, v7, v8}, Ljava/lang/Object;->wait(J)V
+
+    .line 2967
+    monitor-exit v5
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_2
+
+    .line 2959
+    :cond_1
+    :goto_3
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_2
+
+    .line 2951
+    .end local v0           #N:I
+    .end local v2           #i:I
+    .end local v4           #numProcs:I
+    .end local v6           #stats:Lcom/android/internal/os/ProcessStats$Stats;
+    :catchall_1
+    move-exception v7
+
+    :try_start_a
+    monitor-exit p2
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_1
+
+    :try_start_b
+    throw v7
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_3
+    .catch Ljava/lang/InterruptedException; {:try_start_b .. :try_end_b} :catch_1
+
+    .line 2952
+    :catch_1
+    move-exception v7
+
+    goto :goto_1
+
+    .line 2967
+    .restart local v0       #N:I
+    .restart local v2       #i:I
+    .restart local v4       #numProcs:I
+    .restart local v6       #stats:Lcom/android/internal/os/ProcessStats$Stats;
+    :catchall_2
+    move-exception v7
+
+    :try_start_c
+    monitor-exit v5
+    :try_end_c
+    .catchall {:try_start_c .. :try_end_c} :catchall_2
+
+    :try_start_d
+    throw v7
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_3
+    .catch Ljava/lang/InterruptedException; {:try_start_d .. :try_end_d} :catch_2
+
+    .line 2968
+    :catch_2
+    move-exception v1
+
+    .line 2969
+    .restart local v1       #e:Ljava/lang/InterruptedException;
+    :try_start_e
+    const-string v7, "ActivityManager"
+
+    invoke-static {v7, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_e
+    .catchall {:try_start_e .. :try_end_e} :catchall_3
+
+    goto :goto_3
+
+    .line 2977
+    .end local v0           #N:I
+    .end local v1           #e:Ljava/lang/InterruptedException;
+    .end local v2           #i:I
+    .end local v4           #numProcs:I
+    .end local v6           #stats:Lcom/android/internal/os/ProcessStats$Stats;
+    :catchall_3
+    move-exception v7
+
+    invoke-virtual {v5}, Landroid/os/FileObserver;->stopWatching()V
+
+    throw v7
+
+    :cond_2
+    invoke-virtual {v5}, Landroid/os/FileObserver;->stopWatching()V
+
+    .line 2979
+    return-void
 .end method
 
 .method private final findAffinityTaskTopLocked(ILjava/lang/String;)I
@@ -41504,6 +41820,271 @@
     throw v2
 .end method
 
+.method public final broadcastSpecificIntentLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Ljava/util/List;Ljava/util/List;)I
+    .locals 18
+    .parameter "callerApp"
+    .parameter "callerPackage"
+    .parameter "intent"
+    .parameter "resolvedType"
+    .parameter "resultTo"
+    .parameter "resultCode"
+    .parameter "resultData"
+    .parameter "map"
+    .parameter "requiredPermission"
+    .parameter "receivers"
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/android/server/am/ProcessRecord;",
+            "Ljava/lang/String;",
+            "Landroid/content/Intent;",
+            "Ljava/lang/String;",
+            "Landroid/content/IIntentReceiver;",
+            "I",
+            "Ljava/lang/String;",
+            "Landroid/os/Bundle;",
+            "Ljava/lang/String;",
+            "Ljava/util/List;",
+            "Ljava/util/List",
+            "<",
+            "Lcom/android/server/am/BroadcastFilter;",
+            ">;)I"
+        }
+    .end annotation
+
+    .prologue
+    .line 14899
+    .local p11, registeredReceivers:Ljava/util/List;,"Ljava/util/List<Lcom/android/server/am/BroadcastFilter;>;"
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Lcom/android/server/am/ActivityManagerService;->mLruProcesses:Ljava/util/ArrayList;
+
+    move-object/from16 v0, p10
+
+    move-object/from16 v1, p11
+
+    move-object/from16 v2, p3
+
+    invoke-static {v0, v1, v2, v5}, Lcom/baidu/security/bm/BroadcastManagerService;->filterBroadcastReceiver(Ljava/util/List;Ljava/util/List;Landroid/content/Intent;Ljava/util/ArrayList;)I
+
+    .line 14902
+    new-instance v4, Landroid/content/Intent;
+
+    move-object/from16 v0, p3
+
+    invoke-direct {v4, v0}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
+
+    .line 14903
+    .end local p3
+    .local v4, intent:Landroid/content/Intent;
+    if-eqz p11, :cond_0
+
+    invoke-interface/range {p11 .. p11}, Ljava/util/List;->size()I
+
+    move-result v5
+
+    if-lez v5, :cond_0
+
+    .line 14904
+    new-instance v3, Lcom/android/server/am/BroadcastRecord;
+
+    sget v7, Lcom/android/server/am/ActivityManagerService;->MY_PID:I
+
+    const/16 v8, 0x3e8
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    move-object/from16 v5, p1
+
+    move-object/from16 v6, p2
+
+    move-object/from16 v9, p9
+
+    move-object/from16 v10, p11
+
+    move-object/from16 v11, p5
+
+    move/from16 v12, p6
+
+    move-object/from16 v13, p7
+
+    move-object/from16 v14, p8
+
+    invoke-direct/range {v3 .. v17}, Lcom/android/server/am/BroadcastRecord;-><init>(Landroid/content/Intent;Lcom/android/server/am/ProcessRecord;Ljava/lang/String;IILjava/lang/String;Ljava/util/List;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;ZZZ)V
+
+    .line 14909
+    .local v3, r:Lcom/android/server/am/BroadcastRecord;
+    const-string v5, "ActivityManager"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "Enqueueing parallel broadcast "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, ": prev Parallel had "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lcom/android/server/am/ActivityManagerService;->mParallelBroadcasts:Ljava/util/ArrayList;
+
+    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
+
+    move-result v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 14912
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Lcom/android/server/am/ActivityManagerService;->mParallelBroadcasts:Ljava/util/ArrayList;
+
+    invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 14913
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/am/ActivityManagerService;->scheduleBroadcastsLocked()V
+
+    .line 14916
+    .end local v3           #r:Lcom/android/server/am/BroadcastRecord;
+    :cond_0
+    if-eqz p10, :cond_1
+
+    invoke-interface/range {p10 .. p10}, Ljava/util/List;->size()I
+
+    move-result v5
+
+    if-lez v5, :cond_1
+
+    .line 14917
+    new-instance v3, Lcom/android/server/am/BroadcastRecord;
+
+    sget v7, Lcom/android/server/am/ActivityManagerService;->MY_PID:I
+
+    const/16 v8, 0x3e8
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    move-object/from16 v5, p1
+
+    move-object/from16 v6, p2
+
+    move-object/from16 v9, p9
+
+    move-object/from16 v10, p10
+
+    move-object/from16 v11, p5
+
+    move/from16 v12, p6
+
+    move-object/from16 v13, p7
+
+    move-object/from16 v14, p8
+
+    invoke-direct/range {v3 .. v17}, Lcom/android/server/am/BroadcastRecord;-><init>(Landroid/content/Intent;Lcom/android/server/am/ProcessRecord;Ljava/lang/String;IILjava/lang/String;Ljava/util/List;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;ZZZ)V
+
+    .line 14922
+    .restart local v3       #r:Lcom/android/server/am/BroadcastRecord;
+    const-string v5, "ActivityManager"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "Enqueueing ordered broadcast "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, ": prev Ordered had "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lcom/android/server/am/ActivityManagerService;->mOrderedBroadcasts:Ljava/util/ArrayList;
+
+    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
+
+    move-result v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, " receiver.size() = "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-interface/range {p10 .. p10}, Ljava/util/List;->size()I
+
+    move-result v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 14925
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Lcom/android/server/am/ActivityManagerService;->mOrderedBroadcasts:Ljava/util/ArrayList;
+
+    invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 14926
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/am/ActivityManagerService;->scheduleBroadcastsLocked()V
+
+    .line 14929
+    .end local v3           #r:Lcom/android/server/am/BroadcastRecord;
+    :cond_1
+    const/4 v5, 0x0
+
+    return v5
+.end method
+
 .method public cancelIntentSender(Landroid/content/IIntentSender;)V
     .locals 7
     .parameter "sender"
@@ -44500,6 +45081,112 @@
     const/high16 v2, 0x1000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    goto :goto_0
+.end method
+
+.method public createQbShutdownBackground()V
+    .locals 7
+
+    .prologue
+    const/16 v6, 0x400
+
+    const/4 v5, -0x1
+
+    .line 14935
+    const-string v3, "ActivityManager"
+
+    const-string v4, "create Quickboot shutdown background!"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 14937
+    sget-object v3, Lcom/android/server/am/ActivityManagerService;->mQbShutdownBgd:Landroid/view/View;
+
+    if-eqz v3, :cond_0
+
+    .line 14938
+    const-string v3, "ActivityManager"
+
+    const-string v4, "mQbShutdownBgd already exist"
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 14964
+    :goto_0
+    return-void
+
+    .line 14942
+    :cond_0
+    iget-object v3, p0, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
+
+    invoke-static {v3}, Lcom/android/internal/policy/PolicyManager;->makeNewWindow(Landroid/content/Context;)Landroid/view/Window;
+
+    move-result-object v1
+
+    .line 14944
+    .local v1, win:Landroid/view/Window;
+    const/16 v3, 0x7ed
+
+    invoke-virtual {v1, v3}, Landroid/view/Window;->setType(I)V
+
+    .line 14945
+    invoke-virtual {v1, v6, v6}, Landroid/view/Window;->setFlags(II)V
+
+    .line 14947
+    invoke-virtual {v1, v5, v5}, Landroid/view/Window;->setLayout(II)V
+
+    .line 14951
+    const/4 v3, 0x1
+
+    invoke-virtual {v1, v3}, Landroid/view/Window;->requestFeature(I)Z
+
+    .line 14953
+    invoke-virtual {v1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v0
+
+    .line 14954
+    .local v0, params:Landroid/view/WindowManager$LayoutParams;
+    const-string v3, "QbShutdownBackground"
+
+    invoke-virtual {v0, v3}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
+
+    .line 14955
+    const/16 v3, 0x418
+
+    iput v3, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
+
+    .line 14959
+    iget-object v3, p0, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
+
+    const-string v4, "window"
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/view/WindowManager;
+
+    .line 14961
+    .local v2, wm:Landroid/view/WindowManager;
+    invoke-virtual {v1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v3
+
+    sput-object v3, Lcom/android/server/am/ActivityManagerService;->mQbShutdownBgd:Landroid/view/View;
+
+    .line 14962
+    sget-object v3, Lcom/android/server/am/ActivityManagerService;->mQbShutdownBgd:Landroid/view/View;
+
+    const/high16 v4, -0x100
+
+    invoke-virtual {v3, v4}, Landroid/view/View;->setBackgroundColor(I)V
+
+    .line 14963
+    sget-object v3, Lcom/android/server/am/ActivityManagerService;->mQbShutdownBgd:Landroid/view/View;
+
+    invoke-interface {v2, v3, v0}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_0
 .end method
@@ -66248,6 +66935,7 @@
 
     goto :goto_3
 .end method
+
 .method makeRunningServiceInfoLocked(Lcom/android/server/am/ServiceRecord;)Landroid/app/ActivityManager$RunningServiceInfo;
     .locals 7
     .parameter "r"
@@ -71356,6 +72044,45 @@
     goto :goto_0
 .end method
 
+.method public rmQbShutdownBackground()V
+    .locals 3
+
+    .prologue
+    .line 14976
+    sget-object v1, Lcom/android/server/am/ActivityManagerService;->mQbShutdownBgd:Landroid/view/View;
+
+    if-nez v1, :cond_0
+
+    .line 14984
+    :goto_0
+    return-void
+
+    .line 14979
+    :cond_0
+    iget-object v1, p0, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
+
+    const-string v2, "window"
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/WindowManager;
+
+    .line 14981
+    .local v0, wm:Landroid/view/WindowManager;
+    sget-object v1, Lcom/android/server/am/ActivityManagerService;->mQbShutdownBgd:Landroid/view/View;
+
+    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
+
+    .line 14982
+    const/4 v1, 0x0
+
+    sput-object v1, Lcom/android/server/am/ActivityManagerService;->mQbShutdownBgd:Landroid/view/View;
+
+    goto :goto_0
+.end method
+
 .method final scheduleAppGcLocked(Lcom/android/server/am/ProcessRecord;)V
     .locals 6
     .parameter "app"
@@ -73489,6 +74216,59 @@
     .line 7324
     :catch_0
     move-exception v1
+
+    goto :goto_0
+.end method
+
+.method public setQbBackgroundRes(I)V
+    .locals 3
+    .parameter "res"
+
+    .prologue
+    .line 14967
+    sget-object v0, Lcom/android/server/am/ActivityManagerService;->mQbShutdownBgd:Landroid/view/View;
+
+    if-eqz v0, :cond_0
+
+    .line 14968
+    const-string v0, "ActivityManager"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Set new background picture:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 14969
+    sget-object v0, Lcom/android/server/am/ActivityManagerService;->mQbShutdownBgd:Landroid/view/View;
+
+    invoke-virtual {v0, p1}, Landroid/view/View;->setBackgroundResource(I)V
+
+    .line 14973
+    :goto_0
+    return-void
+
+    .line 14971
+    :cond_0
+    const-string v0, "ActivityManager"
+
+    const-string v1, "The mQbShutdownBgd is null!!!!"
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method
@@ -77658,6 +78438,15 @@
 
     .line 7662
     :try_start_0
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
+
+    sget-object v4, Lcom/android/server/am/ActivityManagerService;->mSelf:Lcom/android/server/am/ActivityManagerService;
+
+    invoke-static {v3, v4}, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->createHook(Landroid/content/Context;Lcom/android/server/am/ActivityManagerService;)V
+
+    .line 6910
     move-object/from16 v0, p0
 
     iget-boolean v3, v0, Lcom/android/server/am/ActivityManagerService;->mSystemReady:Z

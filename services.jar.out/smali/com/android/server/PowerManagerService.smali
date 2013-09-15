@@ -10,6 +10,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;,
         Lcom/android/server/PowerManagerService$PMSInternalAPI;,
         Lcom/android/server/PowerManagerService$LockList;,
         Lcom/android/server/PowerManagerService$BrightnessState;,
@@ -155,6 +156,16 @@
 
 
 # instance fields
+.field private final ACTION_QUICKBOOT_BOOT:Ljava/lang/String;
+
+.field private final ACTION_QUICKBOOT_BOOT_COMPLETE:Ljava/lang/String;
+
+.field private final ACTION_QUICKBOOT_SCREENOFF:Ljava/lang/String;
+
+.field private final ACTION_QUICKBOOT_SCREENON:Ljava/lang/String;
+
+.field private final ACTION_QUICKBOOT_SHUTDOWN:Ljava/lang/String;
+
 .field private final EnableWakeLockRecord:Z
 
 .field private final IS_AMOLED:Z
@@ -172,6 +183,8 @@
 .field private mActivityService:Landroid/app/IActivityManager;
 
 .field mAnimateScreenLights:Z
+
+.field mAnimateScreenLightsOrigin:Z
 
 .field private mAnimationSetting:I
 
@@ -250,6 +263,8 @@
 .field private mIsDocked:Z
 
 .field private mIsPowered:Z
+
+.field private mIsQbShutdown:Z
 
 .field private mIsScreenOnAnimatingDone:Z
 
@@ -382,6 +397,8 @@
 .field private mProximityTask:Ljava/lang/Runnable;
 
 .field private mProximityWakeLockCount:I
+
+.field private mQbBrightnessTask:Ljava/lang/Runnable;
 
 .field private mRebootHandler:Landroid/os/Handler;
 
@@ -804,8 +821,42 @@
     .line 303
     iput v6, p0, Lcom/android/server/PowerManagerService;->mButtonBrightnessOverride:I
 
+    .line 258
+    const/16 v4, 0x10
+
+    iput v4, p0, Lcom/android/server/PowerManagerService;->mAnimationSetting:I
+
+    .line 276
+    const-string v4, "android.intent.action.ACTION_QUICKBOOT_BOOT"
+
+    iput-object v4, p0, Lcom/android/server/PowerManagerService;->ACTION_QUICKBOOT_BOOT:Ljava/lang/String;
+
+    .line 277
+    const-string v4, "android.intent.action.ACTION_QUICKBOOT_BOOT_COMPLETE"
+
+    iput-object v4, p0, Lcom/android/server/PowerManagerService;->ACTION_QUICKBOOT_BOOT_COMPLETE:Ljava/lang/String;
+
+    .line 278
+    const-string v4, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN"
+
+    iput-object v4, p0, Lcom/android/server/PowerManagerService;->ACTION_QUICKBOOT_SHUTDOWN:Ljava/lang/String;
+
+    .line 279
+    const-string v4, "android.intent.action.ACTION_QUICKBOOT_SCREENON"
+
+    iput-object v4, p0, Lcom/android/server/PowerManagerService;->ACTION_QUICKBOOT_SCREENON:Ljava/lang/String;
+
+    .line 280
+    const-string v4, "android.intent.action.ACTION_QUICKBOOT_SCREENOFF"
+
+    iput-object v4, p0, Lcom/android/server/PowerManagerService;->ACTION_QUICKBOOT_SCREENOFF:Ljava/lang/String;
+
+    .line 281
+    iput-boolean v3, p0, Lcom/android/server/PowerManagerService;->mIsQbShutdown:Z
+
     .line 311
     iput v3, p0, Lcom/android/server/PowerManagerService;->mAutoBrightnessAlgorithm:I
+
 
     .line 320
     const/16 v4, 0x10
@@ -915,6 +966,7 @@
 
     invoke-direct {v2, p0}, Lcom/android/server/PowerManagerService$11;-><init>(Lcom/android/server/PowerManagerService;)V
 
+
     iput-object v2, p0, Lcom/android/server/PowerManagerService;->mProximityTask:Ljava/lang/Runnable;
 
     .line 3512
@@ -923,6 +975,13 @@
     invoke-direct {v2, p0}, Lcom/android/server/PowerManagerService$12;-><init>(Lcom/android/server/PowerManagerService;)V
 
     iput-object v2, p0, Lcom/android/server/PowerManagerService;->mAutoBrightnessTask:Ljava/lang/Runnable;
+
+    .line 2968
+    new-instance v2, Lcom/android/server/PowerManagerService$18;
+
+    invoke-direct {v2, p0}, Lcom/android/server/PowerManagerService$18;-><init>(Lcom/android/server/PowerManagerService;)V
+
+    iput-object v2, p0, Lcom/android/server/PowerManagerService;->mQbBrightnessTask:Ljava/lang/Runnable;
 
     .line 4503
     new-instance v2, Lcom/android/server/PowerManagerService$16;
@@ -1029,6 +1088,17 @@
     iget-object v0, p0, Lcom/android/server/PowerManagerService;->mBatteryService:Lcom/android/server/BatteryService;
 
     return-object v0
+.end method
+
+.method static synthetic access$1001(Lcom/android/server/PowerManagerService;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 77
+    invoke-direct {p0}, Lcom/android/server/PowerManagerService;->forceUserActivityLocked()V
+
+    return-void
 .end method
 
 .method static synthetic access$1100(Lcom/android/server/PowerManagerService;)V
@@ -1642,6 +1712,18 @@
     return v0
 .end method
 
+.method static synthetic access$5902(Lcom/android/server/PowerManagerService;Z)Z
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 77
+    iput-boolean p1, p0, Lcom/android/server/PowerManagerService;->mIsQbShutdown:Z
+
+    return p1
+.end method
+
 .method static synthetic access$600(Lcom/android/server/PowerManagerService;)I
     .locals 1
     .parameter "x0"
@@ -1660,6 +1742,17 @@
     .prologue
     .line 91
     iget-object v0, p0, Lcom/android/server/PowerManagerService;->mScreenBrightness:Lcom/android/server/PowerManagerService$BrightnessState;
+
+    return-object v0
+.end method
+
+.method static synthetic access$6001(Lcom/android/server/PowerManagerService;)Ljava/lang/Runnable;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 77
+    iget-object v0, p0, Lcom/android/server/PowerManagerService;->mQbBrightnessTask:Ljava/lang/Runnable;
 
     return-object v0
 .end method
@@ -1709,6 +1802,17 @@
     iput p1, p0, Lcom/android/server/PowerManagerService;->mProximityPendingValue:I
 
     return p1
+.end method
+
+.method static synthetic access$501(Lcom/android/server/PowerManagerService;)Lcom/android/server/PowerManagerService$LockList;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 77
+    iget-object v0, p0, Lcom/android/server/PowerManagerService;->mLocks:Lcom/android/server/PowerManagerService$LockList;
+
+    return-object v0
 .end method
 
 .method static synthetic access$6400(Lcom/android/server/PowerManagerService;Z)V
@@ -9521,6 +9625,10 @@
     .line 3414
     .end local v8           #deviceManager:Lcom/htc/server/HtcDeviceInfoManager;
     :cond_4
+    iget-boolean v2, p0, Lcom/android/server/PowerManagerService;->mIsQbShutdown:Z
+
+    if-nez v2, :cond_2
+
     iget-object v12, p0, Lcom/android/server/PowerManagerService;->mLocks:Lcom/android/server/PowerManagerService$LockList;
 
     monitor-enter v12
@@ -15855,6 +15963,9 @@
 
     .line 4242
     :goto_0
+    invoke-direct {p0}, Lcom/android/server/PowerManagerService;->registerQbReceiver()V
+
+    .line 2908
     iget-object v3, p0, Lcom/android/server/PowerManagerService;->mLocks:Lcom/android/server/PowerManagerService$LockList;
 
     monitor-enter v3
@@ -16627,4 +16738,313 @@
     :cond_0
     return v0
 .end method
+
+.method private registerQbReceiver()V
+    .locals 5
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 2929
+    new-instance v0, Landroid/content/IntentFilter;
+
+    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
+
+    .line 2930
+    .local v0, filter:Landroid/content/IntentFilter;
+    const-string v1, "android.intent.action.ACTION_QUICKBOOT_BOOT"
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    .line 2931
+    const-string v1, "android.intent.action.ACTION_QUICKBOOT_BOOT_COMPLETE"
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    .line 2932
+    const-string v1, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN"
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    .line 2933
+    const-string v1, "android.intent.action.ACTION_QUICKBOOT_SCREENON"
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    .line 2934
+    const-string v1, "android.intent.action.ACTION_QUICKBOOT_SCREENOFF"
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    .line 2935
+    iget-object v1, p0, Lcom/android/server/PowerManagerService;->mContext:Landroid/content/Context;
+
+    new-instance v2, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;
+
+    invoke-direct {v2, p0, v4}, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;-><init>(Lcom/android/server/PowerManagerService;Lcom/android/server/PowerManagerService$1;)V
+
+    iget-object v3, p0, Lcom/android/server/PowerManagerService;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v1, v2, v0, v4, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+
+    .line 2936
+    return-void
+.end method
+
+.method private isPoweroffAlarmShutdown()Z
+    .locals 9
+
+    .prologue
+    const/4 v5, 0x0
+
+    .line 2975
+    invoke-static {}, Landroid/os/Binder;->getCallingUid()I
+
+    move-result v4
+
+    .line 2976
+    .local v4, uid:I
+    iget-object v6, p0, Lcom/android/server/PowerManagerService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v6}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v2
+
+    .line 2977
+    .local v2, pm:Landroid/content/pm/PackageManager;
+    invoke-virtual {v2, v4}, Landroid/content/pm/PackageManager;->getPackagesForUid(I)[Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 2978
+    .local v1, pkgs:[Ljava/lang/String;
+    const-string v6, "PowerManagerService"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "calling package is "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    aget-object v8, v1, v5
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2980
+    aget-object v6, v1, v5
+
+    const-string v7, "com.baidu.baiduclock"
+
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_2
+
+    .line 2981
+    iget-object v5, p0, Lcom/android/server/PowerManagerService;->mHandler:Landroid/os/Handler;
+
+    if-eqz v5, :cond_0
+
+    invoke-static {}, Landroid/app/ActivityManagerNative;->isSystemReady()Z
+
+    move-result v5
+
+    if-nez v5, :cond_1
+
+    .line 2982
+    :cond_0
+    new-instance v5, Ljava/lang/IllegalStateException;
+
+    const-string v6, "Too early to call shutdown() or reboot()"
+
+    invoke-direct {v5, v6}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v5
+
+    .line 2985
+    :cond_1
+    new-instance v3, Lcom/android/server/PowerManagerService$19;
+
+    invoke-direct {v3, p0}, Lcom/android/server/PowerManagerService$19;-><init>(Lcom/android/server/PowerManagerService;)V
+
+    .line 2995
+    .local v3, runnable:Ljava/lang/Runnable;
+    iget-object v5, p0, Lcom/android/server/PowerManagerService;->mHandler:Landroid/os/Handler;
+
+    invoke-static {v5, v3}, Landroid/os/Message;->obtain(Landroid/os/Handler;Ljava/lang/Runnable;)Landroid/os/Message;
+
+    move-result-object v0
+
+    .line 2996
+    .local v0, msg:Landroid/os/Message;
+    iget-object v5, p0, Lcom/android/server/PowerManagerService;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v5, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    .line 2998
+    const/4 v5, 0x1
+
+    .line 3001
+    .end local v0           #msg:Landroid/os/Message;
+    .end local v3           #runnable:Ljava/lang/Runnable;
+    :cond_2
+    return v5
+.end method
+
+.method public shutdown(ZZ)V
+    .locals 5
+    .parameter "confirm"
+    .parameter "wait"
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 3012
+    iget-object v2, p0, Lcom/android/server/PowerManagerService;->mContext:Landroid/content/Context;
+
+    const-string v3, "android.permission.REBOOT"
+
+    invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 3014
+    invoke-direct {p0}, Lcom/android/server/PowerManagerService;->isPoweroffAlarmShutdown()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 3023
+    :goto_0
+    return-void
+
+    .line 3017
+    :cond_0
+    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
+
+    move-result-wide v0
+
+    .line 3019
+    .local v0, ident:J
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    :try_start_0
+    invoke-direct {p0, v2, p1, v3, p2}, Lcom/android/server/PowerManagerService;->shutdownOrRebootInternal(ZZLjava/lang/String;Z)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 3021
+    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v2
+
+    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    throw v2
+.end method
+
+.method private shutdownOrRebootInternal(ZZLjava/lang/String;Z)V
+    .locals 4
+    .parameter "shutdown"
+    .parameter "confirm"
+    .parameter "reason"
+    .parameter "wait"
+
+    .prologue
+    .line 3027
+    iget-object v2, p0, Lcom/android/server/PowerManagerService;->mHandler:Landroid/os/Handler;
+
+    if-eqz v2, :cond_0
+
+    invoke-static {}, Landroid/app/ActivityManagerNative;->isSystemReady()Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    .line 3028
+    :cond_0
+    new-instance v2, Ljava/lang/IllegalStateException;
+
+    const-string v3, "Too early to call shutdown() or reboot()"
+
+    invoke-direct {v2, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    .line 3031
+    :cond_1
+    new-instance v1, Lcom/android/server/PowerManagerService$20;
+
+    invoke-direct {v1, p0, p1, p2, p3}, Lcom/android/server/PowerManagerService$20;-><init>(Lcom/android/server/PowerManagerService;ZZLjava/lang/String;)V
+
+    .line 3045
+    .local v1, runnable:Ljava/lang/Runnable;
+    iget-object v2, p0, Lcom/android/server/PowerManagerService;->mHandler:Landroid/os/Handler;
+
+    invoke-static {v2, v1}, Landroid/os/Message;->obtain(Landroid/os/Handler;Ljava/lang/Runnable;)Landroid/os/Message;
+
+    move-result-object v0
+
+    .line 3046
+    .local v0, msg:Landroid/os/Message;
+    iget-object v2, p0, Lcom/android/server/PowerManagerService;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v2, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    .line 3049
+    if-eqz p4, :cond_2
+
+    .line 3050
+    monitor-enter v1
+
+    .line 3053
+    :goto_0
+    :try_start_0
+    invoke-virtual {v1}, Ljava/lang/Object;->wait()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 3054
+    :catch_0
+    move-exception v2
+
+    goto :goto_0
+
+    .line 3057
+    :catchall_0
+    move-exception v2
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v2
+
+    .line 3059
+    :cond_2
+    return-void
+.end method
+
 

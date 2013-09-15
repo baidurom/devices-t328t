@@ -419,11 +419,26 @@
     move-result-object v10
 
     check-cast v10, Lcom/android/server/AlarmManagerService$Alarm;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 1362
     .local v10, alarm:Lcom/android/server/AlarmManagerService$Alarm;
+
+    move-object/from16 v4, p0
+
+    iget-object v5, v4, Lcom/android/server/AlarmManagerService$AlarmThread;->this$0:Lcom/android/server/AlarmManagerService;
+
+    move-wide/from16 v0, v16
+
+    #calls: Lcom/android/server/AlarmManagerService;->handlerPoweroffAlarm(Lcom/android/server/AlarmManagerService$Alarm;J)Z
+    invoke-static {v5, v10, v0, v1}, Lcom/android/server/AlarmManagerService;->access$1501(Lcom/android/server/AlarmManagerService;Lcom/android/server/AlarmManagerService$Alarm;J)Z
+
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    move-result v0
+
+    if-nez v0, :cond_7
+
     :try_start_2
     iget-object v3, v10, Lcom/android/server/AlarmManagerService$Alarm;->operation:Landroid/app/PendingIntent;
 

@@ -78,6 +78,7 @@
 
 .field static final TRANSACTION_watchdog:I = 0x16
 
+.field static final TRANSACTION_shutdown:I = 0x1b
 
 # direct methods
 .method public constructor <init>()V
@@ -165,6 +166,10 @@
     .end annotation
 
     .prologue
+    const/4 v8, 0x0
+
+    const/4 v7, 0x1
+
     .line 39
     sparse-switch p1, :sswitch_data_0
 
@@ -1057,6 +1062,55 @@
 
     goto/16 :goto_0
 
+    :sswitch_1b
+    const-string v9, "android.os.IPowerManager"
+
+    invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 217
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v9
+
+    if-eqz v9, :cond_1007
+
+    move v0, v7
+
+    .line 219
+    .local v0, _arg0:Z
+    :goto_1007
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v9
+
+    if-eqz v9, :cond_1008
+
+    move v2, v7
+
+    .line 220
+    .local v2, _arg1:Z
+    :goto_1008
+    invoke-virtual {p0, v0, v2}, Landroid/os/IPowerManager$Stub;->shutdown(ZZ)V
+
+    .line 221
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
+    .end local v0           #_arg0:Z
+    .end local v2           #_arg1:Z
+    :cond_1007
+    move v0, v8
+
+    .line 217
+    goto :goto_1007
+
+    .restart local v0       #_arg0:Z
+    :cond_1008
+    move v2, v8
+
+    .line 219
+    goto :goto_1008
 
     .line 39
     :sswitch_data_0
@@ -1087,6 +1141,7 @@
         0x18 -> :sswitch_18
         0x19 -> :sswitch_19
         0x1a -> :sswitch_1a
+        0x1b -> :sswitch_1b
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method
