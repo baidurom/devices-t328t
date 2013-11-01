@@ -320,6 +320,11 @@
 
 .field static final TRANSACTION_updateServiceLocationExt:I = 0x79
 
+.field static final TRANSACTION_getScAddress:I = 0x94
+
+.field static final TRANSACTION_setScAddress:I = 0x95
+
+
 
 # direct methods
 .method public constructor <init>()V
@@ -4278,6 +4283,46 @@
     invoke-virtual {p3, v6}, Landroid/os/Parcel;->writeInt(I)V
 
     goto/16 :goto_0
+    
+    :sswitch_94
+    const-string v0, "com.android.internal.telephony.ITelephony"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 376
+    invoke-virtual {p0}, Lcom/android/internal/telephony/ITelephony$Stub;->getScAddress()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 377
+    .local v1, _result:Ljava/lang/String;
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 378
+    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
+    .line 383
+    .end local v1          #_result:Ljava/lang/String;
+    :sswitch_95
+    const-string v0, "com.android.internal.telephony.ITelephony"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 385
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 386
+    .restart local v1       #_arg0:Ljava/lang/String;
+    invoke-virtual {p0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->setScAddress(Ljava/lang/String;)V
+
+    .line 387
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
 
     .line 45
     :sswitch_data_0
@@ -4429,6 +4474,8 @@
         0x91 -> :sswitch_91
         0x92 -> :sswitch_92
         0x93 -> :sswitch_93
+	0x94 -> :sswitch_94
+	0x95 -> :sswitch_95
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method
