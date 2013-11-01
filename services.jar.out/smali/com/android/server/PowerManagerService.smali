@@ -16740,54 +16740,104 @@
 .end method
 
 .method private registerQbReceiver()V
-    .locals 5
+    .locals 9
 
     .prologue
-    const/4 v4, 0x0
-
-    .line 2929
-    new-instance v0, Landroid/content/IntentFilter;
-
-    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
-
-    .line 2930
-    .local v0, filter:Landroid/content/IntentFilter;
-    const-string v1, "android.intent.action.ACTION_QUICKBOOT_BOOT"
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    const/4 v8, 0x0
 
     .line 2931
-    const-string v1, "android.intent.action.ACTION_QUICKBOOT_BOOT_COMPLETE"
+    new-instance v2, Landroid/content/IntentFilter;
 
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-direct {v2}, Landroid/content/IntentFilter;-><init>()V
 
     .line 2932
-    const-string v1, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN"
+    .local v2, filter:Landroid/content/IntentFilter;
+    const-string v5, "android.intent.action.ACTION_QUICKBOOT_BOOT"
 
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-virtual {v2, v5}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     .line 2933
-    const-string v1, "android.intent.action.ACTION_QUICKBOOT_SCREENON"
+    const-string v5, "android.intent.action.ACTION_QUICKBOOT_BOOT_COMPLETE"
 
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-virtual {v2, v5}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     .line 2934
-    const-string v1, "android.intent.action.ACTION_QUICKBOOT_SCREENOFF"
+    const-string v5, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN"
 
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-virtual {v2, v5}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     .line 2935
-    iget-object v1, p0, Lcom/android/server/PowerManagerService;->mContext:Landroid/content/Context;
+    const-string v5, "android.intent.action.ACTION_QUICKBOOT_SCREENON"
 
-    new-instance v2, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;
-
-    invoke-direct {v2, p0, v4}, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;-><init>(Lcom/android/server/PowerManagerService;Lcom/android/server/PowerManagerService$1;)V
-
-    iget-object v3, p0, Lcom/android/server/PowerManagerService;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v1, v2, v0, v4, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+    invoke-virtual {v2, v5}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     .line 2936
+    const-string v5, "android.intent.action.ACTION_QUICKBOOT_SCREENOFF"
+
+    invoke-virtual {v2, v5}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    .line 2937
+    iget-object v5, p0, Lcom/android/server/PowerManagerService;->mContext:Landroid/content/Context;
+
+    new-instance v6, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;
+
+    invoke-direct {v6, p0, v8}, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;-><init>(Lcom/android/server/PowerManagerService;Lcom/android/server/PowerManagerService$1;)V
+
+    iget-object v7, p0, Lcom/android/server/PowerManagerService;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v5, v6, v2, v8, v7}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+
+    .line 2939
+    const-string v5, "persist.sys.shutdown.state"
+
+    const-string v6, "-1"
+
+    invoke-static {v5, v6}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 2940
+    .local v3, sstate:Ljava/lang/String;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+
+    move-result v4
+
+    .line 2941
+    .local v4, state:I
+    if-lez v4, :cond_0
+
+    .line 2942
+    move v0, v4
+
+    .line 2943
+    .local v0, adbState:I
+    iget-object v5, p0, Lcom/android/server/PowerManagerService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v5}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    .line 2944
+    .local v1, cr:Landroid/content/ContentResolver;
+    const-string v5, "adb_enabled"
+
+    invoke-static {v1, v5, v0}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    .line 2945
+    const-string v5, "persist.sys.shutdown.state"
+
+    const-string v6, "-1"
+
+    invoke-static {v5, v6}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 2947
+    .end local v0           #adbState:I
+    .end local v1           #cr:Landroid/content/ContentResolver;
+    :cond_0
     return-void
 .end method
 
