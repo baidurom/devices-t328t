@@ -24,3 +24,48 @@
     goto :goto_0
 .end method
 
+.method private isWakeKeyWhenKeyguardShowing(IZ)Z
+    .locals 0
+    .parameter "keyCode"
+    .parameter "isDocked"
+
+    .prologue
+    .line 868
+    sparse-switch p1, :sswitch_data_0
+
+    .line 890
+    const/4 p2, 0x1
+
+    .end local p2
+    :goto_0
+    :sswitch_0
+    return p2
+
+    .line 888
+    .restart local p2
+    :sswitch_1
+    const/4 p2, 0x0
+
+    goto :goto_0
+
+    .line 868
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x1b -> :sswitch_1
+        0x4f -> :sswitch_1
+        0x55 -> :sswitch_1
+        0x56 -> :sswitch_1
+        0x57 -> :sswitch_1
+        0x58 -> :sswitch_1
+        0x59 -> :sswitch_1
+        0x5a -> :sswitch_1
+        0x5b -> :sswitch_1
+        0x7e -> :sswitch_1
+        0x7f -> :sswitch_1
+        0x82 -> :sswitch_1
+        0xa4 -> :sswitch_0
+    .end sparse-switch
+.end method
+
