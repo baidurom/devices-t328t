@@ -159,6 +159,11 @@ override_property += \
     ro.product.device.alias=t328t,T328T \
     ro.call.record=1
 
+# reduce hwui cache size
+override_property += \
+    ro.hwui.layer_cache_size=8.0 \
+    ro.hwui.texture_cache_size=12.0
+
 ##############################################################################
 # override_property: this property will override the build.prop
 #-----------------------------------------------------------------------------
