@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/internal/app/ShutdownThread$QbShutdown;,
         Lcom/android/internal/app/ShutdownThread$CloseDialogReceiver;
     }
 .end annotation
@@ -13,6 +14,10 @@
 
 # static fields
 .field private static final ACTION_QUICKBOOT_SHUTDOWN:Ljava/lang/String; = "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN"
+
+.field private static final DISABLE:I = 0x0
+
+.field private static final ENABLE:I = 0x1
 
 .field private static final MAX_BROADCAST_TIME:I = 0x2710
 
@@ -22,15 +27,17 @@
 
 .field private static final PHONE_STATE_POLL_SLEEP_MSEC:I = 0x1f4
 
+.field private static final QUICKBOOT_DIALOG_ALARM_MAX_NUM:I = 0x2
+
 .field public static final SHUTDOWN_ACTION_PROPERTY:Ljava/lang/String; = "sys.shutdown.requested"
 
 .field private static final SHUTDOWN_VIBRATE_MS:I = 0x1f4
 
 .field private static final TAG:Ljava/lang/String; = "ShutdownThread"
 
-.field private static mIsQbChecked:Z
-
 .field private static mIsQuickbootShutdown:Z
+
+.field private static mPoweroffAlarm:Landroid/app/AlarmManager$PoweroffAlarm;
 
 .field private static final mQbManager:Lcom/android/internal/app/QuickbootManager;
 
@@ -89,27 +96,27 @@
 
     sput-object v0, Lcom/android/internal/app/ShutdownThread;->sInstance:Lcom/android/internal/app/ShutdownThread;
 
-    .line 88
+    .line 102
     sput-boolean v1, Lcom/android/internal/app/ShutdownThread;->mIsQuickbootShutdown:Z
 
-    .line 89
-    const/4 v0, 0x1
-
-    sput-boolean v0, Lcom/android/internal/app/ShutdownThread;->mIsQbChecked:Z
-
-    .line 91
+    .line 104
     invoke-static {}, Lcom/android/internal/app/QuickbootManager;->getInstance()Lcom/android/internal/app/QuickbootManager;
 
     move-result-object v0
 
     sput-object v0, Lcom/android/internal/app/ShutdownThread;->mQbManager:Lcom/android/internal/app/QuickbootManager;
 
-    .line 93
+    .line 106
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/android/internal/app/ShutdownThread;->mShutdownThreadSync:Ljava/lang/Object;
+
+    .line 113
+    const/4 v0, 0x0
+
+    sput-object v0, Lcom/android/internal/app/ShutdownThread;->mPoweroffAlarm:Landroid/app/AlarmManager$PoweroffAlarm;
 
     return-void
 .end method
@@ -141,6 +148,19 @@
     invoke-static {p0}, Lcom/android/internal/app/ShutdownThread;->beginShutdownSequence(Landroid/content/Context;)V
 
     return-void
+.end method
+
+.method static synthetic access$100(Landroid/content/Context;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 67
+    invoke-static {p0}, Lcom/android/internal/app/ShutdownThread;->isQuickBootSupport(Landroid/content/Context;)Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method static synthetic access$102(Z)Z
@@ -192,6 +212,41 @@
 
     .prologue
     .line 53
+    sput-boolean p0, Lcom/android/internal/app/ShutdownThread;->mIsQuickbootShutdown:Z
+
+    return p0
+.end method
+
+.method static synthetic access$400(Landroid/content/Context;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 67
+    invoke-static {p0}, Lcom/android/internal/app/ShutdownThread;->isQuickBootEnabled(Landroid/content/Context;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$502(Landroid/app/AlarmManager$PoweroffAlarm;)Landroid/app/AlarmManager$PoweroffAlarm;
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 67
+    sput-object p0, Lcom/android/internal/app/ShutdownThread;->mPoweroffAlarm:Landroid/app/AlarmManager$PoweroffAlarm;
+
+    return-object p0
+.end method
+
+.method static synthetic access$602(Z)Z
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 67
     sput-boolean p0, Lcom/android/internal/app/ShutdownThread;->mIsQuickbootShutdown:Z
 
     return p0
@@ -542,183 +597,93 @@
 .end method
 
 .method private static createQbShutdownConfirmDialog(Landroid/content/Context;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
-    .locals 10
+    .locals 7
     .parameter "context"
     .parameter "origin"
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v6, 0x0
 
-    .line 299
-    :try_start_0
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    .line 521
+    move-object v3, p1
 
-    move-result-object v2
+    .line 523
+    .local v3, retAlertDialog:Landroid/app/AlertDialog;
+    invoke-static {p0}, Lcom/android/internal/app/ShutdownThread;->isQuickBootSupport(Landroid/content/Context;)Z
 
-    const v4, #bool@config_quickbootSupport#t
+    move-result v4
 
-    invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getBoolean(I)Z
-    :try_end_0
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    if-eqz v4, :cond_0
 
-    move-result v8
-
-    .line 301
-    .local v8, quickbootSupport:Z
-    if-nez v8, :cond_0
-
-    .line 347
-    .end local v8           #quickbootSupport:Z
-    .end local p1
-    :goto_0
-    return-object p1
-
-    .line 303
-    .restart local p1
-    :catch_0
-    move-exception v7
-
-    .line 304
-    .local v7, e:Landroid/content/res/Resources$NotFoundException;
-    goto :goto_0
-
-    .line 307
-    .end local v7           #e:Landroid/content/res/Resources$NotFoundException;
-    .restart local v8       #quickbootSupport:Z
-    :cond_0
-    new-instance v2, Landroid/app/AlertDialog$Builder;
-
-    invoke-direct {v2, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
-
-    const v4, #string@power_off#t
-
-    invoke-virtual {v2, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v2
-
-    const v4, #string@quickboot_shutdown_info#t
-
-    invoke-virtual {v2, v4}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v2
-
-    const v4, #string@yes#t
-
-    new-instance v5, Lcom/android/internal/app/ShutdownThread$5;
-
-    invoke-direct {v5, p0}, Lcom/android/internal/app/ShutdownThread$5;-><init>(Landroid/content/Context;)V
-
-    invoke-virtual {v2, v4, v5}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v2
-
-    const v4, #string@no#t
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v2, v4, v5}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+    .line 524
+    invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
-    .line 317
-    .local v0, ret:Landroid/app/AlertDialog;
-    new-instance v6, Landroid/widget/CheckBox;
+    .line 525
+    .local v0, layoutInflater:Landroid/view/LayoutInflater;
+    const v4, #layout@quickboot_dialog_confirm#t
 
-    invoke-direct {v6, p0}, Landroid/widget/CheckBox;-><init>(Landroid/content/Context;)V
+    invoke-virtual {v0, v4, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    .line 318
-    .local v6, checkBox:Landroid/widget/CheckBox;
-    new-instance v9, Landroid/widget/TextView;
+    move-result-object v1
 
-    invoke-direct {v9, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    .line 529
+    .local v1, qbConfirmView:Landroid/view/View;
+    if-eqz v1, :cond_0
 
-    .line 319
-    .local v9, text:Landroid/widget/TextView;
-    const v2, #string@power_off_alarm#t
+    .line 530
+    new-instance v2, Lcom/android/internal/app/ShutdownThread$QbShutdown;
 
-    invoke-virtual {v9, v2}, Landroid/widget/TextView;->setText(I)V
+    invoke-direct {v2, p0, v1}, Lcom/android/internal/app/ShutdownThread$QbShutdown;-><init>(Landroid/content/Context;Landroid/view/View;)V
 
-    .line 320
-    const/16 v2, 0xa
+    .line 532
+    .local v2, qbShutdown:Lcom/android/internal/app/ShutdownThread$QbShutdown;
+    invoke-virtual {v2}, Lcom/android/internal/app/ShutdownThread$QbShutdown;->isAvaliable()Z
 
-    invoke-virtual {v9, v2, v3, v3, v3}, Landroid/widget/TextView;->setPadding(IIII)V
+    move-result v4
 
-    .line 321
-    const/high16 v2, 0x4140
+    if-eqz v4, :cond_0
 
-    invoke-virtual {v9, v2}, Landroid/widget/TextView;->setTextSize(F)V
+    .line 533
+    new-instance v4, Landroid/app/AlertDialog$Builder;
 
-    .line 322
-    sget-boolean v2, Lcom/android/internal/app/ShutdownThread;->mIsQbChecked:Z
+    invoke-direct {v4, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v6, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
+    const v5, #string@power_off#t
 
-    .line 323
-    sget-boolean v2, Lcom/android/internal/app/ShutdownThread;->mIsQbChecked:Z
+    invoke-virtual {v4, v5}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    sput-boolean v2, Lcom/android/internal/app/ShutdownThread;->mIsQuickbootShutdown:Z
+    move-result-object v4
 
-    .line 324
-    invoke-virtual {v6}, Landroid/widget/CheckBox;->isChecked()Z
+    const v5, #string@yes#t
 
-    move-result v2
+    invoke-virtual {v4, v5, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    if-eqz v2, :cond_1
+    move-result-object v4
 
-    .line 325
-    const v2, -0xaba8a1
+    const v5, #string@no#t
 
-    invoke-virtual {v9, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v4, v5, v6}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 329
-    :goto_1
-    new-instance v2, Lcom/android/internal/app/ShutdownThread$6;
+    move-result-object v4
 
-    invoke-direct {v2, v9}, Lcom/android/internal/app/ShutdownThread$6;-><init>(Landroid/widget/TextView;)V
+    invoke-virtual {v4}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
-    invoke-virtual {v6, v2}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+    move-result-object v3
 
-    .line 341
-    new-instance v1, Landroid/widget/LinearLayout;
+    .line 542
+    invoke-virtual {v3, v1}, Landroid/app/AlertDialog;->setView(Landroid/view/View;)V
 
-    invoke-direct {v1, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+    .line 543
+    invoke-virtual {v2}, Lcom/android/internal/app/ShutdownThread$QbShutdown;->setListener()V
 
-    .line 342
-    .local v1, layout:Landroid/widget/LinearLayout;
-    invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
-
-    .line 343
-    invoke-virtual {v1, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    .line 344
-    invoke-virtual {v1, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    .line 346
-    const/16 v2, 0xe
-
-    const/16 v5, 0x14
-
-    move v4, v3
-
-    invoke-virtual/range {v0 .. v5}, Landroid/app/AlertDialog;->setView(Landroid/view/View;IIII)V
-
-    move-object p1, v0
-
-    .line 347
-    goto :goto_0
-
-    .line 327
-    .end local v1           #layout:Landroid/widget/LinearLayout;
-    :cond_1
-    const v2, -0x4d4c48
-
-    invoke-virtual {v9, v2}, Landroid/widget/TextView;->setTextColor(I)V
-
-    goto :goto_1
+    .line 548
+    .end local v0           #layoutInflater:Landroid/view/LayoutInflater;
+    .end local v1           #qbConfirmView:Landroid/view/View;
+    .end local v2           #qbShutdown:Lcom/android/internal/app/ShutdownThread$QbShutdown;
+    :cond_0
+    return-object v3
 .end method
 
 .method public static dismissDialog()V
@@ -745,6 +710,87 @@
     return-void
 .end method
 
+.method private static isQuickBootEnabled(Landroid/content/Context;)Z
+    .locals 5
+    .parameter "context"
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 324
+    const/4 v0, 0x0
+
+    .line 325
+    .local v0, qbEnabled:Z
+    invoke-static {p0}, Lcom/android/internal/app/ShutdownThread;->isQuickBootSupport(Landroid/content/Context;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 326
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    const-string v4, "baidu_settings_quickboot"
+
+    invoke-static {v3, v4, v2}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v3
+
+    if-ne v3, v1, :cond_1
+
+    move v0, v1
+
+    .line 329
+    :cond_0
+    :goto_0
+    return v0
+
+    :cond_1
+    move v0, v2
+
+    .line 326
+    goto :goto_0
+.end method
+
+.method private static isQuickBootSupport(Landroid/content/Context;)Z
+    .locals 3
+    .parameter "context"
+
+    .prologue
+    .line 314
+    const/4 v0, 0x0
+
+    .line 316
+    .local v0, quickbootSupport:Z
+    :try_start_0
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, #bool@config_quickbootSupport#t
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
+    :try_end_0
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v0
+
+    .line 320
+    :goto_0
+    return v0
+
+    .line 318
+    :catch_0
+    move-exception v1
+
+    goto :goto_0
+.end method
+
 .method public static reboot(Landroid/content/Context;Ljava/lang/String;Z)V
     .locals 1
     .parameter "context"
@@ -752,18 +798,28 @@
     .parameter "confirm"
 
     .prologue
-    .line 206
+    .line 218
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/android/internal/app/ShutdownThread;->mReboot:Z
 
-    .line 207
+    .line 220
+    const/4 v0, 0x0
+
+    sput-boolean v0, Lcom/android/internal/app/ShutdownThread;->mIsQuickbootShutdown:Z
+
+    .line 223
+    const/4 v0, 0x0
+
+    sput-object v0, Lcom/android/internal/app/ShutdownThread;->mPoweroffAlarm:Landroid/app/AlarmManager$PoweroffAlarm;
+
+    .line 226
     sput-object p1, Lcom/android/internal/app/ShutdownThread;->mRebootReason:Ljava/lang/String;
 
-    .line 208
+    .line 227
     invoke-static {p0, p2}, Lcom/android/internal/app/ShutdownThread;->shutdown(Landroid/content/Context;Z)V
 
-    .line 209
+    .line 228
     return-void
 .end method
 
@@ -887,34 +943,54 @@
     .parameter "confirm"
 
     .prologue
-    .line 109
-    const/4 v0, 0x0
+    .line 135
+    if-nez p1, :cond_0
+
+    sget-boolean v0, Lcom/android/internal/app/ShutdownThread;->mReboot:Z
+
+    if-nez v0, :cond_0
+
+    .line 136
+    invoke-static {p0}, Lcom/android/internal/app/ShutdownThread$QbShutdown;->hasPoweroffAlarm(Landroid/content/Context;)Z
+
+    move-result v0
 
     sput-boolean v0, Lcom/android/internal/app/ShutdownThread;->mIsQuickbootShutdown:Z
 
-    .line 111
+    .line 137
+    const/4 v0, 0x0
+
+    sput-object v0, Lcom/android/internal/app/ShutdownThread;->mPoweroffAlarm:Landroid/app/AlarmManager$PoweroffAlarm;
+
+    .line 142
+    :cond_0
     invoke-static {p0, p1}, Lcom/android/internal/app/ShutdownThread;->shutdownInner(Landroid/content/Context;Z)V
 
-    .line 112
+    .line 143
     return-void
 .end method
 
 .method public static shutdownFromPoweroffAlarm(Landroid/content/Context;)V
-    .locals 1
+    .locals 2
     .parameter "context"
 
     .prologue
-    .line 292
+    const/4 v1, 0x0
+
+    .line 307
+    const/4 v0, 0x0
+
+    sput-object v0, Lcom/android/internal/app/ShutdownThread;->mPoweroffAlarm:Landroid/app/AlarmManager$PoweroffAlarm;
+
+    .line 308
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/android/internal/app/ShutdownThread;->mIsQuickbootShutdown:Z
 
-    .line 293
-    const/4 v0, 0x0
+    .line 309
+    invoke-static {p0, v1}, Lcom/android/internal/app/ShutdownThread;->shutdownInner(Landroid/content/Context;Z)V
 
-    invoke-static {p0, v0}, Lcom/android/internal/app/ShutdownThread;->shutdownInner(Landroid/content/Context;Z)V
-
-    .line 294
+    .line 310
     return-void
 .end method
 
@@ -2122,26 +2198,31 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 432
+    .line 634
     const/4 v2, 0x0
 
     sput-boolean v2, Lcom/android/internal/app/ShutdownThread;->mIsQuickbootShutdown:Z
 
-    .line 440
+    .line 636
+    const/4 v2, 0x0
+
+    sput-object v2, Lcom/android/internal/app/ShutdownThread;->mPoweroffAlarm:Landroid/app/AlarmManager$PoweroffAlarm;
+
+    .line 645
     .end local v13           #delay:J
     :cond_0
     monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 443
+    .line 648
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput-boolean v2, v0, Lcom/android/internal/app/ShutdownThread;->mActionDone:Z
 
-    .line 444
+    .line 649
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/app/ShutdownThread;->mContext:Landroid/content/Context;
@@ -2214,12 +2295,17 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 453
+    .line 658
     const/4 v2, 0x0
 
     sput-boolean v2, Lcom/android/internal/app/ShutdownThread;->mIsQuickbootShutdown:Z
 
-    .line 461
+    .line 660
+    const/4 v2, 0x0
+
+    sput-object v2, Lcom/android/internal/app/ShutdownThread;->mPoweroffAlarm:Landroid/app/AlarmManager$PoweroffAlarm;
+
+    .line 669
     .end local v13           #delay:J
     :cond_1
     monitor-exit v3
@@ -2594,15 +2680,22 @@
 
     iget-object v3, v0, Lcom/android/internal/app/ShutdownThread;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v2, v3}, Lcom/android/internal/app/QuickbootManager;->shutdown(Landroid/content/Context;)Z
+    sget-object v4, Lcom/android/internal/app/ShutdownThread;->mPoweroffAlarm:Landroid/app/AlarmManager$PoweroffAlarm;
+
+    invoke-virtual {v2, v3, v4}, Lcom/android/internal/app/QuickbootManager;->shutdown(Landroid/content/Context;Landroid/app/AlarmManager$PoweroffAlarm;)Z
 
     move-result v29
 
-    .line 583
+    .line 792
     .local v29, ret:Z
+    const/4 v2, 0x0
+
+    sput-object v2, Lcom/android/internal/app/ShutdownThread;->mPoweroffAlarm:Landroid/app/AlarmManager$PoweroffAlarm;
+
+    .line 794
     if-nez v29, :cond_18
 
-    .line 584
+    .line 795
     sget-boolean v2, Lcom/android/internal/app/ShutdownThread;->mReboot:Z
 
     sget-object v3, Lcom/android/internal/app/ShutdownThread;->mRebootReason:Ljava/lang/String;
@@ -3014,12 +3107,17 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 617
+    .line 828
     const/4 v2, 0x0
 
     sput-boolean v2, Lcom/android/internal/app/ShutdownThread;->mIsQuickbootShutdown:Z
 
-    .line 618
+    .line 830
+    const/4 v2, 0x0
+
+    sput-object v2, Lcom/android/internal/app/ShutdownThread;->mPoweroffAlarm:Landroid/app/AlarmManager$PoweroffAlarm;
+
+    .line 832
     sget-boolean v2, Lcom/android/internal/app/ShutdownThread;->mReboot:Z
 
     sget-object v3, Lcom/android/internal/app/ShutdownThread;->mRebootReason:Ljava/lang/String;

@@ -47,11 +47,23 @@
 
 .field public static final APPEND_FOR_LAST_AUDIBLE:Ljava/lang/String; = "_last_audible"
 
+.field public static final AUTO_BRIGHTNESS_COE:Ljava/lang/String; = "auto_brightness_coe"
+
 .field public static final AUTO_APPLY_UPDATE:Ljava/lang/String; = "auto_apply_set_time_city_locale"
 
 .field public static final AUTO_TIME:Ljava/lang/String; = "auto_time"
 
 .field public static final AUTO_TIME_ZONE:Ljava/lang/String; = "auto_time_zone"
+
+.field public static final BATTERY_LIGHT_ENABLED:Ljava/lang/String; = "battery_light_enabled"
+
+.field public static final BATTERY_LIGHT_FULL_COLOR:Ljava/lang/String; = "battery_light_full_color"
+
+.field public static final BATTERY_LIGHT_LOW_COLOR:Ljava/lang/String; = "battery_light_low_color"
+
+.field public static final BATTERY_LIGHT_MEDIUM_COLOR:Ljava/lang/String; = "battery_light_medium_color"
+
+.field public static final BATTERY_LIGHT_PULSE:Ljava/lang/String; = "battery_light_pulse"
 
 .field public static final AUTO_UPDATE_BY_LOC:Ljava/lang/String; = "auto_set_time_city_locale"
 
@@ -196,6 +208,8 @@
 .field public static final DUMMY_STRING_FOR_PADDING:Ljava/lang/String; = ""
 
 .field public static final EMERGENCY_TONE:Ljava/lang/String; = "emergency_tone"
+
+.field public static final ENABLE_MWI_NOTIFICATION:Ljava/lang/String; = "enable_mwi_notification"
 
 .field public static final ENABLE_POWER_EFFICIENCY:Ljava/lang/String; = "enable_power_efficiency"
 
@@ -413,6 +427,16 @@
 
 .field public static final NOTIFICATION_LIGHT_PULSE:Ljava/lang/String; = "notification_light_pulse"
 
+.field public static final NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE:Ljava/lang/String; = "notification_light_pulse_custom_enable"
+
+.field public static final NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES:Ljava/lang/String; = "notification_light_pulse_custom_values"
+
+.field public static final NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR:Ljava/lang/String; = "notification_light_pulse_default_color"
+
+.field public static final NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF:Ljava/lang/String; = "notification_light_pulse_default_led_off"
+
+.field public static final NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON:Ljava/lang/String; = "notification_light_pulse_default_led_on"
+
 .field public static final NOTIFICATION_SOUND:Ljava/lang/String; = "notification_sound"
 
 .field public static final PARENTAL_CONTROL_ENABLED:Ljava/lang/String; = "parental_control_enabled"
@@ -447,6 +471,8 @@
 .field public static final PREF_BRIGHTNESS:Ljava/lang/String; = "settings.display.brightness"
 
 .field public static final PSAVER_ENABLE:Ljava/lang/String; = "psaver_enable"
+
+.field public static final PREVENT_WAKEUP:Ljava/lang/String; = "prevent_wakeup"
 
 .field public static final PSAVER_SCHEDULE:Ljava/lang/String; = "psaver_schedule"
 
@@ -1321,7 +1347,7 @@
     sput-object v0, Landroid/provider/Settings$System;->DEFAULT_MSG_NOTIFICATION_URI:Landroid/net/Uri;
 
     .line 3245
-    const/16 v0, 0x3f
+    const/16 v0, 0x41
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -1690,6 +1716,18 @@
     const/16 v1, 0x3e
 
     const-string/jumbo v2, "volume_revoke"
+
+    aput-object v2, v0, v1
+    
+    const/16 v1, 0x3f
+
+    const-string/jumbo v2, "prevent_wakeup"
+
+    aput-object v2, v0, v1
+    
+    const/16 v1, 0x40
+
+    const-string/jumbo v2, "auto_brightness_coe"
 
     aput-object v2, v0, v1
 

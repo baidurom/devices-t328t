@@ -642,11 +642,72 @@
     goto :goto_1
 .end method
 
+.method public static getIntentForIntentSender(Landroid/content/IIntentSender;)Landroid/content/Intent;
+    .locals 5
+    .parameter "pendingResult"
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 88
+    instance-of v2, p0, Lcom/android/server/am/PendingIntentRecord;
+
+    if-nez v2, :cond_0
+
+    .line 96
+    :goto_0
+    return-object v3
+
+    .line 92
+    :cond_0
+    :try_start_0
+    move-object v0, p0
+
+    check-cast v0, Lcom/android/server/am/PendingIntentRecord;
+
+    move-object v1, v0
+
+    .line 93
+    .local v1, res:Lcom/android/server/am/PendingIntentRecord;
+    iget-object v2, v1, Lcom/android/server/am/PendingIntentRecord;->key:Lcom/android/server/am/PendingIntentRecord$Key;
+
+    iget-object v2, v2, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
+
+    if-eqz v2, :cond_1
+
+    new-instance v2, Landroid/content/Intent;
+
+    iget-object v4, v1, Lcom/android/server/am/PendingIntentRecord;->key:Lcom/android/server/am/PendingIntentRecord$Key;
+
+    iget-object v4, v4, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
+
+    invoke-direct {v2, v4}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_1
+    move-object v3, v2
+
+    goto :goto_0
+
+    :cond_1
+    move-object v2, v3
+
+    goto :goto_1
+
+    .line 94
+    .end local v1           #res:Lcom/android/server/am/PendingIntentRecord;
+    :catch_0
+    move-exception v2
+
+    goto :goto_0
+.end method
+
 .method private init()V
     .locals 3
 
     .prologue
-    .line 86
+    .line 104
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V

@@ -2,6 +2,12 @@
 # Please use this file as the project Makefile reference
 
 ##############################################################################
+# This value defines which base this project should choose, only for baidu internal.
+# Support values: S710, JRD77SS, YINS, YIGN
+#-----------------------------------------------------------------------------
+BAIDU_BASE_DEVICE := YINS
+
+##############################################################################
 # Default DALVIK_VM_BUILD setting is 27
 # android 4.0: 27
 # android 4.1: 28
@@ -14,6 +20,16 @@ DALVIK_VM_BUILD := 28
 # this depends on the device's resolution
 #-----------------------------------------------------------------------------
 DENSITY := hdpi
+
+##############################################################################
+# customize weather use prebuilt image or pack from BOOT/RECOVERY directory
+# Support Values:
+# vendor_modify_images := boot recovery
+# boot/recovery, pack boot.img/recovery.img from vendor/BOOT / vendor/RECOVERY
+# NULL, check boot.img/recovery.img in project root directory, if it exists,
+# use a prebuilt boot.img/recovery.img, if not, nothing to do
+#-----------------------------------------------------------------------------
+vendor_modify_images := boot
 
 ##############################################################################
 # Directorys which you want to remove in vendor directory
@@ -103,12 +119,27 @@ override_property += \
     ro.hwui.layer_cache_size=8.0 \
     ro.hwui.texture_cache_size=12.0
 
+# for Led color settings
+#   use System Properties "ro.baidu.led.dev_spec" to mark device specific led feature
+#   Now use int(32 bit) and mask to identify different special feature
+#   ps: intrusiveNotificationLed is declare with com.android.internal.R.bool.config_intrusiveBatteryLed 
+#   high-order    <-----    low-order
+#   00000000 00000000 000000000 00000001  =  0x00000001    default: false    pulseSpeed flag
+#   00000000 00000000 000000000 00000010  =  0x00000002    default: false    multiColorBatteryLed flag
+#   00000000 00000000 000000000 00000100  =  0x00000004    default: false    intrusiveBatteryLed flag
+#   00000000 00000000 000000000 00001000  =  0x00000008    default: true     multiColorNotificationLed flag
+override_property += \
+    ro.baidu.led.dev_spec=0
+
 ##############################################################################
 # override_property: this property will override the build.prop
 #-----------------------------------------------------------------------------
 remove_property += \
     dev.defaultwallpaper
 
+LOW_RAM_DEVICE := true
+
 include $(PWD)/vendor.remove.mk
 
 include $(PORT_BUILD)/main.mk
+include $(PORT_BUILD)/autopatch.mk

@@ -1515,6 +1515,12 @@
     invoke-static {v3, v9}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 512
+    invoke-static {}, Landroid/app/ActivityManager;->isLowRamDeviceStatic()Z
+    
+    move-result v3
+    
+    if-nez v3, :cond_21
+    
     new-instance v48, Lcom/android/server/CountryDetectorService;
 
     move-object/from16 v0, v48
@@ -1540,6 +1546,7 @@
     .line 519
     .end local v48           #countryDetector:Lcom/android/server/CountryDetectorService;
     .restart local v47       #countryDetector:Lcom/android/server/CountryDetectorService;
+    :cond_21
     :goto_22
     :try_start_31
     const-string v3, "SystemServer"
@@ -1569,6 +1576,12 @@
     invoke-static {v3, v9}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 528
+    invoke-static {}, Landroid/app/ActivityManager;->isLowRamDeviceStatic()Z
+    
+    move-result v3
+    
+    if-nez v3, :cond_22
+    
     const-string v3, "dropbox"
 
     new-instance v9, Lcom/android/server/DropBoxManagerService;
@@ -1586,6 +1599,7 @@
     .catch Ljava/lang/Throwable; {:try_start_32 .. :try_end_32} :catch_1a
 
     .line 536
+    :cond_22
     :goto_24
     :try_start_33
     const-string v3, "SystemServer"
@@ -1855,6 +1869,12 @@
 
     invoke-static {v3, v9}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    invoke-static {}, Landroid/app/ActivityManager;->isLowRamDeviceStatic()Z
+    
+    move-result v3
+    
+    if-nez v3, :cond_23
+    
     .line 619
     const-string v3, "diskstats"
 
@@ -1867,6 +1887,7 @@
     .catch Ljava/lang/Throwable; {:try_start_40 .. :try_end_40} :catch_25
 
     .line 629
+    :cond_23
     :goto_2f
     :try_start_41
     const-string v3, "SystemServer"
@@ -1876,6 +1897,12 @@
     invoke-static {v3, v9}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 630
+    invoke-static {}, Landroid/app/ActivityManager;->isLowRamDeviceStatic()Z
+    
+    move-result v3
+    
+    if-nez v3, :cond_24
+    
     const-string v3, "samplingprofiler"
 
     new-instance v9, Lcom/android/server/SamplingProfilerService;
@@ -1887,6 +1914,7 @@
     .catch Ljava/lang/Throwable; {:try_start_41 .. :try_end_41} :catch_26
 
     .line 637
+    :cond_24
     :goto_30
     :try_start_42
     const-string v3, "SystemServer"

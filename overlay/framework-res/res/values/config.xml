@@ -27,4 +27,5 @@
     <!-- This value add a switch in Settings, which can close Notification LED -->
     <bool name="config_intrusiveNotificationLed">true</bool>
     <bool name="config_wakeup_by_volume_key">true</bool> 
+    <bool name="config_quickbootSupport">true</bool>
 </resources>

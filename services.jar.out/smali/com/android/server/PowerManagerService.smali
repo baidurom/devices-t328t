@@ -62,6 +62,8 @@
 
 .field private static final DEFAULT_DESKDOCK_DIM_SCREEN_VALUE:I = 0xa
 
+.field private static final DEFAULT_AUTOMATIC_BRIGHTNESS_COE:I = 0x64
+
 .field private static final DEFAULT_SCREEN_OFF_TIMEOUT:I = 0x3a98
 
 .field private static final DESKDOCK_DIM_SCREEN:Ljava/lang/String; = "deskdock_dim_screen"
@@ -99,6 +101,8 @@
 .field private static final LONG_KEYLIGHT_DELAY:I = 0x1770
 
 .field private static final MAX_WAKE_LOCK_RECORD:I = 0x32
+
+.field private static final MAXIMUM_SCREEN_BRIGHTNESS:I = 0xff
 
 .field private static final MEDIUM_KEYLIGHT_DELAY:I = 0x3a98
 
@@ -199,6 +203,8 @@
 .field private mAutoBrightnessOffset:I
 
 .field private mAutoBrightnessTask:Ljava/lang/Runnable;
+
+.field private mAutomaticBrightnessCoe:I
 
 .field private mBatteryService:Lcom/android/server/BatteryService;
 
@@ -1212,6 +1218,17 @@
     return-object v0
 .end method
 
+.method static synthetic access$1901(Lcom/android/server/PowerManagerService;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 80
+    iget v0, p0, Lcom/android/server/PowerManagerService;->mAutomaticBrightnessCoe:I
+
+    return v0
+.end method
+
 .method static synthetic access$2002(Lcom/android/server/PowerManagerService;I)I
     .locals 0
     .parameter "x0"
@@ -1220,6 +1237,18 @@
     .prologue
     .line 91
     iput p1, p0, Lcom/android/server/PowerManagerService;->mStayOnConditions:I
+
+    return p1
+.end method
+
+.method static synthetic access$2003(Lcom/android/server/PowerManagerService;I)I
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 80
+    iput p1, p0, Lcom/android/server/PowerManagerService;->mAutomaticBrightnessCoe:I
 
     return p1
 .end method
@@ -1243,6 +1272,22 @@
     .prologue
     .line 91
     iget v0, p0, Lcom/android/server/PowerManagerService;->mScreenOffDelayForDeskDock:I
+
+    return v0
+.end method
+
+.method static synthetic access$2201(Lcom/android/server/PowerManagerService;F)F
+    .locals 1
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 80
+    iget v0, p0, Lcom/android/server/PowerManagerService;->mLightSensorValue:F
+
+    add-float/2addr v0, p1
+
+    iput v0, p0, Lcom/android/server/PowerManagerService;->mLightSensorValue:F
 
     return v0
 .end method
@@ -4171,9 +4216,9 @@
     iget-object v10, p0, Lcom/android/server/PowerManagerService;->mLcdBacklightValues:[I
 
     invoke-direct {p0, p1, v10}, Lcom/android/server/PowerManagerService;->getAutoBrightnessValue(I[I)I
-
+    
     move-result v6
-
+    
     .line 3626
     :goto_1
     iget v10, p0, Lcom/android/server/PowerManagerService;->mAutoBrightnessOffset:I
@@ -4208,7 +4253,27 @@
     invoke-virtual {v10, v6}, Lcom/android/server/HtcAutoBrightnessCtrl;->getCtrlAutoBrightnessValue(I)I
 
     move-result v6
+       
+    iget v10, p0, Lcom/android/server/PowerManagerService;->mAutomaticBrightnessCoe:I
 
+    mul-int/2addr v10, v6
+
+    div-int/lit8 v6, v10, 0x64
+    
+    const/16 v11, 0xff
+
+    .line 2562
+    invoke-static {v6, v11}, Ljava/lang/Math;->min(II)I
+
+    move-result v6
+
+    .line 2563
+    iget v10, p0, Lcom/android/server/PowerManagerService;->mScreenBrightnessDim:I
+
+    invoke-static {v6, v10}, Ljava/lang/Math;->max(II)I
+    
+    move-result v6
+    
     .line 3637
     const-string v10, "PowerManagerService"
 
@@ -4246,7 +4311,7 @@
     iget-object v10, p0, Lcom/android/server/PowerManagerService;->mButtonBacklightValues:[I
 
     invoke-direct {p0, p1, v10}, Lcom/android/server/PowerManagerService;->getAutoBrightnessValue(I[I)I
-
+    
     move-result v2
 
     .line 3641
@@ -13673,9 +13738,9 @@
     .local v0, resolver:Landroid/content/ContentResolver;
     sget-object v1, Landroid/provider/Settings$System;->CONTENT_URI:Landroid/net/Uri;
 
-    const-string v3, "(name=?) or (name=?) or (name=?) or (name=?) or (name=?) or (name=?) or (name=?)"
+    const-string v3, "(name=?) or (name=?) or (name=?) or (name=?) or (name=?) or (name=?) or (name=?) or (name=?)"
 
-    const/4 v4, 0x7
+    const/16 v4, 0x8
 
     new-array v4, v4, [Ljava/lang/String;
 
@@ -13714,7 +13779,13 @@
     const-string v5, "transition_animation_scale"
 
     aput-object v5, v4, v13
+    
+    const/4 v5, 0x7
 
+    const-string v12, "auto_brightness_coe"
+
+    aput-object v12, v4, v5
+    
     move-object v5, v2
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;

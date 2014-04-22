@@ -968,7 +968,7 @@
     const/16 v6, 0xa
 
     .line 1828
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
     .line 1830
     const/4 v3, 0x0
@@ -1086,7 +1086,12 @@
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 1840
+    .line 1597
+    iget-object v3, p0, Lcom/android/server/net/NetworkStatsService;->mDropBox:Landroid/os/DropBoxManager;
+
+    if-eqz v3, :cond_1
+
+    .line 1598
     iget-object v3, p0, Lcom/android/server/net/NetworkStatsService;->mDropBox:Landroid/os/DropBoxManager;
 
     const-string v4, "netstats_error"
@@ -1097,7 +1102,8 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/os/DropBoxManager;->addText(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1844
+    .line 1604
+    :cond_1
     const/4 v3, 0x1
 
     :try_start_1
@@ -1127,14 +1133,14 @@
     .end local p2
     invoke-direct {p2, v7, v8, v6}, Landroid/net/NetworkStats;-><init>(JI)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
     .line 1857
     .end local v0           #builder:Ljava/lang/StringBuilder;
     .end local v1           #e:Landroid/net/NetworkStats$NonMonotonicException;
     .end local v2           #e1:Landroid/net/NetworkStats$NonMonotonicException;
     .restart local p2
-    :cond_1
+    :cond_2
     if-nez p3, :cond_0
 
     .line 1863
@@ -6591,6 +6597,8 @@
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkStatsService;->mDropBox:Landroid/os/DropBoxManager;
+    
+    if-eqz v0, :cond_4
 
     move-object/from16 v20, v0
 
@@ -6602,6 +6610,7 @@
 
     invoke-virtual/range {v20 .. v22}, Landroid/os/DropBoxManager;->addText(Ljava/lang/String;Ljava/lang/String;)V
 
+    :cond_4
     goto/16 :goto_0
 
     .line 1562

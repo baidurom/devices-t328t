@@ -21,6 +21,8 @@
 
 .field public count:I
 
+.field public isPoweroffAlarm:Z
+
 .field public operation:Landroid/app/PendingIntent;
 
 .field public regularTime:J
@@ -45,6 +47,10 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1249
+    const/4 v0, 0x0
+    
+    iput-boolean v0, p0, Lcom/android/server/AlarmManagerService$Alarm;->isPoweroffAlarm:Z
+    
     iput-wide v1, p0, Lcom/android/server/AlarmManagerService$Alarm;->when:J
 
     .line 1250

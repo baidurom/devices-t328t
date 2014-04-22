@@ -7,6 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/server/BatteryService$WirelessChargingTimerThread;,
+	Lcom/android/server/BatteryService$SettingsObserver;,
+        Lcom/android/server/BatteryService$Led;,
         Lcom/android/server/BatteryService$QuickbootBroadcastReceiver;
     }
 .end annotation
@@ -65,6 +67,8 @@
 
 .field private mAcOnline:Z
 
+.field private mBatteryFullARGB:I
+
 .field private mBatteryHealth:I
 
 .field private mBatteryLevel:I
@@ -72,6 +76,10 @@
 .field private mBatteryLevelCritical:Z
 
 .field private mBatteryLevelLow:Z
+
+.field private mBatteryLowARGB:I
+
+.field private mBatteryMediumARGB:I
 
 .field private mBatteryPresent:Z
 
@@ -127,6 +135,12 @@
 
 .field private mLastPlugType:I
 
+.field private mLed:Lcom/android/server/BatteryService$Led;
+
+.field private mLedPulseEnabled:Z
+
+.field private mLightEnabled:Z
+
 .field private mLastUnsupportedCharger:Z
 
 .field private mLowBatteryCloseWarningLevel:I
@@ -136,6 +150,8 @@
 .field private mLowBatteryWarningLevelAry:[I
 
 .field private mOverload:Z
+
+.field private mMultiColorLed:Z
 
 .field private mPlugType:I
 
@@ -324,6 +340,12 @@
 
     .line 272
     iput-object p1, p0, Lcom/android/server/BatteryService;->mContext:Landroid/content/Context;
+    
+    new-instance v2, Lcom/android/server/BatteryService$Led;
+
+    invoke-direct {v2, p0, p1, p2}, Lcom/android/server/BatteryService$Led;-><init>(Lcom/android/server/BatteryService;Landroid/content/Context;Lcom/android/server/LightsService;)V
+
+    iput-object v2, p0, Lcom/android/server/BatteryService;->mLed:Lcom/android/server/BatteryService$Led;
 
     .line 276
     invoke-static {}, Lcom/android/server/am/BatteryStatsService;->getService()Lcom/android/internal/app/IBatteryStats;
@@ -468,6 +490,18 @@
 
     .line 308
     :cond_0
+    new-instance v0, Lcom/android/server/BatteryService$SettingsObserver;
+
+    new-instance v2, Landroid/os/Handler;
+
+    invoke-direct {v2}, Landroid/os/Handler;-><init>()V
+
+    invoke-direct {v0, p0, v2}, Lcom/android/server/BatteryService$SettingsObserver;-><init>(Lcom/android/server/BatteryService;Landroid/os/Handler;)V
+
+    .line 171
+    .local v0, observer:Lcom/android/server/BatteryService$SettingsObserver;
+    invoke-virtual {v0}, Lcom/android/server/BatteryService$SettingsObserver;->observe()V
+
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
@@ -780,6 +814,40 @@
     return-object v0
 .end method
 
+.method static synthetic access$001(Lcom/android/server/BatteryService;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 79
+    iget v0, p0, Lcom/android/server/BatteryService;->mBatteryStatus:I
+
+    return v0
+.end method
+
+.method static synthetic access$003(Lcom/android/server/BatteryService;Z)Z
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 79
+    iput-boolean p1, p0, Lcom/android/server/BatteryService;->mMultiColorLed:Z
+
+    return p1
+.end method
+
+.method static synthetic access$004(Lcom/android/server/BatteryService;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 79
+    iget-boolean v0, p0, Lcom/android/server/BatteryService;->mMultiColorLed:Z
+
+    return v0
+.end method
+
 .method static synthetic access$100(Lcom/android/server/BatteryService;)V
     .locals 0
     .parameter "x0"
@@ -812,6 +880,52 @@
     iput-object p1, p0, Lcom/android/server/BatteryService;->mQuickBoot:Lcom/baidu/service/IQuickBootService;
 
     return-object p1
+.end method
+
+.method static synthetic access$103(Lcom/android/server/BatteryService;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 79
+    iget v0, p0, Lcom/android/server/BatteryService;->mBatteryLowARGB:I
+
+    return v0
+.end method
+
+.method static synthetic access$104(Lcom/android/server/BatteryService;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 79
+    iget-boolean v0, p0, Lcom/android/server/BatteryService;->mLightEnabled:Z
+
+    return v0
+.end method
+
+.method static synthetic access$105(Lcom/android/server/BatteryService;I)I
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 79
+    iput p1, p0, Lcom/android/server/BatteryService;->mBatteryLowARGB:I
+
+    return p1
+.end method
+
+.method static synthetic access$106(Lcom/android/server/BatteryService;Z)Z
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 79
+    iput-boolean p1, p0, Lcom/android/server/BatteryService;->mLightEnabled:Z
+
+    return p1
 .end method
 
 .method static synthetic access$200(Lcom/android/server/BatteryService;)I
@@ -848,6 +962,40 @@
     return p1
 .end method
 
+.method static synthetic access$203(Lcom/android/server/BatteryService;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 79
+    iget v0, p0, Lcom/android/server/BatteryService;->mBatteryFullARGB:I
+
+    return v0
+.end method
+
+.method static synthetic access$204(Lcom/android/server/BatteryService;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 79
+    iget-boolean v0, p0, Lcom/android/server/BatteryService;->mLedPulseEnabled:Z
+
+    return v0
+.end method
+
+.method static synthetic access$205(Lcom/android/server/BatteryService;Z)Z
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 79
+    iput-boolean p1, p0, Lcom/android/server/BatteryService;->mLedPulseEnabled:Z
+
+    return p1
+.end method
+
 .method static synthetic access$300(Lcom/android/server/BatteryService;Ljava/io/File;Ljava/io/FileWriter;Ljava/lang/Integer;)V
     .locals 0
     .parameter "x0"
@@ -871,6 +1019,29 @@
     iget v0, p0, Lcom/android/server/BatteryService;->mPlugType:I
 
     return v0
+.end method
+
+.method static synthetic access$302(Lcom/android/server/BatteryService;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 79
+    iget v0, p0, Lcom/android/server/BatteryService;->mBatteryMediumARGB:I
+
+    return v0
+.end method
+
+.method static synthetic access$303(Lcom/android/server/BatteryService;I)I
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 79
+    iput p1, p0, Lcom/android/server/BatteryService;->mBatteryFullARGB:I
+
+    return p1
 .end method
 
 .method static synthetic access$400(Lcom/android/server/BatteryService;Ljava/io/File;Ljava/io/FileWriter;)V
@@ -897,6 +1068,29 @@
     invoke-direct {p0, p1, p2}, Lcom/android/server/BatteryService;->notifyQbService(IZ)V
 
     return-void
+.end method
+
+.method static synthetic access$402(Lcom/android/server/BatteryService;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 79
+    invoke-direct {p0}, Lcom/android/server/BatteryService;->updateLedPulse()V
+
+    return-void
+.end method
+
+.method static synthetic access$403(Lcom/android/server/BatteryService;I)I
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 79
+    iput p1, p0, Lcom/android/server/BatteryService;->mBatteryMediumARGB:I
+
+    return p1
 .end method
 
 .method static synthetic access$500(Lcom/android/server/BatteryService;)Landroid/content/Context;
@@ -943,6 +1137,17 @@
     iput-boolean p1, p0, Lcom/android/server/BatteryService;->isInterruptShowing:Z
 
     return p1
+.end method
+
+.method static synthetic access$603(Lcom/android/server/BatteryService;)Lcom/android/server/BatteryService$Led;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 79
+    iget-object v0, p0, Lcom/android/server/BatteryService;->mLed:Lcom/android/server/BatteryService$Led;
+
+    return-object v0
 .end method
 
 .method static synthetic access$700(Lcom/android/server/BatteryService;)I
@@ -3635,6 +3840,34 @@
     move-exception v1
 
     goto/16 :goto_3
+.end method
+
+.method private declared-synchronized updateLedPulse()V
+    .locals 1
+
+    .prologue
+    .line 653
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/BatteryService;->mLed:Lcom/android/server/BatteryService$Led;
+
+    invoke-virtual {v0}, Lcom/android/server/BatteryService$Led;->updateLightsLocked()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 654
+    monitor-exit p0
+
+    return-void
+
+    .line 653
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
 .method private final sendIntent()V

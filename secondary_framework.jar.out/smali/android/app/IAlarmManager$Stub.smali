@@ -52,6 +52,8 @@
 
 .field static final TRANSACTION_stopHibernate:I = 0xc
 
+.field static final TRANSACTION_getPoweroffAlarm:I = 0xe
+
 
 # direct methods
 .method public constructor <init>()V
@@ -676,6 +678,34 @@
 
     .line 216
     goto/16 :goto_0
+    
+    :sswitch_e
+    const-string v0, "android.app.IAlarmManager"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 144
+    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v7
+
+    .line 145
+    .restart local v7       #_arg0:J
+    invoke-virtual {p0, v7, v8}, Landroid/app/IAlarmManager$Stub;->getPoweroffAlarm(J)[J
+
+    move-result-object v1
+
+    .line 146
+    .local v1, _result:[J
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 147
+    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeLongArray([J)V
+
+    move v0, v9
+
+    .line 148
+    goto/16 :goto_0
 
     .line 43
     :sswitch_data_0
@@ -693,6 +723,7 @@
         0xb -> :sswitch_b
         0xc -> :sswitch_c
         0xd -> :sswitch_d
+	0xe -> :sswitch_e
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

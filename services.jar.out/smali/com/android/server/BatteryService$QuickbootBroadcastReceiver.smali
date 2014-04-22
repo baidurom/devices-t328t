@@ -119,6 +119,13 @@
     .line 188
     iget-object v1, p0, Lcom/android/server/BatteryService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/BatteryService;
 
+    #getter for: Lcom/android/server/BatteryService;->mLed:Lcom/android/server/BatteryService$Led;
+    invoke-static {v1}, Lcom/android/server/BatteryService;->access$603(Lcom/android/server/BatteryService;)Lcom/android/server/BatteryService$Led;
+    
+    move-result-object v1
+    
+    invoke-virtual {v1}, Lcom/android/server/BatteryService$Led;->updateQbLights()V
+    
     .line 195
     :cond_1
     :goto_1

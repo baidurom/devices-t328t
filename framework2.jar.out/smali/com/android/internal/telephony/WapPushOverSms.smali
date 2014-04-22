@@ -458,24 +458,39 @@
 
     move/from16 v2, v22
     
-    invoke-static {v0, v1, v2}, Lcom/baidu/internal/telephony/DisturbPreventUtils;->shouldPrevent(Landroid/content/Context;Ljava/lang/String;I)I
+    invoke-static {v0, v1, v2}, Lcom/baidu/internal/telephony/DisturbPreventUtils;->shouldPrevent(Landroid/content/Context;Ljava/lang/String;I)Lcom/baidu/internal/telephony/DisturbPreventUtils$BlockResult;
+    
+    move-result-object v22
 
-    move-result v22
+    .line 270
+    move-object/from16 v0, v22
+
+    iget v0, v0, Lcom/baidu/internal/telephony/DisturbPreventUtils$BlockResult;->result:I
 
     const/16 v23, 0x1
-
-    move/from16 v0, v22
 
     move/from16 v1, v23
 
     if-ne v0, v1, :cond_4
+        
+    move-object/from16 v0, v22
+
+    iget v0, v0, Lcom/baidu/internal/telephony/DisturbPreventUtils$BlockResult;->reason:I
+
+    move/from16 v22, v0
+
+    const/16 v23, -0x1
     
     move-object/from16 v0, p0
     
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0, v15, v14}, Lcom/baidu/internal/telephony/SMSPlugin;->dispatchDisturbWapPdu(Landroid/content/Context;Ljava/lang/String;[B)V
-    
+
+    move/from16 v1, v22
+
+    move/from16 v2, v23
+
+    invoke-static {v0, v15, v14, v1, v2}, Lcom/baidu/internal/telephony/SMSPlugin;->dispatchDisturbWapPdu(Landroid/content/Context;Ljava/lang/String;[BII)V
+   
     const/16 v21, 0x1
 
     goto/16 :goto_0

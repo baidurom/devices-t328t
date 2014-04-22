@@ -265,6 +265,86 @@
 
     #calls: Lcom/android/server/PowerManagerService;->setScreenOffTimeoutsLocked()V
     invoke-static {v2}, Lcom/android/server/PowerManagerService;->access$1500(Lcom/android/server/PowerManagerService;)V
+    
+    iget-object v2, p0, Lcom/android/server/PowerManagerService$SettingsObserver;->this$0:Lcom/android/server/PowerManagerService;
+
+    const-string v4, "auto_brightness_coe"
+
+    const/16 v5, 0x64
+
+    invoke-direct {p0, v4, v5}, Lcom/android/server/PowerManagerService$SettingsObserver;->getInt(Ljava/lang/String;I)I
+
+    move-result v4
+
+    #setter for: Lcom/android/server/PowerManagerService;->mAutomaticBrightnessCoe:I
+    invoke-static {v2, v4}, Lcom/android/server/PowerManagerService;->access$2003(Lcom/android/server/PowerManagerService;I)I
+
+    .line 492
+    iget-object v2, p0, Lcom/android/server/PowerManagerService$SettingsObserver;->this$0:Lcom/android/server/PowerManagerService;
+
+    #getter for: Lcom/android/server/PowerManagerService;->mLocks:Lcom/android/server/PowerManagerService$LockList;
+    invoke-static {v2}, Lcom/android/server/PowerManagerService;->access$501(Lcom/android/server/PowerManagerService;)Lcom/android/server/PowerManagerService$LockList;
+
+    move-result-object v4
+
+    monitor-enter v4
+
+    .line 494
+    iget-object v2, p0, Lcom/android/server/PowerManagerService$SettingsObserver;->this$0:Lcom/android/server/PowerManagerService;
+
+    #getter for: Lcom/android/server/PowerManagerService;->mLightSensorValue:F
+    invoke-static {v2}, Lcom/android/server/PowerManagerService;->access$7800(Lcom/android/server/PowerManagerService;)F
+
+    move-result v2
+
+    float-to-int v1, v2
+
+    .line 495
+    .local v1, value:I
+    iget-object v2, p0, Lcom/android/server/PowerManagerService$SettingsObserver;->this$0:Lcom/android/server/PowerManagerService;
+
+    const/high16 v5, 0x3f80
+
+    invoke-static {v2, v5}, Lcom/android/server/PowerManagerService;->access$2201(Lcom/android/server/PowerManagerService;F)F
+
+    .line 496
+    iget-object v2, p0, Lcom/android/server/PowerManagerService$SettingsObserver;->this$0:Lcom/android/server/PowerManagerService;
+
+    #calls: Lcom/android/server/PowerManagerService;->lightSensorChangedLocked(I)V
+    invoke-static {v2, v1}, Lcom/android/server/PowerManagerService;->access$6900(Lcom/android/server/PowerManagerService;I)V
+
+    .line 497
+    monitor-exit v4
+
+    .line 498
+    const-string v2, "PowerManagerService"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "mAutomaticBrightnessCoe="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/android/server/PowerManagerService$SettingsObserver;->this$0:Lcom/android/server/PowerManagerService;
+
+    #getter for: Lcom/android/server/PowerManagerService;->mAutomaticBrightnessCoe:I
+    invoke-static {v5}, Lcom/android/server/PowerManagerService;->access$1901(Lcom/android/server/PowerManagerService;)I
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v2, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 668
     const-string v2, "window_animation_scale"

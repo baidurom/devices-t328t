@@ -61,7 +61,18 @@
     .parameter "dropbox"
 
     .prologue
-    .line 79
+    .line 80
+    if-nez p2, :cond_0
+
+    .line 89
+    :goto_0
+    invoke-virtual {p1}, Ljava/io/File;->delete()Z
+
+    .line 91
+    return-void
+
+    .line 84
+    :cond_0
     :try_start_0
     const-string v1, "SamplingProfilerService"
 
@@ -72,18 +83,13 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 84
-    :goto_0
-    invoke-virtual {p1}, Ljava/io/File;->delete()Z
+    goto :goto_0
 
     .line 86
-    return-void
-
-    .line 81
     :catch_0
     move-exception v0
 
-    .line 82
+    .line 87
     .local v0, e:Ljava/io/IOException;
     :try_start_1
     const-string v1, "SamplingProfilerService"
@@ -122,7 +128,7 @@
 
     goto :goto_0
 
-    .line 84
+    .line 89
     .end local v0           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v1

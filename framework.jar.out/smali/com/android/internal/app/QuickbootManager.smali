@@ -1435,18 +1435,34 @@
 .end method
 
 .method public shutdown(Landroid/content/Context;)Z
-    .locals 5
+    .locals 1
     .parameter "context"
 
     .prologue
-    .line 164
+    .line 170
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Lcom/android/internal/app/QuickbootManager;->shutdown(Landroid/content/Context;Landroid/app/AlarmManager$PoweroffAlarm;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public shutdown(Landroid/content/Context;Landroid/app/AlarmManager$PoweroffAlarm;)Z
+    .locals 7
+    .parameter "context"
+    .parameter "poweroffAlarm"
+
+    .prologue
+    .line 174
     const-string v3, "QuickbootManager"
 
     const-string v4, "Now going to enter simulated poweroff state."
 
     invoke-static {v3, v4}, Lcom/android/internal/app/QuickbootManager$Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 167
+    .line 177
     const-string/jumbo v3, "power"
 
     invoke-virtual {p1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1455,7 +1471,7 @@
 
     check-cast v2, Landroid/os/PowerManager;
 
-    .line 168
+    .line 178
     .local v2, pm:Landroid/os/PowerManager;
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -1463,40 +1479,63 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/os/PowerManager;->goToSleep(J)V
 
-    .line 172
+    .line 183
+    if-nez p2, :cond_0
+
+    .line 184
     :try_start_0
     iget-object v3, p0, Lcom/android/internal/app/QuickbootManager;->mQbService:Lcom/baidu/service/IQuickBootService;
 
-    invoke-interface {v3}, Lcom/baidu/service/IQuickBootService;->enableQuickBootService()V
+    const/4 v4, -0x1
+
+    const-wide/16 v5, 0x0
+
+    invoke-interface {v3, v4, v5, v6}, Lcom/baidu/service/IQuickBootService;->enableQuickBootService(IJ)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 179
+    .line 194
+    :goto_0
     invoke-direct {p0, p1}, Lcom/android/internal/app/QuickbootManager;->stopEverything(Landroid/content/Context;)V
 
-    .line 181
+    .line 196
     new-instance v1, Landroid/content/Intent;
 
     const-string v3, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN_DONE"
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 182
+    .line 197
     .local v1, intent:Landroid/content/Intent;
     invoke-virtual {p1, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 184
+    .line 199
     const/4 v3, 0x1
 
     .end local v1           #intent:Landroid/content/Intent;
-    :goto_0
+    :goto_1
     return v3
 
-    .line 173
+    .line 186
+    :cond_0
+    :try_start_1
+    iget-object v3, p0, Lcom/android/internal/app/QuickbootManager;->mQbService:Lcom/baidu/service/IQuickBootService;
+
+    iget v4, p2, Landroid/app/AlarmManager$PoweroffAlarm;->alarmType:I
+
+    iget-wide v5, p2, Landroid/app/AlarmManager$PoweroffAlarm;->when:J
+
+    invoke-interface {v3, v4, v5, v6}, Lcom/baidu/service/IQuickBootService;->enableQuickBootService(IJ)V
+    :try_end_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_0
+
+    .line 188
     :catch_0
     move-exception v0
 
-    .line 174
+    .line 189
     .local v0, e:Landroid/os/RemoteException;
     const-string v3, "QuickbootManager"
 
@@ -1504,8 +1543,8 @@
 
     invoke-static {v3, v4}, Lcom/android/internal/app/QuickbootManager$Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 175
+    .line 190
     const/4 v3, 0x0
 
-    goto :goto_0
+    goto :goto_1
 .end method

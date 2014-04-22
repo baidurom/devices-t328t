@@ -20,6 +20,8 @@
 
 .field private mRect:Landroid/graphics/Rect;
 
+.field mShowArrow:Z
+
 .field private mX:I
 
 .field private mY:I
@@ -45,6 +47,10 @@
     iput v1, p0, Lcom/android/internal/widget/PopupLayout;->mArrowUp:I
 
     .line 25
+    const/4 v1, 0x1
+    
+    iput-boolean v1, p0, Lcom/android/internal/widget/PopupLayout;->mShowArrow:Z
+    
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
@@ -99,6 +105,10 @@
     iput v1, p0, Lcom/android/internal/widget/PopupLayout;->mArrowUp:I
 
     .line 25
+    const/4 v1, 0x1
+    
+    iput-boolean v1, p0, Lcom/android/internal/widget/PopupLayout;->mShowArrow:Z
+    
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
@@ -160,19 +170,27 @@
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onDraw(Landroid/graphics/Canvas;)V
 
     .line 75
+    iget-boolean v7, p0, Lcom/android/internal/widget/PopupLayout;->mShowArrow:Z
+    
+    if-nez v7, :cond_0
+    
+    :goto_0
+    return-void
+    
+    :cond_0
     iget-object v2, p0, Lcom/android/internal/widget/PopupLayout;->mDrawableDown:Landroid/graphics/drawable/Drawable;
 
     .line 76
     .local v2, drawable:Landroid/graphics/drawable/Drawable;
     iget v7, p0, Lcom/android/internal/widget/PopupLayout;->mY:I
 
-    if-nez v7, :cond_0
+    if-nez v7, :cond_1
 
     .line 77
     iget-object v2, p0, Lcom/android/internal/widget/PopupLayout;->mDrawableUp:Landroid/graphics/drawable/Drawable;
 
     .line 80
-    :cond_0
+    :cond_1
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v4
@@ -191,11 +209,11 @@
 
     const/4 v8, -0x1
 
-    if-eq v7, v8, :cond_2
+    if-eq v7, v8, :cond_3
 
     sget-object v7, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    :goto_0
+    :goto_1
     invoke-static {v4, v3, v7}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
@@ -224,7 +242,7 @@
     .local v5, x:I
     iget v7, p0, Lcom/android/internal/widget/PopupLayout;->mY:I
 
-    if-lez v7, :cond_1
+    if-lez v7, :cond_2
 
     iget v7, p0, Lcom/android/internal/widget/PopupLayout;->mY:I
 
@@ -234,7 +252,7 @@
 
     .line 93
     .local v6, y:I
-    :cond_1
+    :cond_2
     int-to-float v7, v5
 
     int-to-float v8, v6
@@ -243,18 +261,38 @@
 
     invoke-virtual {p1, v0, v7, v8, v9}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 95
-    return-void
+    goto :goto_0
 
     .line 83
     .end local v0           #bitmap:Landroid/graphics/Bitmap;
     .end local v1           #c:Landroid/graphics/Canvas;
     .end local v5           #x:I
     .end local v6           #y:I
-    :cond_2
+    :cond_3
     sget-object v7, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    goto :goto_0
+    goto :goto_1
+.end method
+
+.method public setShowArrow(Z)V
+    .locals 1
+    .parameter "show"
+
+    .prologue
+    .line 50
+    iget-boolean v0, p0, Lcom/android/internal/widget/PopupLayout;->mShowArrow:Z
+
+    if-eq v0, p1, :cond_0
+
+    .line 51
+    invoke-virtual {p0}, Lcom/android/internal/widget/PopupLayout;->invalidate()V
+
+    .line 53
+    :cond_0
+    iput-boolean p1, p0, Lcom/android/internal/widget/PopupLayout;->mShowArrow:Z
+
+    .line 54
+    return-void
 .end method
 
 .method public setXY(II)V

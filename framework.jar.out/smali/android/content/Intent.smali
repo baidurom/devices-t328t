@@ -538,6 +538,8 @@
 
 .field public static final FILL_IN_SOURCE_BOUNDS:I = 0x20
 
+.field public static final FLAG_ACCESS_CONTROLL_PASS:I = -0x80000000
+
 .field public static final FLAG_ACTIVITY_BROUGHT_TO_FRONT:I = 0x400000
 
 .field public static final FLAG_ACTIVITY_CLEAR_TASK:I = 0x8000
